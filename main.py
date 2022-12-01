@@ -45,12 +45,22 @@ DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
 
 DEBUG_OBS = False
 
-xaxis = dict(title="Time", rangeselector=dict(buttons=list(
-            [dict(count=1, label="1m", step="month", stepmode="backward"),
-             dict(count=6, label="6m", step="month", stepmode="backward"),
-             dict(count=1, label="YTD", step="year", stepmode="todate"),
-             dict(count=1, label="1y", step="year", stepmode="backward"), dict(step="all")])),
-                 rangeslider=dict(visible=True), type="date")
+xaxis = dict(
+    title="Time",
+    rangeselector=dict(
+        buttons=list(
+            [
+                dict(count=1, label="1m", step="month", stepmode="backward"),
+                dict(count=6, label="6m", step="month", stepmode="backward"),
+                dict(count=1, label="YTD", step="year", stepmode="todate"),
+                dict(count=1, label="1y", step="year", stepmode="backward"),
+                dict(step="all"),
+            ]
+        )
+    ),
+    rangeslider=dict(visible=True),
+    type="date",
+)
 
 
 def get_observations(location_iotid, limit=1000):
@@ -60,8 +70,12 @@ def get_observations(location_iotid, limit=1000):
         location = resp.json()
         ds = location["Things"][0]["Datastreams"][0]
         if DEBUG_OBS:
-            obs = [{'phenomenonTime': datetime.datetime.now().strftime(DTFORMAT),
-                    'result': 0}]
+            obs = [
+                {
+                    "phenomenonTime": datetime.datetime.now().strftime(DTFORMAT),
+                    "result": 0,
+                }
+            ]
             return location, obs
         else:
             resp = requests.get(
@@ -87,47 +101,50 @@ def init_app():
         style_cell={"textAlign": "left"},
         columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
         style_as_list_view=True,
-        style_data={'fontSize': '12px'},
-        style_table={"height": "300px",
-                     "overflowY": "auto"},
+        style_data={"fontSize": "12px"},
+        style_table={"height": "300px", "overflowY": "auto"},
     )
-    summarytable = DataTable(id='summarytable',
-                             style_cell={"textAlign": "left"},
-                             columns=[{"name": "Location", "id": "location"},
-                                      {"name": "Last Measurement", "id": "last_measurement"},
-                                      {"name": "Last Time", "id": "last_time"},
-                                      {"name": "Trend", "id": "trend"}],
-                             # css=[
-                             #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
-                             #     # set height of header
-                             #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
-                             #     # set height of body rows
-                             # ],
-                             style_as_list_view=True,
-                             style_data={'fontSize': '12px'},
-                             style_data_conditional=[
-                                 {
-                                     'if': {
-                                         'column_id': "trend",
-                                         'filter_query': '{trendvalue} > 0',
-                                     },
-                                     'backgroundColor': 'green',
-                                     'color': 'white'
-                                 },
-                                 {
-                                     'if': {
-                                         'column_id': "trend",
-                                         'filter_query': '{trendvalue} < 0',
-                                     },
-                                     'backgroundColor': 'red',
-                                     'color': 'white'
-                                 },
-                             ],
-                             style_table={
-                                 # "height": "300px",
-                                 "padding_top": "10px",
-                                 "overflowY": "auto"},
-                             )
+    summarytable = DataTable(
+        id="summarytable",
+        style_cell={"textAlign": "left"},
+        columns=[
+            {"name": "Location", "id": "location"},
+            {"name": "Last Measurement", "id": "last_measurement"},
+            {"name": "Last Time", "id": "last_time"},
+            {"name": "Trend", "id": "trend"},
+        ],
+        # css=[
+        #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
+        #     # set height of header
+        #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
+        #     # set height of body rows
+        # ],
+        style_as_list_view=True,
+        style_data={"fontSize": "12px"},
+        style_data_conditional=[
+            {
+                "if": {
+                    "column_id": "trend",
+                    "filter_query": "{trendvalue} > 0",
+                },
+                "backgroundColor": "green",
+                "color": "white",
+            },
+            {
+                "if": {
+                    "column_id": "trend",
+                    "filter_query": "{trendvalue} < 0",
+                },
+                "backgroundColor": "red",
+                "color": "white",
+            },
+        ],
+        style_table={
+            # "height": "300px",
+            "padding_top": "10px",
+            "overflowY": "auto",
+        },
+    )
 
     hydrocomp = dcc.Graph(id="hydrograph")
 
@@ -146,9 +163,7 @@ def init_app():
         # scatter.add_scatter(x=mxs, y=mys)
         fobs = obs[:50]
         x = [
-            datetime.datetime.strptime(
-                o["phenomenonTime"], DTFORMAT
-            ).timestamp()
+            datetime.datetime.strptime(o["phenomenonTime"], DTFORMAT).timestamp()
             for o in fobs
         ]
         y = [o["result"] for o in fobs]
@@ -168,25 +183,29 @@ def init_app():
             showlegend=False,
             yaxis_autorange="reversed",
             yaxis_title="Depth To Water (bgs ft)",
-            xaxis=xaxis
+            xaxis=xaxis,
         )
 
         comp = dcc.Graph(id=f"hydrograph{i}", figure=scatter)
 
         charts.append(comp)
-        lt = obs[-1]['phenomenonTime']
-        lm = obs[-1]['result']
+        lt = obs[-1]["phenomenonTime"]
+        lm = obs[-1]["result"]
 
-        srow = {'location': location['name'],
-                "trend": 'increase' if trend > 0 else 'decrease',
-                "trendvalue": trend,
-                "last_measurement": f'{lm:0.2f}',
-                "last_time": datetime.datetime.strptime(lt, DTFORMAT).isoformat()}
+        srow = {
+            "location": location["name"],
+            "trend": "increase" if trend > 0 else "decrease",
+            "trendvalue": trend,
+            "last_measurement": f"{lm:0.2f}",
+            "last_time": datetime.datetime.strptime(lt, DTFORMAT).isoformat(),
+        }
         sdata.append(srow)
 
     summarytable.data = sdata
-    for a, tag in (("PVACD", "pvacd_hydrovu"),
-                   ("ISC Seven Rivers", "isc_seven_rivers")):
+    for a, tag in (
+        ("PVACD", "pvacd_hydrovu"),
+        ("ISC Seven Rivers", "isc_seven_rivers"),
+    ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
         )
@@ -195,10 +214,12 @@ def init_app():
         lats = [l["location"]["coordinates"][1] for l in locations]
         lons = [l["location"]["coordinates"][0] for l in locations]
         ids = [l["name"] for l in locations]
-        if a=='PVACD':
-            colors = ["red" if trends.get(l["@iot.id"], 1) < 0 else "green" for l in locations]
+        if a == "PVACD":
+            colors = [
+                "red" if trends.get(l["@iot.id"], 1) < 0 else "green" for l in locations
+            ]
         else:
-            colors = 'blue'
+            colors = "blue"
 
         data.append(
             go.Scattermapbox(
@@ -217,9 +238,9 @@ def init_app():
         [
             dbc.Row(html.H1("PVACD Monitoring Locations")),
             dbc.Row([dbc.Col(summarytable), dbc.Col(mapcomp)]),
-            dbc.Row([dbc.Col([html.H2('Selection'), tablecomp]),
-                     dbc.Col([hydrocomp])]),
-        ] + charts,
+            dbc.Row([dbc.Col([html.H2("Selection"), tablecomp]), dbc.Col([hydrocomp])]),
+        ]
+        + charts,
         style={"background-color": "#eeffcd"},
     )
 
@@ -241,8 +262,8 @@ def display_click_data(clickData):
         {"name": "Well Depth (ft)", "value": ""},
     ]
     obs = [{"phenomenonTime": 0, "result": 0}]
-    mxs =[]
-    mys =[]
+    mxs = []
+    mys = []
     if clickData:
         point = clickData["points"][0]
         name = point["text"]
@@ -297,22 +318,24 @@ def display_click_data(clickData):
                         }
                     )
 
-                nm_aquifer_location, manual_obs = get_observations(location_iotid=aiotid, limit=100)
-                mxs = [xi['phenomenonTime'] for xi in manual_obs]
-                mys = [xi['result'] for xi in manual_obs]
+                nm_aquifer_location, manual_obs = get_observations(
+                    location_iotid=aiotid, limit=100
+                )
+                mxs = [xi["phenomenonTime"] for xi in manual_obs]
+                mys = [xi["result"] for xi in manual_obs]
 
     fig = go.Figure()
-    xs = [xi['phenomenonTime'] for xi in obs]
-    ys = [xi['result'] for xi in obs]
-    fig.add_trace(go.Scatter(x=xs, y=ys, name='PVACD'))
-    fig.add_trace(go.Scatter(x=mxs, y=mys, name='NMBGMR'))
+    xs = [xi["phenomenonTime"] for xi in obs]
+    ys = [xi["result"] for xi in obs]
+    fig.add_trace(go.Scatter(x=xs, y=ys, name="PVACD"))
+    fig.add_trace(go.Scatter(x=mxs, y=mys, name="NMBGMR"))
 
     fig.update_layout(
         height=350,
         margin=dict(t=50, b=10, l=50, r=50),
         yaxis_autorange="reversed",
         yaxis_title="Depth To Water (bgs ft)",
-        xaxis=xaxis
+        xaxis=xaxis,
     )
     return data, fig
 
