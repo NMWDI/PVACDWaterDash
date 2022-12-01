@@ -41,121 +41,187 @@ crosswalk = pd.read_csv(
 #     'https://raw.githubusercontent.com/NMWDI/HydroViewer/master/static/active_monitoring_wells.csv')
 ST2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1"
 
+DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
 
-def get_observations(location_iotid):
+DEBUG_OBS = False
+
+xaxis = dict(title="Time", rangeselector=dict(buttons=list(
+            [dict(count=1, label="1m", step="month", stepmode="backward"),
+             dict(count=6, label="6m", step="month", stepmode="backward"),
+             dict(count=1, label="YTD", step="year", stepmode="todate"),
+             dict(count=1, label="1y", step="year", stepmode="backward"), dict(step="all")])),
+                 rangeslider=dict(visible=True), type="date")
+
+
+def get_observations(location_iotid, limit=1000):
     url = f"{ST2}/Locations({location_iotid})?$expand=Things/Datastreams"
     resp = requests.get(url)
     if resp.status_code == 200:
         location = resp.json()
         ds = location["Things"][0]["Datastreams"][0]
-        resp = requests.get(
-            f"{ST2}/Datastreams({ds['@iot.id']})/Observations?$orderby=phenomenonTime desc&$top=500"
-        )
-
-        if resp.status_code == 200:
-            obs = resp.json()["value"]
+        if DEBUG_OBS:
+            obs = [{'phenomenonTime': datetime.datetime.now().strftime(DTFORMAT),
+                    'result': 0}]
             return location, obs
+        else:
+            resp = requests.get(
+                f"{ST2}/Datastreams({ds['@iot.id']})/Observations?$orderby=phenomenonTime desc&$top={limit}"
+            )
+
+            if resp.status_code == 200:
+                obs = resp.json()["value"]
+                return location, obs
 
 
-layout = go.Layout(
-    mapbox_style="open-street-map",
-    mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -106.4}},
-    margin={"r": 0, "t": 30, "l": 0, "b": 20},
-    height=400,
-    paper_bgcolor="#eeffcd",
-)
-
-tablecomp = DataTable(
-    id="selected_table",
-    style_cell={"textAlign": "left"},
-    columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
-    style_table={"height": "300px", "overflowY": "auto"},
-)
-
-hydrocomp = dcc.Graph(id="hydrograph")
-
-data = []
-trends = {}
-col2 = []
-for i, row in crosswalk.iterrows():
-    iotid = row["PVACD"]
-    print(iotid, row)
-    location, obs = get_observations(location_iotid=iotid)
-    scatter = px.scatter(obs, x="phenomenonTime", y="result", height=200)
-
-    x = [
-        datetime.datetime.strptime(
-            o["phenomenonTime"], "%Y-%m-%dT%H:%M:%S.000Z"
-        ).timestamp()
-        for o in obs
-    ]
-    y = [o["result"] for o in obs]
-
-    coeffs = polyfit(x, y, 1)
-    xs = linspace(x[0], x[-1])
-    ys = polyval(coeffs, xs)
-    trends[iotid] = coeffs[0]
-    # fitline = [{'x':xi, 'y':yi} for xi, yi in zip(xs, ys)]
-    # regline = px.line(fitline, x='x', y='y')
-    scatter.add_scatter(
-        x=[datetime.datetime.fromtimestamp(xi) for xi in xs], y=ys, mode="lines"
+def init_app():
+    layout = go.Layout(
+        mapbox_style="open-street-map",
+        mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
+        margin={"r": 0, "t": 30, "l": 0, "b": 20},
+        height=400,
+        paper_bgcolor="#eeffcd",
     )
 
-    scatter.update_layout(
-        margin=dict(t=25, b=10, l=10, r=0),
-        title=location["name"],
-        showlegend=False,
-        xaxis_title="Time",
-        yaxis_autorange="reversed",
-        yaxis_title="Depth To Water (bgs ft)",
+    tablecomp = DataTable(
+        id="selected_table",
+        style_cell={"textAlign": "left"},
+        columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
+        style_as_list_view=True,
+        style_data={'fontSize': '12px'},
+        style_table={"height": "300px",
+                     "overflowY": "auto"},
     )
+    summarytable = DataTable(id='summarytable',
+                             style_cell={"textAlign": "left"},
+                             columns=[{"name": "Location", "id": "location"},
+                                      {"name": "Last Measurement", "id": "last_measurement"},
+                                      {"name": "Last Time", "id": "last_time"},
+                                      {"name": "Trend", "id": "trend"}],
+                             # css=[
+                             #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
+                             #     # set height of header
+                             #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
+                             #     # set height of body rows
+                             # ],
+                             style_as_list_view=True,
+                             style_data={'fontSize': '12px'},
+                             style_data_conditional=[
+                                 {
+                                     'if': {
+                                         'column_id': "trend",
+                                         'filter_query': '{trendvalue} > 0',
+                                     },
+                                     'backgroundColor': 'green',
+                                     'color': 'white'
+                                 },
+                                 {
+                                     'if': {
+                                         'column_id': "trend",
+                                         'filter_query': '{trendvalue} < 0',
+                                     },
+                                     'backgroundColor': 'red',
+                                     'color': 'white'
+                                 },
+                             ],
+                             style_table={
+                                 # "height": "300px",
+                                 "padding_top": "10px",
+                                 "overflowY": "auto"},
+                             )
 
-    comp = dcc.Graph(id=f"hydrograph{i}", figure=scatter)
+    hydrocomp = dcc.Graph(id="hydrograph")
 
-    col2.append(comp)
+    sdata = []
+    data = []
+    trends = {}
+    charts = []
+    for i, row in crosswalk.iterrows():
+        iotid = row["PVACD"]
+        print(iotid, row)
+        location, obs = get_observations(location_iotid=iotid)
+        # nm_aquifer_location, manual_obs = get_observations(location_iotid=row['NM_AQUIFER'], limit=100)
+        scatter = px.scatter(obs, x="phenomenonTime", y="result", height=350)
+        # mxs = [xi['phenomenonTime'] for xi in manual_obs]
+        # mys = [xi['result'] for xi in manual_obs]
+        # scatter.add_scatter(x=mxs, y=mys)
+        fobs = obs[:50]
+        x = [
+            datetime.datetime.strptime(
+                o["phenomenonTime"], DTFORMAT
+            ).timestamp()
+            for o in fobs
+        ]
+        y = [o["result"] for o in fobs]
 
-for a, tag in (("PVACD", "pvacd_hydrovu"),):
-    locations = pd.read_json(
-        f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
-    )
-    locations = locations["locations"]
+        coeffs = polyfit(x, y, 1)
+        xs = linspace(x[0], x[-1])
+        ys = polyval(coeffs, xs)
+        trends[iotid] = trend = coeffs[0]
 
-    lats = [l["location"]["coordinates"][1] for l in locations]
-    lons = [l["location"]["coordinates"][0] for l in locations]
-    ids = [l["name"] for l in locations]
-    colors = ["red" if trends[l["@iot.id"]] > 0 else "green" for l in locations]
-
-    data.append(
-        go.Scattermapbox(
-            lat=lats,
-            lon=lons,
-            text=ids,
-            name=a,
-            marker=go.scattermapbox.Marker(color=colors, size=10),
+        scatter.add_scatter(
+            x=[datetime.datetime.fromtimestamp(xi) for xi in xs], y=ys, mode="lines"
         )
+
+        scatter.update_layout(
+            margin=dict(t=75, b=10, l=50, r=50),
+            title=location["name"],
+            showlegend=False,
+            yaxis_autorange="reversed",
+            yaxis_title="Depth To Water (bgs ft)",
+            xaxis=xaxis
+        )
+
+        comp = dcc.Graph(id=f"hydrograph{i}", figure=scatter)
+
+        charts.append(comp)
+        lt = obs[-1]['phenomenonTime']
+        lm = obs[-1]['result']
+
+        srow = {'location': location['name'],
+                "trend": 'increase' if trend > 0 else 'decrease',
+                "trendvalue": trend,
+                "last_measurement": f'{lm:0.2f}',
+                "last_time": datetime.datetime.strptime(lt, DTFORMAT).isoformat()}
+        sdata.append(srow)
+
+    summarytable.data = sdata
+    for a, tag in (("PVACD", "pvacd_hydrovu"),
+                   ("ISC Seven Rivers", "isc_seven_rivers")):
+        locations = pd.read_json(
+            f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
+        )
+        locations = locations["locations"]
+
+        lats = [l["location"]["coordinates"][1] for l in locations]
+        lons = [l["location"]["coordinates"][0] for l in locations]
+        ids = [l["name"] for l in locations]
+        if a=='PVACD':
+            colors = ["red" if trends.get(l["@iot.id"], 1) < 0 else "green" for l in locations]
+        else:
+            colors = 'blue'
+
+        data.append(
+            go.Scattermapbox(
+                lat=lats,
+                lon=lons,
+                text=ids,
+                name=a,
+                marker=go.scattermapbox.Marker(color=colors, size=10),
+            )
+        )
+
+    figmap = go.Figure(layout=layout, data=data)
+    mapcomp = dcc.Graph(id="map", figure=figmap)
+
+    dash_app.layout = dbc.Container(
+        [
+            dbc.Row(html.H1("PVACD Monitoring Locations")),
+            dbc.Row([dbc.Col(summarytable), dbc.Col(mapcomp)]),
+            dbc.Row([dbc.Col([html.H2('Selection'), tablecomp]),
+                     dbc.Col([hydrocomp])]),
+        ] + charts,
+        style={"background-color": "#eeffcd"},
     )
-
-figmap = go.Figure(layout=layout, data=data)
-mapcomp = dcc.Graph(id="map", figure=figmap)
-col2.insert(0, mapcomp)
-
-dash_app.layout = dbc.Container(
-    [
-        dbc.Row(html.H1("PVACD Monitoring Locations")),
-        dbc.Row([dbc.Col([tablecomp, hydrocomp], width=5), dbc.Col(col2)]),
-    ],
-    style={"background-color": "#eeffcd"},
-)
-
-
-# @dash_app.callback(
-#     Output(component_id='map', component_property='figure'),
-#     Input(component_id='slider', component_property='value')
-# )
-# def update_output_div(input_value):
-#     fig.layout.mapbox.pitch = input_value
-#
-#     return fig
 
 
 @dash_app.callback(
@@ -175,7 +241,8 @@ def display_click_data(clickData):
         {"name": "Well Depth (ft)", "value": ""},
     ]
     obs = [{"phenomenonTime": 0, "result": 0}]
-
+    mxs =[]
+    mys =[]
     if clickData:
         point = clickData["points"][0]
         name = point["text"]
@@ -196,28 +263,6 @@ def display_click_data(clickData):
                 #              "value": f"{location['properties']['Altitude']:0.2f}"})
             except IndexError:
                 pass
-            # get the data from NM_Aquifer (via ST2 for these wells)
-            aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
-
-            data.append({"name": "aST ID", "value": aiotid})
-            resp = requests.get(f"{ST2}/Locations({aiotid})?$expand=Things")
-            if resp.status_code == 200:
-                alocation = resp.json()
-                thing = alocation["Things"][0]
-                data.append({"name": "PointID", "value": alocation["name"]})
-                data.append(
-                    {
-                        "name": "Elevation (ft)",
-                        "value": alocation["properties"]["Altitude"],
-                    }
-                )
-                data.append(
-                    {
-                        "name": "Well Depth",
-                        "value": thing["properties"].get("WellDepth"),
-                    }
-                )
-
             ds = location["Things"][0]["Datastreams"][0]
             resp = requests.get(
                 f"{ST2}/Datastreams({ds['@iot.id']})/Observations?$orderby=phenomenonTime desc"
@@ -226,16 +271,55 @@ def display_click_data(clickData):
             if resp.status_code == 200:
                 obs = resp.json()["value"]
 
-    line = px.line(obs, x="phenomenonTime", y="result", height=500)
-    line.update_layout(
-        margin=dict(t=20, b=10, l=10, r=0),
-        xaxis_title="Time",
+            # get the data from NM_Aquifer (via ST2 for these wells)
+            try:
+                aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
+            except BaseException:
+                aiotid = None
+
+            if aiotid:
+                data.append({"name": "aST ID", "value": aiotid})
+                resp = requests.get(f"{ST2}/Locations({aiotid})?$expand=Things")
+                if resp.status_code == 200:
+                    alocation = resp.json()
+                    thing = alocation["Things"][0]
+                    data.append({"name": "PointID", "value": alocation["name"]})
+                    data.append(
+                        {
+                            "name": "Elevation (ft)",
+                            "value": alocation["properties"]["Altitude"],
+                        }
+                    )
+                    data.append(
+                        {
+                            "name": "Well Depth",
+                            "value": thing["properties"].get("WellDepth"),
+                        }
+                    )
+
+                nm_aquifer_location, manual_obs = get_observations(location_iotid=aiotid, limit=100)
+                mxs = [xi['phenomenonTime'] for xi in manual_obs]
+                mys = [xi['result'] for xi in manual_obs]
+
+    fig = go.Figure()
+    xs = [xi['phenomenonTime'] for xi in obs]
+    ys = [xi['result'] for xi in obs]
+    fig.add_trace(go.Scatter(x=xs, y=ys, name='PVACD'))
+    fig.add_trace(go.Scatter(x=mxs, y=mys, name='NMBGMR'))
+
+    fig.update_layout(
+        height=350,
+        margin=dict(t=50, b=10, l=50, r=50),
         yaxis_autorange="reversed",
-        yaxis_title="Depth To Water Below Ground Surface (ft)",
+        yaxis_title="Depth To Water (bgs ft)",
+        xaxis=xaxis
     )
-    return data, line
+    return data, fig
+
+
+init_app()
 
 
 if __name__ == "__main__":
-    dash_app.run_server(debug=True)
+    dash_app.run_server(debug=True, port=8051)
 # ============= EOF =============================================
