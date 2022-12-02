@@ -104,43 +104,47 @@ def init_app():
         style_data={"fontSize": "12px"},
         style_table={"height": "300px", "overflowY": "auto"},
     )
-    summarytable = DataTable(id='summarytable',
-                             style_cell={"textAlign": "left"},
-                             columns=[{"name": "Location", "id": "location"},
-                                      {"name": "Last Measurement", "id": "last_measurement"},
-                                      {"name": "Last Time", "id": "last_time"},
-                                      {"name": "Trend", "id": "trend"}],
-                             # css=[
-                             #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
-                             #     # set height of header
-                             #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
-                             #     # set height of body rows
-                             # ],
-                             style_as_list_view=True,
-                             style_data={'fontSize': '12px'},
-                             style_data_conditional=[
-                                 {
-                                     'if': {
-                                         'column_id': "trend",
-                                         'filter_query': '{trendvalue} > 0',
-                                     },
-                                     'backgroundColor': 'red',
-                                     'color': 'white'
-                                 },
-                                 {
-                                     'if': {
-                                         'column_id': "trend",
-                                         'filter_query': '{trendvalue} < 0',
-                                     },
-                                     'backgroundColor': 'green',
-                                     'color': 'white'
-                                 },
-                             ],
-                             style_table={
-                                 # "height": "300px",
-                                 "padding_top": "10px",
-                                 "overflowY": "auto"},
-                             )
+    summarytable = DataTable(
+        id="summarytable",
+        style_cell={"textAlign": "left"},
+        columns=[
+            {"name": "Location", "id": "location"},
+            {"name": "Last Measurement", "id": "last_measurement"},
+            {"name": "Last Time", "id": "last_time"},
+            {"name": "Trend", "id": "trend"},
+        ],
+        # css=[
+        #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
+        #     # set height of header
+        #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
+        #     # set height of body rows
+        # ],
+        style_as_list_view=True,
+        style_data={"fontSize": "12px"},
+        style_data_conditional=[
+            {
+                "if": {
+                    "column_id": "trend",
+                    "filter_query": "{trendvalue} > 0",
+                },
+                "backgroundColor": "red",
+                "color": "white",
+            },
+            {
+                "if": {
+                    "column_id": "trend",
+                    "filter_query": "{trendvalue} < 0",
+                },
+                "backgroundColor": "green",
+                "color": "white",
+            },
+        ],
+        style_table={
+            # "height": "300px",
+            "padding_top": "10px",
+            "overflowY": "auto",
+        },
+    )
 
     hydrocomp = dcc.Graph(id="hydrograph")
 
@@ -210,8 +214,10 @@ def init_app():
         lats = [l["location"]["coordinates"][1] for l in locations]
         lons = [l["location"]["coordinates"][0] for l in locations]
         ids = [l["name"] for l in locations]
-        if a=='PVACD':
-            colors = ["green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations]
+        if a == "PVACD":
+            colors = [
+                "green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations
+            ]
         else:
             colors = "blue"
 
@@ -232,9 +238,9 @@ def init_app():
         [
             dbc.Row(html.H1("PVACD Monitoring Locations")),
             dbc.Row([dbc.Col(summarytable), dbc.Col(mapcomp)]),
-            dbc.Row([dbc.Col([html.H2('Selection'), tablecomp]),
-                     dbc.Col([hydrocomp])]),
-        ] + charts,
+            dbc.Row([dbc.Col([html.H2("Selection"), tablecomp]), dbc.Col([hydrocomp])]),
+        ]
+        + charts,
         style={"background-color": "#D3D3D3"},
     )
 
