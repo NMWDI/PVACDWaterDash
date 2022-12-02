@@ -31,6 +31,7 @@ dash_app = Dash(
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     title="PVACD Groundwater Dashboard",
 )
+dash_app.css.append_css({'external_url': 'assets/css/style.css'})
 
 app = dash_app.server
 
@@ -62,6 +63,19 @@ xaxis = dict(
     type="date",
 )
 
+chart_bgcolor = '#b5aeae'
+card_style = {'border': 'solid', 'border-radius': '10px',
+              'margin-block': '5px',
+              "background-color": chart_bgcolor,
+              "box-shadow": "2px 2px orange"
+              }
+
+lcol_style = card_style.copy()
+rcol_style = card_style.copy()
+
+lcol_style['margin-right'] = '5px'
+rcol_style['margin-left'] = '5px'
+
 
 def get_observations(location_iotid, limit=1000):
     url = f"{ST2}/Locations({location_iotid})?$expand=Things/Datastreams"
@@ -87,13 +101,16 @@ def get_observations(location_iotid, limit=1000):
                 return location, obs
 
 
+BGCOLOR = '#d3d3d3'
+
+
 def init_app():
     layout = go.Layout(
         mapbox_style="open-street-map",
         mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
-        margin={"r": 0, "t": 30, "l": 0, "b": 20},
+        margin={"r": 10, "t": 30, "l": 10, "b": 20},
         height=400,
-        paper_bgcolor="#eeffcd",
+        paper_bgcolor=chart_bgcolor,
     )
 
     tablecomp = DataTable(
@@ -104,47 +121,47 @@ def init_app():
         style_data={"fontSize": "12px"},
         style_table={"height": "300px", "overflowY": "auto"},
     )
-    summarytable = DataTable(
-        id="summarytable",
-        style_cell={"textAlign": "left"},
-        columns=[
-            {"name": "Location", "id": "location"},
-            {"name": "Last Measurement", "id": "last_measurement"},
-            {"name": "Last Time", "id": "last_time"},
-            {"name": "Trend", "id": "trend"},
-        ],
-        # css=[
-        #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
-        #     # set height of header
-        #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
-        #     # set height of body rows
-        # ],
-        style_as_list_view=True,
-        style_data={"fontSize": "12px"},
-        style_data_conditional=[
-            {
-                "if": {
-                    "column_id": "trend",
-                    "filter_query": "{trendvalue} > 0",
-                },
-                "backgroundColor": "red",
-                "color": "white",
-            },
-            {
-                "if": {
-                    "column_id": "trend",
-                    "filter_query": "{trendvalue} < 0",
-                },
-                "backgroundColor": "green",
-                "color": "white",
-            },
-        ],
-        style_table={
-            # "height": "300px",
-            "padding_top": "10px",
-            "overflowY": "auto",
-        },
-    )
+    summarytable = DataTable(id='summarytable',
+                             style_cell={"textAlign": "left"},
+                             columns=[{"name": "Location", "id": "location"},
+                                      {"name": "Last Measurement", "id": "last_measurement"},
+                                      {"name": "Last Time", "id": "last_time"},
+                                      {"name": "Trend", "id": "trend"}],
+                             # css=[
+                             #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
+                             #     # set height of header
+                             #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
+                             #     # set height of body rows
+                             # ],
+                             style_as_list_view=True,
+                             style_data={'fontSize': '12px'},
+                             style_data_conditional=[
+                                 {
+                                     'if': {
+                                         'column_id': "trend",
+                                         'filter_query': '{trendvalue} > 0',
+                                     },
+                                     'backgroundColor': 'red',
+                                     'color': 'white'
+                                 },
+                                 {
+                                     'if': {
+                                         'column_id': "trend",
+                                         'filter_query': '{trendvalue} < 0',
+                                     },
+                                     'backgroundColor': 'green',
+                                     'color': 'white'
+                                 },
+                             ],
+                             style_table={
+                                 # "border": "solid",
+                                 # "border-color": "red",
+                                 # "border-radius": "15px",
+
+                                 # "height": "300px",
+                                 "padding_top": "10px",
+                                 "overflowY": "auto"},
+                             )
 
     hydrocomp = dcc.Graph(id="hydrograph")
 
@@ -178,15 +195,18 @@ def init_app():
         )
 
         scatter.update_layout(
-            margin=dict(t=75, b=10, l=50, r=50),
+            margin=dict(t=75, b=50, l=50, r=50),
             title=location["name"],
             showlegend=False,
             yaxis_autorange="reversed",
             yaxis_title="Depth To Water (bgs ft)",
             xaxis=xaxis,
+            paper_bgcolor=chart_bgcolor,
         )
 
-        comp = dcc.Graph(id=f"hydrograph{i}", figure=scatter)
+        comp = dcc.Graph(id=f"hydrograph{i}",
+                         style=card_style,
+                         figure=scatter)
 
         charts.append(comp)
         lt = obs[-1]["phenomenonTime"]
@@ -203,8 +223,8 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-        ("PVACD", "pvacd_hydrovu"),
-        ("ISC Seven Rivers", "isc_seven_rivers"),
+            ("PVACD", "pvacd_hydrovu"),
+            ("ISC Seven Rivers", "isc_seven_rivers"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -214,10 +234,8 @@ def init_app():
         lats = [l["location"]["coordinates"][1] for l in locations]
         lons = [l["location"]["coordinates"][0] for l in locations]
         ids = [l["name"] for l in locations]
-        if a == "PVACD":
-            colors = [
-                "green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations
-            ]
+        if a == 'PVACD':
+            colors = ["green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations]
         else:
             colors = "blue"
 
@@ -236,12 +254,27 @@ def init_app():
 
     dash_app.layout = dbc.Container(
         [
-            dbc.Row(html.H1("PVACD Monitoring Locations")),
-            dbc.Row([dbc.Col(summarytable), dbc.Col(mapcomp)]),
-            dbc.Row([dbc.Col([html.H2("Selection"), tablecomp]), dbc.Col([hydrocomp])]),
-        ]
-        + charts,
-        style={"background-color": "#D3D3D3"},
+            dbc.Row([html.Img(style={'height': '25%', 'width': '25%'},
+                              src='assets/img/newmexicowaterdatalogo.png'),
+                     html.Img(style={'height': '10%', 'width': '10%'},
+                              src='assets/img/newmexicobureauofgeologyandmineralresources.jpeg')],
+                    style=card_style),
+            dbc.Row(html.H1("PVACD Monitoring Locations"),
+                    style=card_style),
+            dbc.Row([dbc.Col(summarytable,
+                             style=lcol_style),
+                     dbc.Col(mapcomp,
+                             style=rcol_style)]),
+            dbc.Row([dbc.Col([html.H2('Selection'), tablecomp],
+                             style=lcol_style),
+                     dbc.Col([hydrocomp],
+                             style=rcol_style)],
+                    ),
+            dbc.Row(children=charts,
+                    # style=card_style
+                    )
+        ],
+        style={"background-color": BGCOLOR},
     )
 
 
@@ -336,12 +369,13 @@ def display_click_data(clickData):
         yaxis_autorange="reversed",
         yaxis_title="Depth To Water (bgs ft)",
         xaxis=xaxis,
+        paper_bgcolor=chart_bgcolor,
+
     )
     return data, fig
 
 
 init_app()
-
 
 if __name__ == "__main__":
     dash_app.run_server(debug=True, port=8051)
