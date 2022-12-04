@@ -31,7 +31,7 @@ dash_app = Dash(
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     title="PVACD Groundwater Dashboard",
 )
-dash_app.css.append_css({"external_url": "assets/css/style.css"})
+# dash_app.css.append_css({"external_url": "assets/css/style.css"})
 
 app = dash_app.server
 
@@ -109,10 +109,28 @@ BGCOLOR = "#d3d3d3"
 def init_app():
     layout = go.Layout(
         mapbox_style="open-street-map",
+        mapbox_layers=[
+            {
+                "below": 'traces',
+                "sourcetype": "raster",
+                "sourceattribution": "United States Geological Survey",
+                "source": [
+                    "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}"
+                ]
+            }],
         mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
         margin={"r": 10, "t": 30, "l": 10, "b": 20},
         height=400,
         paper_bgcolor=chart_bgcolor,
+        legend=dict(
+            yanchor="top",
+            y=0.99,
+            xanchor="left",
+            x=0.735,
+            bgcolor='#899DBE',
+            borderwidth=3
+
+        )
     )
 
     tablecomp = DataTable(
@@ -225,9 +243,10 @@ def init_app():
         sdata.append(srow)
 
     summarytable.data = sdata
-    for a, tag in (
-        ("PVACD", "pvacd_hydrovu"),
-        ("ISC Seven Rivers", "isc_seven_rivers"),
+    for a, tag, colors in (
+        ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
+        ("OSE Roswell", 'ose_roswell', "orange"),
+        ("PVACD", "pvacd_hydrovu", ""),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -237,12 +256,12 @@ def init_app():
         lats = [l["location"]["coordinates"][1] for l in locations]
         lons = [l["location"]["coordinates"][0] for l in locations]
         ids = [l["name"] for l in locations]
+        size = 10
         if a == "PVACD":
             colors = [
                 "green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations
             ]
-        else:
-            colors = "blue"
+            size = 15
 
         data.append(
             go.Scattermapbox(
@@ -250,7 +269,8 @@ def init_app():
                 lon=lons,
                 text=ids,
                 name=a,
-                marker=go.scattermapbox.Marker(color=colors, size=10),
+                marker=go.scattermapbox.Marker(color=colors,
+                                               size=size),
             )
         )
 
@@ -263,11 +283,11 @@ def init_app():
                 [
                     html.Img(
                         style={"height": "25%", "width": "25%"},
-                        src="assets/img/newmexicowaterdatalogo.png",
+                        src="assets/newmexicowaterdatalogo.png",
                     ),
                     html.Img(
                         style={"height": "10%", "width": "10%"},
-                        src="assets/img/newmexicobureauofgeologyandmineralresources.jpeg",
+                        src="assets/newmexicobureauofgeologyandmineralresources.jpeg",
                     ),
                 ],
                 style=card_style,
@@ -385,6 +405,7 @@ def display_click_data(clickData):
         yaxis_autorange="reversed",
         yaxis_title="Depth To Water (bgs ft)",
         xaxis=xaxis,
+        yaxis= {"rangeslider": dict(visible=True)},
         paper_bgcolor=chart_bgcolor,
     )
     return data, fig
