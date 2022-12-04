@@ -111,13 +111,14 @@ def init_app():
         mapbox_style="open-street-map",
         mapbox_layers=[
             {
-                "below": 'traces',
+                "below": "traces",
                 "sourcetype": "raster",
                 "sourceattribution": "United States Geological Survey",
                 "source": [
                     "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}"
-                ]
-            }],
+                ],
+            }
+        ],
         mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
         margin={"r": 10, "t": 30, "l": 10, "b": 20},
         height=400,
@@ -127,10 +128,9 @@ def init_app():
             y=0.99,
             xanchor="left",
             x=0.735,
-            bgcolor='#899DBE',
-            borderwidth=3
-
-        )
+            bgcolor="#899DBE",
+            borderwidth=3,
+        ),
     )
 
     tablecomp = DataTable(
@@ -245,7 +245,7 @@ def init_app():
     summarytable.data = sdata
     for a, tag, colors in (
         ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
-        ("OSE Roswell", 'ose_roswell', "orange"),
+        ("OSE Roswell", "ose_roswell", "orange"),
         ("PVACD", "pvacd_hydrovu", ""),
     ):
         locations = pd.read_json(
@@ -269,8 +269,7 @@ def init_app():
                 lon=lons,
                 text=ids,
                 name=a,
-                marker=go.scattermapbox.Marker(color=colors,
-                                               size=size),
+                marker=go.scattermapbox.Marker(color=colors, size=size),
             )
         )
 
@@ -405,7 +404,7 @@ def display_click_data(clickData):
         yaxis_autorange="reversed",
         yaxis_title="Depth To Water (bgs ft)",
         xaxis=xaxis,
-        yaxis= {"rangeslider": dict(visible=True)},
+        yaxis={"rangeslider": dict(visible=True)},
         paper_bgcolor=chart_bgcolor,
     )
     return data, fig
