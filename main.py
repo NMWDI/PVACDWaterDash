@@ -63,21 +63,23 @@ xaxis = dict(
     type="date",
 )
 
-chart_bgcolor = '#b5aeae'
-card_style = {'border': 'solid', 'borderRadius': '10px',
-              'marginBlock': '5px',
-              "backgroundColor": chart_bgcolor,
-              "boxShadow": "2px 2px #8d9ea2",
-              "borderColor": "7d777a"
-              }
+chart_bgcolor = "#b5aeae"
+card_style = {
+    "border": "solid",
+    "borderRadius": "10px",
+    "marginBlock": "5px",
+    "backgroundColor": chart_bgcolor,
+    "boxShadow": "2px 2px #8d9ea2",
+    "borderColor": "7d777a",
+}
 
 lcol_style = card_style.copy()
 rcol_style = card_style.copy()
 header_style = card_style.copy()
 
-lcol_style['marginRight'] = '5px'
-rcol_style['marginLeft'] = '5px'
-header_style['height'] = '90px'
+lcol_style["marginRight"] = "5px"
+rcol_style["marginLeft"] = "5px"
+header_style["height"] = "90px"
 
 
 def get_observations(location_iotid, limit=1000):
@@ -246,7 +248,7 @@ def init_app():
     summarytable.data = sdata
     for a, tag, colors in (
         ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
-        ("OSE Roswell", 'ose_roswell', "orange"),
+        ("OSE Roswell", "ose_roswell", "orange"),
         ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
     ):
         locations = pd.read_json(
@@ -279,27 +281,35 @@ def init_app():
 
     dash_app.layout = dbc.Container(
         [
-            dbc.Row([html.Img(style={'height': '25%', 'width': '25%'},
-                              src='assets/newmexicowaterdatalogo.png'),
-                     # html.Img(style={'height': '10%', 'width': '10%'},
-                     #          src='assets/img/newmexicobureauofgeologyandmineralresources.jpeg')
-                     ],
-                    style=card_style),
-            dbc.Row(html.H1("PVACD Monitoring Locations"),
-                    style=card_style),
-            dbc.Row([dbc.Col(summarytable,
-                             style=lcol_style),
-                     dbc.Col(mapcomp,
-                             style=rcol_style)]),
-            dbc.Row([dbc.Col([html.H2('Selection'), tablecomp],
-                             style=lcol_style),
-                     dbc.Col([hydrocomp],
-                             style=rcol_style)],
+            dbc.Row(
+                [
+                    html.Img(
+                        style={"height": "25%", "width": "25%"},
+                        src="assets/newmexicowaterdatalogo.png",
                     ),
-            dbc.Row(children=charts,
-                    # style=card_style
-                    ),
-            dbc.Row([html.Footer('Developed By Jake Ross (2022)')])
+                    # html.Img(style={'height': '10%', 'width': '10%'},
+                    #          src='assets/img/newmexicobureauofgeologyandmineralresources.jpeg')
+                ],
+                style=card_style,
+            ),
+            dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
+            dbc.Row(
+                [
+                    dbc.Col(summarytable, style=lcol_style),
+                    dbc.Col(mapcomp, style=rcol_style),
+                ]
+            ),
+            dbc.Row(
+                [
+                    dbc.Col([html.H2("Selection"), tablecomp], style=lcol_style),
+                    dbc.Col([hydrocomp], style=rcol_style),
+                ],
+            ),
+            dbc.Row(
+                children=charts,
+                # style=card_style
+            ),
+            dbc.Row([html.Footer("Developed By Jake Ross (2022)")]),
         ],
         style={"backgroundColor": BGCOLOR},
     )
