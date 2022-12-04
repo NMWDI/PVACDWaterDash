@@ -43,7 +43,7 @@ crosswalk = pd.read_csv(
 ST2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1"
 
 DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
-
+DEPTH_TO_WATER_FT_BGS = "Depth To Water (ft bgs)"
 DEBUG_OBS = False
 
 xaxis = dict(
@@ -63,20 +63,21 @@ xaxis = dict(
     type="date",
 )
 
-chart_bgcolor = "#b5aeae"
-card_style = {
-    "border": "solid",
-    "border-radius": "10px",
-    "margin-block": "5px",
-    "background-color": chart_bgcolor,
-    "box-shadow": "2px 2px orange",
-}
+chart_bgcolor = '#b5aeae'
+card_style = {'border': 'solid', 'borderRadius': '10px',
+              'marginBlock': '5px',
+              "backgroundColor": chart_bgcolor,
+              "boxShadow": "2px 2px #8d9ea2",
+              "borderColor": "7d777a"
+              }
 
 lcol_style = card_style.copy()
 rcol_style = card_style.copy()
+header_style = card_style.copy()
 
-lcol_style["margin-right"] = "5px"
-rcol_style["margin-left"] = "5px"
+lcol_style['marginRight'] = '5px'
+rcol_style['marginLeft'] = '5px'
+header_style['height'] = '90px'
 
 
 def get_observations(location_iotid, limit=1000):
@@ -218,11 +219,11 @@ def init_app():
         )
 
         scatter.update_layout(
-            margin=dict(t=75, b=50, l=50, r=50),
+            margin=dict(t=75, b=50, l=50, r=25),
             title=location["name"],
             showlegend=False,
             yaxis_autorange="reversed",
-            yaxis_title="Depth To Water (bgs ft)",
+            yaxis_title=DEPTH_TO_WATER_FT_BGS,
             xaxis=xaxis,
             paper_bgcolor=chart_bgcolor,
         )
@@ -245,8 +246,8 @@ def init_app():
     summarytable.data = sdata
     for a, tag, colors in (
         ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
-        ("OSE Roswell", "ose_roswell", "orange"),
-        ("PVACD", "pvacd_hydrovu", ""),
+        ("OSE Roswell", 'ose_roswell', "orange"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -257,7 +258,7 @@ def init_app():
         lons = [l["location"]["coordinates"][0] for l in locations]
         ids = [l["name"] for l in locations]
         size = 10
-        if a == "PVACD":
+        if tag == "pvacd_hydrovu":
             colors = [
                 "green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations
             ]
@@ -278,38 +279,29 @@ def init_app():
 
     dash_app.layout = dbc.Container(
         [
-            dbc.Row(
-                [
-                    html.Img(
-                        style={"height": "25%", "width": "25%"},
-                        src="assets/newmexicowaterdatalogo.png",
+            dbc.Row([html.Img(style={'height': '25%', 'width': '25%'},
+                              src='assets/newmexicowaterdatalogo.png'),
+                     # html.Img(style={'height': '10%', 'width': '10%'},
+                     #          src='assets/img/newmexicobureauofgeologyandmineralresources.jpeg')
+                     ],
+                    style=card_style),
+            dbc.Row(html.H1("PVACD Monitoring Locations"),
+                    style=card_style),
+            dbc.Row([dbc.Col(summarytable,
+                             style=lcol_style),
+                     dbc.Col(mapcomp,
+                             style=rcol_style)]),
+            dbc.Row([dbc.Col([html.H2('Selection'), tablecomp],
+                             style=lcol_style),
+                     dbc.Col([hydrocomp],
+                             style=rcol_style)],
                     ),
-                    html.Img(
-                        style={"height": "10%", "width": "10%"},
-                        src="assets/newmexicobureauofgeologyandmineralresources.jpeg",
+            dbc.Row(children=charts,
+                    # style=card_style
                     ),
-                ],
-                style=card_style,
-            ),
-            dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
-            dbc.Row(
-                [
-                    dbc.Col(summarytable, style=lcol_style),
-                    dbc.Col(mapcomp, style=rcol_style),
-                ]
-            ),
-            dbc.Row(
-                [
-                    dbc.Col([html.H2("Selection"), tablecomp], style=lcol_style),
-                    dbc.Col([hydrocomp], style=rcol_style),
-                ],
-            ),
-            dbc.Row(
-                children=charts,
-                # style=card_style
-            ),
+            dbc.Row([html.Footer('Developed By Jake Ross (2022)')])
         ],
-        style={"background-color": BGCOLOR},
+        style={"backgroundColor": BGCOLOR},
     )
 
 
@@ -400,11 +392,11 @@ def display_click_data(clickData):
 
     fig.update_layout(
         height=350,
-        margin=dict(t=50, b=10, l=50, r=50),
+        margin=dict(t=50, b=50, l=50, r=25),
         yaxis_autorange="reversed",
-        yaxis_title="Depth To Water (bgs ft)",
+        yaxis_title=DEPTH_TO_WATER_FT_BGS,
         xaxis=xaxis,
-        yaxis={"rangeslider": dict(visible=True)},
+        # yaxis={"rangeslider": dict(visible=True)},
         paper_bgcolor=chart_bgcolor,
     )
     return data, fig
