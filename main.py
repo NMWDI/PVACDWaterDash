@@ -46,6 +46,12 @@ DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
 DEPTH_TO_WATER_FT_BGS = "Depth To Water (ft bgs)"
 DEBUG_OBS = False
 
+yaxis = dict(
+    autorange="reversed",
+    title=DEPTH_TO_WATER_FT_BGS,
+    fixedrange=False
+)
+
 xaxis = dict(
     title="Time",
     rangeselector=dict(
@@ -224,8 +230,9 @@ def init_app():
             margin=dict(t=75, b=50, l=50, r=25),
             title=location["name"],
             showlegend=False,
-            yaxis_autorange="reversed",
-            yaxis_title=DEPTH_TO_WATER_FT_BGS,
+            yaxis = yaxis,
+            # yaxis_autorange="reversed",
+            # yaxis_title=DEPTH_TO_WATER_FT_BGS,
             xaxis=xaxis,
             paper_bgcolor=chart_bgcolor,
         )
@@ -233,12 +240,12 @@ def init_app():
         comp = dcc.Graph(id=f"hydrograph{i}", style=card_style, figure=scatter)
 
         charts.append(comp)
-        lt = obs[-1]["phenomenonTime"]
-        lm = obs[-1]["result"]
+        lt = obs[0]["phenomenonTime"]
+        lm = obs[0]["result"]
 
         srow = {
             "location": location["name"],
-            "trend": "increase" if trend > 0 else "decrease",
+            "trend": "Failing" if trend > 0 else "Rising",
             "trendvalue": trend,
             "last_measurement": f"{lm:0.2f}",
             "last_time": datetime.datetime.strptime(lt, DTFORMAT).isoformat(),
@@ -397,15 +404,17 @@ def display_click_data(clickData):
     fig = go.Figure()
     xs = [xi["phenomenonTime"] for xi in obs]
     ys = [xi["result"] for xi in obs]
-    fig.add_trace(go.Scatter(x=xs, y=ys, name="PVACD"))
-    fig.add_trace(go.Scatter(x=mxs, y=mys, name="NMBGMR"))
+    fig.add_trace(go.Scatter(x=xs, y=ys, name="PVACD Continuous"))
+    fig.add_trace(go.Scatter(x=mxs, y=mys, name="PVACD Historical"))
 
     fig.update_layout(
         height=350,
         margin=dict(t=50, b=50, l=50, r=25),
-        yaxis_autorange="reversed",
-        yaxis_title=DEPTH_TO_WATER_FT_BGS,
+        # yaxis_autorange="reversed",
+        # yaxis_fixedrange=False,
+        # yaxis_title=DEPTH_TO_WATER_FT_BGS,
         xaxis=xaxis,
+        yaxis=yaxis,
         # yaxis={"rangeslider": dict(visible=True)},
         paper_bgcolor=chart_bgcolor,
     )
