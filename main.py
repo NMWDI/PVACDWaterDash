@@ -46,11 +46,7 @@ DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
 DEPTH_TO_WATER_FT_BGS = "Depth To Water (ft bgs)"
 DEBUG_OBS = False
 
-yaxis = dict(
-    autorange="reversed",
-    title=DEPTH_TO_WATER_FT_BGS,
-    fixedrange=False
-)
+yaxis = dict(autorange="reversed", title=DEPTH_TO_WATER_FT_BGS, fixedrange=False)
 
 xaxis = dict(
     title="Time",
@@ -230,7 +226,7 @@ def init_app():
             margin=dict(t=75, b=50, l=50, r=25),
             title=location["name"],
             showlegend=False,
-            yaxis = yaxis,
+            yaxis=yaxis,
             # yaxis_autorange="reversed",
             # yaxis_title=DEPTH_TO_WATER_FT_BGS,
             xaxis=xaxis,
