@@ -23,11 +23,11 @@ from constants import ST2, DEBUG_OBS, DTFORMAT
 
 def floatfmt(t, n=2):
     if t is None:
-        return ''
+        return ""
 
     try:
         f = float(t)
-        return f'{f:0.{n}f}'
+        return f"{f:0.{n}f}"
     except ValueError:
         return t
 
@@ -38,23 +38,24 @@ FORMATION_MAP = None
 def get_formation_name(code):
     global FORMATION_MAP
     if FORMATION_MAP is None:
-        with open('./formations.json') as rfile:
+        with open("./formations.json") as rfile:
             FORMATION_MAP = json.load(rfile)
 
     for f in FORMATION_MAP:
-        if f['Code'] == code:
-            return f['Meaning']
+        if f["Code"] == code:
+            return f["Meaning"]
     else:
         return code
+
 
 def extract_usgs_timeseries(obj):
     pass
 
 
 def get_usgs(location):
-    if location['properties']['agency'] == 'OSE-Roswell':
-        siteid = location['name'].replace(' ', '')
-        url = f'https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all'
+    if location["properties"]["agency"] == "OSE-Roswell":
+        siteid = location["name"].replace(" ", "")
+        url = f"https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all"
         resp = requests.get(url)
         return resp.json()
 
@@ -67,7 +68,7 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
         if resp.status_code == 200:
             location = resp.json()
             ds = location["Things"][0]["Datastreams"][0]
-            datastream_id = ds['@iot.id']
+            datastream_id = ds["@iot.id"]
     else:
         location = None
 
@@ -86,13 +87,15 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
         if resp.status_code == 200:
             j = resp.json()
             obs = j["value"]
-            nextlink = j.get('@iot.nextLink')
+            nextlink = j.get("@iot.nextLink")
             while len(obs) < limit and nextlink:
                 resp = requests.get(nextlink)
                 if resp.status_code == 200:
                     j = resp.json()
                     obs.extend(j["value"])
-                    nextlink = j.get('@iot.nextLink')
+                    nextlink = j.get("@iot.nextLink")
 
             return location, obs
+
+
 # ============= EOF =============================================

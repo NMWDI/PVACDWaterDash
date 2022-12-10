@@ -18,7 +18,7 @@ import geojson as geojson
 import pandas as pd
 import requests
 
-OSE = 'https://ose.newmexicowaterdata.org/FROST-Server/v1.1'
+OSE = "https://ose.newmexicowaterdata.org/FROST-Server/v1.1"
 
 
 def get_ose_roswell_locations():
@@ -33,9 +33,10 @@ def make_within(wkt):
 
 
 def get_ose_pods_location(l):
-    lon = l['location']['coordinates'][0]
-    lat = l['location']['coordinates'][1]
+    lon = l["location"]["coordinates"][0]
+    lat = l["location"]["coordinates"][1]
     from shapely import geometry, affinity
+
     center = geometry.Point(lon, lat)  # Null Island
     radius = 0.001
     circle = center.buffer(radius, cap_style=3)  # Degrees Radius
@@ -44,22 +45,23 @@ def get_ose_pods_location(l):
     url = f"{OSE}/Locations?$filter={within} and properties/pod_sub_basin eq 'RA'&$expand=Things"
     # print(url)
     resp = requests.get(url)
-    return resp.json()['value']
+    return resp.json()["value"]
 
 
 def get_usgs(l):
-    siteid = l['name'].replace(' ', '')
+    siteid = l["name"].replace(" ", "")
 
-    resp = requests.get(f'https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all')
-
+    resp = requests.get(
+        f"https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all"
+    )
 
 
 def do_crosswalk():
     ose_roswell_locations = get_ose_roswell_locations()
     n = len(ose_roswell_locations)
-    print(f'examining {n} locations')
-    with open('crosswalk.csv', 'w') as wfile:
-        header = 'OSE-RoswellID,POD,OSE_ST_LOCATION_NAME,OSE_ST_LOCATION_ID,POTENTIAL\n'
+    print(f"examining {n} locations")
+    with open("crosswalk.csv", "w") as wfile:
+        header = "OSE-RoswellID,POD,OSE_ST_LOCATION_NAME,OSE_ST_LOCATION_ID,POTENTIAL\n"
         wfile.write(header)
         for i, l in enumerate(ose_roswell_locations):
             # pods = get_ose_pods_location(l)
@@ -67,30 +69,32 @@ def do_crosswalk():
             break
             if pods:
                 for j, pod in enumerate(pods):
-                    pod_location_name = pod['name']
-                    pod_iotid = str(pod['@iot.id'])
+                    pod_location_name = pod["name"]
+                    pod_iotid = str(pod["@iot.id"])
 
-                    thing = pod['Things'][0]
-                    properties = thing['properties']
-                    basin = properties['pod_basin']
-                    num = properties['pod_number']
+                    thing = pod["Things"][0]
+                    properties = thing["properties"]
+                    basin = properties["pod_basin"]
+                    num = properties["pod_number"]
 
-                    pod_id = f'{basin}-{num}'
+                    pod_id = f"{basin}-{num}"
 
-                    row = ','.join([l['name'], pod_id, pod_location_name, pod_iotid, str(j)])
-                    prefix = '' if not j else '   '
+                    row = ",".join(
+                        [l["name"], pod_id, pod_location_name, pod_iotid, str(j)]
+                    )
+                    prefix = "" if not j else "   "
                     print(f"{prefix}{i}/{n}, {row}")
-                    line = f'{row}\n'
+                    line = f"{row}\n"
                     wfile.write(line)
             else:
-                row = ','.join([l['name'], '', '', '', ''])
-                print(f'{i}/{n} {row}')
-                line = f'{row}\n'
+                row = ",".join([l["name"], "", "", "", ""])
+                print(f"{i}/{n} {row}")
+                line = f"{row}\n"
                 wfile.write(line)
         # break
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     do_crosswalk()
 
 # ============= EOF =============================================

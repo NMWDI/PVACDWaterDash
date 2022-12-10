@@ -213,8 +213,8 @@ def init_app():
         lt = obs[0]["phenomenonTime"]
         lm = obs[0]["result"]
 
-        name = location['name']
-        for level in ('Level', 'level'):
+        name = location["name"]
+        for level in ("Level", "level"):
             if level in name:
                 name = name.split(level)[0].strip()
                 break
@@ -224,16 +224,16 @@ def init_app():
             "trend": "Falling" if trend > 0 else "Rising",
             "trendvalue": trend,
             "last_measurement": f"{lm:0.2f}",
-            "last_time": datetime.datetime.strptime(lt, DTFORMAT).strftime('%c'),
+            "last_time": datetime.datetime.strptime(lt, DTFORMAT).strftime("%c"),
         }
         sdata.append(srow)
 
     summarytable.data = sdata
     for a, tag, colors in (
-            ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
-            ("OSE Roswell", "ose_roswell", "orange"),
-            ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
-            ("Healy Collaborative", "healy_collaborative", "purple"),
+        ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
+        ("OSE Roswell", "ose_roswell", "orange"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
+        ("Healy Collaborative", "healy_collaborative", "purple"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -299,17 +299,14 @@ def init_app():
     )
 
 
-
-
-
 def make_additional_selection(location, thing, formation=None):
     data = []
     if not formation:
-        gf = thing['properties'].get("GeologicFormation")
-        formation = ''
+        gf = thing["properties"].get("GeologicFormation")
+        formation = ""
         if gf:
             gfname = get_formation_name(gf)
-            formation = f'{gfname} ({gf})'
+            formation = f"{gfname} ({gf})"
 
     data.append(
         {
@@ -324,8 +321,7 @@ def make_additional_selection(location, thing, formation=None):
         }
     )
 
-    data.append({"name": "Formation",
-                 "value": formation})
+    data.append({"name": "Formation", "value": formation})
     return data
 
 
@@ -364,16 +360,16 @@ def display_click_data(clickData):
             try:
                 location = resp.json()["value"][0]
                 iotid = location["@iot.id"]
-                osewellid = ''
+                osewellid = ""
                 data.append({"name": "OSE Well ID", "value": osewellid})
 
             except IndexError:
                 pass
 
             thing = location["Things"][0]
-            ds = thing['Datastreams'][0]
+            ds = thing["Datastreams"][0]
 
-            _, obs = get_observations(datastream_id=ds['@iot.id'], limit=2000)
+            _, obs = get_observations(datastream_id=ds["@iot.id"], limit=2000)
             # get the data from NM_Aquifer (via ST2 for these wells)
             try:
                 aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
@@ -387,7 +383,9 @@ def display_click_data(clickData):
                     alocation = resp.json()
                     thing = alocation["Things"][0]
                     data.append({"name": "PointID", "value": alocation["name"]})
-                    vs = make_additional_selection(alocation, thing, formation='Artesia (313ARTS)')
+                    vs = make_additional_selection(
+                        alocation, thing, formation="Artesia (313ARTS)"
+                    )
                     data.extend(vs)
 
                 nm_aquifer_location, manual_obs = get_observations(
@@ -399,8 +397,8 @@ def display_click_data(clickData):
                 # get the data from USGS
                 usgs = get_usgs(location)
                 if usgs:
-                    xs,ys = extract_usgs_timeseries(usgs)
-                    fig.add_trace(go.Scatter(x=xs, y=ys, name='USGS NWIS'))
+                    xs, ys = extract_usgs_timeseries(usgs)
+                    fig.add_trace(go.Scatter(x=xs, y=ys, name="USGS NWIS"))
                 else:
                     vs = make_additional_selection(location, thing)
                     data.extend(vs)
@@ -418,8 +416,6 @@ def display_click_data(clickData):
         paper_bgcolor=chart_bgcolor,
     )
     return data, fig
-
-
 
 
 init_app()
