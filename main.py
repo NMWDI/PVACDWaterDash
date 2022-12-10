@@ -26,25 +26,24 @@ import plotly.graph_objects as go
 import pandas as pd
 from dash.dash_table import DataTable
 
+from util import floatfmt, get_formation_name, get_observations, get_usgs
+from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2
+
 dash_app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     title="PVACD Groundwater Dashboard",
 )
-# dash_app.css.append_css({"external_url": "assets/css/style.css"})
 
 app = dash_app.server
 
 crosswalk = pd.read_csv(
     "https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/pvacd_nm_aquifer.csv"
 )
+# crosswalk = crosswalk[1:4]
 # active_wells = pd.read_csv(
 #     'https://raw.githubusercontent.com/NMWDI/HydroViewer/master/static/active_monitoring_wells.csv')
-ST2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1"
 
-DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
-DEPTH_TO_WATER_FT_BGS = "Depth To Water (ft bgs)"
-DEBUG_OBS = False
 
 yaxis = dict(autorange="reversed", title=DEPTH_TO_WATER_FT_BGS, fixedrange=False)
 
@@ -82,30 +81,6 @@ header_style = card_style.copy()
 lcol_style["marginRight"] = "5px"
 rcol_style["marginLeft"] = "5px"
 header_style["height"] = "90px"
-
-
-def get_observations(location_iotid, limit=1000):
-    url = f"{ST2}/Locations({location_iotid})?$expand=Things/Datastreams"
-    resp = requests.get(url)
-    if resp.status_code == 200:
-        location = resp.json()
-        ds = location["Things"][0]["Datastreams"][0]
-        if DEBUG_OBS:
-            obs = [
-                {
-                    "phenomenonTime": datetime.datetime.now().strftime(DTFORMAT),
-                    "result": 0,
-                }
-            ]
-            return location, obs
-        else:
-            resp = requests.get(
-                f"{ST2}/Datastreams({ds['@iot.id']})/Observations?$orderby=phenomenonTime desc&$top={limit}"
-            )
-
-            if resp.status_code == 200:
-                obs = resp.json()["value"]
-                return location, obs
 
 
 BGCOLOR = "#d3d3d3"
@@ -151,7 +126,7 @@ def init_app():
         style_cell={"textAlign": "left"},
         columns=[
             {"name": "Location", "id": "location"},
-            {"name": "Last Measurement", "id": "last_measurement"},
+            {"name": "Last Depth to Water (ft)", "id": "last_measurement"},
             {"name": "Last Time", "id": "last_time"},
             {"name": "Trend", "id": "trend"},
         ],
@@ -201,6 +176,7 @@ def init_app():
         iotid = row["PVACD"]
         print(iotid, row)
         location, obs = get_observations(location_iotid=iotid)
+        # print(obs)
         # nm_aquifer_location, manual_obs = get_observations(location_iotid=row['NM_AQUIFER'], limit=100)
         scatter = px.scatter(obs, x="phenomenonTime", y="result", height=350)
         # mxs = [xi['phenomenonTime'] for xi in manual_obs]
@@ -227,8 +203,6 @@ def init_app():
             title=location["name"],
             showlegend=False,
             yaxis=yaxis,
-            # yaxis_autorange="reversed",
-            # yaxis_title=DEPTH_TO_WATER_FT_BGS,
             xaxis=xaxis,
             paper_bgcolor=chart_bgcolor,
         )
@@ -239,28 +213,35 @@ def init_app():
         lt = obs[0]["phenomenonTime"]
         lm = obs[0]["result"]
 
+        name = location['name']
+        for level in ('Level', 'level'):
+            if level in name:
+                name = name.split(level)[0].strip()
+                break
+
         srow = {
-            "location": location["name"],
-            "trend": "Failing" if trend > 0 else "Rising",
+            "location": name,
+            "trend": "Falling" if trend > 0 else "Rising",
             "trendvalue": trend,
             "last_measurement": f"{lm:0.2f}",
-            "last_time": datetime.datetime.strptime(lt, DTFORMAT).isoformat(),
+            "last_time": datetime.datetime.strptime(lt, DTFORMAT).strftime('%c'),
         }
         sdata.append(srow)
 
     summarytable.data = sdata
     for a, tag, colors in (
-        ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
-        ("OSE Roswell", "ose_roswell", "orange"),
-        ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
+            ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
+            ("OSE Roswell", "ose_roswell", "orange"),
+            ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
+            ("Healy Collaborative", "healy_collaborative", "purple"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
         )
         locations = locations["locations"]
 
-        lats = [l["location"]["coordinates"][1] for l in locations]
-        lons = [l["location"]["coordinates"][0] for l in locations]
+        lats = [f'{l["location"]["coordinates"][1]:0.3f}' for l in locations]
+        lons = [f'{l["location"]["coordinates"][0]:0.3f}' for l in locations]
         ids = [l["name"] for l in locations]
         size = 10
         if tag == "pvacd_hydrovu":
@@ -318,6 +299,36 @@ def init_app():
     )
 
 
+
+
+
+def make_additional_selection(location, thing, formation=None):
+    data = []
+    if not formation:
+        gf = thing['properties'].get("GeologicFormation")
+        formation = ''
+        if gf:
+            gfname = get_formation_name(gf)
+            formation = f'{gfname} ({gf})'
+
+    data.append(
+        {
+            "name": "Elevation (ft)",
+            "value": floatfmt(location["properties"].get("Altitude")),
+        }
+    )
+    data.append(
+        {
+            "name": "Well Depth (ft)",
+            "value": floatfmt(thing["properties"].get("WellDepth")),
+        }
+    )
+
+    data.append({"name": "Formation",
+                 "value": formation})
+    return data
+
+
 @dash_app.callback(
     Output("selected_table", "data"),
     Output("hydrograph", "figure"),
@@ -328,15 +339,16 @@ def display_click_data(clickData):
         {"name": "Location", "value": ""},
         {"name": "Latitude", "value": ""},
         {"name": "Longitude", "value": ""},
-        {"name": "ST ID", "value": ""},
-        {"name": "aST ID", "value": ""},
         {"name": "PointID", "value": ""},
         {"name": "Elevation (ft)", "value": ""},
         {"name": "Well Depth (ft)", "value": ""},
+        {"name": "Formation", "value": ""},
     ]
     obs = [{"phenomenonTime": 0, "result": 0}]
     mxs = []
     mys = []
+
+    fig = go.Figure()
     if clickData:
         point = clickData["points"][0]
         name = point["text"]
@@ -352,19 +364,16 @@ def display_click_data(clickData):
             try:
                 location = resp.json()["value"][0]
                 iotid = location["@iot.id"]
-                data.append({"name": "ST ID", "value": iotid})
-                # data.append({"name": 'Elevation (ft)',
-                #              "value": f"{location['properties']['Altitude']:0.2f}"})
+                osewellid = ''
+                data.append({"name": "OSE Well ID", "value": osewellid})
+
             except IndexError:
                 pass
-            ds = location["Things"][0]["Datastreams"][0]
-            resp = requests.get(
-                f"{ST2}/Datastreams({ds['@iot.id']})/Observations?$orderby=phenomenonTime desc"
-            )
 
-            if resp.status_code == 200:
-                obs = resp.json()["value"]
+            thing = location["Things"][0]
+            ds = thing['Datastreams'][0]
 
+            _, obs = get_observations(datastream_id=ds['@iot.id'], limit=2000)
             # get the data from NM_Aquifer (via ST2 for these wells)
             try:
                 aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
@@ -372,32 +381,30 @@ def display_click_data(clickData):
                 aiotid = None
 
             if aiotid:
-                data.append({"name": "aST ID", "value": aiotid})
+                # data.append({"name": "aST ID", "value": aiotid})
                 resp = requests.get(f"{ST2}/Locations({aiotid})?$expand=Things")
                 if resp.status_code == 200:
                     alocation = resp.json()
                     thing = alocation["Things"][0]
                     data.append({"name": "PointID", "value": alocation["name"]})
-                    data.append(
-                        {
-                            "name": "Elevation (ft)",
-                            "value": alocation["properties"]["Altitude"],
-                        }
-                    )
-                    data.append(
-                        {
-                            "name": "Well Depth",
-                            "value": thing["properties"].get("WellDepth"),
-                        }
-                    )
+                    vs = make_additional_selection(alocation, thing, formation='Artesia (313ARTS)')
+                    data.extend(vs)
 
                 nm_aquifer_location, manual_obs = get_observations(
                     location_iotid=aiotid, limit=100
                 )
                 mxs = [xi["phenomenonTime"] for xi in manual_obs]
                 mys = [xi["result"] for xi in manual_obs]
+            else:
+                # get the data from USGS
+                usgs = get_usgs(location)
+                if usgs:
+                    xs,ys = extract_usgs_timeseries(usgs)
+                    fig.add_trace(go.Scatter(x=xs, y=ys, name='USGS NWIS'))
+                else:
+                    vs = make_additional_selection(location, thing)
+                    data.extend(vs)
 
-    fig = go.Figure()
     xs = [xi["phenomenonTime"] for xi in obs]
     ys = [xi["result"] for xi in obs]
     fig.add_trace(go.Scatter(x=xs, y=ys, name="PVACD Continuous"))
@@ -406,15 +413,13 @@ def display_click_data(clickData):
     fig.update_layout(
         height=350,
         margin=dict(t=50, b=50, l=50, r=25),
-        # yaxis_autorange="reversed",
-        # yaxis_fixedrange=False,
-        # yaxis_title=DEPTH_TO_WATER_FT_BGS,
         xaxis=xaxis,
         yaxis=yaxis,
-        # yaxis={"rangeslider": dict(visible=True)},
         paper_bgcolor=chart_bgcolor,
     )
     return data, fig
+
+
 
 
 init_app()

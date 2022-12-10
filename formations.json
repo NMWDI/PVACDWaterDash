@@ -1,0 +1,1477 @@
+[
+  {
+    "Code": "000EXRV",
+    "Meaning": "Extrusive Rocks",
+    "id": 1
+  },
+  {
+    "Code": "000IRSV",
+    "Meaning": "Intrusive Rocks",
+    "id": 2
+  },
+  {
+    "Code": "050QUAL",
+    "Meaning": "Quaternary Alluvium in Valleys",
+    "id": 3
+  },
+  {
+    "Code": "100QBAS",
+    "Meaning": "Quaternary basalt",
+    "id": 4
+  },
+  {
+    "Code": "110ALVM",
+    "Meaning": "Quaternary Alluvium",
+    "id": 5
+  },
+  {
+    "Code": "110AVMB",
+    "Meaning": "Alluvium, Bolson Deposits and Other Surface Deposits",
+    "id": 6
+  },
+  {
+    "Code": "110BLSN",
+    "Meaning": "Bolson Fill",
+    "id": 7
+  },
+  {
+    "Code": "110NTGU",
+    "Meaning": "Naha and Tsegi Alluvium Deposits, undifferentiated",
+    "id": 8
+  },
+  {
+    "Code": "110PTODC",
+    "Meaning": "Pediment, Terrace and Other Deposits of Gravel, Sand and Caliche",
+    "id": 10
+  },
+  {
+    "Code": "111MCCR",
+    "Meaning": "McCathys Basalt Flow",
+    "id": 11
+  },
+  {
+    "Code": "112ANCH",
+    "Meaning": "Upper Santa Fe Group, Ancha Formation (QTa)",
+    "id": 12
+  },
+  {
+    "Code": "112CURB",
+    "Meaning": "Cuerbio Basalt",
+    "id": 13
+  },
+  {
+    "Code": "112LAMA",
+    "Meaning": "Lama Formation (QTl, QTbh) and other mountain front alluvial fans",
+    "id": 14
+  },
+  {
+    "Code": "112LAMAb",
+    "Meaning": "Lama Fm (QTl, QTbh) between Servilleta Basalts",
+    "id": 15
+  },
+  {
+    "Code": "112LGUN",
+    "Meaning": "Laguna Basalt Flow",
+    "id": 16
+  },
+  {
+    "Code": "112QTBF",
+    "Meaning": "Quaternary-Tertiary basin fill (not in valleys)",
+    "id": 17
+  },
+  {
+    "Code": "112QTBFlac",
+    "Meaning": "Quaternary-Tertiary basin fill, lacustrian-playa lithofacies",
+    "id": 18
+  },
+  {
+    "Code": "112QTBFpd",
+    "Meaning": "Quaternary-Tertiary basin fill, distal piedmont lithofacies",
+    "id": 19
+  },
+  {
+    "Code": "112QTBFppm",
+    "Meaning": "Quaternary-Tertiary basin fill, proximal and medial piedmont lithofacies",
+    "id": 20
+  },
+  {
+    "Code": "112SNTF",
+    "Meaning": "Santa Fe Group, undivided",
+    "id": 21
+  },
+  {
+    "Code": "112SNTFA",
+    "Meaning": "Upper Santa Fe Group, axial facies",
+    "id": 22
+  },
+  {
+    "Code": "112SNTFOB",
+    "Meaning": "Upper SantaFe Group, Loma Barbon member of Arroyo Ojito Formatin",
+    "id": 23
+  },
+  {
+    "Code": "112SNTFP",
+    "Meaning": "Upper Santa Fe Group, piedmont facies",
+    "id": 24
+  },
+  {
+    "Code": "112TRTO",
+    "Meaning": "Tuerto Gravels (QTt)",
+    "id": 25
+  },
+  {
+    "Code": "120DTIL",
+    "Meaning": "Datil Formation",
+    "id": 26
+  },
+  {
+    "Code": "120ELRT",
+    "Meaning": "El Rito Formation",
+    "id": 27
+  },
+  {
+    "Code": "120IRSV",
+    "Meaning": "Tertiary Intrusives",
+    "id": 28
+  },
+  {
+    "Code": "120SBLC",
+    "Meaning": "Sierra Blanca Volcanics, undivided",
+    "id": 29
+  },
+  {
+    "Code": "120SRVB",
+    "Meaning": "Tertiary Servilletta Basalts (Tsb)",
+    "id": 30
+  },
+  {
+    "Code": "120SRVBf",
+    "Meaning": "Tertiary Servilletta Basalts, fractured (Tsbf)",
+    "id": 31
+  },
+  {
+    "Code": "120TSBV_Lower",
+    "Meaning": "Tertiary Sierra Blanca area lower volcanic unit (Hog Pen Fm)",
+    "id": 32
+  },
+  {
+    "Code": "120TSBV_Upper",
+    "Meaning": "Tertiary Sierra Blanca area upper volcanic unit (above Hog Pen Fm)",
+    "id": 33
+  },
+  {
+    "Code": "121CHMT",
+    "Meaning": "Chamita Formation (Tc)",
+    "id": 34
+  },
+  {
+    "Code": "121CHMTv",
+    "Meaning": "Chamita Fm, Vallito member (Tcv)",
+    "id": 35
+  },
+  {
+    "Code": "121CHMTvs",
+    "Meaning": "Chamita Fm, sandy Vallito member (Tcvs)",
+    "id": 36
+  },
+  {
+    "Code": "121OGLL",
+    "Meaning": "Ogallala Formation",
+    "id": 37
+  },
+  {
+    "Code": "121PUYEF",
+    "Meaning": "Puye Conglomerate, Fanglomerate Member",
+    "id": 38
+  },
+  {
+    "Code": "121TSUQ",
+    "Meaning": "Tesuque Formation, undifferentiated unit",
+    "id": 39
+  },
+  {
+    "Code": "121TSUQa",
+    "Meaning": "Tesuque Fm lithosome A (Tta)",
+    "id": 40
+  },
+  {
+    "Code": "121TSUQacu",
+    "Meaning": "Tesuque Fm (upper), Cuarteles member lithosome A (Ttacu)",
+    "id": 41
+  },
+  {
+    "Code": "121TSUQacuf",
+    "Meaning": "Tesuque Fm (upper), fine-grained Cuarteles member lithosome A (Ttacuf)",
+    "id": 42
+  },
+  {
+    "Code": "121TSUQaml",
+    "Meaning": "Tesuque Fm lower-middle lithosome A (Ttaml)",
+    "id": 43
+  },
+  {
+    "Code": "121TSUQb",
+    "Meaning": "Tesuque Fm lithosome B (Ttb)",
+    "id": 44
+  },
+  {
+    "Code": "121TSUQbfl",
+    "Meaning": "Tesuque Fm lower lithosome B, basin-floor deposits (Ttbfl)",
+    "id": 45
+  },
+  {
+    "Code": "121TSUQbfm",
+    "Meaning": "Tesuque Fm middle lithosome B, basin-floor deposits (Ttbfm)",
+    "id": 46
+  },
+  {
+    "Code": "121TSUQbp",
+    "Meaning": "Tesuque Fm lithosome B, Pojoaque member (Ttbp)",
+    "id": 47
+  },
+  {
+    "Code": "121TSUQce",
+    "Meaning": "Tesuque Fm, Cejita member (Ttce)",
+    "id": 48
+  },
+  {
+    "Code": "121TSUQe",
+    "Meaning": "Tesuque Fm lithosome E (Tte)",
+    "id": 49
+  },
+  {
+    "Code": "121TSUQs",
+    "Meaning": "Tesuque Fm lithosome S (Tts)",
+    "id": 50
+  },
+  {
+    "Code": "121TSUQsa",
+    "Meaning": "Tesuque Fm lateral gradation lithosomes S and A (Ttsag)",
+    "id": 51
+  },
+  {
+    "Code": "121TSUQsc",
+    "Meaning": "Tesuque Fm coarse-grained lithosome S (Ttsc)",
+    "id": 52
+  },
+  {
+    "Code": "121TSUQsf",
+    "Meaning": "Tesuque Fm, fine-grained lithosome S (Ttsf)",
+    "id": 53
+  },
+  {
+    "Code": "122CHOC",
+    "Meaning": "Chamita and Ojo Caliente interlayered (Ttoc)",
+    "id": 54
+  },
+  {
+    "Code": "122CRTO",
+    "Meaning": "Chama El Rito Formation (Tesuque member, Ttc)",
+    "id": 55
+  },
+  {
+    "Code": "122OJOC",
+    "Meaning": "Ojo Caliente Formation (Tesuque member, Tto)",
+    "id": 56
+  },
+  {
+    "Code": "122PICR",
+    "Meaning": "Picuris Tuff",
+    "id": 57
+  },
+  {
+    "Code": "122PPTS",
+    "Meaning": "Popotosa Formation",
+    "id": 58
+  },
+  {
+    "Code": "122SNTFP",
+    "Meaning": "Lower Santa Fe Group, piedmont facies",
+    "id": 59
+  },
+  {
+    "Code": "123DTILSPRS",
+    "Meaning": "Datil Group ignimbrites and lavas and Spears Group, interbedded",
+    "id": 60
+  },
+  {
+    "Code": "123DTMGandbas",
+    "Meaning": "Datil and Mogollon Group andesite, basaltic andesite, and basalt flows",
+    "id": 61
+  },
+  {
+    "Code": "123DTMGign",
+    "Meaning": "Datil and Mogollon Group ignimbrites",
+    "id": 62
+  },
+  {
+    "Code": "123DTMGrhydac",
+    "Meaning": "Datil and Mogollon Group rhyolite and dacite flows",
+    "id": 63
+  },
+  {
+    "Code": "123ESPN",
+    "Meaning": "T Espinaso Formation (Te)",
+    "id": 64
+  },
+  {
+    "Code": "123GLST",
+    "Meaning": "T Galisteo Formation",
+    "id": 65
+  },
+  {
+    "Code": "123PICS",
+    "Meaning": "T Picuris Formation (Tp)",
+    "id": 66
+  },
+  {
+    "Code": "123PICSc",
+    "Meaning": "T Picuris Formation, basal conglomerate (Tpc)",
+    "id": 67
+  },
+  {
+    "Code": "123PICSl",
+    "Meaning": "T lower Picuris Formation (Tpl)",
+    "id": 68
+  },
+  {
+    "Code": "123SPRSDTMGlava",
+    "Meaning": "Spears Group and Datil-Mogollon intermediate-mafic lavas, interbedded",
+    "id": 69
+  },
+  {
+    "Code": "123SPRSlower",
+    "Meaning": "Spears Group, lower part; tuffaceous, gravelly debris and mud flows",
+    "id": 70
+  },
+  {
+    "Code": "123SPRSmid_uppe",
+    "Meaning": "Spears Group, middle-upper part; excludes Dog Spring Formation",
+    "id": 71
+  },
+  {
+    "Code": "124BACA",
+    "Meaning": "Baca Formation",
+    "id": 72
+  },
+  {
+    "Code": "124CBMN",
+    "Meaning": "Cub Mountain Formation",
+    "id": 73
+  },
+  {
+    "Code": "124LLVS",
+    "Meaning": "Llaves Member of San Jose Formation",
+    "id": 74
+  },
+  {
+    "Code": "124PSCN",
+    "Meaning": "Poison Canyon Formation",
+    "id": 75
+  },
+  {
+    "Code": "124RGIN",
+    "Meaning": "Regina Member of San Jose Formation",
+    "id": 76
+  },
+  {
+    "Code": "124SNJS",
+    "Meaning": "San Jose Formation",
+    "id": 77
+  },
+  {
+    "Code": "124TPCS",
+    "Meaning": "TapicitosMember of San Jose Formation",
+    "id": 78
+  },
+  {
+    "Code": "125NCMN",
+    "Meaning": "Nacimiento Formation",
+    "id": 79
+  },
+  {
+    "Code": "125NCMNS",
+    "Meaning": "Nacimiento Formation, Sandy Shale Facies",
+    "id": 80
+  },
+  {
+    "Code": "125RTON",
+    "Meaning": "Raton Formation",
+    "id": 81
+  },
+  {
+    "Code": "130CALDFLOOR",
+    "Meaning": "Caldera Floor bedrock S. of San Agustin Plains. Mostly DTILSPRS & Paleo.",
+    "id": 82
+  },
+  {
+    "Code": "180TKSCC_Upper",
+    "Meaning": "Tertiary-Cretaceous, Sanders Canyon, Cub Mtn. and upper Crevasse Canyon Fm",
+    "id": 83
+  },
+  {
+    "Code": "180TKTR",
+    "Meaning": "Tertiary-Cretaceous-Triassic, Baca, Crevasse Cyn, Gallup, Mancos, Dakota, T",
+    "id": 84
+  },
+  {
+    "Code": "210CRCS",
+    "Meaning": "Cretaceous System, undivided",
+    "id": 85
+  },
+  {
+    "Code": "210GLUPC_Lower",
+    "Meaning": "K Gallup Sandstone and lower Crevasse Canyon Fm",
+    "id": 86
+  },
+  {
+    "Code": "210HOSTD",
+    "Meaning": "K Hosta Dalton",
+    "id": 87
+  },
+  {
+    "Code": "210MCDK",
+    "Meaning": "K Mancos/Dakota undivided",
+    "id": 88
+  },
+  {
+    "Code": "210MNCS",
+    "Meaning": "Mancos Shale, undivided",
+    "id": 89
+  },
+  {
+    "Code": "210MNCSL",
+    "Meaning": "K Lower Mancos",
+    "id": 90
+  },
+  {
+    "Code": "210MNCSU",
+    "Meaning": "K Upper Mancos",
+    "id": 91
+  },
+  {
+    "Code": "211CLFHV",
+    "Meaning": "Cliff House Sandstone, includes La Ventana Tongues in NW Sandoval Co.",
+    "id": 92
+  },
+  {
+    "Code": "211CRLL",
+    "Meaning": "Carlile Shale",
+    "id": 93
+  },
+  {
+    "Code": "211CRVC",
+    "Meaning": "Crevasse Canyon Formation of Mesaverde Group",
+    "id": 94
+  },
+  {
+    "Code": "211DKOT",
+    "Meaning": "Dakota Sandstone or Formation",
+    "id": 95
+  },
+  {
+    "Code": "211DLCO",
+    "Meaning": "Dilco Coal Member of Crevasse Canyon Formation of Mesaverde Group",
+    "id": 96
+  },
+  {
+    "Code": "211DLTN",
+    "Meaning": "Dalton Sandstone Member of Crevasse Canyon Formation of Mesaverde Group",
+    "id": 97
+  },
+  {
+    "Code": "211FRHS",
+    "Meaning": "Fort Hays Limestone Member of Niobrara Formation",
+    "id": 98
+  },
+  {
+    "Code": "211FRLD",
+    "Meaning": "Fruitland Formation",
+    "id": 99
+  },
+  {
+    "Code": "211FRMG",
+    "Meaning": "Farmington Sandstone Member of Kirtland Shale",
+    "id": 100
+  },
+  {
+    "Code": "211GBSNC",
+    "Meaning": "Gibson Coal Member of Crevasse Canyon Formation of Mesaverde Group",
+    "id": 101
+  },
+  {
+    "Code": "211GLLG",
+    "Meaning": "Gallego Sandstone Member of Gallup Sandstone",
+    "id": 102
+  },
+  {
+    "Code": "211GLLP",
+    "Meaning": "Gallup Sandstone",
+    "id": 103
+  },
+  {
+    "Code": "211GRRG",
+    "Meaning": "Greenhorn and Graneros Formations",
+    "id": 104
+  },
+  {
+    "Code": "211GRRS",
+    "Meaning": "Graneros Shale",
+    "id": 105
+  },
+  {
+    "Code": "211HOST",
+    "Meaning": "Hosta Tongue of Point Lookout Sandstone of Mesaverde Group",
+    "id": 106
+  },
+  {
+    "Code": "211KRLD",
+    "Meaning": "Kirtland Shale",
+    "id": 107
+  },
+  {
+    "Code": "211LWIS",
+    "Meaning": "Lewis Shale",
+    "id": 108
+  },
+  {
+    "Code": "211MENF",
+    "Meaning": "Menefee Formation",
+    "id": 109
+  },
+  {
+    "Code": "211MENFU",
+    "Meaning": "K Upper Menefee (above Harmon Sandstone)",
+    "id": 111
+  },
+  {
+    "Code": "211MVRD",
+    "Meaning": "Mesaverde Group",
+    "id": 112
+  },
+  {
+    "Code": "211OJAM",
+    "Meaning": "Ojo Alamo Sandstone",
+    "id": 113
+  },
+  {
+    "Code": "211PCCF",
+    "Meaning": "Pictured Cliffs Sandstone",
+    "id": 114
+  },
+  {
+    "Code": "211PIRR",
+    "Meaning": "Pierre Shale",
+    "id": 115
+  },
+  {
+    "Code": "211PNLK",
+    "Meaning": "Point Lookout Sandstone",
+    "id": 116
+  },
+  {
+    "Code": "211SMKH",
+    "Meaning": "Smoky Hill Marl Member",
+    "id": 117
+  },
+  {
+    "Code": "211TLLS",
+    "Meaning": "Twowells Sandstone Lentil of Pike of Dakota Sandstone",
+    "id": 118
+  },
+  {
+    "Code": "212KTRP",
+    "Meaning": "K Dakota Sandstone, Moenkopi Fm, Artesia Group",
+    "id": 119
+  },
+  {
+    "Code": "217PRGR",
+    "Meaning": "Purgatoire Formation",
+    "id": 120
+  },
+  {
+    "Code": "220ENRD",
+    "Meaning": "Entrada Sandstone",
+    "id": 121
+  },
+  {
+    "Code": "220JURC",
+    "Meaning": "Jurassic undivided",
+    "id": 122
+  },
+  {
+    "Code": "220NAVJ",
+    "Meaning": "Navajo Sandstone",
+    "id": 123
+  },
+  {
+    "Code": "221BLFF",
+    "Meaning": "Bluff Sandstone of Morrison Formation",
+    "id": 124
+  },
+  {
+    "Code": "221CSPG",
+    "Meaning": "Cow Springs Sandstone of Morrison Formation",
+    "id": 125
+  },
+  {
+    "Code": "221ERADU",
+    "Meaning": "Entrada Sandstone of San Rafael Group, Upper",
+    "id": 126
+  },
+  {
+    "Code": "221MRSN",
+    "Meaning": "Morrison Formation",
+    "id": 127
+  },
+  {
+    "Code": "221MRSN/BBSN",
+    "Meaning": "Brushy Basin Member of Morrison",
+    "id": 128
+  },
+  {
+    "Code": "221MRSN/JCKP",
+    "Meaning": "Jackpile Sandstone Member of Morrison",
+    "id": 129
+  },
+  {
+    "Code": "221MRSN/RCAP",
+    "Meaning": "Recapture Shale Member of Morrison",
+    "id": 130
+  },
+  {
+    "Code": "221MRSN/WWCN",
+    "Meaning": "Westwater Canyon Member of Morrison",
+    "id": 131
+  },
+  {
+    "Code": "221SLWS",
+    "Meaning": "Salt Wash Sandstone Member of Morrison Formation",
+    "id": 132
+  },
+  {
+    "Code": "221SMVL",
+    "Meaning": "Summerville Formation of San Rafael Group",
+    "id": 133
+  },
+  {
+    "Code": "221TDLT",
+    "Meaning": "J Todilto",
+    "id": 134
+  },
+  {
+    "Code": "221WSRC",
+    "Meaning": "Westwater Canyon Sandstone Member of Morrison Formation",
+    "id": 135
+  },
+  {
+    "Code": "221ZUNIS",
+    "Meaning": "Zuni Sandstone",
+    "id": 136
+  },
+  {
+    "Code": "231AGZC",
+    "Meaning": "Tr Agua Zarca",
+    "id": 137
+  },
+  {
+    "Code": "231AGZCU",
+    "Meaning": "Tr Upper Agua Zarca",
+    "id": 138
+  },
+  {
+    "Code": "231CHNL",
+    "Meaning": "Chinle Formation",
+    "id": 139
+  },
+  {
+    "Code": "231CORR",
+    "Meaning": "Correo Sandstone Member of Chinle Formation",
+    "id": 140
+  },
+  {
+    "Code": "231DCKM",
+    "Meaning": "Dockum Group",
+    "id": 141
+  },
+  {
+    "Code": "231PFDF",
+    "Meaning": "Tr Petrified Forest",
+    "id": 142
+  },
+  {
+    "Code": "231PFDFL",
+    "Meaning": "Tr Lower Petrified Forest (below middle sandstone)",
+    "id": 143
+  },
+  {
+    "Code": "231PFDFM",
+    "Meaning": "Tr Middle Petrified Forest sandstone",
+    "id": 144
+  },
+  {
+    "Code": "231PFDFU",
+    "Meaning": "Tr Upper Petrified Forest (above middle sandstone)",
+    "id": 145
+  },
+  {
+    "Code": "231RCKP",
+    "Meaning": "Rock Point Member of Wingate Sandstone",
+    "id": 146
+  },
+  {
+    "Code": "231SNRS",
+    "Meaning": "Santa Rosa Sandstone",
+    "id": 147
+  },
+  {
+    "Code": "231SNSL",
+    "Meaning": "Sonsela Sandstone Bed of Petrified Forest Member of Chinle Formation",
+    "id": 148
+  },
+  {
+    "Code": "231SRMP",
+    "Meaning": "Shinarump Member of Chinle Formation",
+    "id": 149
+  },
+  {
+    "Code": "231WNGT",
+    "Meaning": "Wingate Sandstone",
+    "id": 150
+  },
+  {
+    "Code": "260SNAN",
+    "Meaning": "P San Andres",
+    "id": 151
+  },
+  {
+    "Code": "260SNAN_lower",
+    "Meaning": "Lower San Andres Formation",
+    "id": 152
+  },
+  {
+    "Code": "261SNGL",
+    "Meaning": "P San Andres - Glorieta Sandstone in Rio Bonito member",
+    "id": 153
+  },
+  {
+    "Code": "300YESO",
+    "Meaning": "P Yeso",
+    "id": 154
+  },
+  {
+    "Code": "300YESO_lower",
+    "Meaning": "Lower Yeso Formation",
+    "id": 155
+  },
+  {
+    "Code": "300YESO_upper",
+    "Meaning": "Upper Yeso Formation",
+    "id": 156
+  },
+  {
+    "Code": "310ABO",
+    "Meaning": "P Abo",
+    "id": 157
+  },
+  {
+    "Code": "310DCLL",
+    "Meaning": "De Chelly Sandstone Member of Cutler Formation",
+    "id": 158
+  },
+  {
+    "Code": "310GLOR",
+    "Meaning": "Glorieta Sandstone Member of San Andres Formation (of Manzano Group)",
+    "id": 159
+  },
+  {
+    "Code": "310MBLC",
+    "Meaning": "Meseta Blanca Sandstone Member of Yeso Formation",
+    "id": 160
+  },
+  {
+    "Code": "310TRRS",
+    "Meaning": "Torres Member of Yeso Formation",
+    "id": 161
+  },
+  {
+    "Code": "310YESO",
+    "Meaning": "Yeso Formation",
+    "id": 162
+  },
+  {
+    "Code": "310YESOG",
+    "Meaning": "Yeso Formation, Manzono Group",
+    "id": 163
+  },
+  {
+    "Code": "312CSTL",
+    "Meaning": "Castile Formation",
+    "id": 164
+  },
+  {
+    "Code": "312RSLR",
+    "Meaning": "Rustler Formation",
+    "id": 165
+  },
+  {
+    "Code": "313ARTS",
+    "Meaning": "Artesia Group",
+    "id": 166
+  },
+  {
+    "Code": "313BLCN",
+    "Meaning": "Bell Canyon Formation",
+    "id": 167
+  },
+  {
+    "Code": "313BRUC",
+    "Meaning": "Brushy Canyon Formation of Delaware Mountain Group",
+    "id": 168
+  },
+  {
+    "Code": "313CKBF",
+    "Meaning": "Chalk Bluff Formation",
+    "id": 169
+  },
+  {
+    "Code": "313CLBD",
+    "Meaning": "Carlsbad Limestone",
+    "id": 170
+  },
+  {
+    "Code": "313CPTN",
+    "Meaning": "Capitan Limestone",
+    "id": 171
+  },
+  {
+    "Code": "313GDLP",
+    "Meaning": "Guadalupian Series",
+    "id": 172
+  },
+  {
+    "Code": "313GOSP",
+    "Meaning": "Goat Seep Dolomite",
+    "id": 173
+  },
+  {
+    "Code": "313SADG",
+    "Meaning": "San Andres Limestone and Glorieta Sandstone",
+    "id": 174
+  },
+  {
+    "Code": "313SADR",
+    "Meaning": "San Andres Limestone, undivided",
+    "id": 175
+  },
+  {
+    "Code": "313TNSL",
+    "Meaning": "Tansill Formation",
+    "id": 176
+  },
+  {
+    "Code": "313YATS",
+    "Meaning": "Yates Formation, Guadalupe Group",
+    "id": 177
+  },
+  {
+    "Code": "315LABR",
+    "Meaning": "P Laborcita (Bursum)",
+    "id": 178
+  },
+  {
+    "Code": "315YESOABO",
+    "Meaning": "Alamosa Creek and San Agustin Plains area - Yeso and Abo Formations",
+    "id": 179
+  },
+  {
+    "Code": "318ABO",
+    "Meaning": "P Abo",
+    "id": 180
+  },
+  {
+    "Code": "318BSPG",
+    "Meaning": "Bone Spring Limestone",
+    "id": 181
+  },
+  {
+    "Code": "318JOYT",
+    "Meaning": "Joyita Sandstone Member of Yeso Formation",
+    "id": 182
+  },
+  {
+    "Code": "318YESO",
+    "Meaning": "Yeso Formation",
+    "id": 183
+  },
+  {
+    "Code": "319BRSM",
+    "Meaning": "Bursum Formation and Equivalent Rocks",
+    "id": 184
+  },
+  {
+    "Code": "320HLDR",
+    "Meaning": "Penn Holder",
+    "id": 185
+  },
+  {
+    "Code": "320PENN",
+    "Meaning": "Pennsylvanian undivided",
+    "id": 186
+  },
+  {
+    "Code": "320SNDI",
+    "Meaning": "Sandia Formation",
+    "id": 187
+  },
+  {
+    "Code": "321SGDC",
+    "Meaning": "Sangre de Cristo Formation",
+    "id": 188
+  },
+  {
+    "Code": "322BEMN",
+    "Meaning": "Penn Beeman",
+    "id": 189
+  },
+  {
+    "Code": "325GBLR",
+    "Meaning": "Penn Gobbler",
+    "id": 190
+  },
+  {
+    "Code": "325MDER",
+    "Meaning": "Madera Limestone, undivided",
+    "id": 191
+  },
+  {
+    "Code": "325MDERL",
+    "Meaning": "Penn Lower Madera",
+    "id": 192
+  },
+  {
+    "Code": "325MDERU",
+    "Meaning": "Penn Upper Madera",
+    "id": 193
+  },
+  {
+    "Code": "325SAND",
+    "Meaning": "Penn Sandia",
+    "id": 194
+  },
+  {
+    "Code": "326MGDL",
+    "Meaning": "Magdalena Group",
+    "id": 195
+  },
+  {
+    "Code": "340EPRS",
+    "Meaning": "Espiritu Santo Formation",
+    "id": 196
+  },
+  {
+    "Code": "350PZBA",
+    "Meaning": "Alamosa Creek and San Agustin Plains area - Paleozoic strata beneath Abo Fm",
+    "id": 197
+  },
+  {
+    "Code": "350PZBB",
+    "Meaning": "Tul Basin area - Paleozoic strata below Bursum Fm",
+    "id": 198
+  },
+  {
+    "Code": "400EMBD",
+    "Meaning": "Embudo Granite (undifferentiated PreCambrian near Santa Fe)",
+    "id": 199
+  },
+  {
+    "Code": "400PCMB",
+    "Meaning": "Precambrian Erathem",
+    "id": 200
+  },
+  {
+    "Code": "400PREC",
+    "Meaning": "undifferentiated PreCambrian crystalline rocks (X)",
+    "id": 201
+  },
+  {
+    "Code": "400PRECintr",
+    "Meaning": "PreCambrian crystalline rocks and local Tertiary intrusives",
+    "id": 202
+  },
+  {
+    "Code": "400PRST",
+    "Meaning": "Priest Granite",
+    "id": 203
+  },
+  {
+    "Code": "400TUSS",
+    "Meaning": "Tusas Granite",
+    "id": 204
+  },
+  {
+    "Code": "410PRCG",
+    "Meaning": "PreCambrian granite (Xg)",
+    "id": 205
+  },
+  {
+    "Code": "410PRCGf",
+    "Meaning": "PreCambrian granite, fractured (Xgf)",
+    "id": 206
+  },
+  {
+    "Code": "410PRCQ",
+    "Meaning": "PreCambrian quartzite (Xq)",
+    "id": 207
+  },
+  {
+    "Code": "410PRCQf",
+    "Meaning": "PreCambrian quartzite, fractured (Xqf)",
+    "id": 208
+  },
+  {
+    "Code": "121GILA",
+    "Meaning": "Gila Conglomerate (group)",
+    "id": 209
+  },
+  {
+    "Code": "312DYLK",
+    "Meaning": "Dewey Lake Redbeds",
+    "id": 210
+  },
+  {
+    "Code": "120WMVL",
+    "Meaning": "Wimsattville Formation",
+    "id": 211
+  },
+  {
+    "Code": "313GRBG",
+    "Meaning": "Grayburg Formation of Artesia Group",
+    "id": 212
+  },
+  {
+    "Code": "318ABOL",
+    "Meaning": "Abo Sandstone (Lower Tongue)",
+    "id": 213
+  },
+  {
+    "Code": "318ABOU",
+    "Meaning": "Abo Sandstone (Upper Tongue)",
+    "id": 214
+  },
+  {
+    "Code": "112SNTFU",
+    "Meaning": "Santa Fe Group, Upper Part",
+    "id": 215
+  },
+  {
+    "Code": "310FRNR",
+    "Meaning": "Forty-Niner Member of Rustler Formation",
+    "id": 216
+  },
+  {
+    "Code": "312OCHO",
+    "Meaning": "Ochoan Series",
+    "id": 217
+  },
+  {
+    "Code": "313AZOT",
+    "Meaning": "Azotea Tongue of Seven Rivers Formation",
+    "id": 218
+  },
+  {
+    "Code": "313QUEN",
+    "Meaning": "Queen Formation",
+    "id": 219
+  },
+  {
+    "Code": "319HUCO",
+    "Meaning": "Hueco Limestone",
+    "id": 220
+  },
+  {
+    "Code": "313SVRV",
+    "Meaning": "Seven Rivers Formation",
+    "id": 221
+  },
+  {
+    "Code": "313CABD",
+    "Meaning": "Carlsbad Group",
+    "id": 222
+  },
+  {
+    "Code": "320GRMS",
+    "Meaning": "Gray Mesa Member of Madera Formation",
+    "id": 223
+  },
+  {
+    "Code": "211CLRDH",
+    "Meaning": "Colorado Shale",
+    "id": 224
+  },
+  {
+    "Code": "120BRLM",
+    "Meaning": "Bearwallow Mountain Andesite",
+    "id": 225
+  },
+  {
+    "Code": "122RUBO",
+    "Meaning": "Rubio Peak Formation",
+    "id": 226
+  },
+  {
+    "Code": "313SADRL",
+    "Meaning": "San Andres Limestone, Lower Cherty Member",
+    "id": 227
+  },
+  {
+    "Code": "313SADRU",
+    "Meaning": "San Andres Limestone, Upper Clastic Member",
+    "id": 228
+  },
+  {
+    "Code": "313BRNL",
+    "Meaning": "Bernal Formation of Artesia Group",
+    "id": 229
+  },
+  {
+    "Code": "318CPDR",
+    "Meaning": "Chupadera Formation",
+    "id": 230
+  },
+  {
+    "Code": "121BDHC",
+    "Meaning": "Bidahochi Formation",
+    "id": 231
+  },
+  {
+    "Code": "313SADY",
+    "Meaning": "San Andres Limestone and Yeso Formation, undivided",
+    "id": 232
+  },
+  {
+    "Code": "221SRFLL",
+    "Meaning": "San Rafael Group, Lower Part",
+    "id": 233
+  },
+  {
+    "Code": "221BLUF",
+    "Meaning": "Bluff Sandstone of Morrison Formation",
+    "id": 234
+  },
+  {
+    "Code": "221COSP",
+    "Meaning": "Cow Springs Sandstone of Morrison Formation",
+    "id": 235
+  },
+  {
+    "Code": "317ABYS",
+    "Meaning": "Abo and Yeso, undifferentiated",
+    "id": 236
+  },
+  {
+    "Code": "221BRSB",
+    "Meaning": "Brushy Basin Shale Member of Morrison Formation",
+    "id": 237
+  },
+  {
+    "Code": "310SYDR",
+    "Meaning": "San Ysidro Member of Yeso Formation",
+    "id": 238
+  },
+  {
+    "Code": "400SDVL",
+    "Meaning": "Sandoval Granite",
+    "id": 239
+  },
+  {
+    "Code": "221SRFL",
+    "Meaning": "San Rafael Group",
+    "id": 240
+  },
+  {
+    "Code": "310SGRC",
+    "Meaning": "Sangre de Cristo Formation",
+    "id": 241
+  },
+  {
+    "Code": "231TCVS",
+    "Meaning": "Tecovas Formation of Dockum Group",
+    "id": 242
+  },
+  {
+    "Code": "211DCRS",
+    "Meaning": "D-Cross Tongue of Mancos Shale of Mesaverde Group",
+    "id": 243
+  },
+  {
+    "Code": "211ALSN",
+    "Meaning": "Allison Member of Menefee Formation of Mesaverde Group",
+    "id": 244
+  },
+  {
+    "Code": "211LVNN",
+    "Meaning": "La Ventana Tongue of Cliff House Sandstone",
+    "id": 245
+  },
+  {
+    "Code": "211MORD",
+    "Meaning": "Madrid Formation",
+    "id": 246
+  },
+  {
+    "Code": "210PRMD",
+    "Meaning": "Pyramid Shale",
+    "id": 247
+  },
+  {
+    "Code": "124ANMS",
+    "Meaning": "Animas Formation",
+    "id": 248
+  },
+  {
+    "Code": "211NBRR",
+    "Meaning": "Niobrara Formation",
+    "id": 249
+  },
+  {
+    "Code": "111ALVM",
+    "Meaning": "Holocene Alluvium",
+    "id": 250
+  },
+  {
+    "Code": "122SNTFL",
+    "Meaning": "Santa Fe Group, Lower Part",
+    "id": 251
+  },
+  {
+    "Code": "111CPLN",
+    "Meaning": "Capulin Basalts",
+    "id": 252
+  },
+  {
+    "Code": "120CRSN",
+    "Meaning": "Carson Conflomerate",
+    "id": 253
+  },
+  {
+    "Code": "111CRMS",
+    "Meaning": "Covered/Reclaimed Mine Spoil",
+    "id": 254
+  },
+  {
+    "Code": "111CRMSA",
+    "Meaning": "Covered/Reclaimed Mine Spoil and Ash",
+    "id": 255
+  },
+  {
+    "Code": "111SPOL",
+    "Meaning": "Spoil",
+    "id": 256
+  },
+  {
+    "Code": "110TURT",
+    "Meaning": "Tuerto Gravel of Santa Fe Group",
+    "id": 257
+  },
+  {
+    "Code": "221RCPR",
+    "Meaning": "Recapture Shale Member of Morrison Formation",
+    "id": 258
+  },
+  {
+    "Code": "320BLNG",
+    "Meaning": "Bullington Member of Magdalena Formation",
+    "id": 259
+  },
+  {
+    "Code": "112ANCHsr",
+    "Meaning": "Upper Santa Fe Group, Ancha Formation & ancestral Santa Fe river deposits",
+    "id": 260
+  },
+  {
+    "Code": "121TSUQae",
+    "Meaning": "Tesuque Fm Lithosomes A and E",
+    "id": 261
+  },
+  {
+    "Code": "230TRSC",
+    "Meaning": "Triassic undifferentiated",
+    "id": 262
+  },
+  {
+    "Code": "122TSUQdx",
+    "Meaning": "Tesuque Fm, Dixon member (Ttd)",
+    "id": 263
+  },
+  {
+    "Code": "123PICSu",
+    "Meaning": "T upper Picuris Formation (Tpu)",
+    "id": 264
+  },
+  {
+    "Code": "123PICSm",
+    "Meaning": "T middle Picuris Formation (Tpm)",
+    "id": 265
+  },
+  {
+    "Code": "123PICSmc",
+    "Meaning": "T middle conglomerate Picuris Formation (Tpmc)",
+    "id": 266
+  },
+  {
+    "Code": "120VBVC",
+    "Meaning": "Tertiary volcanic breccia/volcaniclastic conglomerate",
+    "id": 267
+  },
+  {
+    "Code": "120VCSS",
+    "Meaning": "Tertiary volcaniclastic sandstone",
+    "id": 268
+  },
+  {
+    "Code": "124DMDT",
+    "Meaning": "Diamond Tail Formation",
+    "id": 269
+  },
+  {
+    "Code": "325ALMT",
+    "Meaning": "Penn Alamitos Formation",
+    "id": 270
+  },
+  {
+    "Code": "400SAND",
+    "Meaning": "Sandia Granite",
+    "id": 271
+  },
+  {
+    "Code": "318VCPK",
+    "Meaning": "Victorio Peak Limestone",
+    "id": 272
+  },
+  {
+    "Code": "318BSVP",
+    "Meaning": "Bone Spring and Victorio Peak Limestones",
+    "id": 273
+  },
+  {
+    "Code": "100ALVM",
+    "Meaning": "Alluvium",
+    "id": 274
+  },
+  {
+    "Code": "310PRMN",
+    "Meaning": "Permian System",
+    "id": 275
+  },
+  {
+    "Code": "110AVPS",
+    "Meaning": "Alluvium and Permian System",
+    "id": 276
+  },
+  {
+    "Code": "313CRCX",
+    "Meaning": "Capitan Reef Complex and Associated Limestones",
+    "id": 277
+  },
+  {
+    "Code": "112SLBL",
+    "Meaning": "Salt Bolson",
+    "id": 278
+  },
+  {
+    "Code": "112SBCRC",
+    "Meaning": "Salt Bolson and Capitan Reef Complex",
+    "id": 279
+  },
+  {
+    "Code": "313CRDM",
+    "Meaning": "Capitan Reef Complex - Delaware Mountain Group",
+    "id": 280
+  },
+  {
+    "Code": "112SBDM",
+    "Meaning": "Salt Bolson and Delaware Mountain Group",
+    "id": 281
+  },
+  {
+    "Code": "120BLSN",
+    "Meaning": "Bolson Deposits",
+    "id": 282
+  },
+  {
+    "Code": "112SBCR",
+    "Meaning": "Salt Bolson and Cretaceous Rocks",
+    "id": 283
+  },
+  {
+    "Code": "112HCBL",
+    "Meaning": "Hueco Bolson",
+    "id": 284
+  },
+  {
+    "Code": "120IVIG",
+    "Meaning": "Intrusive Rocks",
+    "id": 285
+  },
+  {
+    "Code": "112RLBL",
+    "Meaning": "Red Light Draw Bolson",
+    "id": 286
+  },
+  {
+    "Code": "112EFBL",
+    "Meaning": "Eagle Flat Bolson",
+    "id": 287
+  },
+  {
+    "Code": "112GRBL",
+    "Meaning": "Green River Bolson",
+    "id": 288
+  },
+  {
+    "Code": "123SAND",
+    "Meaning": "Sanders Canyon Formation",
+    "id": 289
+  },
+  {
+    "Code": "210MRNH",
+    "Meaning": "Moreno Hill Formation",
+    "id": 291
+  },
+  {
+    "Code": "320ALMT",
+    "Meaning": "Alamito Shale",
+    "id": 292
+  },
+  {
+    "Code": "313DLRM",
+    "Meaning": "Delaware Mountain Group",
+    "id": 293
+  },
+  {
+    "Code": "300PLZC",
+    "Meaning": "Paleozoic Erathem",
+    "id": 294
+  },
+  {
+    "Code": "122SPRS",
+    "Meaning": "Spears Member of Datil Formation",
+    "id": 295
+  },
+  {
+    "Code": "110AVTV",
+    "Meaning": "Alluvium and Tertiary Volcanics",
+    "id": 296
+  },
+  {
+    "Code": "313DMBS",
+    "Meaning": "Delaware Mountain Group - Bone Spring Limestone",
+    "id": 297
+  },
+  {
+    "Code": "120ERSV",
+    "Meaning": "Tertiary extrusives",
+    "id": 298
+  }
+]
