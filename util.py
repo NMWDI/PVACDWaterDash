@@ -50,19 +50,22 @@ def get_formation_name(code):
 
 def extract_usgs_timeseries(obj):
     # print(obj.keys())
-    ts = obj['value']['timeSeries']
+    ts = obj["value"]["timeSeries"]
     # print(len(ts))
     data = []
     for i, ti in enumerate(ts):
         # print(ti.keys(), ti['variable'].keys(), ti['variable']['variableCode'][0])
         # print(ti['variable']['variableName'])
         # if ti['variable']['variableCode'][0]['variableID'] == 52331280:
-        if ti['variable']['variableName'] == 'Depth to water level, ft below land surface':
-            for j, tj in enumerate(ti['values']):
-                values = tj['value']
+        if (
+            ti["variable"]["variableName"]
+            == "Depth to water level, ft below land surface"
+        ):
+            for j, tj in enumerate(ti["values"]):
+                values = tj["value"]
                 data.append(values[0])
 
-    return zip(*[(x['dateTime'], x['value']) for x in data])
+    return zip(*[(x["dateTime"], x["value"]) for x in data])
 
 
 def get_usgs(location=None, siteid=None):
@@ -88,7 +91,9 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
     else:
         location = None
 
-    url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc"
+    url = (
+        f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc"
+    )
     if DEBUG_OBS:
         url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$top=10"
         limit = 10
@@ -106,5 +111,6 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
                 nextlink = j.get("@iot.nextLink")
 
         return location, obs
+
 
 # ============= EOF =============================================
