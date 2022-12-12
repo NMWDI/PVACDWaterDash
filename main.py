@@ -15,6 +15,8 @@
 # ===============================================================================
 import datetime
 import json
+from asyncio import Event
+
 import dash_bootstrap_components as dbc
 import datetime as datetime
 import requests as requests
@@ -26,7 +28,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from dash.dash_table import DataTable
 
-from util import floatfmt, get_formation_name, get_observations, get_usgs
+from util import floatfmt, get_formation_name, get_observations, get_usgs, extract_usgs_timeseries
 from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2
 
 dash_app = Dash(
@@ -81,7 +83,6 @@ header_style = card_style.copy()
 lcol_style["marginRight"] = "5px"
 rcol_style["marginLeft"] = "5px"
 header_style["height"] = "90px"
-
 
 BGCOLOR = "#d3d3d3"
 
@@ -173,9 +174,17 @@ def init_app():
     trends = {}
     charts = []
     for i, row in crosswalk.iterrows():
+
         iotid = row["PVACD"]
         print(iotid, row)
+        obs = []
+        # iotid = iotid.split('|')
+        # for ii in iotid:
         location, obs = get_observations(location_iotid=iotid)
+        # obs.extend(iobs)
+        # obs = sorted(obs, key=lambda o: o['phenomenonTime'], reverse=True)
+
+        # iotid = iotid[0]
         # print(obs)
         # nm_aquifer_location, manual_obs = get_observations(location_iotid=row['NM_AQUIFER'], limit=100)
         scatter = px.scatter(obs, x="phenomenonTime", y="result", height=350)
@@ -230,10 +239,10 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag, colors in (
-        ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
-        ("OSE Roswell", "ose_roswell", "orange"),
-        ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
-        ("Healy Collaborative", "healy_collaborative", "purple"),
+            ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
+            ("OSE Roswell", "ose_roswell", "orange"),
+            ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
+            ("Healy Collaborative", "healy_collaborative", "purple"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -262,21 +271,38 @@ def init_app():
 
     figmap = go.Figure(layout=layout, data=data)
     mapcomp = dcc.Graph(id="map", figure=figmap)
+    progress = html.Div(
+        [
+            dcc.Interval(id="progress-interval",
+                         n_intervals=0,
+                         interval=500),
+            dbc.Progress(id="progress", striped=True,
+                         animated=True),
+        ], id="progress_div"
+    )
 
     dash_app.layout = dbc.Container(
         [
             dbc.Row(
                 [
-                    html.Img(
-                        style={"height": "25%", "width": "25%"},
-                        src="assets/newmexicowaterdatalogo.png",
+                    dbc.Col(
+                        html.Img(
+                                 # style={"height": "100%", "width": "50%"},
+                                 src="assets/newmexicowaterdatalogo.png",
+                                 ),
+                        width=3),
+                    dbc.Col(
+                        html.H1("PVACD Groundwater Visualization",
+                                ),
+                        width=6
                     ),
+                    dbc.Col(width=3)
                     # html.Img(style={'height': '10%', 'width': '10%'},
                     #          src='assets/img/newmexicobureauofgeologyandmineralresources.jpeg')
                 ],
                 style=card_style,
             ),
-            dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
+            # dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
             dbc.Row(
                 [
                     dbc.Col(summarytable, style=lcol_style),
@@ -286,7 +312,7 @@ def init_app():
             dbc.Row(
                 [
                     dbc.Col([html.H2("Selection"), tablecomp], style=lcol_style),
-                    dbc.Col([hydrocomp], style=rcol_style),
+                    dbc.Col([progress, hydrocomp], style=rcol_style),
                 ],
             ),
             dbc.Row(
@@ -325,12 +351,36 @@ def make_additional_selection(location, thing, formation=None):
     return data
 
 
+progress_event = Event()
+
+
 @dash_app.callback(
-    Output("selected_table", "data"),
-    Output("hydrograph", "figure"),
+    [Output("progress", "value"),
+     Output("progress", "label"),
+     Output("progress_div", "style"),
+     Output("progress-interval", 'interval')],
+    [Input("progress-interval", "n_intervals")],
+)
+def update_progress(n):
+    progress_value = 100
+    progress_label = ''
+
+    style = {"display": 'none'}
+    interval = 500
+    if progress_event.is_set():
+        style = {"display": 'block'}
+    return progress_value, progress_label, style, interval
+
+
+@dash_app.callback(
+    [Output("selected_table", "data"),
+     Output("hydrograph", "figure"),
+     # Output("progress-interval", "disabled")
+     ],
     Input("map", "clickData"),
 )
 def display_click_data(clickData):
+    progress_event.set()
     data = [
         {"name": "Location", "value": ""},
         {"name": "Latitude", "value": ""},
@@ -340,9 +390,9 @@ def display_click_data(clickData):
         {"name": "Well Depth (ft)", "value": ""},
         {"name": "Formation", "value": ""},
     ]
-    obs = [{"phenomenonTime": 0, "result": 0}]
-    mxs = []
-    mys = []
+    # obs = [{"phenomenonTime": 0, "result": 0}]
+    # mxs = []
+    # mys = []
 
     fig = go.Figure()
     if clickData:
@@ -393,20 +443,25 @@ def display_click_data(clickData):
                 )
                 mxs = [xi["phenomenonTime"] for xi in manual_obs]
                 mys = [xi["result"] for xi in manual_obs]
+                # xs = [xi["phenomenonTime"] for xi in obs]
+                # ys = [xi["result"] for xi in obs]
+                name = 'PVACD Continuous'
+                fig.add_trace(go.Scatter(x=mxs, y=mys, name="PVACD Historical"))
             else:
                 # get the data from USGS
                 usgs = get_usgs(location)
                 if usgs:
-                    xs, ys = extract_usgs_timeseries(usgs)
-                    fig.add_trace(go.Scatter(x=xs, y=ys, name="USGS NWIS"))
+                    name = 'OSE-Roswell'
+                    uxs, uys = extract_usgs_timeseries(usgs)
+                    fig.add_trace(go.Scatter(x=uxs, y=uys, name="USGS NWIS"))
                 else:
+                    name = 'NMBGMR'
                     vs = make_additional_selection(location, thing)
                     data.extend(vs)
 
-    xs = [xi["phenomenonTime"] for xi in obs]
-    ys = [xi["result"] for xi in obs]
-    fig.add_trace(go.Scatter(x=xs, y=ys, name="PVACD Continuous"))
-    fig.add_trace(go.Scatter(x=mxs, y=mys, name="PVACD Historical"))
+        xs = [xi["phenomenonTime"] for xi in obs]
+        ys = [xi["result"] for xi in obs]
+        fig.add_trace(go.Scatter(x=xs, y=ys, name=name))
 
     fig.update_layout(
         height=350,
@@ -415,9 +470,13 @@ def display_click_data(clickData):
         yaxis=yaxis,
         paper_bgcolor=chart_bgcolor,
     )
+    progress_event.clear()
     return data, fig
 
 
+# usgslocation = '333149104170801'
+# usgs = get_usgs(siteid =usgslocation)
+# print(extract_usgs_timeseries(usgs))
 init_app()
 
 if __name__ == "__main__":

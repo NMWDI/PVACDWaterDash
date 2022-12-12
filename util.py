@@ -49,12 +49,28 @@ def get_formation_name(code):
 
 
 def extract_usgs_timeseries(obj):
-    pass
+    # print(obj.keys())
+    ts = obj['value']['timeSeries']
+    # print(len(ts))
+    data = []
+    for i, ti in enumerate(ts):
+        # print(ti.keys(), ti['variable'].keys(), ti['variable']['variableCode'][0])
+        # print(ti['variable']['variableName'])
+        # if ti['variable']['variableCode'][0]['variableID'] == 52331280:
+        if ti['variable']['variableName'] == 'Depth to water level, ft below land surface':
+            for j, tj in enumerate(ti['values']):
+                values = tj['value']
+                data.append(values[0])
+
+    return zip(*[(x['dateTime'], x['value']) for x in data])
 
 
-def get_usgs(location):
-    if location["properties"]["agency"] == "OSE-Roswell":
-        siteid = location["name"].replace(" ", "")
+def get_usgs(location=None, siteid=None):
+    if location:
+        if location["properties"]["agency"] == "OSE-Roswell":
+            siteid = location["name"].replace(" ", "")
+
+    if siteid:
         url = f"https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all"
         resp = requests.get(url)
         return resp.json()
@@ -72,30 +88,23 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
     else:
         location = None
 
+    url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc"
     if DEBUG_OBS:
-        obs = [
-            {
-                "phenomenonTime": datetime.datetime.now().strftime(DTFORMAT),
-                "result": 0,
-            }
-        ]
+        url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$top=10"
+        limit = 10
+
+    resp = requests.get(url)
+    if resp.status_code == 200:
+        j = resp.json()
+        obs = j["value"]
+        nextlink = j.get("@iot.nextLink")
+        while len(obs) < limit and nextlink:
+            resp = requests.get(nextlink)
+            if resp.status_code == 200:
+                j = resp.json()
+                obs.extend(j["value"])
+                nextlink = j.get("@iot.nextLink")
+
         return location, obs
-    else:
-        resp = requests.get(
-            f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc"
-        )
-        if resp.status_code == 200:
-            j = resp.json()
-            obs = j["value"]
-            nextlink = j.get("@iot.nextLink")
-            while len(obs) < limit and nextlink:
-                resp = requests.get(nextlink)
-                if resp.status_code == 200:
-                    j = resp.json()
-                    obs.extend(j["value"])
-                    nextlink = j.get("@iot.nextLink")
-
-            return location, obs
-
 
 # ============= EOF =============================================
