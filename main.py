@@ -35,7 +35,7 @@ from util import (
     get_usgs,
     extract_usgs_timeseries,
 )
-from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2
+from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE
 
 dash_app = Dash(
     __name__,
@@ -91,8 +91,10 @@ rcol_style["marginLeft"] = "5px"
 header_style["height"] = "90px"
 
 BGCOLOR = "#d3d3d3"
-
-
+COLOR_MAP = {"isc_seven_rivers":"blue",
+        "ose_roswell":"orange",
+        "pvacd_hydrovu":"",
+        "healy_collaborative":"purple"}
 def init_app():
     layout = go.Layout(
         mapbox_style="open-street-map",
@@ -125,7 +127,8 @@ def init_app():
         style_cell={"textAlign": "left"},
         columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
         style_as_list_view=True,
-        style_data={"fontSize": "12px"},
+        style_header={'font-family': "verdana"},
+        style_data={"fontSize": "12px", "font-family": "verdana"},
         style_table={"height": "300px", "overflowY": "auto"},
     )
     summarytable = DataTable(
@@ -134,7 +137,7 @@ def init_app():
         columns=[
             {"name": "Location", "id": "location"},
             {"name": "Last Depth to Water (ft)", "id": "last_measurement"},
-            {"name": "Last Time", "id": "last_time"},
+            {"name": "Measurement Time", "id": "last_time"},
             {"name": "Trend", "id": "trend"},
         ],
         # css=[
@@ -143,8 +146,10 @@ def init_app():
         #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
         #     # set height of body rows
         # ],
+        style_header={'font-family': "verdana"},
         style_as_list_view=True,
-        style_data={"fontSize": "12px"},
+        style_data={"fontSize": "12px",
+                    "font-family": "verdana"},
         style_data_conditional=[
             {
                 "if": {
@@ -244,11 +249,11 @@ def init_app():
         sdata.append(srow)
 
     summarytable.data = sdata
-    for a, tag, colors in (
-        ("ISC Seven Rivers", "isc_seven_rivers", "blue"),
-        ("OSE Roswell", "ose_roswell", "orange"),
-        ("PVACD Monitoring Wells", "pvacd_hydrovu", ""),
-        ("Healy Collaborative", "healy_collaborative", "purple"),
+    for a, tag in (
+        ("ISC Seven Rivers", "isc_seven_rivers"),
+        ("OSE Roswell", "ose_roswell"),
+        ("Healy Collaborative", "healy_collaborative"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -259,19 +264,39 @@ def init_app():
         lons = [f'{l["location"]["coordinates"][0]:0.3f}' for l in locations]
         ids = [l["name"] for l in locations]
         size = 10
+        colors = COLOR_MAP[tag]
         if tag == "pvacd_hydrovu":
             colors = [
                 "green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations
             ]
             size = 15
 
+
+        # data.append(
+        #     go.Scattermapbox(
+        #         lat=lats,
+        #         lon=lons,
+        #         showlegend=False,
+        #         hoverinfo='none',
+        #         marker=dict(size=size+3,
+        #                     color='black'
+        #                     )
+        #     )
+        # )
         data.append(
             go.Scattermapbox(
                 lat=lats,
                 lon=lons,
                 text=ids,
                 name=a,
-                marker=go.scattermapbox.Marker(color=colors, size=size),
+                hovertemplate='<b>%{text}</b>',
+                # hovertext='',
+                # fill='none',
+                # line=dict(color='black', width=1),
+                marker=dict(size=size,
+                            color=colors,
+                            # opacity=0.25,
+                            )
             )
         )
 
@@ -279,7 +304,7 @@ def init_app():
     mapcomp = dcc.Graph(id="map", figure=figmap)
     progress = html.Div(
         [
-            dcc.Interval(id="progress-interval", n_intervals=0, interval=500),
+            dcc.Interval(id="progress-interval", n_intervals=0, interval=1000),
             dbc.Progress(id="progress", striped=True, animated=True),
         ],
         id="progress_div",
@@ -298,7 +323,7 @@ def init_app():
                     ),
                     dbc.Col(
                         html.H1(
-                            "PVACD Groundwater Visualization",
+                            TITLE,
                         ),
                         width=6,
                     ),
@@ -384,9 +409,9 @@ def update_progress(n):
         Output("hydrograph", "figure"),
     ],
     Input("map", "clickData"),
-    running=[
-        (Output("progress-interval", "disabled"), False, True),
-    ],
+    # running=[
+    #     (Output("progress-interval", "disabled"), False, True),
+    # ],
 )
 def display_click_data(clickData):
     progress_event.set()
@@ -461,6 +486,7 @@ def display_click_data(clickData):
                 usgs = get_usgs(location)
                 if usgs:
                     name = "OSE-Roswell"
+
                     uxs, uys = extract_usgs_timeseries(usgs)
                     fig.add_trace(go.Scatter(x=uxs, y=uys, name="USGS NWIS"))
                 else:
