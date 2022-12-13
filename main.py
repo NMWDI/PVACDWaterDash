@@ -365,7 +365,6 @@ progress_event = Event()
         Output("progress", "value"),
         Output("progress", "label"),
         Output("progress_div", "style"),
-        Output("progress-interval", "interval"),
     ],
     [Input("progress-interval", "n_intervals")],
 )
@@ -374,19 +373,20 @@ def update_progress(n):
     progress_label = ""
 
     style = {"display": "none"}
-    interval = 500
     if progress_event.is_set():
         style = {"display": "block"}
-    return progress_value, progress_label, style, interval
+    return progress_value, progress_label, style
 
 
 @dash_app.callback(
     [
         Output("selected_table", "data"),
         Output("hydrograph", "figure"),
-        # Output("progress-interval", "disabled")
     ],
     Input("map", "clickData"),
+    running=[
+        (Output("progress-interval", "disabled"), False, True),
+    ],
 )
 def display_click_data(clickData):
     progress_event.set()
