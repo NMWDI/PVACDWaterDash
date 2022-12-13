@@ -91,10 +91,14 @@ rcol_style["marginLeft"] = "5px"
 header_style["height"] = "90px"
 
 BGCOLOR = "#d3d3d3"
-COLOR_MAP = {"isc_seven_rivers":"blue",
-        "ose_roswell":"orange",
-        "pvacd_hydrovu":"",
-        "healy_collaborative":"purple"}
+COLOR_MAP = {
+    "isc_seven_rivers": "blue",
+    "ose_roswell": "orange",
+    "pvacd_hydrovu": "",
+    "healy_collaborative": "purple",
+}
+
+
 def init_app():
     layout = go.Layout(
         mapbox_style="open-street-map",
@@ -127,7 +131,7 @@ def init_app():
         style_cell={"textAlign": "left"},
         columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
         style_as_list_view=True,
-        style_header={'font-family': "verdana"},
+        style_header={"font-family": "verdana"},
         style_data={"fontSize": "12px", "font-family": "verdana"},
         style_table={"height": "300px", "overflowY": "auto"},
     )
@@ -146,10 +150,9 @@ def init_app():
         #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
         #     # set height of body rows
         # ],
-        style_header={'font-family': "verdana"},
+        style_header={"font-family": "verdana"},
         style_as_list_view=True,
-        style_data={"fontSize": "12px",
-                    "font-family": "verdana"},
+        style_data={"fontSize": "12px", "font-family": "verdana"},
         style_data_conditional=[
             {
                 "if": {
@@ -271,7 +274,6 @@ def init_app():
             ]
             size = 15
 
-
         # data.append(
         #     go.Scattermapbox(
         #         lat=lats,
@@ -289,14 +291,15 @@ def init_app():
                 lon=lons,
                 text=ids,
                 name=a,
-                hovertemplate='<b>%{text}</b>',
+                hovertemplate="<b>%{text}</b>",
                 # hovertext='',
                 # fill='none',
                 # line=dict(color='black', width=1),
-                marker=dict(size=size,
-                            color=colors,
-                            # opacity=0.25,
-                            )
+                marker=dict(
+                    size=size,
+                    color=colors,
+                    # opacity=0.25,
+                ),
             )
         )
 
