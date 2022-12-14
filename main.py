@@ -367,12 +367,16 @@ def init_app():
             dbc.Row(
                 [
                     dbc.Col([html.H2("Selection"), tablecomp], style=lcol_style),
-                    dbc.Col([dbc.Spinner([html.Div(id="loading-output"),
-                                          hydrocomp
-                                          ],
-                                         # fullscreen=True,
-                                         color='primary'),
-                        ], style=rcol_style),
+                    dbc.Col(
+                        [
+                            dbc.Spinner(
+                                [html.Div(id="loading-output"), hydrocomp],
+                                # fullscreen=True,
+                                color="primary",
+                            ),
+                        ],
+                        style=rcol_style,
+                    ),
                 ],
             ),
             dbc.Row(
@@ -380,7 +384,6 @@ def init_app():
                 # style=card_style
             ),
             dbc.Row([html.Footer("Developed By Jake Ross (2022)")]),
-
         ],
         style={"backgroundColor": BGCOLOR},
     )
@@ -514,39 +517,41 @@ def display_click_data(clickData):
     fd = []
     if obs:
         # print('nasadfme', name, len(obs), len(uxs) if uxs else 0)
-        obs = sorted(obs, key=lambda x: x['phenomenonTime'])
+        obs = sorted(obs, key=lambda x: x["phenomenonTime"])
 
         xs = [xi["phenomenonTime"] for xi in obs]
         ys = [xi["result"] for xi in obs]
 
-    #     fd.append(go.Scatter(x=xs, y=ys, uid='continuous', name=name))
-    #     # fig.add_trace(go.Scatter(x=xs, y=ys, name=name))
-    #
-    # if uxs:
-    #     fd.append(go.Scatter(x=uxs, y=uys, uid="usgs_nwis", name="USGS NWIS"))
-    #     # fig.add_trace(go.Scatter(x=uxs, y=uys, name="USGS NWIS"))
-    # if mxs:
-    #     fd.append(go.Scatter(x=mxs, y=mys, uid='pvacd_historic', name="PVACD Historical"))
-    #     # fig.add_trace(go.Scatter(x=mxs, y=mys, name="PVACD Historical"))
+        #     fd.append(go.Scatter(x=xs, y=ys, uid='continuous', name=name))
+        #     # fig.add_trace(go.Scatter(x=xs, y=ys, name=name))
+        #
+        # if uxs:
+        #     fd.append(go.Scatter(x=uxs, y=uys, uid="usgs_nwis", name="USGS NWIS"))
+        #     # fig.add_trace(go.Scatter(x=uxs, y=uys, name="USGS NWIS"))
+        # if mxs:
+        #     fd.append(go.Scatter(x=mxs, y=mys, uid='pvacd_historic', name="PVACD Historical"))
+        #     # fig.add_trace(go.Scatter(x=mxs, y=mys, name="PVACD Historical"))
 
         fd = [go.Scatter(x=xs, y=ys)]
 
-    layout = dict(height=350,
-                  margin=dict(t=50, b=50, l=50, r=25),
-                  xaxis=xaxis,
-                  yaxis=yaxis,
-                  title=location["name"] if location else "",
-                  paper_bgcolor=chart_bgcolor,)
+    layout = dict(
+        height=350,
+        margin=dict(t=50, b=50, l=50, r=25),
+        xaxis=xaxis,
+        yaxis=yaxis,
+        title=location["name"] if location else "",
+        paper_bgcolor=chart_bgcolor,
+    )
 
     fig = go.Figure(data=fd, layout=layout)
     # fig.data = []
     # fig.update_layout(
-        # height=350,
-        # margin=dict(t=50, b=50, l=50, r=25),
-        # xaxis=xaxis,
-        # yaxis=yaxis,
-        # title=location["name"] if location else "",
-        # paper_bgcolor=chart_bgcolor,
+    # height=350,
+    # margin=dict(t=50, b=50, l=50, r=25),
+    # xaxis=xaxis,
+    # yaxis=yaxis,
+    # title=location["name"] if location else "",
+    # paper_bgcolor=chart_bgcolor,
     # )
     return "", data, fig
 

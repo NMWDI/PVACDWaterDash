@@ -65,8 +65,12 @@ def extract_usgs_timeseries(obj):
         ):
             for j, tj in enumerate(ti["values"]):
                 values = tj["value"]
-                data.append({'phenomenonTime': values[0]["dateTime"],
-                             'result': values[0]['value']})
+                data.append(
+                    {
+                        "phenomenonTime": values[0]["dateTime"],
+                        "result": values[0]["value"],
+                    }
+                )
 
     return data
     # if data:
