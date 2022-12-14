@@ -41,11 +41,20 @@ def get_formation_name(code):
         with open("./formations.json") as rfile:
             FORMATION_MAP = json.load(rfile)
 
-    for f in FORMATION_MAP:
-        if f["Code"] == code:
-            return f["Meaning"]
-    else:
-        return code
+    def get(c):
+        for f in FORMATION_MAP:
+            if f["Code"] == c:
+                return f["Meaning"]
+        else:
+            return c
+
+    fs = []
+    for gf in code.split("/"):
+        gfname = get(gf)
+        fs.append(f"{gfname} ({gf})")
+
+    formation = "/".join(fs)
+    return formation
 
 
 def extract_usgs_timeseries(obj):
@@ -60,8 +69,8 @@ def extract_usgs_timeseries(obj):
         # print(ti['variable']['variableName'])
         # if ti['variable']['variableCode'][0]['variableID'] == 52331280:
         if (
-            ti["variable"]["variableName"]
-            == "Depth to water level, ft below land surface"
+                ti["variable"]["variableName"]
+                == "Depth to water level, ft below land surface"
         ):
             for j, tj in enumerate(ti["values"]):
                 values = tj["value"]
@@ -77,6 +86,29 @@ def extract_usgs_timeseries(obj):
     #     xs, ys = zip(*[(x["dateTime"], x["value"]) for x in data])
 
     # return xs, ys
+
+
+def make_formations(locations, tag):
+    fs = []
+    for l in locations:
+        if tag == 'pvacd_hydrovu':
+            code = '313SADR'
+        else:
+            code = l["Things"][0]["properties"].get("GeologicFormation")
+        name = ''
+        if code:
+            name = get_formation_name(code)
+
+        fs.append(name)
+
+    return fs
+
+
+def todatetime(t, fmt=DTFORMAT):
+    if isinstance(t, dict):
+        t = t['phenomenonTime']
+
+    return datetime.datetime.strptime(t, fmt)
 
 
 def get_usgs(location=None, siteid=None):
@@ -139,6 +171,5 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
                 nextlink = j.get("@iot.nextLink")
 
         return location, obs
-
 
 # ============= EOF =============================================

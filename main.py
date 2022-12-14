@@ -35,10 +35,9 @@ from util import (
     get_formation_name,
     get_observations,
     get_usgs,
-    extract_usgs_timeseries,
+    extract_usgs_timeseries, todatetime, make_formations,
 )
 from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE
-
 
 # from celery import Celery
 # url = ''
@@ -104,7 +103,7 @@ chart_bgcolor = "white"
 card_style = {
     "border": "solid",
     "borderRadius": "10px",
-    "marginBlock": "5px",
+     "marginBlock": "3px",
     "backgroundColor": chart_bgcolor,
     "boxShadow": "2px 2px #8d9ea2",
     "borderColor": "7d777a",
@@ -112,18 +111,21 @@ card_style = {
 
 lcol_style = card_style.copy()
 rcol_style = card_style.copy()
-header_style = card_style.copy()
 
 lcol_style["marginRight"] = "5px"
-rcol_style["marginLeft"] = "5px"
-header_style["height"] = "90px"
+# rcol_style["marginLeft"] = "5px"
 
+header_style = {"font-family": "verdana",
+                "font-weight": "bold",
+                "fontSize": "10px"}
+data_style = {"fontSize": "10px",
+              "font-family": "verdana"}
 BGCOLOR = "#d3d3d3"
 COLOR_MAP = {
-    "isc_seven_rivers": "blue",
+    "isc_seven_rivers": "orange",
     "ose_roswell": "orange",
     "pvacd_hydrovu": "",
-    "healy_collaborative": "purple",
+    "healy_collaborative": "orange",
 }
 
 
@@ -148,7 +150,7 @@ def init_app():
             yanchor="top",
             y=0.99,
             xanchor="left",
-            x=0.735,
+            x=0.66,
             bgcolor="#899DBE",
             borderwidth=3,
         ),
@@ -159,8 +161,8 @@ def init_app():
         style_cell={"textAlign": "left"},
         columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
         style_as_list_view=True,
-        style_header={"font-family": "verdana"},
-        style_data={"fontSize": "12px", "font-family": "verdana"},
+        style_header=header_style,
+        style_data=data_style,
         style_table={"height": "300px", "overflowY": "auto"},
     )
     summarytable = DataTable(
@@ -170,17 +172,12 @@ def init_app():
             {"name": "Location", "id": "location"},
             {"name": "Last Depth to Water (ft)", "id": "last_measurement"},
             {"name": "Measurement Time", "id": "last_time"},
+            {"name": "Measurement Interval (hrs)", "id": "measurement_interval"},
             {"name": "Trend", "id": "trend"},
         ],
-        # css=[
-        #     {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},
-        #     # set height of header
-        #     {"selector": ".dash-spreadsheet tr td", "rule": "height: 12px;"},
-        #     # set height of body rows
-        # ],
-        style_header={"font-family": "verdana"},
+        style_header=header_style,
         style_as_list_view=True,
-        style_data={"fontSize": "12px", "font-family": "verdana"},
+        style_data=data_style,
         style_data_conditional=[
             {
                 "if": {
@@ -200,11 +197,7 @@ def init_app():
             },
         ],
         style_table={
-            # "border": "solid",
-            # "border-color": "red",
-            # "border-radius": "15px",
-            # "height": "300px",
-            "padding_top": "10px",
+            # "padding_top": "10px",
             "overflowY": "auto",
         },
     )
@@ -259,6 +252,7 @@ def init_app():
         lt = obs[0]["phenomenonTime"]
         lm = obs[0]["result"]
 
+        interval = (todatetime(obs[0]) - todatetime(obs[1])).total_seconds()
         name = location["name"]
         for level in ("Level", "level"):
             if level in name:
@@ -270,16 +264,17 @@ def init_app():
             "trend": "Falling" if trend > 0 else "Rising",
             "trendvalue": trend,
             "last_measurement": f"{lm:0.2f}",
-            "last_time": datetime.datetime.strptime(lt, DTFORMAT).strftime("%c"),
+            "measurement_interval": floatfmt(interval/3600.,1),
+            "last_time": todatetime(lt).strftime("%H:%M %m/%d/%y"),
         }
         sdata.append(srow)
 
     summarytable.data = sdata
     for a, tag in (
-        ("ISC Seven Rivers", "isc_seven_rivers"),
-        ("OSE Roswell", "ose_roswell"),
-        ("Healy Collaborative", "healy_collaborative"),
-        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+            ("ISC Seven Rivers", "isc_seven_rivers"),
+            ("OSE Roswell", "ose_roswell"),
+            ("Healy Collaborative", "healy_collaborative"),
+            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -297,31 +292,18 @@ def init_app():
             ]
             size = 15
 
-        # data.append(
-        #     go.Scattermapbox(
-        #         lat=lats,
-        #         lon=lons,
-        #         showlegend=False,
-        #         hoverinfo='none',
-        #         marker=dict(size=size+3,
-        #                     color='black'
-        #                     )
-        #     )
-        # )
         data.append(
             go.Scattermapbox(
                 lat=lats,
                 lon=lons,
                 text=ids,
                 name=a,
-                hovertemplate="<b>%{text}</b>",
-                # hovertext='',
-                # fill='none',
-                # line=dict(color='black', width=1),
+                customdata=make_formations(locations, tag),
+                hovertemplate='<b>%{text}</b><br>%{customdata}',
+
                 marker=dict(
                     size=size,
                     color=colors,
-                    # opacity=0.25,
                 ),
             )
         )
@@ -355,13 +337,14 @@ def init_app():
             # dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
             dbc.Row(
                 [
-                    dbc.Col(summarytable, style=lcol_style),
+                    dbc.Col(html.Div([html.H3('Monitoring Wells'),
+                                      summarytable]), style=lcol_style, width=6),
                     dbc.Col(mapcomp, style=rcol_style),
                 ]
             ),
             dbc.Row(
                 [
-                    dbc.Col([html.H2("Selection"), tablecomp], style=lcol_style),
+                    dbc.Col([html.H3("Map Selection"), tablecomp], style=lcol_style),
                     dbc.Col(
                         [
                             dbc.Spinner(
@@ -380,7 +363,9 @@ def init_app():
             ),
             dbc.Row([html.Footer("Developed By Jake Ross (2022)")]),
         ],
-        style={"backgroundColor": BGCOLOR},
+        # fluid=True,
+        # className="container-fluid",
+        style={"backgroundColor": BGCOLOR,},
     )
 
 
@@ -392,12 +377,13 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
 
     formation = ""
     if formation_code:
-        fs = []
-        for gf in formation_code.split("/"):
-            gfname = get_formation_name(gf)
-            fs.append(f"{gfname} ({gf})")
-
-        formation = "/".join(fs)
+        formation = get_formation_name(formation_code)
+        # fs = []
+        # for gf in formation_code.split("/"):
+        #     gfname = get_formation_name(gf)
+        #     fs.append(f"{gfname} ({gf})")
+        #
+        # formation = "/".join(fs)
 
     data.append(
         {
