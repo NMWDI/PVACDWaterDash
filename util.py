@@ -69,8 +69,8 @@ def extract_usgs_timeseries(obj):
         # print(ti['variable']['variableName'])
         # if ti['variable']['variableCode'][0]['variableID'] == 52331280:
         if (
-                ti["variable"]["variableName"]
-                == "Depth to water level, ft below land surface"
+            ti["variable"]["variableName"]
+            == "Depth to water level, ft below land surface"
         ):
             for j, tj in enumerate(ti["values"]):
                 values = tj["value"]
@@ -91,11 +91,11 @@ def extract_usgs_timeseries(obj):
 def make_formations(locations, tag):
     fs = []
     for l in locations:
-        if tag == 'pvacd_hydrovu':
-            code = '313SADR'
+        if tag == "pvacd_hydrovu":
+            code = "313SADR"
         else:
             code = l["Things"][0]["properties"].get("GeologicFormation")
-        name = ''
+        name = ""
         if code:
             name = get_formation_name(code)
 
@@ -106,7 +106,7 @@ def make_formations(locations, tag):
 
 def todatetime(t, fmt=DTFORMAT):
     if isinstance(t, dict):
-        t = t['phenomenonTime']
+        t = t["phenomenonTime"]
 
     return datetime.datetime.strptime(t, fmt)
 
@@ -171,5 +171,6 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
                 nextlink = j.get("@iot.nextLink")
 
         return location, obs
+
 
 # ============= EOF =============================================

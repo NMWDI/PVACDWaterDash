@@ -35,7 +35,9 @@ from util import (
     get_formation_name,
     get_observations,
     get_usgs,
-    extract_usgs_timeseries, todatetime, make_formations,
+    extract_usgs_timeseries,
+    todatetime,
+    make_formations,
 )
 from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE
 
@@ -103,7 +105,7 @@ chart_bgcolor = "white"
 card_style = {
     "border": "solid",
     "borderRadius": "10px",
-     "marginBlock": "3px",
+    "marginBlock": "3px",
     "backgroundColor": chart_bgcolor,
     "boxShadow": "2px 2px #8d9ea2",
     "borderColor": "7d777a",
@@ -115,11 +117,8 @@ rcol_style = card_style.copy()
 lcol_style["marginRight"] = "5px"
 # rcol_style["marginLeft"] = "5px"
 
-header_style = {"font-family": "verdana",
-                "font-weight": "bold",
-                "fontSize": "10px"}
-data_style = {"fontSize": "10px",
-              "font-family": "verdana"}
+header_style = {"font-family": "verdana", "font-weight": "bold", "fontSize": "10px"}
+data_style = {"fontSize": "10px", "font-family": "verdana"}
 BGCOLOR = "#d3d3d3"
 COLOR_MAP = {
     "isc_seven_rivers": "orange",
@@ -264,17 +263,17 @@ def init_app():
             "trend": "Falling" if trend > 0 else "Rising",
             "trendvalue": trend,
             "last_measurement": f"{lm:0.2f}",
-            "measurement_interval": floatfmt(interval/3600.,1),
+            "measurement_interval": floatfmt(interval / 3600.0, 1),
             "last_time": todatetime(lt).strftime("%H:%M %m/%d/%y"),
         }
         sdata.append(srow)
 
     summarytable.data = sdata
     for a, tag in (
-            ("ISC Seven Rivers", "isc_seven_rivers"),
-            ("OSE Roswell", "ose_roswell"),
-            ("Healy Collaborative", "healy_collaborative"),
-            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+        ("ISC Seven Rivers", "isc_seven_rivers"),
+        ("OSE Roswell", "ose_roswell"),
+        ("Healy Collaborative", "healy_collaborative"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -299,8 +298,7 @@ def init_app():
                 text=ids,
                 name=a,
                 customdata=make_formations(locations, tag),
-                hovertemplate='<b>%{text}</b><br>%{customdata}',
-
+                hovertemplate="<b>%{text}</b><br>%{customdata}",
                 marker=dict(
                     size=size,
                     color=colors,
@@ -337,8 +335,11 @@ def init_app():
             # dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
             dbc.Row(
                 [
-                    dbc.Col(html.Div([html.H3('Monitoring Wells'),
-                                      summarytable]), style=lcol_style, width=6),
+                    dbc.Col(
+                        html.Div([html.H3("Monitoring Wells"), summarytable]),
+                        style=lcol_style,
+                        width=6,
+                    ),
                     dbc.Col(mapcomp, style=rcol_style),
                 ]
             ),
@@ -365,7 +366,9 @@ def init_app():
         ],
         # fluid=True,
         # className="container-fluid",
-        style={"backgroundColor": BGCOLOR,},
+        style={
+            "backgroundColor": BGCOLOR,
+        },
     )
 
 
