@@ -1,5 +1,8 @@
-dash
+dash[diskcache]==2.7.1
 plotly
 pandas
 dash_bootstrap_components
 requests
+diskcache
+# celery
+# redis

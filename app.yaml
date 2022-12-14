@@ -10,6 +10,8 @@ handlers:
 - url: .*
   script: main.app
 
+#env_variables:
+#  REDIS_URL: "10.83.182.91:6379"
 #libraries:
 #- name: webapp2
 #  version: "2.5.2"

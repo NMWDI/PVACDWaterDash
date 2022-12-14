@@ -15,6 +15,7 @@
 # ===============================================================================
 import datetime
 import json
+import os
 from asyncio import Event
 
 import dash_bootstrap_components as dbc
@@ -22,7 +23,7 @@ import datetime as datetime
 import requests as requests
 from numpy import polyfit, linspace, polyval
 
-from dash import Dash, html, dcc, Output, Input
+from dash import Dash, html, dcc, Output, Input, DiskcacheManager, CeleryManager
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
@@ -37,10 +38,31 @@ from util import (
 )
 from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE
 
+
+# from celery import Celery
+# url = ''
+# celery_app = Celery(__name__, broker=url, backend=url)
+# background_callback_manager = CeleryManager(celery_app)
+
+if 'REDIS_URL' in os.environ:
+    # Use Redis & Celery if REDIS_URL set as an env variable
+    from celery import Celery
+    celery_app = Celery(__name__, broker=os.environ['REDIS_URL'], backend=os.environ['REDIS_URL'])
+    background_callback_manager = CeleryManager(celery_app)
+
+else:
+
+    # Diskcache for non-production apps when developing locally
+    import diskcache
+    cache = diskcache.Cache("/tmp/cache")
+    background_callback_manager = DiskcacheManager(cache)
+
+
 dash_app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     title="PVACD Groundwater Dashboard",
+    background_callback_manager=background_callback_manager
 )
 
 app = dash_app.server
@@ -73,6 +95,7 @@ xaxis = dict(
 )
 
 chart_bgcolor = "#b5aeae"
+chart_bgcolor = "white"
 card_style = {
     "border": "solid",
     "borderRadius": "10px",
@@ -305,14 +328,17 @@ def init_app():
 
     figmap = go.Figure(layout=layout, data=data)
     mapcomp = dcc.Graph(id="map", figure=figmap)
-    progress = html.Div(
-        [
-            dcc.Interval(id="progress-interval", n_intervals=0, interval=1000),
-            dbc.Progress(id="progress", striped=True, animated=True),
-        ],
-        id="progress_div",
-    )
+    # progress = html.Div(
+    #     [
+    #         # dcc.Interval(id="progress-interval", n_intervals=0, interval=1500),
+    #         dbc.Progress(id="progress", value=100,
+    #                      striped=True, animated=True),
+    #         # html.Progress(id="progress_bar", value="0"),
+    #     ],
+    #     id="progress_div",
+    # )
 
+    progress = dbc.Progress(id="progress", value=100, striped=True, animated=True)
     dash_app.layout = dbc.Container(
         [
             dbc.Row(
@@ -359,14 +385,20 @@ def init_app():
     )
 
 
-def make_additional_selection(location, thing, formation=None):
+def make_additional_selection(location, thing, formation=None, formation_code=None):
     data = []
-    if not formation:
-        gf = thing["properties"].get("GeologicFormation")
-        formation = ""
-        if gf:
+
+    if not formation and not formation_code:
+        formation_code = thing["properties"].get("GeologicFormation")
+
+    formation = ""
+    if formation_code:
+        fs =[]
+        for gf in formation_code.split('/'):
             gfname = get_formation_name(gf)
-            formation = f"{gfname} ({gf})"
+            fs.append(f"{gfname} ({gf})")
+
+        formation = '/'.join(fs)
 
     data.append(
         {
@@ -385,39 +417,24 @@ def make_additional_selection(location, thing, formation=None):
     return data
 
 
-progress_event = Event()
-
-
-@dash_app.callback(
-    [
-        Output("progress", "value"),
-        Output("progress", "label"),
-        Output("progress_div", "style"),
-    ],
-    [Input("progress-interval", "n_intervals")],
-)
-def update_progress(n):
-    progress_value = 100
-    progress_label = ""
-
-    style = {"display": "none"}
-    if progress_event.is_set():
-        style = {"display": "block"}
-    return progress_value, progress_label, style
-
-
 @dash_app.callback(
     [
         Output("selected_table", "data"),
         Output("hydrograph", "figure"),
     ],
     Input("map", "clickData"),
-    # running=[
-    #     (Output("progress-interval", "disabled"), False, True),
-    # ],
+    background=True,
+    running=[
+        (
+            Output("progress", "style"),
+            {"visibility": "visible"},
+            {"visibility": "hidden"},
+        ),
+    ],
+    # progress=[Output("progress_bar", "value"), Output("progress_bar", "max")],
 )
 def display_click_data(clickData):
-    progress_event.set()
+    # set_progress()
     data = [
         {"name": "Location", "value": ""},
         {"name": "Latitude", "value": ""},
@@ -431,7 +448,9 @@ def display_click_data(clickData):
     # mxs = []
     # mys = []
 
+    location = None
     fig = go.Figure()
+    fig.data = []
     if clickData:
         point = clickData["points"][0]
         name = point["text"]
@@ -471,7 +490,8 @@ def display_click_data(clickData):
                     thing = alocation["Things"][0]
                     data.append({"name": "PointID", "value": alocation["name"]})
                     vs = make_additional_selection(
-                        alocation, thing, formation="Artesia (313ARTS)"
+                        alocation, thing,
+                        formation_code='313SADR'
                     )
                     data.extend(vs)
 
@@ -489,7 +509,6 @@ def display_click_data(clickData):
                 usgs = get_usgs(location)
                 if usgs:
                     name = "OSE-Roswell"
-
                     uxs, uys = extract_usgs_timeseries(usgs)
                     fig.add_trace(go.Scatter(x=uxs, y=uys, name="USGS NWIS"))
                 else:
@@ -506,9 +525,10 @@ def display_click_data(clickData):
         margin=dict(t=50, b=50, l=50, r=25),
         xaxis=xaxis,
         yaxis=yaxis,
+        title=location['name'] if location else '',
         paper_bgcolor=chart_bgcolor,
     )
-    progress_event.clear()
+
     return data, fig
 
 
