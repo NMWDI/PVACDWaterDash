@@ -124,9 +124,7 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
     else:
         location = None
 
-    url = (
-        f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime,result"
-    )
+    url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime,result"
 
     resp = requests.get(url)
     if resp.status_code == 200:

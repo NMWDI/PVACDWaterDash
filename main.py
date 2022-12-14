@@ -225,8 +225,8 @@ def init_app():
         if historic_obs:
             obs.extend(historic_obs)
 
-        obs = sorted(obs, key=lambda o: o['phenomenonTime'], reverse=True)
-        obs = [o for i, o in enumerate(obs) if not i%3]
+        obs = sorted(obs, key=lambda o: o["phenomenonTime"], reverse=True)
+        obs = [o for i, o in enumerate(obs) if not i % 3]
 
         scatter = px.line(obs, x="phenomenonTime", y="result", height=350)
 
@@ -415,6 +415,7 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
     data.append({"name": "Formation", "value": formation})
     return data
 
+
 def get_nm_aquifer_obs(iotid, data=None):
     try:
         aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
@@ -438,6 +439,7 @@ def get_nm_aquifer_obs(iotid, data=None):
             location_iotid=aiotid, limit=100
         )
         return manual_obs
+
 
 @dash_app.callback(
     [
