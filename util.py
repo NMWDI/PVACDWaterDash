@@ -125,7 +125,7 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
         location = None
 
     url = (
-        f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc"
+        f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime,result"
     )
 
     resp = requests.get(url)

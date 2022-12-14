@@ -75,7 +75,7 @@ app = dash_app.server
 crosswalk = pd.read_csv(
     "https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/pvacd_nm_aquifer.csv"
 )
-# crosswalk = crosswalk[1:4]
+# crosswalk = crosswalk[:1]
 # active_wells = pd.read_csv(
 #     'https://raw.githubusercontent.com/NMWDI/HydroViewer/master/static/active_monitoring_wells.csv')
 
@@ -216,23 +216,20 @@ def init_app():
     trends = {}
     charts = []
     for i, row in crosswalk.iterrows():
-
         iotid = row["PVACD"]
         print(iotid, row)
-        obs = []
-        # iotid = iotid.split('|')
-        # for ii in iotid:
-        location, obs = get_observations(location_iotid=iotid)
-        # obs.extend(iobs)
-        # obs = sorted(obs, key=lambda o: o['phenomenonTime'], reverse=True)
 
-        # iotid = iotid[0]
-        # print(obs)
-        # nm_aquifer_location, manual_obs = get_observations(location_iotid=row['NM_AQUIFER'], limit=100)
-        scatter = px.scatter(obs, x="phenomenonTime", y="result", height=350)
-        # mxs = [xi['phenomenonTime'] for xi in manual_obs]
-        # mys = [xi['result'] for xi in manual_obs]
-        # scatter.add_scatter(x=mxs, y=mys)
+        location, obs = get_observations(location_iotid=iotid)
+
+        historic_obs = get_nm_aquifer_obs(iotid)
+        if historic_obs:
+            obs.extend(historic_obs)
+
+        obs = sorted(obs, key=lambda o: o['phenomenonTime'], reverse=True)
+        obs = [o for i, o in enumerate(obs) if not i%3]
+
+        scatter = px.line(obs, x="phenomenonTime", y="result", height=350)
+
         fobs = obs[:50]
         x = [
             datetime.datetime.strptime(o["phenomenonTime"], DTFORMAT).timestamp()
@@ -248,7 +245,6 @@ def init_app():
         scatter.add_scatter(
             x=[datetime.datetime.fromtimestamp(xi) for xi in xs], y=ys, mode="lines"
         )
-
         scatter.update_layout(
             margin=dict(t=75, b=50, l=50, r=25),
             title=location["name"],
@@ -257,10 +253,9 @@ def init_app():
             xaxis=xaxis,
             paper_bgcolor=chart_bgcolor,
         )
-
         comp = dcc.Graph(id=f"hydrograph{i}", style=card_style, figure=scatter)
-
         charts.append(comp)
+
         lt = obs[0]["phenomenonTime"]
         lm = obs[0]["result"]
 
@@ -420,6 +415,29 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
     data.append({"name": "Formation", "value": formation})
     return data
 
+def get_nm_aquifer_obs(iotid, data=None):
+    try:
+        aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
+    except BaseException:
+        aiotid = None
+
+    if aiotid:
+        # data.append({"name": "aST ID", "value": aiotid})
+        resp = requests.get(f"{ST2}/Locations({aiotid})?$expand=Things")
+        if resp.status_code == 200:
+            alocation = resp.json()
+            thing = alocation["Things"][0]
+            if data is not None:
+                data.append({"name": "PointID", "value": alocation["name"]})
+                vs = make_additional_selection(
+                    alocation, thing, formation_code="313SADR"
+                )
+                data.extend(vs)
+
+        nm_aquifer_location, manual_obs = get_observations(
+            location_iotid=aiotid, limit=100
+        )
+        return manual_obs
 
 @dash_app.callback(
     [
@@ -475,26 +493,8 @@ def display_click_data(clickData):
 
             _, obs = get_observations(datastream_id=ds["@iot.id"], limit=2000)
             # get the data from NM_Aquifer (via ST2 for these wells)
-            try:
-                aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
-            except BaseException:
-                aiotid = None
-
-            if aiotid:
-                # data.append({"name": "aST ID", "value": aiotid})
-                resp = requests.get(f"{ST2}/Locations({aiotid})?$expand=Things")
-                if resp.status_code == 200:
-                    alocation = resp.json()
-                    thing = alocation["Things"][0]
-                    data.append({"name": "PointID", "value": alocation["name"]})
-                    vs = make_additional_selection(
-                        alocation, thing, formation_code="313SADR"
-                    )
-                    data.extend(vs)
-
-                nm_aquifer_location, manual_obs = get_observations(
-                    location_iotid=aiotid, limit=100
-                )
+            manual_obs = get_nm_aquifer_obs(iotid, data)
+            if manual_obs:
                 # mxs = [xi["phenomenonTime"] for xi in manual_obs]
                 # mys = [xi["result"] for xi in manual_obs]
                 # xs = [xi["phenomenonTime"] for xi in obs]
