@@ -16,6 +16,7 @@
 import datetime
 import json
 import os
+import time
 from asyncio import Event
 
 import dash_bootstrap_components as dbc
@@ -44,29 +45,29 @@ from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE
 # celery_app = Celery(__name__, broker=url, backend=url)
 # background_callback_manager = CeleryManager(celery_app)
 
-if "REDIS_URL" in os.environ:
-    # Use Redis & Celery if REDIS_URL set as an env variable
-    from celery import Celery
-
-    celery_app = Celery(
-        __name__, broker=os.environ["REDIS_URL"], backend=os.environ["REDIS_URL"]
-    )
-    background_callback_manager = CeleryManager(celery_app)
-
-else:
-
-    # Diskcache for non-production apps when developing locally
-    import diskcache
-
-    cache = diskcache.Cache("/tmp/cache")
-    background_callback_manager = DiskcacheManager(cache)
+# if "REDIS_URL" in os.environ:
+#     # Use Redis & Celery if REDIS_URL set as an env variable
+#     from celery import Celery
+#
+#     celery_app = Celery(
+#         __name__, broker=os.environ["REDIS_URL"], backend=os.environ["REDIS_URL"]
+#     )
+#     background_callback_manager = CeleryManager(celery_app)
+#
+# else:
+#
+#     # Diskcache for non-production apps when developing locally
+#     import diskcache
+#
+#     cache = diskcache.Cache("/tmp/cache")
+#     background_callback_manager = DiskcacheManager(cache)
 
 
 dash_app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     title="PVACD Groundwater Dashboard",
-    background_callback_manager=background_callback_manager,
+    # background_callback_manager=background_callback_manager,
 )
 
 app = dash_app.server
@@ -332,17 +333,7 @@ def init_app():
 
     figmap = go.Figure(layout=layout, data=data)
     mapcomp = dcc.Graph(id="map", figure=figmap)
-    # progress = html.Div(
-    #     [
-    #         # dcc.Interval(id="progress-interval", n_intervals=0, interval=1500),
-    #         dbc.Progress(id="progress", value=100,
-    #                      striped=True, animated=True),
-    #         # html.Progress(id="progress_bar", value="0"),
-    #     ],
-    #     id="progress_div",
-    # )
 
-    progress = dbc.Progress(id="progress", value=100, striped=True, animated=True)
     dash_app.layout = dbc.Container(
         [
             dbc.Row(
@@ -376,7 +367,12 @@ def init_app():
             dbc.Row(
                 [
                     dbc.Col([html.H2("Selection"), tablecomp], style=lcol_style),
-                    dbc.Col([progress, hydrocomp], style=rcol_style),
+                    dbc.Col([dbc.Spinner([html.Div(id="loading-output"),
+                                          hydrocomp
+                                          ],
+                                         # fullscreen=True,
+                                         color='primary'),
+                        ], style=rcol_style),
                 ],
             ),
             dbc.Row(
@@ -384,6 +380,7 @@ def init_app():
                 # style=card_style
             ),
             dbc.Row([html.Footer("Developed By Jake Ross (2022)")]),
+
         ],
         style={"backgroundColor": BGCOLOR},
     )
@@ -423,21 +420,14 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
 
 @dash_app.callback(
     [
+        Output("loading-output", "children"),
         Output("selected_table", "data"),
         Output("hydrograph", "figure"),
     ],
     Input("map", "clickData"),
-    background=True,
-    running=[
-        (
-            Output("progress", "style"),
-            {"visibility": "visible"},
-            {"visibility": "hidden"},
-        ),
-    ],
-    # progress=[Output("progress_bar", "value"), Output("progress_bar", "max")],
 )
 def display_click_data(clickData):
+    # print('clasd', clickData)
     # set_progress()
     data = [
         {"name": "Location", "value": ""},
@@ -451,10 +441,11 @@ def display_click_data(clickData):
     # obs = [{"phenomenonTime": 0, "result": 0}]
     # mxs = []
     # mys = []
-
+    # uxs = None
+    # mxs = None
+    # name = None
     location = None
-    fig = go.Figure()
-    fig.data = []
+    obs = None
     if clickData:
         point = clickData["points"][0]
         name = point["text"]
@@ -501,38 +492,63 @@ def display_click_data(clickData):
                 nm_aquifer_location, manual_obs = get_observations(
                     location_iotid=aiotid, limit=100
                 )
-                mxs = [xi["phenomenonTime"] for xi in manual_obs]
-                mys = [xi["result"] for xi in manual_obs]
+                # mxs = [xi["phenomenonTime"] for xi in manual_obs]
+                # mys = [xi["result"] for xi in manual_obs]
                 # xs = [xi["phenomenonTime"] for xi in obs]
                 # ys = [xi["result"] for xi in obs]
-                name = "PVACD Continuous"
-                fig.add_trace(go.Scatter(x=mxs, y=mys, name="PVACD Historical"))
+                obs.extend(manual_obs)
+                # name = "PVACD Continuous"
+
             else:
                 # get the data from USGS
                 usgs = get_usgs(location)
                 if usgs:
-                    name = "OSE-Roswell"
-                    uxs, uys = extract_usgs_timeseries(usgs)
-                    fig.add_trace(go.Scatter(x=uxs, y=uys, name="USGS NWIS"))
+                    # name = "OSE-Roswell"
+                    obsu = extract_usgs_timeseries(usgs)
+                    obs.extend(obsu)
                 else:
-                    name = "NMBGMR"
+                    # name = "NMBGMR"
                     vs = make_additional_selection(location, thing)
                     data.extend(vs)
 
+    fd = []
+    if obs:
+        # print('nasadfme', name, len(obs), len(uxs) if uxs else 0)
+        obs = sorted(obs, key=lambda x: x['phenomenonTime'])
+
         xs = [xi["phenomenonTime"] for xi in obs]
         ys = [xi["result"] for xi in obs]
-        fig.add_trace(go.Scatter(x=xs, y=ys, name=name))
 
-    fig.update_layout(
-        height=350,
-        margin=dict(t=50, b=50, l=50, r=25),
-        xaxis=xaxis,
-        yaxis=yaxis,
-        title=location["name"] if location else "",
-        paper_bgcolor=chart_bgcolor,
-    )
+    #     fd.append(go.Scatter(x=xs, y=ys, uid='continuous', name=name))
+    #     # fig.add_trace(go.Scatter(x=xs, y=ys, name=name))
+    #
+    # if uxs:
+    #     fd.append(go.Scatter(x=uxs, y=uys, uid="usgs_nwis", name="USGS NWIS"))
+    #     # fig.add_trace(go.Scatter(x=uxs, y=uys, name="USGS NWIS"))
+    # if mxs:
+    #     fd.append(go.Scatter(x=mxs, y=mys, uid='pvacd_historic', name="PVACD Historical"))
+    #     # fig.add_trace(go.Scatter(x=mxs, y=mys, name="PVACD Historical"))
 
-    return data, fig
+        fd = [go.Scatter(x=xs, y=ys)]
+
+    layout = dict(height=350,
+                  margin=dict(t=50, b=50, l=50, r=25),
+                  xaxis=xaxis,
+                  yaxis=yaxis,
+                  title=location["name"] if location else "",
+                  paper_bgcolor=chart_bgcolor,)
+
+    fig = go.Figure(data=fd, layout=layout)
+    # fig.data = []
+    # fig.update_layout(
+        # height=350,
+        # margin=dict(t=50, b=50, l=50, r=25),
+        # xaxis=xaxis,
+        # yaxis=yaxis,
+        # title=location["name"] if location else "",
+        # paper_bgcolor=chart_bgcolor,
+    # )
+    return "", data, fig
 
 
 # usgslocation = '333149104170801'

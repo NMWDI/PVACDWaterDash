@@ -65,12 +65,14 @@ def extract_usgs_timeseries(obj):
         ):
             for j, tj in enumerate(ti["values"]):
                 values = tj["value"]
-                data.append(values[0])
+                data.append({'phenomenonTime': values[0]["dateTime"],
+                             'result': values[0]['value']})
 
-    if data:
-        xs, ys = zip(*[(x["dateTime"], x["value"]) for x in data])
+    return data
+    # if data:
+    #     xs, ys = zip(*[(x["dateTime"], x["value"]) for x in data])
 
-    return xs, ys
+    # return xs, ys
 
 
 def get_usgs(location=None, siteid=None):
