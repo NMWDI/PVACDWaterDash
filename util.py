@@ -60,8 +60,8 @@ def extract_usgs_timeseries(obj):
         # print(ti['variable']['variableName'])
         # if ti['variable']['variableCode'][0]['variableID'] == 52331280:
         if (
-                ti["variable"]["variableName"]
-                == "Depth to water level, ft below land surface"
+            ti["variable"]["variableName"]
+            == "Depth to water level, ft below land surface"
         ):
             for j, tj in enumerate(ti["values"]):
                 values = tj["value"]
@@ -90,7 +90,7 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
         t0 = now - datetime.timedelta(hours=0)
         t1 = now - datetime.timedelta(hours=12)
         t2 = now - datetime.timedelta(hours=24)
-        l = {'name': 'Foo'}
+        l = {"name": "Foo"}
         obs = [
             {
                 "phenomenonTime": t0.strftime(DTFORMAT),
@@ -103,7 +103,7 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
             {
                 "phenomenonTime": t2.strftime(DTFORMAT),
                 "result": 0,
-            }
+            },
         ]
         return l, obs
 
@@ -135,5 +135,6 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
                 nextlink = j.get("@iot.nextLink")
 
         return location, obs
+
 
 # ============= EOF =============================================

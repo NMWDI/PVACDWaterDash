@@ -44,16 +44,20 @@ from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE
 # celery_app = Celery(__name__, broker=url, backend=url)
 # background_callback_manager = CeleryManager(celery_app)
 
-if 'REDIS_URL' in os.environ:
+if "REDIS_URL" in os.environ:
     # Use Redis & Celery if REDIS_URL set as an env variable
     from celery import Celery
-    celery_app = Celery(__name__, broker=os.environ['REDIS_URL'], backend=os.environ['REDIS_URL'])
+
+    celery_app = Celery(
+        __name__, broker=os.environ["REDIS_URL"], backend=os.environ["REDIS_URL"]
+    )
     background_callback_manager = CeleryManager(celery_app)
 
 else:
 
     # Diskcache for non-production apps when developing locally
     import diskcache
+
     cache = diskcache.Cache("/tmp/cache")
     background_callback_manager = DiskcacheManager(cache)
 
@@ -62,7 +66,7 @@ dash_app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
     title="PVACD Groundwater Dashboard",
-    background_callback_manager=background_callback_manager
+    background_callback_manager=background_callback_manager,
 )
 
 app = dash_app.server
@@ -393,12 +397,12 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
 
     formation = ""
     if formation_code:
-        fs =[]
-        for gf in formation_code.split('/'):
+        fs = []
+        for gf in formation_code.split("/"):
             gfname = get_formation_name(gf)
             fs.append(f"{gfname} ({gf})")
 
-        formation = '/'.join(fs)
+        formation = "/".join(fs)
 
     data.append(
         {
@@ -490,8 +494,7 @@ def display_click_data(clickData):
                     thing = alocation["Things"][0]
                     data.append({"name": "PointID", "value": alocation["name"]})
                     vs = make_additional_selection(
-                        alocation, thing,
-                        formation_code='313SADR'
+                        alocation, thing, formation_code="313SADR"
                     )
                     data.extend(vs)
 
@@ -525,7 +528,7 @@ def display_click_data(clickData):
         margin=dict(t=50, b=50, l=50, r=25),
         xaxis=xaxis,
         yaxis=yaxis,
-        title=location['name'] if location else '',
+        title=location["name"] if location else "",
         paper_bgcolor=chart_bgcolor,
     )
 
