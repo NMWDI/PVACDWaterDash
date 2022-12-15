@@ -158,49 +158,56 @@ COLOR_MAP = {
 
 banner_style = card_style.copy()
 # banner_style['background-image']="url('assets/new-mexico-408068_1280.jpg')"
-banner_style['background-image']="url('assets/1599247175576.jpg')"
-banner_style["background-repeat"]= "no-repeat"
+banner_style["background-image"] = "url('assets/1599247175576.jpg')"
+banner_style["background-repeat"] = "no-repeat"
 # banner_style["background-attachment"]= "fixed"
-banner_style["background-size"]= "cover"
+banner_style["background-size"] = "cover"
 # banner_style['background-image']="url('assets/pvacd_logo.png')"
 
 banner_row = dbc.Row(
-                [
-                    dbc.Col(
-                        html.A(
-                            href='https://newmexicowaterdata.org',
-                            children=[
-                                html.Img(src="assets/newmexicowaterdatalogo.png")
-                            ]
-                        ),
-                        width=3,
-                    ),
-                    dbc.Col(
-                        html.H1(
-                            TITLE,
-                            style={"margin-top": '10px'}
-                        ),
-                        width=6,
-                    ),
-                    dbc.Col(
-                        html.A(href='https://pvacd.com',
-                        children=[
-                            html.Img(src="assets/pvacd_logo.png",
-                            style={"height": "80%", "margin": "10px"})
-                        ]),
-                        width=3)
+    [
+        dbc.Col(
+            html.A(
+                href="https://newmexicowaterdata.org",
+                children=[html.Img(src="assets/newmexicowaterdatalogo.png")],
+            ),
+            width=3,
+        ),
+        dbc.Col(
+            html.H1(TITLE, style={"margin-top": "10px"}),
+            width=6,
+        ),
+        dbc.Col(
+            html.A(
+                href="https://pvacd.com",
+                children=[
+                    html.Img(
+                        src="assets/pvacd_logo.png",
+                        style={"height": "80%", "margin": "10px"},
+                    )
                 ],
-                style=banner_style,
-            )
-subbanner_row = dbc.Row([
-    html.Div([
-        dbc.Button("Pecos Slope Story Map",
-        color='secondary',
-        style={"margin": "5px"},
-        href='https://nmt.maps.arcgis.com/apps/Cascade/index.html?appid=2f22f13a81f04042aabcfbe2e739ca96')
+            ),
+            width=3,
+        ),
     ],
-    style=card_style)
-])
+    style=banner_style,
+)
+subbanner_row = dbc.Row(
+    [
+        html.Div(
+            [
+                dbc.Button(
+                    "Pecos Slope Story Map",
+                    color="secondary",
+                    style={"margin": "5px"},
+                    href="https://nmt.maps.arcgis.com/apps/Cascade/index.html?appid=2f22f13a81f04042aabcfbe2e739ca96",
+                )
+            ],
+            style=card_style,
+        )
+    ]
+)
+
 
 def init_app():
     layout = go.Layout(
@@ -246,7 +253,7 @@ def init_app():
             f"for "
             f"{now_month_name} highlight row in red",
             "trend": "Depth to water trend. Calculated by performing a linear regression "
-                     "on the last ~25-50 days depending on sampling frequency"
+            "on the last ~25-50 days depending on sampling frequency",
         },
         css=[
             {
@@ -255,7 +262,10 @@ def init_app():
                 "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
                 "border-radius: 5px",
             },
-            {"selector": ".dash-tooltip", "rule": "max_width: 500px; border-radius: 5px"},
+            {
+                "selector": ".dash-tooltip",
+                "rule": "max_width: 500px; border-radius: 5px",
+            },
         ],
         tooltip_duration=None,
         style_cell={"textAlign": "left"},
