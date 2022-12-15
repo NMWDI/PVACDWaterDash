@@ -122,62 +122,6 @@ def get_usgs(location=None, siteid=None):
         return resp.json()
 
 
-def get_observations(location_iotid=None, datastream_id=None, limit=1000):
-    if DEBUG_OBS:
-        now = datetime.datetime.now()
-        t0 = now - datetime.timedelta(hours=0)
-        t1 = now - datetime.timedelta(hours=12)
-        t2 = now - datetime.timedelta(hours=24)
-        l = {"name": "Foo"}
-        obs = [
-            {
-                "phenomenonTime": t0.strftime(DTFORMAT),
-                "result": 0,
-            },
-            {
-                "phenomenonTime": t1.strftime(DTFORMAT),
-                "result": 0,
-            },
-            {
-                "phenomenonTime": t2.strftime(DTFORMAT),
-                "result": 0,
-            },
-        ]
-        return l, obs
-
-    if datastream_id is None:
-        url = f"{ST2}/Locations({location_iotid})?$expand=Things/Datastreams"
-        resp = requests.get(url)
-
-        if resp.status_code == 200:
-            location = resp.json()
-            ds = location["Things"][0]["Datastreams"][0]
-            datastream_id = ds["@iot.id"]
-    else:
-        location = None
-
-    if DEBUG_LIMIT_OBS:
-        limit = DEBUG_LIMIT_OBS
-
-    url = (
-        f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime,"
-        f"result&$top={limit}"
-    )
-
-    resp = requests.get(url)
-    if resp.status_code == 200:
-        j = resp.json()
-        obs = j["value"]
-        nextlink = j.get("@iot.nextLink")
-
-        while len(obs) < limit and nextlink:
-            resp = requests.get(nextlink)
-            if resp.status_code == 200:
-                j = resp.json()
-                obs.extend(j["value"])
-                nextlink = j.get("@iot.nextLink")
-
-        return location, obs
 
 
 # ============= EOF =============================================

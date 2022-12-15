@@ -33,13 +33,12 @@ from dash.dash_table import DataTable
 from util import (
     floatfmt,
     get_formation_name,
-    get_observations,
     get_usgs,
     extract_usgs_timeseries,
     todatetime,
     make_formations,
 )
-from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE, DEBUG_N_WELLS
+from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE, DEBUG_N_WELLS, DEBUG_OBS, DEBUG_LIMIT_OBS
 
 # from celery import Celery
 # url = ''
@@ -63,6 +62,14 @@ from constants import DEPTH_TO_WATER_FT_BGS, DTFORMAT, ST2, TITLE, DEBUG_N_WELLS
 #     cache = diskcache.Cache("/tmp/cache")
 #     background_callback_manager = DiskcacheManager(cache)
 
+from flask_caching import Cache
+
+config = {
+    "DEBUG": True,  # some Flask specific configs
+    "CACHE_TYPE": "FileSystemCache",  # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 300,
+    "CACHE_DIR": '/tmp/cache'
+}
 
 dash_app = Dash(
     __name__,
@@ -72,6 +79,7 @@ dash_app = Dash(
 )
 
 app = dash_app.server
+cache = Cache(app, config=config)
 
 crosswalk = pd.read_csv(
     "https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/pvacd_nm_aquifer.csv"
@@ -223,9 +231,9 @@ def init_app():
         obs = [o for i, o in enumerate(obs) if not i % 3]
 
         scatter = px.line(obs, x="phenomenonTime", y="result", height=350)
-        xs = [o["phenomenonTime"] for o in obs]
-        ys = [o["result"] for o in obs]
-        grouped_hydrograph_data.append(go.Scatter(x=xs, y=ys, name=location["name"]))
+        xs = [o['phenomenonTime'] for o in obs]
+        ys = [o['result'] for o in obs]
+        grouped_hydrograph_data.append(go.Scatter(x=xs, y=ys, name=location['name']))
 
         fobs = obs[:50]
         x = [
@@ -275,10 +283,10 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-        ("ISC Seven Rivers", "isc_seven_rivers"),
-        ("OSE Roswell", "ose_roswell"),
-        ("Healy Collaborative", "healy_collaborative"),
-        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+            ("ISC Seven Rivers", "isc_seven_rivers"),
+            ("OSE Roswell", "ose_roswell"),
+            ("Healy Collaborative", "healy_collaborative"),
+            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -312,19 +320,17 @@ def init_app():
         )
 
     figmap = go.Figure(layout=layout, data=data)
-    grouped_hydrograph = go.Figure(
-        data=grouped_hydrograph_data,
-        layout=dict(
-            margin=dict(t=75, b=50, l=50, r=25),
-            yaxis=yaxis,
-            xaxis=xaxis,
-            paper_bgcolor=chart_bgcolor,
-        ),
-    )
+    grouped_hydrograph = go.Figure(data=grouped_hydrograph_data,
+                                   layout=dict(
+                                       margin=dict(t=75, b=50, l=50, r=25),
+                                       yaxis=yaxis,
+                                       xaxis=xaxis,
+                                       paper_bgcolor=chart_bgcolor,
+                                   ))
     mapcomp = dcc.Graph(id="map", figure=figmap)
-    gchart = dcc.Graph(
-        id="grouped_hydrograph", style=card_style, figure=grouped_hydrograph
-    )
+    gchart = dcc.Graph(id="grouped_hydrograph",
+                       style=card_style,
+                       figure=grouped_hydrograph)
     dash_app.layout = dbc.Container(
         [
             dbc.Row(
@@ -375,31 +381,21 @@ def init_app():
                 ],
             ),
             dbc.Row(
-                children=[
-                    dbc.ButtonGroup(
-                        children=[
-                            dbc.Button(
-                                "Show Hydrographs",
-                                color="primary",
-                                id="toggle_show_hydrographs",
-                                style={"margin": "10px", "width": "40%"},
-                            ),
-                            dbc.Button(
-                                "Show Grouped Hydrograph",
-                                style={"margin": "10px", "width": "40%"},
-                                color="primary",
-                                id="toggle_show_grouped_hydrograph",
-                            ),
-                        ]
-                    )
-                ],
+                children=[dbc.ButtonGroup(children=[dbc.Button("Show Hydrographs", color="primary",
+                                                               id='toggle_show_hydrographs',
+                                                               style={"margin": "10px",
+                                                                      "width": "40%"}
+                                                               ),
+                                                    dbc.Button("Show Grouped Hydrograph",
+                                                               style={"margin": "10px",
+                                                                      "width": "40%"},
+                                                               color='primary',
+                                                               id="toggle_show_grouped_hydrograph")])
+                          ],
             ),
-            dbc.Row(
-                [
-                    html.Div(children=charts, id="igraph_container"),
-                    html.Div(children=gchart, id="ggraph_container"),
-                ],
-            ),
+            dbc.Row([html.Div(children=charts, id='igraph_container'),
+                     html.Div(children=gchart, id='ggraph_container')],
+                    ),
             dbc.Row([html.Footer("Developed By Jake Ross (2022)")]),
         ],
         # fluid=True,
@@ -437,6 +433,64 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
     return data
 
 
+@cache.memoize()
+def get_observations(location_iotid=None, datastream_id=None, limit=1000):
+    if DEBUG_OBS:
+        now = datetime.datetime.now()
+        t0 = now - datetime.timedelta(hours=0)
+        t1 = now - datetime.timedelta(hours=12)
+        t2 = now - datetime.timedelta(hours=24)
+        l = {"name": "Foo"}
+        obs = [
+            {
+                "phenomenonTime": t0.strftime(DTFORMAT),
+                "result": 0,
+            },
+            {
+                "phenomenonTime": t1.strftime(DTFORMAT),
+                "result": 0,
+            },
+            {
+                "phenomenonTime": t2.strftime(DTFORMAT),
+                "result": 0,
+            },
+        ]
+        return l, obs
+
+    if datastream_id is None:
+        url = f"{ST2}/Locations({location_iotid})?$expand=Things/Datastreams"
+        resp = requests.get(url)
+
+        if resp.status_code == 200:
+            location = resp.json()
+            ds = location["Things"][0]["Datastreams"][0]
+            datastream_id = ds["@iot.id"]
+    else:
+        location = None
+
+    if DEBUG_LIMIT_OBS:
+        limit = DEBUG_LIMIT_OBS
+
+    url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime," \
+          f"result&$top={limit}"
+
+    resp = requests.get(url)
+    if resp.status_code == 200:
+        j = resp.json()
+        obs = j["value"]
+        nextlink = j.get("@iot.nextLink")
+
+        while len(obs) < limit and nextlink:
+            resp = requests.get(nextlink)
+            if resp.status_code == 200:
+                j = resp.json()
+                obs.extend(j["value"])
+                nextlink = j.get("@iot.nextLink")
+
+        return location, obs
+
+
+@cache.memoize()
 def get_nm_aquifer_obs(iotid, data=None):
     try:
         aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
@@ -456,30 +510,29 @@ def get_nm_aquifer_obs(iotid, data=None):
                 )
                 data.extend(vs)
 
-        nm_aquifer_location, manual_obs = get_observations(location_iotid=aiotid)
+        nm_aquifer_location, manual_obs = get_observations(
+            location_iotid=aiotid
+        )
         return manual_obs
 
 
-@dash_app.callback(
-    [
-        Output("igraph_container", "style"),
-        Output("ggraph_container", "style"),
-    ],
-    # [Input("hydrograph_radio", "value")]
-    [
-        Input("toggle_show_hydrographs", "n_clicks"),
-        Input("toggle_show_grouped_hydrograph", "n_clicks"),
-    ],
-)
+@dash_app.callback([Output("igraph_container", "style"),
+                    Output("ggraph_container", "style"),
+                    ],
+                   # [Input("hydrograph_radio", "value")]
+                   [Input("toggle_show_hydrographs", "n_clicks"),
+                    Input("toggle_show_grouped_hydrograph", "n_clicks"),
+                    ]
+                   )
 def handle_toggle_grouping(n, n2):
     gstyle = {"display": "none"}
     istyle = {"display": "none"}
 
-    if ctx.triggered_id == "toggle_show_hydrographs":
+    if ctx.triggered_id == 'toggle_show_hydrographs':
         gstyle = {"display": "none"}
         istyle = {"display": "block"}
 
-    if ctx.triggered_id == "toggle_show_grouped_hydrograph":
+    if ctx.triggered_id == 'toggle_show_grouped_hydrograph':
         istyle = {"display": "none"}
         gstyle = {"display": "block"}
 
