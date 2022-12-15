@@ -223,9 +223,9 @@ def init_app():
         obs = [o for i, o in enumerate(obs) if not i % 3]
 
         scatter = px.line(obs, x="phenomenonTime", y="result", height=350)
-        xs = [o['phenomenonTime'] for o in obs]
-        ys = [o['result'] for o in obs]
-        grouped_hydrograph_data.append(go.Scatter(x=xs, y=ys, name=location['name']))
+        xs = [o["phenomenonTime"] for o in obs]
+        ys = [o["result"] for o in obs]
+        grouped_hydrograph_data.append(go.Scatter(x=xs, y=ys, name=location["name"]))
 
         fobs = obs[:50]
         x = [
@@ -275,10 +275,10 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-            ("ISC Seven Rivers", "isc_seven_rivers"),
-            ("OSE Roswell", "ose_roswell"),
-            ("Healy Collaborative", "healy_collaborative"),
-            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+        ("ISC Seven Rivers", "isc_seven_rivers"),
+        ("OSE Roswell", "ose_roswell"),
+        ("Healy Collaborative", "healy_collaborative"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -312,16 +312,19 @@ def init_app():
         )
 
     figmap = go.Figure(layout=layout, data=data)
-    grouped_hydrograph = go.Figure(data=grouped_hydrograph_data, layout=dict(
-        margin=dict(t=75, b=50, l=50, r=25),
-        yaxis=yaxis,
-        xaxis=xaxis,
-        paper_bgcolor=chart_bgcolor,
-    ))
+    grouped_hydrograph = go.Figure(
+        data=grouped_hydrograph_data,
+        layout=dict(
+            margin=dict(t=75, b=50, l=50, r=25),
+            yaxis=yaxis,
+            xaxis=xaxis,
+            paper_bgcolor=chart_bgcolor,
+        ),
+    )
     mapcomp = dcc.Graph(id="map", figure=figmap)
-    gchart = dcc.Graph(id="grouped_hydrograph",
-                       style=card_style,
-                       figure=grouped_hydrograph)
+    gchart = dcc.Graph(
+        id="grouped_hydrograph", style=card_style, figure=grouped_hydrograph
+    )
     dash_app.layout = dbc.Container(
         [
             dbc.Row(
@@ -372,21 +375,31 @@ def init_app():
                 ],
             ),
             dbc.Row(
-                children=[dbc.ButtonGroup(children=[dbc.Button("Show Hydrographs", color="primary",
-                                                               id='toggle_show_hydrographs',
-                                                               style={"margin": "10px",
-                                                                      "width": "40%"}
-                                                               ),
-                                                    dbc.Button("Show Grouped Hydrograph",
-                                                               style={"margin": "10px",
-                                                                      "width": "40%"},
-                                                               color='primary',
-                                                               id="toggle_show_grouped_hydrograph")])
-                          ],
+                children=[
+                    dbc.ButtonGroup(
+                        children=[
+                            dbc.Button(
+                                "Show Hydrographs",
+                                color="primary",
+                                id="toggle_show_hydrographs",
+                                style={"margin": "10px", "width": "40%"},
+                            ),
+                            dbc.Button(
+                                "Show Grouped Hydrograph",
+                                style={"margin": "10px", "width": "40%"},
+                                color="primary",
+                                id="toggle_show_grouped_hydrograph",
+                            ),
+                        ]
+                    )
+                ],
             ),
-            dbc.Row([html.Div(children=charts, id='igraph_container'),
-                     html.Div(children=gchart, id='ggraph_container')],
-                    ),
+            dbc.Row(
+                [
+                    html.Div(children=charts, id="igraph_container"),
+                    html.Div(children=gchart, id="ggraph_container"),
+                ],
+            ),
             dbc.Row([html.Footer("Developed By Jake Ross (2022)")]),
         ],
         # fluid=True,
@@ -443,29 +456,30 @@ def get_nm_aquifer_obs(iotid, data=None):
                 )
                 data.extend(vs)
 
-        nm_aquifer_location, manual_obs = get_observations(
-            location_iotid=aiotid
-        )
+        nm_aquifer_location, manual_obs = get_observations(location_iotid=aiotid)
         return manual_obs
 
 
-@dash_app.callback([Output("igraph_container", "style"),
-                    Output("ggraph_container", "style"),
-                    ],
-                   # [Input("hydrograph_radio", "value")]
-                   [Input("toggle_show_hydrographs", "n_clicks"),
-                    Input("toggle_show_grouped_hydrograph", "n_clicks"),
-                    ]
-                   )
+@dash_app.callback(
+    [
+        Output("igraph_container", "style"),
+        Output("ggraph_container", "style"),
+    ],
+    # [Input("hydrograph_radio", "value")]
+    [
+        Input("toggle_show_hydrographs", "n_clicks"),
+        Input("toggle_show_grouped_hydrograph", "n_clicks"),
+    ],
+)
 def handle_toggle_grouping(n, n2):
     gstyle = {"display": "none"}
     istyle = {"display": "none"}
 
-    if ctx.triggered_id == 'toggle_show_hydrographs':
+    if ctx.triggered_id == "toggle_show_hydrographs":
         gstyle = {"display": "none"}
         istyle = {"display": "block"}
 
-    if ctx.triggered_id == 'toggle_show_grouped_hydrograph':
+    if ctx.triggered_id == "toggle_show_grouped_hydrograph":
         istyle = {"display": "none"}
         gstyle = {"display": "block"}
 

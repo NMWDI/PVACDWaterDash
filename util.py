@@ -159,8 +159,10 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
     if DEBUG_LIMIT_OBS:
         limit = DEBUG_LIMIT_OBS
 
-    url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime," \
-          f"result&$top={limit}"
+    url = (
+        f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime,"
+        f"result&$top={limit}"
+    )
 
     resp = requests.get(url)
     if resp.status_code == 200:
