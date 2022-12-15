@@ -21,5 +21,6 @@ TITLE = "PVACD Groundwater Dashboard"
 
 DEBUG_OBS = True
 DEBUG_OBS = False
-
+DEBUG_LIMIT_OBS = 0
+DEBUG_N_WELLS = 0
 # ============= EOF =============================================

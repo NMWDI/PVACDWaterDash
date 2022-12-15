@@ -18,7 +18,7 @@ import datetime
 
 import requests
 
-from constants import ST2, DEBUG_OBS, DTFORMAT
+from constants import ST2, DEBUG_OBS, DTFORMAT, DEBUG_LIMIT_OBS
 
 
 def floatfmt(t, n=2):
@@ -156,13 +156,18 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
     else:
         location = None
 
-    url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime,result"
+    if DEBUG_LIMIT_OBS:
+        limit = DEBUG_LIMIT_OBS
+
+    url = f"{ST2}/Datastreams({datastream_id})/Observations?$orderby=phenomenonTime desc&$select=phenomenonTime," \
+          f"result&$top={limit}"
 
     resp = requests.get(url)
     if resp.status_code == 200:
         j = resp.json()
         obs = j["value"]
         nextlink = j.get("@iot.nextLink")
+
         while len(obs) < limit and nextlink:
             resp = requests.get(nextlink)
             if resp.status_code == 200:
