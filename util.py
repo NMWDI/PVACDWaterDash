@@ -122,6 +122,4 @@ def get_usgs(location=None, siteid=None):
         return resp.json()
 
 
-
-
 # ============= EOF =============================================
