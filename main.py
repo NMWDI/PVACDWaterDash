@@ -26,7 +26,17 @@ import datetime as datetime
 import requests as requests
 from numpy import polyfit, linspace, polyval
 
-from dash import Dash, html, dcc, Output, Input, DiskcacheManager, CeleryManager, ctx, State
+from dash import (
+    Dash,
+    html,
+    dcc,
+    Output,
+    Input,
+    DiskcacheManager,
+    CeleryManager,
+    ctx,
+    State,
+)
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
@@ -185,18 +195,19 @@ def init_app():
     )
     summarytable = DataTable(
         id="summarytable",
-        tooltip_header={"last_measurement": f"Last depth to water (long term average depth to water for "
-                                            f"{now_month_name}). \nIf current value is > than the longer average "
-                                            f"for "
-                                            f"{now_month_name} highlight row in red"
-                        },
-        css=[{
-            'selector': '.dash-table-tooltip',
-            'rule': 'background-color: grey; font-family: monospace; color: white;'
-                    'width: fit-content; max-width: 440px; min-width: unset; font-size: 10px'
+        tooltip_header={
+            "last_measurement": f"Last depth to water (long term average depth to water for "
+            f"{now_month_name}). \nIf current value is > than the longer average "
+            f"for "
+            f"{now_month_name} highlight row in red"
         },
-            {'selector': '.dash-tooltip',
-             'rule': 'max_width: 500px'}
+        css=[
+            {
+                "selector": ".dash-table-tooltip",
+                "rule": "background-color: grey; font-family: monospace; color: white;"
+                "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px",
+            },
+            {"selector": ".dash-tooltip", "rule": "max_width: 500px"},
         ],
         tooltip_duration=None,
         style_cell={"textAlign": "left"},
@@ -230,7 +241,7 @@ def init_app():
             {
                 "if": {
                     "column_id": "last_measurement",
-                    "filter_query": "{month_average_value}<0"
+                    "filter_query": "{month_average_value}<0",
                 },
                 "backgroundColor": "red",
                 "color": "white",
@@ -238,11 +249,11 @@ def init_app():
             {
                 "if": {
                     "column_id": "last_measurement",
-                    "filter_query": "{month_average_value}>0"
+                    "filter_query": "{month_average_value}>0",
                 },
                 "backgroundColor": "green",
                 "color": "white",
-            }
+            },
         ],
         style_table={
             # "padding_top": "10px",
@@ -313,7 +324,7 @@ def init_app():
                 name = name.split(level)[0].strip()
                 break
 
-        month_average = stat['month_average']
+        month_average = stat["month_average"]
 
         srow = {
             "location": name,
@@ -328,10 +339,10 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-            ("ISC Seven Rivers", "isc_seven_rivers"),
-            ("OSE Roswell", "ose_roswell"),
-            ("Healy Collaborative", "healy_collaborative"),
-            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+        ("ISC Seven Rivers", "isc_seven_rivers"),
+        ("OSE Roswell", "ose_roswell"),
+        ("Healy Collaborative", "healy_collaborative"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -465,16 +476,16 @@ def init_app():
 
 now = datetime.datetime.now()
 now_month = now.month
-now_month_name = now.strftime('%B')
+now_month_name = now.strftime("%B")
 
 
 def calculate_stats(obs):
-    obs = [(todatetime(o), o['result']) for o in obs]
+    obs = [(todatetime(o), o["result"]) for o in obs]
     obs = [o for o in obs if o[0].month == now_month]
     ys = [o[1] for o in obs]
     month_average = sum(ys) / len(ys)
 
-    return {'month_average': month_average}
+    return {"month_average": month_average}
 
 
 def make_additional_selection(location, thing, formation=None, formation_code=None):
@@ -592,13 +603,13 @@ def get_nm_aquifer_obs(iotid, data=None):
         Output("igraph_container", "style"),
         Output("ggraph_container", "style"),
         Output("toggle_show_hydrographs", "children"),
-        Output("toggle_show_grouped_hydrograph", "children")
+        Output("toggle_show_grouped_hydrograph", "children"),
     ],
     [
         Input("toggle_show_hydrographs", "n_clicks"),
         Input("toggle_show_grouped_hydrograph", "n_clicks"),
-        State('toggle_show_hydrographs', 'children'),
-        State('toggle_show_grouped_hydrograph', 'children')
+        State("toggle_show_hydrographs", "children"),
+        State("toggle_show_grouped_hydrograph", "children"),
     ],
 )
 def handle_toggle_grouping(n, n2, tsh, tsgh):
@@ -610,17 +621,17 @@ def handle_toggle_grouping(n, n2, tsh, tsgh):
     if ctx.triggered_id == "toggle_show_hydrographs":
         gstyle = {"display": "none"}
         istyle = {"display": "none"}
-        istate = 'Show Hydrographs'
-        if tsh == 'Show Hydrographs':
+        istate = "Show Hydrographs"
+        if tsh == "Show Hydrographs":
             istyle = {"display": "block"}
-            istate = 'Hide Hydrographs'
+            istate = "Hide Hydrographs"
 
     if ctx.triggered_id == "toggle_show_grouped_hydrograph":
         istyle = {"display": "none"}
         gstyle = {"display": "none"}
-        if tsgh == 'Show Grouped Hydrograph':
+        if tsgh == "Show Grouped Hydrograph":
             gstyle = {"display": "block"}
-            gstate = 'Hide Grouped Hydrograph'
+            gstate = "Hide Grouped Hydrograph"
 
     return istyle, gstyle, istate, gstate
 
