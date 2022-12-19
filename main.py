@@ -147,11 +147,12 @@ rcol_style = card_style.copy()
 lcol_style["marginRight"] = "5px"
 # rcol_style["marginLeft"] = "5px"
 
-header_style = {"font-family": "verdana",
-                "font-weight": "bold",
-                "fontSize": "10px",
-                # "height": "50px"
-                }
+header_style = {
+    "font-family": "verdana",
+    "font-weight": "bold",
+    "fontSize": "10px",
+    # "height": "50px"
+}
 data_style = {"fontSize": "10px", "font-family": "verdana"}
 BGCOLOR = "#d3d3d3"
 COLOR_MAP = {
@@ -214,30 +215,30 @@ subbanner_row = dbc.Row(
 )
 
 layout = go.Layout(
-        mapbox_style="open-street-map",
-        mapbox_layers=[
-            {
-                "below": "traces",
-                "sourcetype": "raster",
-                "sourceattribution": "United States Geological Survey",
-                "source": [
-                    "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}"
-                ],
-            }
-        ],
-        mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
-        margin={"r": 10, "t": 30, "l": 10, "b": 20},
-        height=450,
-        paper_bgcolor=chart_bgcolor,
-        legend=dict(
-            yanchor="top",
-            y=0.99,
-            xanchor="left",
-            x=0.66,
-            bgcolor="#899DBE",
-            borderwidth=3,
-        ),
-    )
+    mapbox_style="open-street-map",
+    mapbox_layers=[
+        {
+            "below": "traces",
+            "sourcetype": "raster",
+            "sourceattribution": "United States Geological Survey",
+            "source": [
+                "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}"
+            ],
+        }
+    ],
+    mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
+    margin={"r": 10, "t": 30, "l": 10, "b": 20},
+    height=450,
+    paper_bgcolor=chart_bgcolor,
+    legend=dict(
+        yanchor="top",
+        y=0.99,
+        xanchor="left",
+        x=0.66,
+        bgcolor="#899DBE",
+        borderwidth=3,
+    ),
+)
 
 tablecomp = DataTable(
     id="selected_table",
@@ -253,7 +254,7 @@ summarytable = DataTable(
     id="summarytable",
     tooltip_header={
         "last_measurement": f"Last depth to water. If current value is > than the long term average for"
-                            f" {now_month_name} highlight row in red",
+        f" {now_month_name} highlight row in red",
         "month_average_value": f"Average depth to water (ft) for {now_month_name}",
         "trend": "Depth to water trend. Calculated by performing a linear regression "
         "on the last ~25-50 days depending on sampling frequency",
@@ -273,8 +274,8 @@ summarytable = DataTable(
     tooltip_duration=None,
     style_cell={"textAlign": "left"},
     columns=[
-        {"name": ["Location",""], "id": "location"},
-        {"name": ["Depth to Water",  "ft"], "id": "last_measurement"},
+        {"name": ["Location", ""], "id": "location"},
+        {"name": ["Depth to Water", "ft"], "id": "last_measurement"},
         {"name": ["Avg. Depth to Water", "ft"], "id": "month_average_value"},
         {"name": ["Measurement Time", ""], "id": "last_time"},
         {"name": ["Measurement Interval", "hrs"], "id": "measurement_interval"},
@@ -325,7 +326,6 @@ summarytable = DataTable(
 
 
 def init_app():
-
 
     hydrocomp = dcc.Graph(id="hydrograph")
 
@@ -396,7 +396,7 @@ def init_app():
             "location": name,
             "trend": "Falling" if trend > 0 else "Rising",
             "trendvalue": trend,
-            "month_average_value_diff": month_average-lm,
+            "month_average_value_diff": month_average - lm,
             "month_average_value": f"{month_average:0.2f}",
             "last_measurement": f"{lm:0.2f}",
             "measurement_interval": floatfmt(interval / 3600.0, 1),

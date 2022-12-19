@@ -100,13 +100,13 @@ def make_customdata(locations, tag):
         customdata = []
         if code:
             name = get_formation_name(code)
-            customdata.append(f'Formation: {name}')
+            customdata.append(f"Formation: {name}")
 
-        welldepth = l['Things'][0]["properties"].get("WellDepth")
+        welldepth = l["Things"][0]["properties"].get("WellDepth")
         if welldepth:
-            customdata.append(f'Well Depth: {welldepth} (ft)')
+            customdata.append(f"Well Depth: {welldepth} (ft)")
 
-        customdata = '<br>'.join(customdata)
+        customdata = "<br>".join(customdata)
         fs.append(customdata)
 
     return fs
