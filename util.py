@@ -51,7 +51,8 @@ def get_formation_name(code):
     fs = []
     for gf in code.split("/"):
         gfname = get(gf)
-        fs.append(f"{gfname} ({gf})")
+        # fs.append(f"{gfname} ({gf})")
+        fs.append(gfname)
 
     formation = "/".join(fs)
     return formation
@@ -88,18 +89,25 @@ def extract_usgs_timeseries(obj):
     # return xs, ys
 
 
-def make_formations(locations, tag):
+def make_customdata(locations, tag):
     fs = []
     for l in locations:
         if tag == "pvacd_hydrovu":
             code = "313SADR"
         else:
             code = l["Things"][0]["properties"].get("GeologicFormation")
-        name = ""
+
+        customdata = []
         if code:
             name = get_formation_name(code)
+            customdata.append(f'Formation: {name}')
 
-        fs.append(name)
+        welldepth = l['Things'][0]["properties"].get("WellDepth")
+        if welldepth:
+            customdata.append(f'Well Depth: {welldepth} (ft)')
+
+        customdata = '<br>'.join(customdata)
+        fs.append(customdata)
 
     return fs
 

@@ -48,7 +48,7 @@ from util import (
     get_usgs,
     extract_usgs_timeseries,
     todatetime,
-    make_formations,
+    make_customdata,
 )
 from constants import (
     DEPTH_TO_WATER_FT_BGS,
@@ -101,14 +101,15 @@ dash_app = Dash(
 app = dash_app.server
 cache = Cache(app, config=config)
 
+now = datetime.datetime.now()
+now_month = now.month
+now_month_name = now.strftime("%B")
+
 crosswalk = pd.read_csv(
     "https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/pvacd_nm_aquifer.csv"
 )
 if DEBUG_N_WELLS:
     crosswalk = crosswalk[:DEBUG_N_WELLS]
-# active_wells = pd.read_csv(
-#     'https://raw.githubusercontent.com/NMWDI/HydroViewer/master/static/active_monitoring_wells.csv')
-
 
 yaxis = dict(autorange="reversed", title=DEPTH_TO_WATER_FT_BGS, fixedrange=False)
 
@@ -146,7 +147,11 @@ rcol_style = card_style.copy()
 lcol_style["marginRight"] = "5px"
 # rcol_style["marginLeft"] = "5px"
 
-header_style = {"font-family": "verdana", "font-weight": "bold", "fontSize": "10px"}
+header_style = {"font-family": "verdana",
+                "font-weight": "bold",
+                "fontSize": "10px",
+                # "height": "50px"
+                }
 data_style = {"fontSize": "10px", "font-family": "verdana"}
 BGCOLOR = "#d3d3d3"
 COLOR_MAP = {
@@ -208,9 +213,7 @@ subbanner_row = dbc.Row(
     ]
 )
 
-
-def init_app():
-    layout = go.Layout(
+layout = go.Layout(
         mapbox_style="open-street-map",
         mapbox_layers=[
             {
@@ -224,7 +227,7 @@ def init_app():
         ],
         mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
         margin={"r": 10, "t": 30, "l": 10, "b": 20},
-        height=400,
+        height=450,
         paper_bgcolor=chart_bgcolor,
         legend=dict(
             yanchor="top",
@@ -236,88 +239,93 @@ def init_app():
         ),
     )
 
-    tablecomp = DataTable(
-        id="selected_table",
-        style_cell={"textAlign": "left"},
-        columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
-        style_as_list_view=True,
-        style_header=header_style,
-        style_data=data_style,
-        style_table={"height": "300px", "overflowY": "auto"},
-    )
-    summarytable = DataTable(
-        id="summarytable",
-        tooltip_header={
-            "last_measurement": f"Last depth to water (long term average depth to water for "
-            f"{now_month_name}). \nIf current value is > than the longer average "
-            f"for "
-            f"{now_month_name} highlight row in red",
-            "trend": "Depth to water trend. Calculated by performing a linear regression "
-            "on the last ~25-50 days depending on sampling frequency",
+tablecomp = DataTable(
+    id="selected_table",
+    style_cell={"textAlign": "left"},
+    columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
+    style_as_list_view=True,
+    style_header=header_style,
+    style_data=data_style,
+    style_table={"height": "300px", "overflowY": "auto"},
+)
+
+summarytable = DataTable(
+    id="summarytable",
+    tooltip_header={
+        "last_measurement": f"Last depth to water. If current value is > than the long term average for"
+                            f" {now_month_name} highlight row in red",
+        "month_average_value": f"Average depth to water (ft) for {now_month_name}",
+        "trend": "Depth to water trend. Calculated by performing a linear regression "
+        "on the last ~25-50 days depending on sampling frequency",
+    },
+    css=[
+        {
+            "selector": ".dash-table-tooltip",
+            "rule": "background-color: grey; font-family: verdana; color: white;"
+            "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
+            "border-radius: 5px",
         },
-        css=[
-            {
-                "selector": ".dash-table-tooltip",
-                "rule": "background-color: grey; font-family: verdana; color: white;"
-                "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
-                "border-radius: 5px",
-            },
-            {
-                "selector": ".dash-tooltip",
-                "rule": "max_width: 500px; border-radius: 5px",
-            },
-        ],
-        tooltip_duration=None,
-        style_cell={"textAlign": "left"},
-        columns=[
-            {"name": "Location", "id": "location"},
-            {"name": "Last Depth to Water (ft)", "id": "last_measurement"},
-            {"name": "Measurement Time", "id": "last_time"},
-            {"name": "Measurement Interval (hrs)", "id": "measurement_interval"},
-            {"name": "Trend", "id": "trend"},
-        ],
-        style_header=header_style,
-        style_as_list_view=True,
-        style_data=data_style,
-        style_data_conditional=[
-            {
-                "if": {
-                    "column_id": "trend",
-                    "filter_query": "{trendvalue} > 0",
-                },
-                "backgroundColor": "red",
-                "color": "white",
-            },
-            {
-                "if": {
-                    "column_id": "trend",
-                    "filter_query": "{trendvalue} < 0",
-                },
-                "backgroundColor": "green",
-                "color": "white",
-            },
-            {
-                "if": {
-                    "column_id": "last_measurement",
-                    "filter_query": "{month_average_value}<0",
-                },
-                "backgroundColor": "red",
-                "color": "white",
-            },
-            {
-                "if": {
-                    "column_id": "last_measurement",
-                    "filter_query": "{month_average_value}>0",
-                },
-                "backgroundColor": "green",
-                "color": "white",
-            },
-        ],
-        style_table={
-            # "padding_top": "10px",
-            "overflowY": "auto",
+        {
+            "selector": ".dash-tooltip",
+            "rule": "max_width: 500px; border-radius: 5px",
         },
-    )
+    ],
+    tooltip_duration=None,
+    style_cell={"textAlign": "left"},
+    columns=[
+        {"name": ["Location",""], "id": "location"},
+        {"name": ["Depth to Water",  "ft"], "id": "last_measurement"},
+        {"name": ["Avg. Depth to Water", "ft"], "id": "month_average_value"},
+        {"name": ["Measurement Time", ""], "id": "last_time"},
+        {"name": ["Measurement Interval", "hrs"], "id": "measurement_interval"},
+        {"name": ["Trend", ""], "id": "trend"},
+    ],
+    style_header=header_style,
+    style_as_list_view=True,
+    style_data=data_style,
+    style_data_conditional=[
+        {
+            "if": {
+                "column_id": "trend",
+                "filter_query": "{trendvalue} > 0",
+            },
+            "backgroundColor": "red",
+            "color": "white",
+        },
+        {
+            "if": {
+                "column_id": "trend",
+                "filter_query": "{trendvalue} < 0",
+            },
+            "backgroundColor": "green",
+            "color": "white",
+        },
+        {
+            "if": {
+                "column_id": "last_measurement",
+                "filter_query": "{month_average_value_diff}<0",
+            },
+            "backgroundColor": "red",
+            "color": "white",
+        },
+        {
+            "if": {
+                "column_id": "last_measurement",
+                "filter_query": "{month_average_value_diff}>0",
+            },
+            "backgroundColor": "green",
+            "color": "white",
+        },
+    ],
+    style_table={
+        # "padding_top": "10px",
+        "overflowY": "auto",
+    },
+)
+
+
+def init_app():
+
 
     hydrocomp = dcc.Graph(id="hydrograph")
 
@@ -388,8 +396,9 @@ def init_app():
             "location": name,
             "trend": "Falling" if trend > 0 else "Rising",
             "trendvalue": trend,
-            "month_average_value": month_average - lm,
-            "last_measurement": f"{lm:0.2f} ({month_average:0.2f})",
+            "month_average_value_diff": month_average-lm,
+            "month_average_value": f"{month_average:0.2f}",
+            "last_measurement": f"{lm:0.2f}",
             "measurement_interval": floatfmt(interval / 3600.0, 1),
             "last_time": todatetime(lt).strftime("%H:%M %m/%d/%y"),
         }
@@ -424,7 +433,7 @@ def init_app():
                 lon=lons,
                 text=ids,
                 name=a,
-                customdata=make_formations(locations, tag),
+                customdata=make_customdata(locations, tag),
                 hovertemplate="<b>%{text}</b><br>%{customdata}",
                 marker=dict(
                     size=size,
@@ -511,11 +520,6 @@ def init_app():
             "backgroundColor": BGCOLOR,
         },
     )
-
-
-now = datetime.datetime.now()
-now_month = now.month
-now_month_name = now.strftime("%B")
 
 
 def calculate_stats(obs):
