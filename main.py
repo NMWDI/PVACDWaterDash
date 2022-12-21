@@ -57,7 +57,12 @@ from constants import (
     TITLE,
     DEBUG_N_WELLS,
     DEBUG_OBS,
-    DEBUG_LIMIT_OBS, USGS_BM, ESRI_BM, MACROSTRAT_BM, OPENTOPO_BM, OSM_BM,
+    DEBUG_LIMIT_OBS,
+    USGS_BM,
+    ESRI_BM,
+    MACROSTRAT_BM,
+    OPENTOPO_BM,
+    OSM_BM,
 )
 
 # from celery import Celery
@@ -246,17 +251,17 @@ summarytable = DataTable(
     id="summarytable",
     tooltip_header={
         "last_measurement": f"Last depth to water. If current value is > than the long term average for"
-                            f" {now_month_name} highlight row in red",
+        f" {now_month_name} highlight row in red",
         "month_average_value": f"Average depth to water (ft) for for all years with water levels in {now_month_name}.",
         "trend": "Depth to water trend. Calculated by performing a linear regression "
-                 "on the last ~25-50 days depending on sampling frequency",
+        "on the last ~25-50 days depending on sampling frequency",
     },
     css=[
         {
             "selector": ".dash-table-tooltip",
             "rule": "background-color: grey; font-family: verdana; color: white;"
-                    "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
-                    "border-radius: 5px",
+            "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
+            "border-radius: 5px",
         },
         {
             "selector": ".dash-tooltip",
@@ -397,10 +402,10 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-            # ("ISC Seven Rivers", "isc_seven_rivers"),
-            # ("OSE Roswell", "ose_roswell"),
-            ("Groundwater Wells", "locations"),
-            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+        # ("ISC Seven Rivers", "isc_seven_rivers"),
+        # ("OSE Roswell", "ose_roswell"),
+        ("Groundwater Wells", "locations"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
@@ -459,41 +464,61 @@ def init_app():
                         style=lcol_style,
                         width=6,
                     ),
-                    dbc.Col(html.Div([dbc.DropdownMenu(
-                        label="Base Map",
-                        size='sm',
-                        color='secondary',
-                        style={'margin-top': '5px'},
-                        id='basemap_select',
-                        children=[
-                            dbc.DropdownMenuItem("USGS Base Map", id='usgs_basemap_select'),
-                            dbc.DropdownMenuItem("Macrostrat", id='macrostrat_basemap_select'),
-                            dbc.DropdownMenuItem("ESRI World Imagery", id='esri_basemap_select'),
-                            dbc.DropdownMenuItem("Open Topo", id='opentopo_basemap_select'),
-                            # dbc.DropdownMenuItem("Open Street Map", id='osm_basemap_select'),
-                            # dbc.DropdownMenuItem("Item 3"),
-                        ],
-                    ), mapcomp]), style=rcol_style),
+                    dbc.Col(
+                        html.Div(
+                            [
+                                dbc.DropdownMenu(
+                                    label="Base Map",
+                                    size="sm",
+                                    color="secondary",
+                                    style={"margin-top": "5px"},
+                                    id="basemap_select",
+                                    children=[
+                                        dbc.DropdownMenuItem(
+                                            "USGS Base Map", id="usgs_basemap_select"
+                                        ),
+                                        dbc.DropdownMenuItem(
+                                            "Macrostrat", id="macrostrat_basemap_select"
+                                        ),
+                                        dbc.DropdownMenuItem(
+                                            "ESRI World Imagery",
+                                            id="esri_basemap_select",
+                                        ),
+                                        dbc.DropdownMenuItem(
+                                            "Open Topo", id="opentopo_basemap_select"
+                                        ),
+                                        # dbc.DropdownMenuItem("Open Street Map", id='osm_basemap_select'),
+                                        # dbc.DropdownMenuItem("Item 3"),
+                                    ],
+                                ),
+                                mapcomp,
+                            ]
+                        ),
+                        style=rcol_style,
+                    ),
                 ]
             ),
             dbc.Row(
                 [
                     dbc.Col([html.H3("Map Selection"), tablecomp], style=lcol_style),
                     dbc.Col(
-                        [dbc.Button("Download Selected",
-                                    style={"margin": "5px"},
-                                    color="secondary",
-                                    size='sm',
-                                    title="Download all the water levels for the selected location"
-                                          " as a single csv file",
-                                    id="download_selected_btn"),
-                         dcc.Download(id="download_selected_csv"),
-                         dbc.Spinner(
-                             [html.Div(id="loading-output"), hydrocomp],
-                             # fullscreen=True,
-                             color="primary",
-                         ),
-                         ],
+                        [
+                            dbc.Button(
+                                "Download Selected",
+                                style={"margin": "5px"},
+                                color="secondary",
+                                size="sm",
+                                title="Download all the water levels for the selected location"
+                                " as a single csv file",
+                                id="download_selected_btn",
+                            ),
+                            dcc.Download(id="download_selected_csv"),
+                            dbc.Spinner(
+                                [html.Div(id="loading-output"), hydrocomp],
+                                # fullscreen=True,
+                                color="primary",
+                            ),
+                        ],
                         style=rcol_style,
                     ),
                 ],
@@ -514,13 +539,15 @@ def init_app():
                                 color="primary",
                                 id="toggle_show_grouped_hydrograph",
                             ),
-                            dbc.Button("Download Monitoring Wells",
-                                       style={"margin": "10px", "width": "40%"},
-                                       color="primary",
-                                       title="Download all the water levels for all the monitoring"
-                                             " wells as a single csv file",
-                                       id="download_monitor_wells_btn"),
-                            dcc.Download(id="download-csv")
+                            dbc.Button(
+                                "Download Monitoring Wells",
+                                style={"margin": "10px", "width": "40%"},
+                                color="primary",
+                                title="Download all the water levels for all the monitoring"
+                                " wells as a single csv file",
+                                id="download_monitor_wells_btn",
+                            ),
+                            dcc.Download(id="download-csv"),
                         ]
                     )
                 ],
@@ -531,8 +558,14 @@ def init_app():
                     html.Div(children=gchart, id="ggraph_container"),
                 ],
             ),
-            dbc.Row([html.Footer("Developed By Jake Ross (2022). "
-                                 "Assembled with data from NMBGMR, OSE, USGS, PVACD and ISC")]),
+            dbc.Row(
+                [
+                    html.Footer(
+                        "Developed By Jake Ross (2022). "
+                        "Assembled with data from NMBGMR, OSE, USGS, PVACD and ISC"
+                    )
+                ]
+            ),
         ],
         # fluid=True,
         # className="container-fluid",
@@ -661,63 +694,76 @@ def get_nm_aquifer_obs(iotid, data=None):
         return manual_obs
 
 
-@dash_app.callback(Output("map", "figure"),
-                   [Input("usgs_basemap_select", "n_clicks"),
-                    Input("macrostrat_basemap_select", "n_clicks"),
-                    Input("esri_basemap_select", "n_clicks"),
-                    Input("opentopo_basemap_select", "n_clicks"),
-                    # Input("osm_basemap_select", "n_clicks"),
-                    State("map", "figure")],
-                   prevent_initial_call=True)
+@dash_app.callback(
+    Output("map", "figure"),
+    [
+        Input("usgs_basemap_select", "n_clicks"),
+        Input("macrostrat_basemap_select", "n_clicks"),
+        Input("esri_basemap_select", "n_clicks"),
+        Input("opentopo_basemap_select", "n_clicks"),
+        # Input("osm_basemap_select", "n_clicks"),
+        State("map", "figure"),
+    ],
+    prevent_initial_call=True,
+)
 def handle_basemap_select(a, b, c, d, fig):
     # print('asdf', a, b)
-    if ctx.triggered_id == 'usgs_basemap_select':
+    if ctx.triggered_id == "usgs_basemap_select":
         l = USGS_BM
-    elif ctx.triggered_id == 'macrostrat_basemap_select':
+    elif ctx.triggered_id == "macrostrat_basemap_select":
         l = MACROSTRAT_BM
-    elif ctx.triggered_id == 'esri_basemap_select':
+    elif ctx.triggered_id == "esri_basemap_select":
         l = ESRI_BM
-    elif ctx.triggered_id == 'opentopo_basemap_select':
+    elif ctx.triggered_id == "opentopo_basemap_select":
         l = OPENTOPO_BM
     # elif ctx.triggered_id == 'osm_basemap_select':
     #     l = OSM_BM
 
     # print(ctx.triggered_id, l)
     if l:
-        fig['layout']['mapbox']["layers"] = [l, ]
+        fig["layout"]["mapbox"]["layers"] = [
+            l,
+        ]
     return fig
 
 
-@dash_app.callback(Output("download_selected_csv", "data"),
-                   [Input("download_selected_btn", "n_clicks"),
-                    Input("hydrograph", "figure")],
-                   prevent_initial_call=True)
+@dash_app.callback(
+    Output("download_selected_csv", "data"),
+    [Input("download_selected_btn", "n_clicks"), Input("hydrograph", "figure")],
+    prevent_initial_call=True,
+)
 def handle_download_selected(n, fig):
-    if ctx.triggered_id == 'download_selected_btn':
+    if ctx.triggered_id == "download_selected_btn":
         return make_fig_csv(fig)
 
 
-@dash_app.callback(Output("download-csv", "data"),
-                   [Input("download_monitor_wells_btn", "n_clicks"),
-                    Input("grouped_hydrograph", "figure")],
-                   prevent_initial_call=True)
+@dash_app.callback(
+    Output("download-csv", "data"),
+    [
+        Input("download_monitor_wells_btn", "n_clicks"),
+        Input("grouped_hydrograph", "figure"),
+    ],
+    prevent_initial_call=True,
+)
 def handle_download_monitor_wells(n, fig):
-    if ctx.triggered_id == 'download_monitor_wells_btn':
+    if ctx.triggered_id == "download_monitor_wells_btn":
         return make_fig_csv(fig)
 
 
 def make_fig_csv(fig):
-    data = fig['data']
+    data = fig["data"]
     if data:
-        content = ['please cite this data: New Mexico Water Data Initiative https://newmexicowaterdata.org']
+        content = [
+            "please cite this data: New Mexico Water Data Initiative https://newmexicowaterdata.org"
+        ]
         for di in data:
             content.append(f'location_name: {di["name"]}')
-            content.append(f'measurement_timestamp, depth_to_water_ft_bgs')
-            for xi, yi in zip(di['x'], di['y']):
-                row = f'{xi},{yi}'
+            content.append(f"measurement_timestamp, depth_to_water_ft_bgs")
+            for xi, yi in zip(di["x"], di["y"]):
+                row = f"{xi},{yi}"
                 content.append(row)
 
-        content = '\n'.join(content)
+        content = "\n".join(content)
         return dict(content=content, filename="download.csv")
 
 
