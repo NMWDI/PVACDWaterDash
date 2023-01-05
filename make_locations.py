@@ -15,7 +15,10 @@
 # ===============================================================================
 import json
 
+import pandas as pd
 import requests
+
+from constants import AQUIFER_3DMODEL_MAP
 
 
 def make_locations(url, out, source, as_csv=False, datastream_filter=True):
@@ -32,7 +35,7 @@ def make_locations(url, out, source, as_csv=False, datastream_filter=True):
                 wfile.write(row)
 
     else:
-        with open("{}.json".format(out), "w") as wfile:
+        with open("./data/{}.json".format(out), "w") as wfile:
 
             obj = {}
             # print(jobj)
@@ -56,7 +59,7 @@ def make_locations(url, out, source, as_csv=False, datastream_filter=True):
 
 
 def make_st_agency(
-    base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
+        base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
 ):
     fs = []
     if filter_by_agency:
@@ -78,12 +81,98 @@ def make_st_agency(
     make_locations(url, out, agency, **kw)
 
 
-if __name__ == "__main__":
+def get_well_depths():
+    with open('./data/locations.json', 'r') as rfile:
+        obj = json.load(rfile)
+        n = len(obj['locations'])
+        for i, location in enumerate(obj['locations']):
+            props = location['properties']
+            iotid = location['@iot.id']
+            name = location['name']
+            agency = props['agency']
+            print(f'{i + 1}/{n} examining {agency} {iotid} {name}')
+
+            # print(iotid, props['agency'])
+            thing = location['Things'][0]
+            tprops = thing['properties']
+
+            wdepth = tprops.get('WellDepth')
+            formation = None
+            if not wdepth:
+                print(f'    no well depth for {agency} {iotid}, {name}')
+                if agency == 'OSE-Roswell':
+                    pass
+                    # get welldepth from usgs
+                    # usgs_data = get_usgs(location)
+                    # print(usgs_data)
+                    # print(usgs_data.keys())
+                    # break
+
+            else:
+                coords = location['location']['coordinates']
+                lat, lon = coords[1], coords[0]
+                formation = get_model_aquifer(lat, lon, wdepth)
+                tprops['model_formation'] = formation
+
+                # compare db formation code with model formation
+                dbformation = tprops.get('GeologicFormation')
+                if dbformation:
+                    formation = dbformation
+                    # aquifer = AQUIFER_FORMATION_MAP.get(dbformation)
+
+            if formation:
+                aquifer = AQUIFER_3DMODEL_MAP.get(formation, '')
+                # aquifer_group = AQUIFER_3DMODEL_MAP.get(aquifer, '')
+                tprops.update({'aquifer': aquifer})
+                try:
+                    del tprops['aquifer_group']
+                except KeyError:
+                    pass
+
+                patch_thing(thing["@iot.selfLink"], {'properties': tprops})
+
+
+def patch_thing(url, patch):
+    print('    patching', url)
+    resp = requests.patch(url, json=patch, auth=('write', 'write'))
+    print(f'    {resp.status_code}')
+
+
+def get_model_aquifer(lat, lon, depth):
+    print(lat, lon, depth)
+    url = f'https://pecosslope-dot-waterdatainitiative-271000.appspot.com/formation/{lon}/{lat}/{depth}'
+    resp = requests.get(url)
+    if resp.status_code == 200:
+        j = resp.json()
+        return j['name']
+
+
+def assemble_locations(root=None):
+    totallocations = []
+    for a, tag in (
+            ("ISC Seven Rivers", "isc_seven_rivers"),
+            ("OSE Roswell", "ose_roswell"),
+            ("Healy Collaborative", "healy_collaborative"),
+            # ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+    ):
+        path = f'{tag}.json'
+        if root:
+            path = f'{root}/{tag}.json'
+
+        locations = pd.read_json(path)
+        totallocations.extend(locations['locations'])
+
+    with open('./data/locations.json', 'w') as wfile:
+        json.dump({'locations': totallocations}, wfile, indent=2)
+
+
+def main_make():
+    # f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
     st2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/"
     # usgs = 'https://labs.waterdata.usgs.gov/sta/v1.1/'
-    # make_st_agency(st2, 'ose_roswell', 'OSE-Roswell')
-    # make_st_agency(st2, 'isc_seven_rivers', 'ISC_SEVEN_RIVERS')
-    # make_st_agency(st2, 'pvacd_hydrovu', 'PVACD')
+    make_st_agency(st2, 'ose_roswell', 'OSE-Roswell')
+    make_st_agency(st2, 'isc_seven_rivers', 'ISC_SEVEN_RIVERS')
+    make_st_agency(st2, 'pvacd_hydrovu', 'PVACD')
     pointids = [
         "SM-0235",
         "SM-0246",
@@ -112,6 +201,8 @@ if __name__ == "__main__":
         "WL-0274",
     ]
     make_st_agency(st2, "healy_collaborative", "NMBGMR", pointids=pointids)
+
+    assemble_locations('./data')
     #
     # points = ['-105.70 34.73', '-103.05 34.73',
     #           '-105.70 32.3',  '-103.05 32.3',
@@ -128,4 +219,11 @@ if __name__ == "__main__":
     # make_locations(url, out, 'NMBGMR')
     # # out = 'usgs_pvacd'
     # # make_locations(url, out, 'USGS')
+
+
+if __name__ == "__main__":
+    get_well_depths()
+    main_make()
+
+
 # ============= EOF =============================================

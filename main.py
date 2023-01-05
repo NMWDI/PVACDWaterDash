@@ -63,6 +63,7 @@ from constants import (
     MACROSTRAT_BM,
     OPENTOPO_BM,
     OSM_BM,
+    AQUIFER_PVACD_MAP
 )
 
 # from celery import Celery
@@ -407,8 +408,8 @@ def init_app():
         ("Groundwater Wells", "locations"),
         ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
-        locations = pd.read_json(
-            f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
+        locations = pd.read_json(f'./data/{tag}.json'
+            # f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
         )
         locations = locations["locations"]
 
@@ -587,8 +588,9 @@ def calculate_stats(obs):
 def make_additional_selection(location, thing, formation=None, formation_code=None):
     data = []
 
+    tprops = thing["properties"]
     if not formation and not formation_code:
-        formation_code = thing["properties"].get("GeologicFormation")
+        formation_code = tprops.get("GeologicFormation")
 
     formation = ""
     if formation_code:
@@ -603,11 +605,19 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
     data.append(
         {
             "name": "Well Depth (ft)",
-            "value": floatfmt(thing["properties"].get("WellDepth")),
+            "value": floatfmt(tprops.get("WellDepth")),
         }
     )
 
+    aquifer = tprops.get('aquifer', '')
+    model_formation = tprops.get('model_formation', '')
+    pvacd_aquifer_name = AQUIFER_PVACD_MAP.get(aquifer, '')
+
+    data.append({"name": "Aquifer (PVACD)", "value": pvacd_aquifer_name})
+    data.append({"name": "Aquifer", "value": aquifer})
+    # data.append({"name": "Aquifer Group", "value": aquifer_group})
     data.append({"name": "Formation", "value": formation})
+    data.append({"name": "Model Formation", "value": model_formation})
     return data
 
 
@@ -824,7 +834,10 @@ def display_click_data(clickData):
         {"name": "PointID", "value": ""},
         {"name": "Elevation (ft)", "value": ""},
         {"name": "Well Depth (ft)", "value": ""},
+        {"name": "Aquifer (PVACD)", "value": ""},
+        {"name": "Aquifer", "value": ""},
         {"name": "Formation", "value": ""},
+        {"name": "Model Formation", "value": ""},
     ]
     # obs = [{"phenomenonTime": 0, "result": 0}]
     # mxs = []

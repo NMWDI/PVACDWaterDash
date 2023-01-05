@@ -4,5 +4,6 @@ pandas
 dash_bootstrap_components
 requests
 flask_caching
+pysta
 # celery
 # redis

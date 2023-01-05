@@ -18,7 +18,7 @@ import datetime
 
 import requests
 
-from constants import ST2, DEBUG_OBS, DTFORMAT, DEBUG_LIMIT_OBS
+from constants import ST2, DEBUG_OBS, DTFORMAT, DEBUG_LIMIT_OBS, AQUIFER_PVACD_MAP
 
 
 def floatfmt(t, n=2):
@@ -38,7 +38,7 @@ FORMATION_MAP = None
 def get_formation_name(code):
     global FORMATION_MAP
     if FORMATION_MAP is None:
-        with open("./formations.json") as rfile:
+        with open("./data/formations.json") as rfile:
             FORMATION_MAP = json.load(rfile)
 
     def get(c):
@@ -92,19 +92,34 @@ def extract_usgs_timeseries(obj):
 def make_customdata(locations, tag):
     fs = []
     for l in locations:
+
+        tprops = l["Things"][0]["properties"]
         if tag == "pvacd_hydrovu":
             code = "313SADR"
         else:
-            code = l["Things"][0]["properties"].get("GeologicFormation")
+            code = tprops.get("GeologicFormation")
 
         customdata = []
+        name = ''
         if code:
             name = get_formation_name(code)
-            customdata.append(f"Formation: {name}")
 
-        welldepth = l["Things"][0]["properties"].get("WellDepth")
+        aquifer = tprops.get("aquifer", "")
+        aquifer_pvacd_name = AQUIFER_PVACD_MAP.get(aquifer, '')
+
+        customdata.append(f"Aquifer (PVACD): {aquifer_pvacd_name}")
+        customdata.append(f"Formation: {name}")
+
+        customdata.append(f"Aquifer: {aquifer}")
+
+        model_formation = tprops.get("model_formation", "")
+        customdata.append(f"Model Formation: {model_formation}")
+
+        welldepth = tprops.get("WellDepth", "")
         if welldepth:
-            customdata.append(f"Well Depth: {welldepth} (ft)")
+            welldepth = f'{welldepth} (ft)'
+
+        customdata.append(f"Well Depth: {welldepth}")
 
         customdata = "<br>".join(customdata)
         fs.append(customdata)

@@ -48,12 +48,12 @@ def get_ose_pods_location(l):
     return resp.json()["value"]
 
 
-def get_usgs(l):
-    siteid = l["name"].replace(" ", "")
-
-    resp = requests.get(
-        f"https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all"
-    )
+# def get_usgs(l):
+#     siteid = l["name"].replace(" ", "")
+#
+#     resp = requests.get(
+#         f"https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all"
+#     )
 
 
 def do_crosswalk():
