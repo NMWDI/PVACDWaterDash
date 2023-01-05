@@ -88,8 +88,9 @@ def extract_usgs_timeseries(obj):
 
     # return xs, ys
 
+
 def prep_hydrovu_name(n):
-    return n.split('level')[0].split('Level')[0]
+    return n.split("level")[0].split("Level")[0]
 
 
 def make_customdata(locations, tag):
@@ -135,9 +136,6 @@ def todatetime(t, fmt=DTFORMAT):
         t = t["phenomenonTime"]
 
     return datetime.datetime.strptime(t, fmt)
-
-
-
 
 
 # ============= EOF =============================================

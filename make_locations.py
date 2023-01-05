@@ -66,7 +66,7 @@ def make_locations(url, out, source, as_csv=False, datastream_filter=True):
 
 
 def make_st_agency(
-        base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
+    base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
 ):
     fs = []
     if filter_by_agency:
@@ -110,10 +110,10 @@ def get_well_depths():
                 if agency == "OSE-Roswell":
                     md = get_site_metadata(location)
                     if md:
-                        formation = md['aqfr_cd']
-                        tprops['WellDepth'] = md['well_depth_va']
-                        tprops['HoleDepth'] = md['hole_depth_va']
-                        tprops['GeologicFormation'] = formation
+                        formation = md["aqfr_cd"]
+                        tprops["WellDepth"] = md["well_depth_va"]
+                        tprops["HoleDepth"] = md["hole_depth_va"]
+                        tprops["GeologicFormation"] = formation
                     # get welldepth from usgs
                     # usgs_data = get_usgs(location)
                     # print(usgs_data)
@@ -162,28 +162,28 @@ def get_model_aquifer(lat, lon, depth):
 def group_locations():
     with open("./data/locations.json", "r") as rfile:
         obj = json.load(rfile)
-        locations = obj['locations']
+        locations = obj["locations"]
 
         # key = attrgetter('properties.aquifer')
         def key(l):
-            return l['Things'][0]['properties'].get('aquifer', 'no_aquifer')
+            return l["Things"][0]["properties"].get("aquifer", "no_aquifer")
 
         for gname, gs in groupby(sorted(locations, key=key), key=key):
             gs = list(gs)
             print(gname, len(gs))
-            gname = gname.lower().replace(' ', '_')
-            out = f'./data/locations_{gname}.json'
-            with open(out, 'w') as wfile:
-                json.dump({'locations': gs}, wfile, indent=2)
+            gname = gname.lower().replace(" ", "_")
+            out = f"./data/locations_{gname}.json"
+            with open(out, "w") as wfile:
+                json.dump({"locations": gs}, wfile, indent=2)
 
 
 def assemble_locations(root=None):
     totallocations = []
     for a, tag in (
-            ("ISC Seven Rivers", "isc_seven_rivers"),
-            ("OSE Roswell", "ose_roswell"),
-            ("Healy Collaborative", "healy_collaborative"),
-            # ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+        ("ISC Seven Rivers", "isc_seven_rivers"),
+        ("OSE Roswell", "ose_roswell"),
+        ("Healy Collaborative", "healy_collaborative"),
+        # ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         path = f"{tag}.json"
         if root:

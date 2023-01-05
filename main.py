@@ -48,7 +48,8 @@ from util import (
     get_formation_name,
     extract_usgs_timeseries,
     todatetime,
-    make_customdata, prep_hydrovu_name,
+    make_customdata,
+    prep_hydrovu_name,
 )
 from constants import (
     DEPTH_TO_WATER_FT_BGS,
@@ -63,7 +64,10 @@ from constants import (
     MACROSTRAT_BM,
     OPENTOPO_BM,
     OSM_BM,
-    AQUIFER_PVACD_MAP, PERMIAN_AQUIFER_SYSTEM, PECOS_VALLEY_ALLUVIAL_AQUIFER, HIGH_MOUNTAIN_AQUIFER_SYSTEM,
+    AQUIFER_PVACD_MAP,
+    PERMIAN_AQUIFER_SYSTEM,
+    PECOS_VALLEY_ALLUVIAL_AQUIFER,
+    HIGH_MOUNTAIN_AQUIFER_SYSTEM,
 )
 
 # from celery import Celery
@@ -169,11 +173,13 @@ BGCOLOR = "#d3d3d3"
 #     # "locations": "orange",
 #     ""
 # }
-COLOR_MAP = {"locations_no_aquifer": "orange",
-             "locations_permian_aquifer_system": "blue",
-             "locations_pecos_valley_alluvial_aquifer": "purple",
-             "locations_high_mountain_aquifer_system": "black",
-             "pvacd_hydrovu": ""}
+COLOR_MAP = {
+    "locations_no_aquifer": "orange",
+    "locations_permian_aquifer_system": "blue",
+    "locations_pecos_valley_alluvial_aquifer": "purple",
+    "locations_high_mountain_aquifer_system": "black",
+    "pvacd_hydrovu": "",
+}
 
 banner_style = card_style.copy()
 # banner_style['background-image']="url('assets/new-mexico-408068_1280.jpg')"
@@ -188,9 +194,13 @@ banner_row = dbc.Row(
         dbc.Col(
             html.A(
                 href="https://newmexicowaterdata.org",
-                children=[html.Img(src="assets/newmexicowaterdatalogo.png",
-                                   height=75,
-                                   style={"margin": "10px"})],
+                children=[
+                    html.Img(
+                        src="assets/newmexicowaterdatalogo.png",
+                        height=75,
+                        style={"margin": "10px"},
+                    )
+                ],
             ),
             width=3,
         ),
@@ -261,17 +271,17 @@ summarytable = DataTable(
     id="summarytable",
     tooltip_header={
         "last_measurement": f"Last depth to water. If current value is > than the long term average for"
-                            f" {now_month_name} highlight row in red",
+        f" {now_month_name} highlight row in red",
         "month_average_value": f"Average depth to water (ft) for for all years with water levels in {now_month_name}.",
         "trend": "Depth to water trend. Calculated by performing a linear regression "
-                 "on the last ~25-50 days depending on sampling frequency",
+        "on the last ~25-50 days depending on sampling frequency",
     },
     css=[
         {
             "selector": ".dash-table-tooltip",
             "rule": "background-color: grey; font-family: verdana; color: white;"
-                    "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
-                    "border-radius: 5px",
+            "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
+            "border-radius: 5px",
         },
         {
             "selector": ".dash-tooltip",
@@ -357,7 +367,9 @@ def init_app():
         scatter = px.line(obs, x="phenomenonTime", y="result", height=350)
         xs = [o["phenomenonTime"] for o in obs]
         ys = [o["result"] for o in obs]
-        grouped_hydrograph_data.append(go.Scatter(x=xs, y=ys, name=prep_hydrovu_name(location["name"])))
+        grouped_hydrograph_data.append(
+            go.Scatter(x=xs, y=ys, name=prep_hydrovu_name(location["name"]))
+        )
 
         stats[iotid] = stat = calculate_stats(obs)
         fobs = obs[:50]
@@ -412,13 +424,13 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-            # ("ISC Seven Rivers", "isc_seven_rivers"),
-            # ("OSE Roswell", "ose_roswell"),
-            ("Groundwater Wells", "locations_no_aquifer"),
-            (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
-            (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
-            (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
-            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+        # ("ISC Seven Rivers", "isc_seven_rivers"),
+        # ("OSE Roswell", "ose_roswell"),
+        ("Groundwater Wells", "locations_no_aquifer"),
+        (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
+        (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
+        (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"./data/{tag}.json"
@@ -526,7 +538,7 @@ def init_app():
                                 color="secondary",
                                 size="sm",
                                 title="Download all the water levels for the selected location"
-                                      " as a single csv file",
+                                " as a single csv file",
                                 id="download_selected_btn",
                             ),
                             dcc.Download(id="download_selected_csv"),
@@ -561,7 +573,7 @@ def init_app():
                                 style={"margin": "10px", "width": "40%"},
                                 color="primary",
                                 title="Download all the water levels for all the monitoring"
-                                      " wells as a single csv file",
+                                " wells as a single csv file",
                                 id="download_monitor_wells_btn",
                             ),
                             dcc.Download(id="download-csv"),
