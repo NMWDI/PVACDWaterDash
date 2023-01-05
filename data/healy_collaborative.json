@@ -766,6 +766,7 @@
             "WellID": "774D3F74-FB79-4585-A457-94DB8EB24095",
             "agency": "NMBGMR",
             "PointID": "WL-0037",
+            "aquifer": "Permian Aquifer System",
             "WellDepth": 137.0,
             "source_id": 37746.0,
             "model_formation": "Yeso",

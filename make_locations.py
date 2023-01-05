@@ -14,11 +14,14 @@
 # limitations under the License.
 # ===============================================================================
 import json
+from itertools import groupby
+from operator import attrgetter
 
 import pandas as pd
 import requests
 
 from constants import AQUIFER_3DMODEL_MAP
+from usgs import get_site_metadata
 
 
 def make_locations(url, out, source, as_csv=False, datastream_filter=True):
@@ -46,6 +49,10 @@ def make_locations(url, out, source, as_csv=False, datastream_filter=True):
 
             n = len(locations)
             for i, l in enumerate(locations):
+                # print(l['name'])
+                # if l['name'].lower().strip().endswith('level'):
+                #     continue
+
                 print("i={}/{}".format(i, n))
                 for thing in l["Things"]:
                     for ds in thing["Datastreams"]:
@@ -59,7 +66,7 @@ def make_locations(url, out, source, as_csv=False, datastream_filter=True):
 
 
 def make_st_agency(
-    base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
+        base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
 ):
     fs = []
     if filter_by_agency:
@@ -101,24 +108,29 @@ def get_well_depths():
             if not wdepth:
                 print(f"    no well depth for {agency} {iotid}, {name}")
                 if agency == "OSE-Roswell":
-                    pass
+                    md = get_site_metadata(location)
+                    if md:
+                        formation = md['aqfr_cd']
+                        tprops['WellDepth'] = md['well_depth_va']
+                        tprops['HoleDepth'] = md['hole_depth_va']
+                        tprops['GeologicFormation'] = formation
                     # get welldepth from usgs
                     # usgs_data = get_usgs(location)
                     # print(usgs_data)
                     # print(usgs_data.keys())
                     # break
 
-            else:
-                coords = location["location"]["coordinates"]
-                lat, lon = coords[1], coords[0]
-                formation = get_model_aquifer(lat, lon, wdepth)
-                tprops["model_formation"] = formation
-
-                # compare db formation code with model formation
-                dbformation = tprops.get("GeologicFormation")
-                if dbformation:
-                    formation = dbformation
-                    # aquifer = AQUIFER_FORMATION_MAP.get(dbformation)
+            # else:
+            #     coords = location["location"]["coordinates"]
+            #     lat, lon = coords[1], coords[0]
+            #     formation = get_model_aquifer(lat, lon, wdepth)
+            #     tprops["model_formation"] = formation
+            #
+            #     # compare db formation code with model formation
+            #     dbformation = tprops.get("GeologicFormation")
+            #     if dbformation:
+            #         formation = dbformation
+            #         # aquifer = AQUIFER_FORMATION_MAP.get(dbformation)
 
             if formation:
                 aquifer = AQUIFER_3DMODEL_MAP.get(formation, "")
@@ -147,13 +159,31 @@ def get_model_aquifer(lat, lon, depth):
         return j["name"]
 
 
+def group_locations():
+    with open("./data/locations.json", "r") as rfile:
+        obj = json.load(rfile)
+        locations = obj['locations']
+
+        # key = attrgetter('properties.aquifer')
+        def key(l):
+            return l['Things'][0]['properties'].get('aquifer', 'no_aquifer')
+
+        for gname, gs in groupby(sorted(locations, key=key), key=key):
+            gs = list(gs)
+            print(gname, len(gs))
+            gname = gname.lower().replace(' ', '_')
+            out = f'./data/locations_{gname}.json'
+            with open(out, 'w') as wfile:
+                json.dump({'locations': gs}, wfile, indent=2)
+
+
 def assemble_locations(root=None):
     totallocations = []
     for a, tag in (
-        ("ISC Seven Rivers", "isc_seven_rivers"),
-        ("OSE Roswell", "ose_roswell"),
-        ("Healy Collaborative", "healy_collaborative"),
-        # ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+            ("ISC Seven Rivers", "isc_seven_rivers"),
+            ("OSE Roswell", "ose_roswell"),
+            ("Healy Collaborative", "healy_collaborative"),
+            # ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         path = f"{tag}.json"
         if root:
@@ -172,7 +202,7 @@ def main_make():
     # usgs = 'https://labs.waterdata.usgs.gov/sta/v1.1/'
     make_st_agency(st2, "ose_roswell", "OSE-Roswell")
     make_st_agency(st2, "isc_seven_rivers", "ISC_SEVEN_RIVERS")
-    make_st_agency(st2, "pvacd_hydrovu", "PVACD")
+    # make_st_agency(st2, "pvacd_hydrovu", "PVACD")
     pointids = [
         "SM-0235",
         "SM-0246",
@@ -222,8 +252,11 @@ def main_make():
 
 
 if __name__ == "__main__":
-    get_well_depths()
-    main_make()
+    # st2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/"
+    # make_st_agency(st2, "pvacd_hydrovu", "PVACD")
 
+    # get_well_depths()
+    main_make()
+    group_locations()
 
 # ============= EOF =============================================

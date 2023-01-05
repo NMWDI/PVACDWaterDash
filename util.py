@@ -88,6 +88,9 @@ def extract_usgs_timeseries(obj):
 
     # return xs, ys
 
+def prep_hydrovu_name(n):
+    return n.split('level')[0].split('Level')[0]
+
 
 def make_customdata(locations, tag):
     fs = []
@@ -107,13 +110,13 @@ def make_customdata(locations, tag):
         aquifer = tprops.get("aquifer", "")
         aquifer_pvacd_name = AQUIFER_PVACD_MAP.get(aquifer, "")
 
-        customdata.append(f"Aquifer (PVACD): {aquifer_pvacd_name}")
-        customdata.append(f"Formation: {name}")
+        customdata.append(f"Aquifer: {aquifer_pvacd_name}")
+        # customdata.append(f"Formation: {name}")
 
-        customdata.append(f"Aquifer: {aquifer}")
+        # customdata.append(f"Aquifer: {aquifer}")
 
-        model_formation = tprops.get("model_formation", "")
-        customdata.append(f"Model Formation: {model_formation}")
+        # model_formation = tprops.get("model_formation", "")
+        # customdata.append(f"Model Formation: {model_formation}")
 
         welldepth = tprops.get("WellDepth", "")
         if welldepth:
@@ -134,15 +137,7 @@ def todatetime(t, fmt=DTFORMAT):
     return datetime.datetime.strptime(t, fmt)
 
 
-def get_usgs(location=None, siteid=None):
-    if location:
-        if location["properties"]["agency"] == "OSE-Roswell":
-            siteid = location["name"].replace(" ", "")
 
-    if siteid:
-        url = f"https://waterservices.usgs.gov/nwis/gwlevels/?format=json&sites={siteid}&siteStatus=all"
-        resp = requests.get(url)
-        return resp.json()
 
 
 # ============= EOF =============================================

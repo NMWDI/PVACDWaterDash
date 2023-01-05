@@ -4102,7 +4102,10 @@
           "@iot.id": 9158,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "71",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9158)",
           "Datastreams": [
@@ -4161,7 +4164,10 @@
           "@iot.id": 9159,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "600",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9159)",
           "Datastreams": [
@@ -4220,7 +4226,10 @@
           "@iot.id": 9160,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "400",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9160)",
           "Datastreams": [
@@ -4279,7 +4288,10 @@
           "@iot.id": 9161,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "200",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9161)",
           "Datastreams": [
@@ -4338,7 +4350,10 @@
           "@iot.id": 9162,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9162)",
           "Datastreams": [
@@ -4397,7 +4412,10 @@
           "@iot.id": 9163,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "225",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9163)",
           "Datastreams": [
@@ -4456,7 +4474,9 @@
           "@iot.id": 9164,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9164)",
           "Datastreams": [
@@ -4515,7 +4535,10 @@
           "@iot.id": 9165,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "127",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9165)",
           "Datastreams": [
@@ -4574,7 +4597,10 @@
           "@iot.id": 9166,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "552",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9166)",
           "Datastreams": [
@@ -4633,7 +4659,10 @@
           "@iot.id": 9167,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "130",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9167)",
           "Datastreams": [
@@ -4692,7 +4721,10 @@
           "@iot.id": 9168,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "180",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9168)",
           "Datastreams": [
@@ -4751,7 +4783,9 @@
           "@iot.id": 9169,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9169)",
           "Datastreams": [
@@ -4810,7 +4844,9 @@
           "@iot.id": 9170,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9170)",
           "Datastreams": [
@@ -4928,7 +4964,9 @@
           "@iot.id": 9172,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9172)",
           "Datastreams": [
@@ -4987,7 +5025,10 @@
           "@iot.id": 9173,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "142",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9173)",
           "Datastreams": [
@@ -5046,7 +5087,10 @@
           "@iot.id": 9174,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "211",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9174)",
           "Datastreams": [
@@ -5105,7 +5149,10 @@
           "@iot.id": 9175,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "880",
+            "GeologicFormation": "313GRBG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9175)",
           "Datastreams": [
@@ -5164,7 +5211,10 @@
           "@iot.id": 9176,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "905",
+            "GeologicFormation": "313GRBG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9176)",
           "Datastreams": [
@@ -5223,7 +5273,10 @@
           "@iot.id": 9177,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "87",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9177)",
           "Datastreams": [
@@ -5282,7 +5335,10 @@
           "@iot.id": 9178,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "305",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9178)",
           "Datastreams": [
@@ -5341,7 +5397,10 @@
           "@iot.id": 9179,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "430",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9179)",
           "Datastreams": [
@@ -5400,7 +5459,10 @@
           "@iot.id": 9180,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "170",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9180)",
           "Datastreams": [
@@ -5459,7 +5521,10 @@
           "@iot.id": 9181,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "205",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9181)",
           "Datastreams": [
@@ -5518,7 +5583,10 @@
           "@iot.id": 9182,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "100",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9182)",
           "Datastreams": [
@@ -5577,7 +5645,10 @@
           "@iot.id": 9183,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "320.0",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9183)",
           "Datastreams": [
@@ -5636,7 +5707,9 @@
           "@iot.id": 9184,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9184)",
           "Datastreams": [
@@ -5695,7 +5768,10 @@
           "@iot.id": 9185,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "235",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9185)",
           "Datastreams": [
@@ -5754,7 +5830,10 @@
           "@iot.id": 9186,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "276",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9186)",
           "Datastreams": [
@@ -5813,7 +5892,10 @@
           "@iot.id": 9187,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "150",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9187)",
           "Datastreams": [
@@ -5931,7 +6013,9 @@
           "@iot.id": 9189,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313GRBG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9189)",
           "Datastreams": [
@@ -5990,7 +6074,9 @@
           "@iot.id": 9190,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9190)",
           "Datastreams": [
@@ -6049,7 +6135,10 @@
           "@iot.id": 9191,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "202",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9191)",
           "Datastreams": [
@@ -6108,7 +6197,10 @@
           "@iot.id": 9192,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "840",
+            "GeologicFormation": "313GRBG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9192)",
           "Datastreams": [
@@ -6167,7 +6259,10 @@
           "@iot.id": 9193,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "400",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9193)",
           "Datastreams": [
@@ -6226,7 +6321,10 @@
           "@iot.id": 9194,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "219",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9194)",
           "Datastreams": [
@@ -6285,7 +6383,10 @@
           "@iot.id": 9195,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "167",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9195)",
           "Datastreams": [
@@ -6344,7 +6445,10 @@
           "@iot.id": 9196,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "114",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9196)",
           "Datastreams": [
@@ -6403,7 +6507,9 @@
           "@iot.id": 9197,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9197)",
           "Datastreams": [
@@ -6462,7 +6568,10 @@
           "@iot.id": 9198,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "325",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9198)",
           "Datastreams": [
@@ -6521,7 +6630,10 @@
           "@iot.id": 9199,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "128",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9199)",
           "Datastreams": [
@@ -6580,7 +6692,10 @@
           "@iot.id": 9200,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "945",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9200)",
           "Datastreams": [
@@ -6639,7 +6754,10 @@
           "@iot.id": 9201,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "201",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9201)",
           "Datastreams": [
@@ -6698,7 +6816,10 @@
           "@iot.id": 9202,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "385",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9202)",
           "Datastreams": [
@@ -6757,7 +6878,10 @@
           "@iot.id": 9203,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "186",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9203)",
           "Datastreams": [
@@ -6875,7 +6999,10 @@
           "@iot.id": 9205,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "903",
+            "GeologicFormation": "313GRBG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9205)",
           "Datastreams": [
@@ -6934,7 +7061,10 @@
           "@iot.id": 9206,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "247",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9206)",
           "Datastreams": [
@@ -6993,7 +7123,10 @@
           "@iot.id": 9207,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9207)",
           "Datastreams": [
@@ -7052,7 +7185,10 @@
           "@iot.id": 9208,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "220",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9208)",
           "Datastreams": [
@@ -7111,7 +7247,10 @@
           "@iot.id": 9209,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "210",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9209)",
           "Datastreams": [
@@ -7170,7 +7309,10 @@
           "@iot.id": 9210,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "100.00",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9210)",
           "Datastreams": [
@@ -7229,7 +7371,10 @@
           "@iot.id": 9211,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "83",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9211)",
           "Datastreams": [
@@ -7288,7 +7433,10 @@
           "@iot.id": 9212,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "231",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9212)",
           "Datastreams": [
@@ -7347,7 +7495,10 @@
           "@iot.id": 9213,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "1261",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9213)",
           "Datastreams": [
@@ -7406,7 +7557,10 @@
           "@iot.id": 9214,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "235",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9214)",
           "Datastreams": [
@@ -7465,7 +7619,10 @@
           "@iot.id": 9215,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "170",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9215)",
           "Datastreams": [
@@ -7524,7 +7681,10 @@
           "@iot.id": 9216,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "390",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9216)",
           "Datastreams": [
@@ -7583,7 +7743,10 @@
           "@iot.id": 9217,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "1149",
+            "GeologicFormation": "313GRBG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9217)",
           "Datastreams": [
@@ -7642,7 +7805,10 @@
           "@iot.id": 9218,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "165",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9218)",
           "Datastreams": [
@@ -7701,7 +7867,9 @@
           "@iot.id": 9219,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9219)",
           "Datastreams": [
@@ -7760,7 +7928,10 @@
           "@iot.id": 9220,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "160",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9220)",
           "Datastreams": [
@@ -7819,7 +7990,10 @@
           "@iot.id": 9221,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "148",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9221)",
           "Datastreams": [
@@ -7878,7 +8052,10 @@
           "@iot.id": 9222,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "325",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9222)",
           "Datastreams": [
@@ -7937,7 +8114,10 @@
           "@iot.id": 9223,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "231.00",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9223)",
           "Datastreams": [
@@ -7996,7 +8176,10 @@
           "@iot.id": 9224,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "1094",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9224)",
           "Datastreams": [
@@ -8114,7 +8297,10 @@
           "@iot.id": 9226,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "292.00",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9226)",
           "Datastreams": [
@@ -8173,7 +8359,10 @@
           "@iot.id": 9227,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "180",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9227)",
           "Datastreams": [
@@ -8232,7 +8421,9 @@
           "@iot.id": 9228,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9228)",
           "Datastreams": [
@@ -8291,7 +8482,10 @@
           "@iot.id": 9229,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "54",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9229)",
           "Datastreams": [
@@ -8350,7 +8544,10 @@
           "@iot.id": 9230,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "280",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9230)",
           "Datastreams": [
@@ -8409,7 +8606,10 @@
           "@iot.id": 9231,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "262",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9231)",
           "Datastreams": [
@@ -8468,7 +8668,10 @@
           "@iot.id": 9232,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "610",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9232)",
           "Datastreams": [
@@ -8527,7 +8730,9 @@
           "@iot.id": 9233,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9233)",
           "Datastreams": [
@@ -8586,7 +8791,10 @@
           "@iot.id": 9234,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "80",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9234)",
           "Datastreams": [
@@ -8645,7 +8853,10 @@
           "@iot.id": 9235,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "300",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9235)",
           "Datastreams": [
@@ -8704,7 +8915,9 @@
           "@iot.id": 9236,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9236)",
           "Datastreams": [
@@ -8763,7 +8976,10 @@
           "@iot.id": 9237,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "168",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9237)",
           "Datastreams": [
@@ -8822,7 +9038,10 @@
           "@iot.id": 9238,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "94",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9238)",
           "Datastreams": [
@@ -8881,7 +9100,10 @@
           "@iot.id": 9239,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "490",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9239)",
           "Datastreams": [
@@ -8940,7 +9162,10 @@
           "@iot.id": 9240,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "425",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9240)",
           "Datastreams": [
@@ -8999,7 +9224,10 @@
           "@iot.id": 9241,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "740",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9241)",
           "Datastreams": [
@@ -9058,7 +9286,10 @@
           "@iot.id": 9242,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "129",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9242)",
           "Datastreams": [
@@ -9117,7 +9348,10 @@
           "@iot.id": 9243,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "78",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9243)",
           "Datastreams": [
@@ -9176,7 +9410,9 @@
           "@iot.id": 9244,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9244)",
           "Datastreams": [
@@ -9235,7 +9471,10 @@
           "@iot.id": 9245,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "188",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9245)",
           "Datastreams": [
@@ -9294,7 +9533,10 @@
           "@iot.id": 9246,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "256",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9246)",
           "Datastreams": [
@@ -9353,7 +9595,10 @@
           "@iot.id": 9247,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "100",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9247)",
           "Datastreams": [
@@ -9412,7 +9657,10 @@
           "@iot.id": 9248,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "102",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9248)",
           "Datastreams": [
@@ -9471,7 +9719,10 @@
           "@iot.id": 9249,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "76",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9249)",
           "Datastreams": [
@@ -9530,7 +9781,10 @@
           "@iot.id": 9250,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "99",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9250)",
           "Datastreams": [
@@ -9648,7 +9902,10 @@
           "@iot.id": 9252,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "111",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9252)",
           "Datastreams": [
@@ -9707,7 +9964,10 @@
           "@iot.id": 9253,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "132",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9253)",
           "Datastreams": [
@@ -9766,7 +10026,9 @@
           "@iot.id": 9254,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9254)",
           "Datastreams": [
@@ -9825,7 +10087,9 @@
           "@iot.id": 9255,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9255)",
           "Datastreams": [
@@ -9884,7 +10148,10 @@
           "@iot.id": 9256,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9256)",
           "Datastreams": [
@@ -9943,7 +10210,10 @@
           "@iot.id": 9257,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "155",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9257)",
           "Datastreams": [
@@ -10002,7 +10272,10 @@
           "@iot.id": 9258,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "220",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9258)",
           "Datastreams": [
@@ -10061,7 +10334,10 @@
           "@iot.id": 9259,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "1220",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9259)",
           "Datastreams": [
@@ -10120,7 +10396,10 @@
           "@iot.id": 9260,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "1150",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9260)",
           "Datastreams": [
@@ -10179,7 +10458,10 @@
           "@iot.id": 9261,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "153",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9261)",
           "Datastreams": [
@@ -10238,7 +10520,10 @@
           "@iot.id": 9262,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "135",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9262)",
           "Datastreams": [
@@ -10297,7 +10582,10 @@
           "@iot.id": 9263,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "168",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9263)",
           "Datastreams": [
@@ -10356,7 +10644,10 @@
           "@iot.id": 9264,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "397",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9264)",
           "Datastreams": [
@@ -10415,7 +10706,10 @@
           "@iot.id": 9265,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "39",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9265)",
           "Datastreams": [
@@ -10474,7 +10768,9 @@
           "@iot.id": 9266,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9266)",
           "Datastreams": [
@@ -10533,7 +10829,9 @@
           "@iot.id": 9267,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9267)",
           "Datastreams": [
@@ -10592,7 +10890,10 @@
           "@iot.id": 9268,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "199",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9268)",
           "Datastreams": [
@@ -10651,7 +10952,9 @@
           "@iot.id": 9269,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9269)",
           "Datastreams": [
@@ -10710,7 +11013,9 @@
           "@iot.id": 9270,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9270)",
           "Datastreams": [
@@ -10769,7 +11074,10 @@
           "@iot.id": 9271,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "180",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9271)",
           "Datastreams": [
@@ -10828,7 +11136,10 @@
           "@iot.id": 9272,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "125",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9272)",
           "Datastreams": [
@@ -10887,7 +11198,10 @@
           "@iot.id": 9273,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "50",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9273)",
           "Datastreams": [
@@ -10946,7 +11260,9 @@
           "@iot.id": 9274,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9274)",
           "Datastreams": [
@@ -11064,7 +11380,10 @@
           "@iot.id": 9276,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "190",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9276)",
           "Datastreams": [
@@ -11123,7 +11442,10 @@
           "@iot.id": 9277,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "308.00",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9277)",
           "Datastreams": [
@@ -11182,7 +11504,10 @@
           "@iot.id": 9278,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "263",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9278)",
           "Datastreams": [
@@ -11241,7 +11566,10 @@
           "@iot.id": 9279,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "235",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9279)",
           "Datastreams": [
@@ -11300,7 +11628,10 @@
           "@iot.id": 9280,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "228",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9280)",
           "Datastreams": [
@@ -11418,7 +11749,10 @@
           "@iot.id": 9282,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "440",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9282)",
           "Datastreams": [
@@ -11477,7 +11811,10 @@
           "@iot.id": 9283,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "177",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9283)",
           "Datastreams": [
@@ -11595,7 +11932,10 @@
           "@iot.id": 9285,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "923",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9285)",
           "Datastreams": [
@@ -11654,7 +11994,10 @@
           "@iot.id": 9286,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "200",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9286)",
           "Datastreams": [
@@ -11713,7 +12056,10 @@
           "@iot.id": 9287,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "870",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9287)",
           "Datastreams": [
@@ -11772,7 +12118,10 @@
           "@iot.id": 9288,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "270",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9288)",
           "Datastreams": [
@@ -11831,7 +12180,10 @@
           "@iot.id": 9289,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "180.",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9289)",
           "Datastreams": [
@@ -11890,7 +12242,9 @@
           "@iot.id": 9290,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9290)",
           "Datastreams": [
@@ -11949,7 +12303,10 @@
           "@iot.id": 9291,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "190",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9291)",
           "Datastreams": [
@@ -12008,7 +12365,10 @@
           "@iot.id": 9292,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "385",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9292)",
           "Datastreams": [
@@ -12067,7 +12427,10 @@
           "@iot.id": 9293,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "208",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9293)",
           "Datastreams": [
@@ -12126,7 +12489,9 @@
           "@iot.id": 9294,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9294)",
           "Datastreams": [
@@ -12185,7 +12550,10 @@
           "@iot.id": 9295,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "515",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9295)",
           "Datastreams": [
@@ -12244,7 +12612,10 @@
           "@iot.id": 9296,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "194",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9296)",
           "Datastreams": [
@@ -12303,7 +12674,10 @@
           "@iot.id": 9297,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "165",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9297)",
           "Datastreams": [
@@ -12362,7 +12736,9 @@
           "@iot.id": 9298,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9298)",
           "Datastreams": [
@@ -12421,7 +12797,10 @@
           "@iot.id": 9299,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "90",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9299)",
           "Datastreams": [
@@ -12480,7 +12859,10 @@
           "@iot.id": 9300,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "170",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9300)",
           "Datastreams": [
@@ -12539,7 +12921,10 @@
           "@iot.id": 9301,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "334",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9301)",
           "Datastreams": [
@@ -12598,7 +12983,10 @@
           "@iot.id": 9302,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "817",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9302)",
           "Datastreams": [
@@ -12657,7 +13045,10 @@
           "@iot.id": 9303,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "150",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9303)",
           "Datastreams": [
@@ -12716,7 +13107,10 @@
           "@iot.id": 9304,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "43",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9304)",
           "Datastreams": [
@@ -12775,7 +13169,10 @@
           "@iot.id": 9305,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "175",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9305)",
           "Datastreams": [
@@ -12893,7 +13290,10 @@
           "@iot.id": 9307,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "233",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9307)",
           "Datastreams": [
@@ -12952,7 +13352,10 @@
           "@iot.id": 9308,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "520",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9308)",
           "Datastreams": [
@@ -13011,7 +13414,10 @@
           "@iot.id": 9309,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "199",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9309)",
           "Datastreams": [
@@ -13070,7 +13476,9 @@
           "@iot.id": 9310,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9310)",
           "Datastreams": [
@@ -13129,7 +13537,10 @@
           "@iot.id": 9311,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "169",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9311)",
           "Datastreams": [
@@ -13247,7 +13658,10 @@
           "@iot.id": 9313,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "200",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9313)",
           "Datastreams": [
@@ -13365,7 +13779,10 @@
           "@iot.id": 9315,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "300",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9315)",
           "Datastreams": [
@@ -13424,7 +13841,10 @@
           "@iot.id": 9316,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "40",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9316)",
           "Datastreams": [
@@ -13483,7 +13903,10 @@
           "@iot.id": 9317,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "312",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9317)",
           "Datastreams": [
@@ -13542,7 +13965,10 @@
           "@iot.id": 9318,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "180",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9318)",
           "Datastreams": [
@@ -13601,7 +14027,9 @@
           "@iot.id": 9319,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9319)",
           "Datastreams": [
@@ -13660,7 +14088,10 @@
           "@iot.id": 9320,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "50",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9320)",
           "Datastreams": [
@@ -13719,7 +14150,10 @@
           "@iot.id": 9321,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "700",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9321)",
           "Datastreams": [
@@ -13778,7 +14212,10 @@
           "@iot.id": 9322,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "43",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9322)",
           "Datastreams": [
@@ -13837,7 +14274,10 @@
           "@iot.id": 9323,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "202",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9323)",
           "Datastreams": [
@@ -13896,7 +14336,10 @@
           "@iot.id": 9324,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9324)",
           "Datastreams": [
@@ -13955,7 +14398,10 @@
           "@iot.id": 9325,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "30.00",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9325)",
           "Datastreams": [
@@ -14014,7 +14460,10 @@
           "@iot.id": 9326,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "370",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9326)",
           "Datastreams": [
@@ -14073,7 +14522,9 @@
           "@iot.id": 9327,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9327)",
           "Datastreams": [
@@ -14132,7 +14583,10 @@
           "@iot.id": 9328,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "365",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9328)",
           "Datastreams": [
@@ -14250,7 +14704,9 @@
           "@iot.id": 9330,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9330)",
           "Datastreams": [
@@ -14309,7 +14765,10 @@
           "@iot.id": 9331,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "160",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9331)",
           "Datastreams": [
@@ -14368,7 +14827,10 @@
           "@iot.id": 9332,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "308",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9332)",
           "Datastreams": [
@@ -14427,7 +14889,10 @@
           "@iot.id": 9333,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "223",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9333)",
           "Datastreams": [
@@ -14486,7 +14951,10 @@
           "@iot.id": 9334,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "84",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9334)",
           "Datastreams": [
@@ -14545,7 +15013,10 @@
           "@iot.id": 9335,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "220",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9335)",
           "Datastreams": [
@@ -14604,7 +15075,10 @@
           "@iot.id": 9336,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "270",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9336)",
           "Datastreams": [
@@ -14663,7 +15137,10 @@
           "@iot.id": 9337,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "286",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9337)",
           "Datastreams": [
@@ -14722,7 +15199,10 @@
           "@iot.id": 9338,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "301",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9338)",
           "Datastreams": [
@@ -14781,7 +15261,10 @@
           "@iot.id": 9339,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "402",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9339)",
           "Datastreams": [
@@ -14840,7 +15323,10 @@
           "@iot.id": 9340,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "90",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9340)",
           "Datastreams": [
@@ -14899,7 +15385,10 @@
           "@iot.id": 9341,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "440",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9341)",
           "Datastreams": [
@@ -14958,7 +15447,10 @@
           "@iot.id": 9342,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "100",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9342)",
           "Datastreams": [
@@ -15017,7 +15509,10 @@
           "@iot.id": 9343,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "436",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9343)",
           "Datastreams": [
@@ -15076,7 +15571,10 @@
           "@iot.id": 9344,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "118",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9344)",
           "Datastreams": [
@@ -15135,7 +15633,10 @@
           "@iot.id": 9345,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "565",
+            "GeologicFormation": "313SADR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9345)",
           "Datastreams": [
@@ -15194,7 +15695,10 @@
           "@iot.id": 9346,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "200",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9346)",
           "Datastreams": [
@@ -15253,7 +15757,10 @@
           "@iot.id": 9347,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "100",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9347)",
           "Datastreams": [
@@ -15312,7 +15819,9 @@
           "@iot.id": 9348,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9348)",
           "Datastreams": [
@@ -15371,7 +15880,10 @@
           "@iot.id": 9349,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "89",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9349)",
           "Datastreams": [
@@ -15430,7 +15942,10 @@
           "@iot.id": 9350,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "68",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9350)",
           "Datastreams": [
@@ -15489,7 +16004,10 @@
           "@iot.id": 9351,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "210",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9351)",
           "Datastreams": [
@@ -15548,7 +16066,9 @@
           "@iot.id": 9352,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9352)",
           "Datastreams": [
@@ -15723,7 +16243,10 @@
           "@iot.id": 9355,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "107",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9355)",
           "Datastreams": [
@@ -15781,7 +16304,9 @@
           "@iot.id": 9356,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "WellDepth": "140",
+            "GeologicFormation": "231CHNL"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9356)",
           "Datastreams": [
@@ -15839,7 +16364,9 @@
           "@iot.id": 9357,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9357)",
           "Datastreams": [
@@ -15897,7 +16424,9 @@
           "@iot.id": 9358,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9358)",
           "Datastreams": [
@@ -15955,7 +16484,10 @@
           "@iot.id": 9359,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "100",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9359)",
           "Datastreams": [
@@ -16013,7 +16545,9 @@
           "@iot.id": 9360,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9360)",
           "Datastreams": [
@@ -16071,7 +16605,8 @@
           "@iot.id": 9361,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "GeologicFormation": "231SNRS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9361)",
           "Datastreams": [
@@ -16129,7 +16664,9 @@
           "@iot.id": 9362,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "WellDepth": "255",
+            "GeologicFormation": "231SNRS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9362)",
           "Datastreams": [
@@ -16187,7 +16724,9 @@
           "@iot.id": 9363,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "WellDepth": "125",
+            "GeologicFormation": "231SNRS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9363)",
           "Datastreams": [
@@ -16245,7 +16784,10 @@
           "@iot.id": 9364,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "125",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9364)",
           "Datastreams": [
@@ -16303,7 +16845,9 @@
           "@iot.id": 9365,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "WellDepth": "448",
+            "GeologicFormation": "231SNRS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9365)",
           "Datastreams": [
@@ -16361,7 +16905,9 @@
           "@iot.id": 9366,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "WellDepth": "93",
+            "GeologicFormation": "211MVRD"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9366)",
           "Datastreams": [
@@ -16419,7 +16965,10 @@
           "@iot.id": 9367,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "40",
+            "GeologicFormation": "310YESOG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9367)",
           "Datastreams": [
@@ -16477,7 +17026,10 @@
           "@iot.id": 9368,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "55",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9368)",
           "Datastreams": [
@@ -16535,7 +17087,10 @@
           "@iot.id": 9369,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "120",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9369)",
           "Datastreams": [
@@ -16593,7 +17148,10 @@
           "@iot.id": 9370,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "425",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9370)",
           "Datastreams": [
@@ -16651,7 +17209,10 @@
           "@iot.id": 9371,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "105",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9371)",
           "Datastreams": [
@@ -16825,7 +17386,9 @@
           "@iot.id": 9374,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "WellDepth": "100",
+            "GeologicFormation": "231CHNL"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9374)",
           "Datastreams": [
@@ -16883,7 +17446,10 @@
           "@iot.id": 9375,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "WellDepth": "125",
+            "GeologicFormation": "310YESOG"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9375)",
           "Datastreams": [
@@ -16941,7 +17507,10 @@
           "@iot.id": 9376,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "HoleDepth": "1261",
+            "WellDepth": "320",
+            "GeologicFormation": "210MNCS"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9376)",
           "Datastreams": [
@@ -17057,7 +17626,10 @@
           "@iot.id": 9378,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Pecos Valley Alluvial Aquifer",
+            "WellDepth": "45",
+            "GeologicFormation": "110AVMB"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9378)",
           "Datastreams": [
@@ -17115,7 +17687,11 @@
           "@iot.id": 9379,
           "name": "Water Well",
           "properties": {
-            "agency": "OSE-Roswell"
+            "agency": "OSE-Roswell",
+            "aquifer": "Permian Aquifer System",
+            "HoleDepth": "120",
+            "WellDepth": "120",
+            "GeologicFormation": "310GLOR"
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9379)",
           "Datastreams": [
@@ -17917,6 +18493,7 @@
             "WellID": "774D3F74-FB79-4585-A457-94DB8EB24095",
             "agency": "NMBGMR",
             "PointID": "WL-0037",
+            "aquifer": "Permian Aquifer System",
             "WellDepth": 137.0,
             "source_id": 37746.0,
             "model_formation": "Yeso",
