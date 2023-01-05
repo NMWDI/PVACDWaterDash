@@ -100,12 +100,12 @@ def make_customdata(locations, tag):
             code = tprops.get("GeologicFormation")
 
         customdata = []
-        name = ''
+        name = ""
         if code:
             name = get_formation_name(code)
 
         aquifer = tprops.get("aquifer", "")
-        aquifer_pvacd_name = AQUIFER_PVACD_MAP.get(aquifer, '')
+        aquifer_pvacd_name = AQUIFER_PVACD_MAP.get(aquifer, "")
 
         customdata.append(f"Aquifer (PVACD): {aquifer_pvacd_name}")
         customdata.append(f"Formation: {name}")
@@ -117,7 +117,7 @@ def make_customdata(locations, tag):
 
         welldepth = tprops.get("WellDepth", "")
         if welldepth:
-            welldepth = f'{welldepth} (ft)'
+            welldepth = f"{welldepth} (ft)"
 
         customdata.append(f"Well Depth: {welldepth}")
 

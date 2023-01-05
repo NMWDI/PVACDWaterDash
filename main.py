@@ -63,7 +63,7 @@ from constants import (
     MACROSTRAT_BM,
     OPENTOPO_BM,
     OSM_BM,
-    AQUIFER_PVACD_MAP
+    AQUIFER_PVACD_MAP,
 )
 
 # from celery import Celery
@@ -408,7 +408,8 @@ def init_app():
         ("Groundwater Wells", "locations"),
         ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
-        locations = pd.read_json(f'./data/{tag}.json'
+        locations = pd.read_json(
+            f"./data/{tag}.json"
             # f"https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/{tag}.json"
         )
         locations = locations["locations"]
@@ -609,9 +610,9 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
         }
     )
 
-    aquifer = tprops.get('aquifer', '')
-    model_formation = tprops.get('model_formation', '')
-    pvacd_aquifer_name = AQUIFER_PVACD_MAP.get(aquifer, '')
+    aquifer = tprops.get("aquifer", "")
+    model_formation = tprops.get("model_formation", "")
+    pvacd_aquifer_name = AQUIFER_PVACD_MAP.get(aquifer, "")
 
     data.append({"name": "Aquifer (PVACD)", "value": pvacd_aquifer_name})
     data.append({"name": "Aquifer", "value": aquifer})
