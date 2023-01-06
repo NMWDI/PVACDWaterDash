@@ -187,6 +187,7 @@ banner_style["backgroundImage"] = "url('assets/1599247175576.jpg')"
 banner_style["backgroundRepeat"] = "no-repeat"
 # banner_style["background-attachment"]= "fixed"
 banner_style["backgroundSize"] = "cover"
+banner_style["backgroundPosition"] = "0% 5%"
 # banner_style['background-image']="url('assets/pvacd_logo.png')"
 
 banner_row = dbc.Row(
@@ -789,12 +790,13 @@ def handle_basemap_select(a, b, c, d, e, opacity, search_input, fig):
     elif ctx.triggered_id == "osm_basemap_select":
         fig["layout"]["mapbox"]["layers"] = []
     elif ctx.triggered_id == "search_input":
+        search_input = search_input.lower()
         for di in fig["data"]:
             location = next(
                 (
                     (i, name)
                     for i, name in enumerate(di["text"])
-                    if name.startswith(search_input)
+                    if name.lower().startswith(search_input)
                 ),
                 None,
             )
