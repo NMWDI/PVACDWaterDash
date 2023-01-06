@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ===============================================================================
+import os
+
 ST2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1"
 
 DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
@@ -22,13 +24,14 @@ TITLE = "PVACD Groundwater Dashboard"
 DEBUG_OBS = True
 DEBUG_OBS = False
 DEBUG_LIMIT_OBS = 0
-DEBUG_N_WELLS = 0
+DEBUG_N_WELLS = os.environ.get('DEBUG_N_WELLS', 0)
+
 
 MACROSTRAT_BM = {
     "below": "traces",
     "sourcetype": "raster",
     "sourceattribution": '&copy; <a href="https://macrostrat.org">MacroStrat</a> contributors',
-    "source": ["http://tiles.macrostrat.org/carto/{z}/{x}/{y}.png"],
+    "source": ["https://tiles.macrostrat.org/carto/{z}/{x}/{y}.png"],
 }
 
 USGS_BM = {

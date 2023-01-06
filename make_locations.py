@@ -66,7 +66,7 @@ def make_locations(url, out, source, as_csv=False, datastream_filter=True):
 
 
 def make_st_agency(
-    base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
+        base_url, out, agency, bounds=None, filter_by_agency=True, pointids=None, **kw
 ):
     fs = []
     if filter_by_agency:
@@ -180,10 +180,10 @@ def group_locations():
 def assemble_locations(root=None):
     totallocations = []
     for a, tag in (
-        ("ISC Seven Rivers", "isc_seven_rivers"),
-        ("OSE Roswell", "ose_roswell"),
-        ("Healy Collaborative", "healy_collaborative"),
-        # ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+            ("ISC Seven Rivers", "isc_seven_rivers"),
+            ("OSE Roswell", "ose_roswell"),
+            ("Healy Collaborative", "healy_collaborative"),
+            # ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         path = f"{tag}.json"
         if root:
@@ -202,7 +202,12 @@ def main_make():
     # usgs = 'https://labs.waterdata.usgs.gov/sta/v1.1/'
     make_st_agency(st2, "ose_roswell", "OSE-Roswell")
     make_st_agency(st2, "isc_seven_rivers", "ISC_SEVEN_RIVERS")
-    # make_st_agency(st2, "pvacd_hydrovu", "PVACD")
+
+    ps = ['Zumwalt level-822322', 'Transwestern Level 823779', 'Cottonwood level-821572',
+          'Berrendo-Smith level-823069', 'LFD Level 826171', 'Poe Corn Level 819270',
+          'Artesia A Level-822328', 'Orchard Park Level-826157',
+          'Greenfield level-822321', 'Bartlett level-950188']
+    make_st_agency(st2, "pvacd_hydrovu", "PVACD", pointids=ps)
     pointids = [
         "SM-0235",
         "SM-0246",

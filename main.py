@@ -242,7 +242,7 @@ subbanner_row = dbc.Row(
 
 layout = go.Layout(
     mapbox_style="open-street-map",
-    mapbox_layers=[USGS_BM],
+    # mapbox_layers=[USGS_BM],
     mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
     margin={"r": 10, "t": 30, "l": 10, "b": 20},
     height=450,
@@ -271,17 +271,17 @@ summarytable = DataTable(
     id="summarytable",
     tooltip_header={
         "last_measurement": f"Last depth to water. If current value is > than the long term average for"
-        f" {now_month_name} highlight row in red",
+                            f" {now_month_name} highlight row in red",
         "month_average_value": f"Average depth to water (ft) for for all years with water levels in {now_month_name}.",
         "trend": "Depth to water trend. Calculated by performing a linear regression "
-        "on the last ~25-50 days depending on sampling frequency",
+                 "on the last ~25-50 days depending on sampling frequency",
     },
     css=[
         {
             "selector": ".dash-table-tooltip",
             "rule": "background-color: grey; font-family: verdana; color: white;"
-            "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
-            "border-radius: 5px",
+                    "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
+                    "border-radius: 5px",
         },
         {
             "selector": ".dash-tooltip",
@@ -424,13 +424,13 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-        # ("ISC Seven Rivers", "isc_seven_rivers"),
-        # ("OSE Roswell", "ose_roswell"),
-        ("Groundwater Wells", "locations_no_aquifer"),
-        (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
-        (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
-        (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
-        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+            # ("ISC Seven Rivers", "isc_seven_rivers"),
+            # ("OSE Roswell", "ose_roswell"),
+            ("Groundwater Wells", "locations_no_aquifer"),
+            (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
+            (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
+            (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
+            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"./data/{tag}.json"
@@ -481,52 +481,68 @@ def init_app():
     gchart = dcc.Graph(
         id="grouped_hydrograph", style=card_style, figure=grouped_hydrograph
     )
+    slider = dcc.Slider(0, 100, value=75,
+                        id='basemap_opacity',
+                        tooltip={"placement": "bottom", "always_visible": False},
+                        marks=None)
+    label = html.Label('Opacity')
+    sliderdiv = html.Div([label, slider])
+
+    maptoolrow = dbc.Row([dbc.Col(dbc.DropdownMenu(
+        label="Base Map",
+        size="sm",
+        color="secondary",
+        style={"marginTop": "5px"},
+        id="basemap_select",
+        children=[
+            dbc.DropdownMenuItem(
+                "USGS Base Map", id="usgs_basemap_select"
+            ),
+            dbc.DropdownMenuItem(
+                "Macrostrat", id="macrostrat_basemap_select"
+            ),
+            dbc.DropdownMenuItem(
+                "ESRI World Imagery",
+                id="esri_basemap_select",
+            ),
+            dbc.DropdownMenuItem(
+                "Open Topo", id="opentopo_basemap_select"
+            ),
+            dbc.DropdownMenuItem("Open Street Map", id='osm_basemap_select'),
+            # dbc.DropdownMenuItem("Item 3"),
+        ],
+    ), width=2),
+        dbc.Col(sliderdiv),
+        dbc.Col(dbc.Input(id='search_input',
+                          placeholder='Search for a well..',
+                          type='text',
+                          debounce=True,
+                          style={"marginTop": '10px'}))])
+    first_row = dbc.Row(
+        [
+            dbc.Col(
+                html.Div([html.H4("Monitoring Wells"), summarytable]),
+                style=lcol_style,
+                width=6,
+            ),
+            dbc.Col(
+                html.Div(
+                    [
+                        maptoolrow,
+                        mapcomp,
+                    ]
+                ),
+                style=rcol_style,
+            ),
+        ]
+    )
+
     dash_app.layout = dbc.Container(
         [
             banner_row,
             subbanner_row,
             # dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
-            dbc.Row(
-                [
-                    dbc.Col(
-                        html.Div([html.H4("Monitoring Wells"), summarytable]),
-                        style=lcol_style,
-                        width=6,
-                    ),
-                    dbc.Col(
-                        html.Div(
-                            [
-                                dbc.DropdownMenu(
-                                    label="Base Map",
-                                    size="sm",
-                                    color="secondary",
-                                    style={"marginTop": "5px"},
-                                    id="basemap_select",
-                                    children=[
-                                        dbc.DropdownMenuItem(
-                                            "USGS Base Map", id="usgs_basemap_select"
-                                        ),
-                                        dbc.DropdownMenuItem(
-                                            "Macrostrat", id="macrostrat_basemap_select"
-                                        ),
-                                        dbc.DropdownMenuItem(
-                                            "ESRI World Imagery",
-                                            id="esri_basemap_select",
-                                        ),
-                                        dbc.DropdownMenuItem(
-                                            "Open Topo", id="opentopo_basemap_select"
-                                        ),
-                                        # dbc.DropdownMenuItem("Open Street Map", id='osm_basemap_select'),
-                                        # dbc.DropdownMenuItem("Item 3"),
-                                    ],
-                                ),
-                                mapcomp,
-                            ]
-                        ),
-                        style=rcol_style,
-                    ),
-                ]
-            ),
+            first_row,
             dbc.Row(
                 [
                     dbc.Col([html.H4("Map Selection"), tablecomp], style=lcol_style),
@@ -538,7 +554,7 @@ def init_app():
                                 color="secondary",
                                 size="sm",
                                 title="Download all the water levels for the selected location"
-                                " as a single csv file",
+                                      " as a single csv file",
                                 id="download_selected_btn",
                             ),
                             dcc.Download(id="download_selected_csv"),
@@ -573,7 +589,7 @@ def init_app():
                                 style={"margin": "10px", "width": "40%"},
                                 color="primary",
                                 title="Download all the water levels for all the monitoring"
-                                " wells as a single csv file",
+                                      " wells as a single csv file",
                                 id="download_monitor_wells_btn",
                             ),
                             dcc.Download(id="download-csv"),
@@ -739,13 +755,16 @@ def get_nm_aquifer_obs(iotid, data=None):
         Input("macrostrat_basemap_select", "n_clicks"),
         Input("esri_basemap_select", "n_clicks"),
         Input("opentopo_basemap_select", "n_clicks"),
-        # Input("osm_basemap_select", "n_clicks"),
+        Input("osm_basemap_select", "n_clicks"),
+        Input("basemap_opacity", "value"),
+        Input("search_input", "value"),
         State("map", "figure"),
     ],
     prevent_initial_call=True,
 )
-def handle_basemap_select(a, b, c, d, fig):
+def handle_basemap_select(a, b, c, d, e, opacity, search_input, fig):
     # print('asdf', a, b)
+    l = None
     if ctx.triggered_id == "usgs_basemap_select":
         l = USGS_BM
     elif ctx.triggered_id == "macrostrat_basemap_select":
@@ -754,11 +773,25 @@ def handle_basemap_select(a, b, c, d, fig):
         l = ESRI_BM
     elif ctx.triggered_id == "opentopo_basemap_select":
         l = OPENTOPO_BM
-    # elif ctx.triggered_id == 'osm_basemap_select':
-    #     l = OSM_BM
+    elif ctx.triggered_id == 'osm_basemap_select':
+        fig['layout']['mapbox']['layers'] = []
+    elif ctx.triggered_id == 'search_input':
+        for di in fig['data']:
+            location = next(((i, name) for i, name in enumerate(di['text']) if name.startswith(search_input)), None)
+            if location:
+                idx, location = location
+                lat = di['lat'][idx]
+                lon = di['lon'][idx]
+                fig['layout']['mapbox']['center'] = {'lat': lat, 'lon': lon}
+                fig['layout']['mapbox']['zoom'] = 11
+    elif ctx.triggered_id == 'basemap_opacity':
+        layers = fig['layout']['mapbox'].get('layers')
+        if layers:
+            l = layers[0]
 
-    # print(ctx.triggered_id, l)
     if l:
+        l['opacity'] = opacity / 100.
+
         fig["layout"]["mapbox"]["layers"] = [
             l,
         ]
