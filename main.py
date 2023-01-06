@@ -271,17 +271,17 @@ summarytable = DataTable(
     id="summarytable",
     tooltip_header={
         "last_measurement": f"Last depth to water. If current value is > than the long term average for"
-                            f" {now_month_name} highlight row in red",
+        f" {now_month_name} highlight row in red",
         "month_average_value": f"Average depth to water (ft) for for all years with water levels in {now_month_name}.",
         "trend": "Depth to water trend. Calculated by performing a linear regression "
-                 "on the last ~25-50 days depending on sampling frequency",
+        "on the last ~25-50 days depending on sampling frequency",
     },
     css=[
         {
             "selector": ".dash-table-tooltip",
             "rule": "background-color: grey; font-family: verdana; color: white;"
-                    "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
-                    "border-radius: 5px",
+            "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
+            "border-radius: 5px",
         },
         {
             "selector": ".dash-tooltip",
@@ -424,13 +424,13 @@ def init_app():
 
     summarytable.data = sdata
     for a, tag in (
-            # ("ISC Seven Rivers", "isc_seven_rivers"),
-            # ("OSE Roswell", "ose_roswell"),
-            ("Groundwater Wells", "locations_no_aquifer"),
-            (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
-            (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
-            (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
-            ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+        # ("ISC Seven Rivers", "isc_seven_rivers"),
+        # ("OSE Roswell", "ose_roswell"),
+        ("Groundwater Wells", "locations_no_aquifer"),
+        (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
+        (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
+        (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
+        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
     ):
         locations = pd.read_json(
             f"./data/{tag}.json"
@@ -481,43 +481,56 @@ def init_app():
     gchart = dcc.Graph(
         id="grouped_hydrograph", style=card_style, figure=grouped_hydrograph
     )
-    slider = dcc.Slider(0, 100, value=75,
-                        id='basemap_opacity',
-                        tooltip={"placement": "bottom", "always_visible": False},
-                        marks=None)
-    label = html.Label('Opacity')
+    slider = dcc.Slider(
+        0,
+        100,
+        value=75,
+        id="basemap_opacity",
+        tooltip={"placement": "bottom", "always_visible": False},
+        marks=None,
+    )
+    label = html.Label("Opacity")
     sliderdiv = html.Div([label, slider])
 
-    maptoolrow = dbc.Row([dbc.Col(dbc.DropdownMenu(
-        label="Base Map",
-        size="sm",
-        color="secondary",
-        style={"marginTop": "5px"},
-        id="basemap_select",
-        children=[
-            dbc.DropdownMenuItem(
-                "USGS Base Map", id="usgs_basemap_select"
+    maptoolrow = dbc.Row(
+        [
+            dbc.Col(
+                dbc.DropdownMenu(
+                    label="Base Map",
+                    size="sm",
+                    color="secondary",
+                    style={"marginTop": "5px"},
+                    id="basemap_select",
+                    children=[
+                        dbc.DropdownMenuItem("USGS Base Map", id="usgs_basemap_select"),
+                        dbc.DropdownMenuItem(
+                            "Macrostrat", id="macrostrat_basemap_select"
+                        ),
+                        dbc.DropdownMenuItem(
+                            "ESRI World Imagery",
+                            id="esri_basemap_select",
+                        ),
+                        dbc.DropdownMenuItem("Open Topo", id="opentopo_basemap_select"),
+                        dbc.DropdownMenuItem(
+                            "Open Street Map", id="osm_basemap_select"
+                        ),
+                        # dbc.DropdownMenuItem("Item 3"),
+                    ],
+                ),
+                width=2,
             ),
-            dbc.DropdownMenuItem(
-                "Macrostrat", id="macrostrat_basemap_select"
+            dbc.Col(sliderdiv),
+            dbc.Col(
+                dbc.Input(
+                    id="search_input",
+                    placeholder="Search for a well..",
+                    type="text",
+                    debounce=True,
+                    style={"marginTop": "10px"},
+                )
             ),
-            dbc.DropdownMenuItem(
-                "ESRI World Imagery",
-                id="esri_basemap_select",
-            ),
-            dbc.DropdownMenuItem(
-                "Open Topo", id="opentopo_basemap_select"
-            ),
-            dbc.DropdownMenuItem("Open Street Map", id='osm_basemap_select'),
-            # dbc.DropdownMenuItem("Item 3"),
-        ],
-    ), width=2),
-        dbc.Col(sliderdiv),
-        dbc.Col(dbc.Input(id='search_input',
-                          placeholder='Search for a well..',
-                          type='text',
-                          debounce=True,
-                          style={"marginTop": '10px'}))])
+        ]
+    )
     first_row = dbc.Row(
         [
             dbc.Col(
@@ -554,7 +567,7 @@ def init_app():
                                 color="secondary",
                                 size="sm",
                                 title="Download all the water levels for the selected location"
-                                      " as a single csv file",
+                                " as a single csv file",
                                 id="download_selected_btn",
                             ),
                             dcc.Download(id="download_selected_csv"),
@@ -589,7 +602,7 @@ def init_app():
                                 style={"margin": "10px", "width": "40%"},
                                 color="primary",
                                 title="Download all the water levels for all the monitoring"
-                                      " wells as a single csv file",
+                                " wells as a single csv file",
                                 id="download_monitor_wells_btn",
                             ),
                             dcc.Download(id="download-csv"),
@@ -773,24 +786,31 @@ def handle_basemap_select(a, b, c, d, e, opacity, search_input, fig):
         l = ESRI_BM
     elif ctx.triggered_id == "opentopo_basemap_select":
         l = OPENTOPO_BM
-    elif ctx.triggered_id == 'osm_basemap_select':
-        fig['layout']['mapbox']['layers'] = []
-    elif ctx.triggered_id == 'search_input':
-        for di in fig['data']:
-            location = next(((i, name) for i, name in enumerate(di['text']) if name.startswith(search_input)), None)
+    elif ctx.triggered_id == "osm_basemap_select":
+        fig["layout"]["mapbox"]["layers"] = []
+    elif ctx.triggered_id == "search_input":
+        for di in fig["data"]:
+            location = next(
+                (
+                    (i, name)
+                    for i, name in enumerate(di["text"])
+                    if name.startswith(search_input)
+                ),
+                None,
+            )
             if location:
                 idx, location = location
-                lat = di['lat'][idx]
-                lon = di['lon'][idx]
-                fig['layout']['mapbox']['center'] = {'lat': lat, 'lon': lon}
-                fig['layout']['mapbox']['zoom'] = 11
-    elif ctx.triggered_id == 'basemap_opacity':
-        layers = fig['layout']['mapbox'].get('layers')
+                lat = di["lat"][idx]
+                lon = di["lon"][idx]
+                fig["layout"]["mapbox"]["center"] = {"lat": lat, "lon": lon}
+                fig["layout"]["mapbox"]["zoom"] = 11
+    elif ctx.triggered_id == "basemap_opacity":
+        layers = fig["layout"]["mapbox"].get("layers")
         if layers:
             l = layers[0]
 
     if l:
-        l['opacity'] = opacity / 100.
+        l["opacity"] = opacity / 100.0
 
         fig["layout"]["mapbox"]["layers"] = [
             l,
