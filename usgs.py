@@ -39,7 +39,7 @@ def get_site_metadata(location=None, siteid=None):
     url = f"https://waterservices.usgs.gov/nwis/site/?format=rdb&sites={siteid}&siteStatus=all&siteOutput=expanded"
     resp = requests.get(url)
     if resp.status_code == 200:
-        return make_site_record(resp.text)
+        return make_site_record(resp.text), url
 
 
 def get_gwl(location=None, siteid=None):

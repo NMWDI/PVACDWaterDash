@@ -103,17 +103,33 @@ def get_well_depths():
             thing = location["Things"][0]
             tprops = thing["properties"]
 
-            wdepth = tprops.get("WellDepth")
+            # wdepth = tprops.get("WellDepth")
+            wdepth = None
             formation = None
             if not wdepth:
                 print(f"    no well depth for {agency} {iotid}, {name}")
                 if agency == "OSE-Roswell":
                     md = get_site_metadata(location)
                     if md:
+                        md, url = md
                         formation = md["aqfr_cd"]
-                        tprops["WellDepth"] = md["well_depth_va"]
-                        tprops["HoleDepth"] = md["hole_depth_va"]
-                        tprops["GeologicFormation"] = formation
+
+
+                        tprops["well_depth"] =wd= md["well_depth_va"]
+                        tprops['WellDepth'] = wd
+                        if wd:
+                            tprops["well_depth_attribution"] = {"agency": 'USGS', "source_url": url}
+
+                        tprops["hole_depth"] =hd= md["hole_depth_va"]
+                        tprops['HoleDepth'] = hd
+                        if hd:
+                            tprops["hole_depth_attribution"] = {"agency": 'USGS', "source_url": url}
+
+                        tprops['GeologicFormation'] = formation
+                        tprops["geologic_formation"] = formation
+                        if formation:
+                            tprops["geologic_formation_attribution"] = {"agency": 'USGS', "source_url": url}
+
                     # get welldepth from usgs
                     # usgs_data = get_usgs(location)
                     # print(usgs_data)
@@ -135,11 +151,13 @@ def get_well_depths():
             if formation:
                 aquifer = AQUIFER_3DMODEL_MAP.get(formation, "")
                 # aquifer_group = AQUIFER_3DMODEL_MAP.get(aquifer, '')
-                tprops.update({"aquifer": aquifer})
-                try:
-                    del tprops["aquifer_group"]
-                except KeyError:
-                    pass
+                tprops.update({"aquifer": aquifer, "aquifer_attribution": {"agency": "NMWDI"}})
+                # for k in ('aquifer_group', 'WellDepth_attribution', 'WellDepth', 'HoleDepth',
+                #           'HoleDepth_attribution', 'GeologicFormation', 'GeologicFormation_attribution'):
+                #     try:
+                #         del tprops[k]
+                #     except KeyError:
+                #         pass
 
                 patch_thing(thing["@iot.selfLink"], {"properties": tprops})
 
@@ -268,8 +286,8 @@ if __name__ == "__main__":
     # st2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/"
     # make_st_agency(st2, "pvacd_hydrovu", "PVACD")
 
-    # get_well_depths()
-    main_make()
-    group_locations()
+    get_well_depths()
+    # main_make()
+    # group_locations()
 
 # ============= EOF =============================================

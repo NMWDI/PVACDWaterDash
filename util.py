@@ -101,7 +101,7 @@ def make_customdata(locations, tag):
         if tag == "pvacd_hydrovu":
             code = "313SADR"
         else:
-            code = tprops.get("GeologicFormation")
+            code = tprops.get("geologic_formation")
 
         customdata = []
         name = ""
@@ -119,7 +119,7 @@ def make_customdata(locations, tag):
         # model_formation = tprops.get("model_formation", "")
         # customdata.append(f"Model Formation: {model_formation}")
 
-        welldepth = tprops.get("WellDepth", "")
+        welldepth = tprops.get("well_depth", "")
         if welldepth:
             welldepth = f"{welldepth} (ft)"
 
@@ -129,6 +129,13 @@ def make_customdata(locations, tag):
         fs.append(customdata)
 
     return fs
+
+def get_tprop(prop, k):
+    def camelcase(n):
+        args =(ni.capitalize() for ni in n.split('_'))
+        return ''.join(args)
+
+    return prop.get(k, prop.get(camelcase(k)))
 
 
 def todatetime(t, fmt=DTFORMAT):

@@ -97,7 +97,7 @@ from flask_caching import Cache
 config = {
     "DEBUG": True,  # some Flask specific configs
     "CACHE_TYPE": "FileSystemCache",  # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 300,
+    "CACHE_DEFAULT_TIMEOUT": 3,
     "CACHE_DIR": "/tmp/cache",
 }
 
@@ -178,7 +178,7 @@ COLOR_MAP = {
     "locations_permian_aquifer_system": "blue",
     "locations_pecos_valley_alluvial_aquifer": "purple",
     "locations_high_mountain_aquifer_system": "black",
-    "pvacd_hydrovu": "",
+    "pvacd_hydrovu": "green",
 }
 
 banner_style = card_style.copy()
@@ -296,7 +296,7 @@ summarytable = DataTable(
         {"name": ["Depth to Water", "ft"], "id": "last_measurement"},
         {"name": ["Avg. Depth to Water", "ft"], "id": "month_average_value"},
         {"name": ["Measurement Time", ""], "id": "last_time"},
-        {"name": ["Measurement Interval", "hrs"], "id": "measurement_interval"},
+        {"name": ["Measurement Int.", "hrs"], "id": "measurement_interval"},
         {"name": ["Trend", ""], "id": "trend"},
     ],
     style_header=header_style,
@@ -356,14 +356,14 @@ def init_app():
         iotid = row["PVACD"]
         print(iotid, row)
 
-        location, obs = get_observations(location_iotid=iotid)
+        location, obs = get_observations(location_iotid=iotid, limit=10000)
 
         historic_obs = get_nm_aquifer_obs(iotid)
         if historic_obs:
             obs.extend(historic_obs)
 
         obs = sorted(obs, key=lambda o: o["phenomenonTime"], reverse=True)
-        obs = [o for i, o in enumerate(obs) if not i % 3]
+        obs = [o for i, o in enumerate(obs) if not i % 5]
 
         scatter = px.line(obs, x="phenomenonTime", y="result", height=350)
         xs = [o["phenomenonTime"] for o in obs]
@@ -427,7 +427,7 @@ def init_app():
     for a, tag in (
         # ("ISC Seven Rivers", "isc_seven_rivers"),
         # ("OSE Roswell", "ose_roswell"),
-        ("Groundwater Wells", "locations_no_aquifer"),
+        ("Well, uncertain aquifer", "locations_no_aquifer"),
         (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
         (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
         (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
@@ -445,9 +445,9 @@ def init_app():
         size = 10
         colors = COLOR_MAP[tag]
         if tag == "pvacd_hydrovu":
-            colors = [
-                "green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations
-            ]
+            # colors = [
+            #     "green" if trends.get(l["@iot.id"], 1) < 0 else "red" for l in locations
+            # ]
             size = 15
             # ids = [prep_hydrovu_name(i) for i in ids]
         else:
@@ -535,7 +535,7 @@ def init_app():
     first_row = dbc.Row(
         [
             dbc.Col(
-                html.Div([html.H4("Monitoring Wells"), summarytable]),
+                html.Div([html.H4("PVACD Monitoring Wells"), summarytable]),
                 style=lcol_style,
                 width=6,
             ),
@@ -559,7 +559,7 @@ def init_app():
             first_row,
             dbc.Row(
                 [
-                    dbc.Col([html.H4("Map Selection"), tablecomp], style=lcol_style),
+                    dbc.Col([html.H4("Selected Well"), tablecomp], style=lcol_style),
                     dbc.Col(
                         [
                             dbc.Button(
@@ -727,14 +727,13 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
         j = resp.json()
         obs = j["value"]
         nextlink = j.get("@iot.nextLink")
-
         while len(obs) < limit and nextlink:
             resp = requests.get(nextlink)
             if resp.status_code == 200:
                 j = resp.json()
                 obs.extend(j["value"])
                 nextlink = j.get("@iot.nextLink")
-
+        print('lea', len(obs))
         return location, obs
 
 
@@ -758,7 +757,7 @@ def get_nm_aquifer_obs(iotid, data=None):
                 )
                 data.extend(vs)
 
-        nm_aquifer_location, manual_obs = get_observations(location_iotid=aiotid)
+        nm_aquifer_location, manual_obs = get_observations(location_iotid=aiotid, limit=10000)
         return manual_obs
 
 
@@ -912,8 +911,8 @@ def display_click_data(clickData):
     # set_progress()
     data = [
         {"name": "Location", "value": ""},
-        {"name": "Latitude", "value": ""},
-        {"name": "Longitude", "value": ""},
+        {"name": "Lat/Lon", "value": ""},
+        {"name": "Source", "value": ""},
         {"name": "PointID", "value": ""},
         {"name": "Elevation (ft)", "value": ""},
         {"name": "Well Depth (ft)", "value": ""},
@@ -938,8 +937,7 @@ def display_click_data(clickData):
         resp = requests.get(url)
         data = [
             {"name": "Location", "value": name},
-            {"name": "Latitude", "value": point["lat"]},
-            {"name": "Longitude", "value": point["lon"]},
+            {"name": "Lat/Lon", "value": f'{point["lat"]}, {point["lon"]}'},
         ]
 
         if resp.status_code == 200:
@@ -947,6 +945,7 @@ def display_click_data(clickData):
                 location = resp.json()["value"][0]
                 iotid = location["@iot.id"]
                 osewellid = ""
+                data.append({"name": "Source", "value": location['properties']['agency']})
                 data.append({"name": "OSE Well ID", "value": osewellid})
 
             except IndexError:
@@ -982,7 +981,7 @@ def display_click_data(clickData):
         xs = [xi["phenomenonTime"] for xi in obs]
         ys = [xi["result"] for xi in obs]
 
-        fd = [go.Scatter(x=xs, y=ys, name=name)]
+        fd = [go.Scatter(x=xs, y=ys, name=name, mode='markers+lines')]
 
     layout = dict(
         height=350,

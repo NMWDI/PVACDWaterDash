@@ -15,6 +15,9 @@
 # ===============================================================================
 import os
 
+import pandas as pd
+import requests
+
 ST2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1"
 
 DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
@@ -25,6 +28,7 @@ DEBUG_OBS = True
 DEBUG_OBS = False
 DEBUG_LIMIT_OBS = 0
 DEBUG_N_WELLS = int(os.environ.get("DEBUG_N_WELLS", 0))
+DEBUG_MAPPINGS = int(os.environ.get("DEBUG_MAPPINGS", 0))
 
 
 MACROSTRAT_BM = {
@@ -67,31 +71,30 @@ OSM_BM = {
     "source": ["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"],
 }
 
-# AQUIFER_FORMATION_MAP = {'300YESO': 'Yeso',
-#                          '300YESO/000IRSV': 'Yeso',
-#                          '313SADR': 'SanAndres'}
-
-# AQUIFER_3DMODEL_MAP = {'Yeso': PERMIAN_AQUIFER_SYSTEM,
-#                        'SanAndres': PERMIAN_AQUIFER_SYSTEM,
-#                        'Alluvium': "Pecos Valley Alluvial Aquifer",
-#                        'Artesia': "Artesia Group"}
 
 PERMIAN_AQUIFER_SYSTEM = "Permian Aquifer System"
 PECOS_VALLEY_ALLUVIAL_AQUIFER = "Pecos Valley Alluvial Aquifer"
 ARTESIA_GROUP = "Artesia Group"
 HIGH_PLAINS_AQUIFER_SYSTEM = "High Plains Aquifer System"
 HIGH_MOUNTAIN_AQUIFER_SYSTEM = "High Mountain Aquifer System"
+def readjson(url):
+    resp = requests.get(url)
+    return resp.json()
 
 
-AQUIFER_PVACD_MAP = {
+if DEBUG_MAPPINGS:
+    AQUIFER_PVACD_MAP = {
     PECOS_VALLEY_ALLUVIAL_AQUIFER: "Shallow",
     ARTESIA_GROUP: "Confining Unit",
     HIGH_PLAINS_AQUIFER_SYSTEM: "Plains",
     HIGH_MOUNTAIN_AQUIFER_SYSTEM: "Mountain",
     PERMIAN_AQUIFER_SYSTEM: "Artesian",
 }
+else:
+    AQUIFER_PVACD_MAP = readjson('https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/mappings/3dmodel_to_PVACD.json')
 
-AQUIFER_3DMODEL_MAP = {
+if DEBUG_MAPPINGS:
+    AQUIFER_3DMODEL_MAP = {
     "050QUAL": PECOS_VALLEY_ALLUVIAL_AQUIFER,
     "100ALVM": PECOS_VALLEY_ALLUVIAL_AQUIFER,
     "110ALVM": PECOS_VALLEY_ALLUVIAL_AQUIFER,
@@ -154,4 +157,6 @@ AQUIFER_3DMODEL_MAP = {
     "SanAndres": PERMIAN_AQUIFER_SYSTEM,
     "Yeso": PERMIAN_AQUIFER_SYSTEM,
 }
+else:
+    AQUIFER_3DMODEL_MAP = readjson('https://raw.githubusercontent.com/NMWDI/VocabService/main/pvacd_hydroviewer/mappings/formationCode_to_3dmodel.json')
 # ============= EOF =============================================
