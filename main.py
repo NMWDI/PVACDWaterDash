@@ -733,7 +733,7 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
                 j = resp.json()
                 obs.extend(j["value"])
                 nextlink = j.get("@iot.nextLink")
-        print('lea', len(obs))
+        print("lea", len(obs))
         return location, obs
 
 
@@ -757,7 +757,9 @@ def get_nm_aquifer_obs(iotid, data=None):
                 )
                 data.extend(vs)
 
-        nm_aquifer_location, manual_obs = get_observations(location_iotid=aiotid, limit=10000)
+        nm_aquifer_location, manual_obs = get_observations(
+            location_iotid=aiotid, limit=10000
+        )
         return manual_obs
 
 
@@ -945,7 +947,9 @@ def display_click_data(clickData):
                 location = resp.json()["value"][0]
                 iotid = location["@iot.id"]
                 osewellid = ""
-                data.append({"name": "Source", "value": location['properties']['agency']})
+                data.append(
+                    {"name": "Source", "value": location["properties"]["agency"]}
+                )
                 data.append({"name": "OSE Well ID", "value": osewellid})
 
             except IndexError:
@@ -981,7 +985,7 @@ def display_click_data(clickData):
         xs = [xi["phenomenonTime"] for xi in obs]
         ys = [xi["result"] for xi in obs]
 
-        fd = [go.Scatter(x=xs, y=ys, name=name, mode='markers+lines')]
+        fd = [go.Scatter(x=xs, y=ys, name=name, mode="markers+lines")]
 
     layout = dict(
         height=350,

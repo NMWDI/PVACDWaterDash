@@ -114,21 +114,29 @@ def get_well_depths():
                         md, url = md
                         formation = md["aqfr_cd"]
 
-
-                        tprops["well_depth"] =wd= md["well_depth_va"]
-                        tprops['WellDepth'] = wd
+                        tprops["well_depth"] = wd = md["well_depth_va"]
+                        tprops["WellDepth"] = wd
                         if wd:
-                            tprops["well_depth_attribution"] = {"agency": 'USGS', "source_url": url}
+                            tprops["well_depth_attribution"] = {
+                                "agency": "USGS",
+                                "source_url": url,
+                            }
 
-                        tprops["hole_depth"] =hd= md["hole_depth_va"]
-                        tprops['HoleDepth'] = hd
+                        tprops["hole_depth"] = hd = md["hole_depth_va"]
+                        tprops["HoleDepth"] = hd
                         if hd:
-                            tprops["hole_depth_attribution"] = {"agency": 'USGS', "source_url": url}
+                            tprops["hole_depth_attribution"] = {
+                                "agency": "USGS",
+                                "source_url": url,
+                            }
 
-                        tprops['GeologicFormation'] = formation
+                        tprops["GeologicFormation"] = formation
                         tprops["geologic_formation"] = formation
                         if formation:
-                            tprops["geologic_formation_attribution"] = {"agency": 'USGS', "source_url": url}
+                            tprops["geologic_formation_attribution"] = {
+                                "agency": "USGS",
+                                "source_url": url,
+                            }
 
                     # get welldepth from usgs
                     # usgs_data = get_usgs(location)
@@ -151,7 +159,9 @@ def get_well_depths():
             if formation:
                 aquifer = AQUIFER_3DMODEL_MAP.get(formation, "")
                 # aquifer_group = AQUIFER_3DMODEL_MAP.get(aquifer, '')
-                tprops.update({"aquifer": aquifer, "aquifer_attribution": {"agency": "NMWDI"}})
+                tprops.update(
+                    {"aquifer": aquifer, "aquifer_attribution": {"agency": "NMWDI"}}
+                )
                 # for k in ('aquifer_group', 'WellDepth_attribution', 'WellDepth', 'HoleDepth',
                 #           'HoleDepth_attribution', 'GeologicFormation', 'GeologicFormation_attribution'):
                 #     try:

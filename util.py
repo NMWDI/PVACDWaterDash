@@ -130,10 +130,11 @@ def make_customdata(locations, tag):
 
     return fs
 
+
 def get_tprop(prop, k):
     def camelcase(n):
-        args =(ni.capitalize() for ni in n.split('_'))
-        return ''.join(args)
+        args = (ni.capitalize() for ni in n.split("_"))
+        return "".join(args)
 
     return prop.get(k, prop.get(camelcase(k)))
 
