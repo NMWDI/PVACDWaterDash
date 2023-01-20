@@ -1,4 +1,4 @@
-service: hydrodash
+service: hydrodashdev
 runtime: python39
 instance_class: F4
 

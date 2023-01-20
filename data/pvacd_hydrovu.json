@@ -45,9 +45,9 @@
                   32.8803720937232
                 ]
               },
-              "phenomenonTime": "2021-12-13T22:03:00.000Z/2023-01-04T12:00:00.000Z",
+              "phenomenonTime": "2021-12-13T22:03:00.000Z/2023-01-11T12:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-13T22:03:00.000Z/2023-01-04T12:00:00.000Z",
+              "resultTime": "2021-12-13T22:03:00.000Z/2023-01-11T12:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14468)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -106,9 +106,9 @@
                   33.5924283752
                 ]
               },
-              "phenomenonTime": "2021-12-09T00:00:00.000Z/2023-01-04T10:00:00.000Z",
+              "phenomenonTime": "2021-12-09T00:00:00.000Z/2023-01-11T12:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-09T00:00:00.000Z/2023-01-04T10:00:00.000Z",
+              "resultTime": "2021-12-09T00:00:00.000Z/2023-01-11T12:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14469)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -168,9 +168,9 @@
                   32.98
                 ]
               },
-              "phenomenonTime": "2021-12-08T21:34:00.000Z/2023-01-04T08:00:00.000Z",
+              "phenomenonTime": "2021-12-08T21:34:00.000Z/2023-01-11T00:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-08T21:34:00.000Z/2023-01-04T08:00:00.000Z",
+              "resultTime": "2021-12-08T21:34:00.000Z/2023-01-11T00:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14470)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -230,9 +230,9 @@
                   33.438
                 ]
               },
-              "phenomenonTime": "2021-12-13T17:11:00.000Z/2023-01-04T12:00:00.000Z",
+              "phenomenonTime": "2021-12-13T17:11:00.000Z/2023-01-11T12:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-13T17:11:00.000Z/2023-01-04T12:00:00.000Z",
+              "resultTime": "2021-12-13T17:11:00.000Z/2023-01-11T12:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14471)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -292,9 +292,9 @@
                   33.373029848637
                 ]
               },
-              "phenomenonTime": "2021-12-14T16:08:00.000Z/2023-01-04T06:00:00.000Z",
+              "phenomenonTime": "2021-12-14T16:08:00.000Z/2023-01-11T12:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-14T16:08:00.000Z/2023-01-04T06:00:00.000Z",
+              "resultTime": "2021-12-14T16:08:00.000Z/2023-01-11T12:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14472)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -353,9 +353,9 @@
                   33.613507745151
                 ]
               },
-              "phenomenonTime": "2021-12-09T00:00:00.000Z/2023-01-04T12:00:00.000Z",
+              "phenomenonTime": "2021-12-09T00:00:00.000Z/2023-01-11T04:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-09T00:00:00.000Z/2023-01-04T12:00:00.000Z",
+              "resultTime": "2021-12-09T00:00:00.000Z/2023-01-11T04:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14474)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -415,9 +415,9 @@
                   32.7794091310684
                 ]
               },
-              "phenomenonTime": "2021-12-09T00:00:00.000Z/2023-01-04T12:00:00.000Z",
+              "phenomenonTime": "2021-12-09T00:00:00.000Z/2023-01-11T08:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-09T00:00:00.000Z/2023-01-04T12:00:00.000Z",
+              "resultTime": "2021-12-09T00:00:00.000Z/2023-01-11T08:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14475)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -477,9 +477,9 @@
                   33.257
                 ]
               },
-              "phenomenonTime": "2021-12-14T16:33:00.000Z/2023-01-04T04:00:00.000Z",
+              "phenomenonTime": "2021-12-14T16:33:00.000Z/2023-01-11T12:00:00.000Z",
               "properties": {},
-              "resultTime": "2021-12-14T16:33:00.000Z/2023-01-04T04:00:00.000Z",
+              "resultTime": "2021-12-14T16:33:00.000Z/2023-01-11T12:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14476)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -539,9 +539,9 @@
                   33.1681864320785
                 ]
               },
-              "phenomenonTime": "2022-03-18T20:07:00.000Z/2023-01-04T10:00:00.000Z",
+              "phenomenonTime": "2022-03-18T20:07:00.000Z/2023-01-11T12:00:00.000Z",
               "properties": {},
-              "resultTime": "2022-03-18T20:07:00.000Z/2023-01-04T10:00:00.000Z",
+              "resultTime": "2022-03-18T20:07:00.000Z/2023-01-11T12:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14477)",
               "unitOfMeasurement": {
                 "name": "Foot",
@@ -601,9 +601,9 @@
                   33.0701484680176
                 ]
               },
-              "phenomenonTime": "2022-10-05T18:00:00.000Z/2023-01-04T08:00:00.000Z",
+              "phenomenonTime": "2022-10-05T18:00:00.000Z/2023-01-11T12:00:00.000Z",
               "properties": {},
-              "resultTime": "2022-10-05T18:00:00.000Z/2023-01-04T08:00:00.000Z",
+              "resultTime": "2022-10-05T18:00:00.000Z/2023-01-11T12:00:00.000Z",
               "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(24951)",
               "unitOfMeasurement": {
                 "name": "Foot",

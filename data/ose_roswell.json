@@ -26,7 +26,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "71",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "71",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323405104242601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323405104242601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9158)",
           "Datastreams": [
@@ -88,7 +101,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "600",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "600",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323409104281401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323409104281401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9159)",
           "Datastreams": [
@@ -150,7 +176,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "400",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "400",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323542104242701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323542104242701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9160)",
           "Datastreams": [
@@ -212,7 +251,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "200",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "200",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323613104260901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323613104260901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9161)",
           "Datastreams": [
@@ -274,7 +326,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "300",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323656104305001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323656104305001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9162)",
           "Datastreams": [
@@ -336,7 +401,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "225",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "225",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323705104225501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323705104225501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9163)",
           "Datastreams": [
@@ -397,7 +475,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323738104253801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9164)",
           "Datastreams": [
@@ -459,7 +545,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "127",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "127",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323810104221601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323810104221601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9165)",
           "Datastreams": [
@@ -521,7 +620,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "552",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "552",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323811104264301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323811104264301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9166)",
           "Datastreams": [
@@ -583,7 +695,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "130",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "130",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323841104303201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323841104303201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9167)",
           "Datastreams": [
@@ -645,7 +770,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "180",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "180",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323842104283501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323842104283501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9168)",
           "Datastreams": [
@@ -706,7 +844,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323953104274401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9169)",
           "Datastreams": [
@@ -767,7 +913,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324004104285801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9170)",
           "Datastreams": [
@@ -887,7 +1041,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324034104201801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9172)",
           "Datastreams": [
@@ -949,7 +1111,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "142",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "142",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324041104294801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324041104294801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9173)",
           "Datastreams": [
@@ -1011,7 +1186,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "211",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "211",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324042104265801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324042104265801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9174)",
           "Datastreams": [
@@ -1073,7 +1261,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "880",
-            "GeologicFormation": "313GRBG"
+            "well_depth": "880",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324105104222601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324105104222601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9175)",
           "Datastreams": [
@@ -1135,7 +1336,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "905",
-            "GeologicFormation": "313GRBG"
+            "well_depth": "905",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324119104242101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324119104242101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9176)",
           "Datastreams": [
@@ -1197,7 +1411,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "87",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "87",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324154104210701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324154104210701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9177)",
           "Datastreams": [
@@ -1259,7 +1486,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "305",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "305",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324155104184601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324155104184601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9178)",
           "Datastreams": [
@@ -1321,7 +1561,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "430",
-            "GeologicFormation": "313SADR"
+            "well_depth": "430",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324220104264001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324220104264001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9179)",
           "Datastreams": [
@@ -1383,7 +1636,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "170",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "170",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324259104232501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324259104232501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9180)",
           "Datastreams": [
@@ -1445,7 +1711,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "205",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "205",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324327104245501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324327104245501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9181)",
           "Datastreams": [
@@ -1507,7 +1786,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "100",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "100",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324340104202301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324340104202301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9182)",
           "Datastreams": [
@@ -1569,7 +1861,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "320.0",
-            "GeologicFormation": "313SADR"
+            "well_depth": "320.0",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324430104284801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324430104284801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9183)",
           "Datastreams": [
@@ -1630,7 +1935,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324453104204901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9184)",
           "Datastreams": [
@@ -1692,7 +2005,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "235",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "235",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324501104223701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324501104223701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9185)",
           "Datastreams": [
@@ -1754,7 +2080,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "276",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "276",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324519104250201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324519104250201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9186)",
           "Datastreams": [
@@ -1816,7 +2155,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "150",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "150",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324522104203301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324522104203301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9187)",
           "Datastreams": [
@@ -1936,7 +2288,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313GRBG"
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324533104251301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9189)",
           "Datastreams": [
@@ -1997,7 +2357,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
-            "GeologicFormation": "313SADR"
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324543104272401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9190)",
           "Datastreams": [
@@ -2059,7 +2427,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "202",
-            "GeologicFormation": "313SADR"
+            "well_depth": "202",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324612104213301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324612104213301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9191)",
           "Datastreams": [
@@ -2121,7 +2502,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "840",
-            "GeologicFormation": "313GRBG"
+            "well_depth": "840",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324652104241001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324652104241001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9192)",
           "Datastreams": [
@@ -2183,7 +2577,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "400",
-            "GeologicFormation": "313SADR"
+            "well_depth": "400",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324715104180201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324715104180201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9193)",
           "Datastreams": [
@@ -2245,7 +2652,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "219",
-            "GeologicFormation": "313SADR"
+            "well_depth": "219",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324729104254701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324729104254701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9194)",
           "Datastreams": [
@@ -2307,7 +2727,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "167",
-            "GeologicFormation": "313SADR"
+            "well_depth": "167",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324732104213101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324732104213101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9195)",
           "Datastreams": [
@@ -2369,7 +2802,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "114",
-            "GeologicFormation": "313SADR"
+            "well_depth": "114",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324752104243201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324752104243201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9196)",
           "Datastreams": [
@@ -2430,7 +2876,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324757104301801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9197)",
           "Datastreams": [
@@ -2492,7 +2946,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "325",
-            "GeologicFormation": "313SADR"
+            "well_depth": "325",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324807104225301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324807104225301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9198)",
           "Datastreams": [
@@ -2554,7 +3021,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "128",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "128",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324808104220901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324808104220901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9199)",
           "Datastreams": [
@@ -2616,7 +3096,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "945",
-            "GeologicFormation": "313SADR"
+            "well_depth": "945",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324815104225501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324815104225501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9200)",
           "Datastreams": [
@@ -2678,7 +3171,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "201",
-            "GeologicFormation": "313SADR"
+            "well_depth": "201",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324831104244401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324831104244401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9201)",
           "Datastreams": [
@@ -2740,7 +3246,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "385",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "385",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324856104334801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324856104334801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9202)",
           "Datastreams": [
@@ -2802,7 +3321,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "186",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "186",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324857104232601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324857104232601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9203)",
           "Datastreams": [
@@ -2923,7 +3455,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "903",
-            "GeologicFormation": "313GRBG"
+            "well_depth": "903",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324916104220601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324916104220601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9205)",
           "Datastreams": [
@@ -2985,7 +3530,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "247",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "247",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324930104272301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324930104272301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9206)",
           "Datastreams": [
@@ -3047,7 +3605,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "300",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324945104353101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324945104353101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9207)",
           "Datastreams": [
@@ -3109,7 +3680,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "220",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "220",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324953104223701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324953104223701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9208)",
           "Datastreams": [
@@ -3171,7 +3755,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "210",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "210",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325033104220201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325033104220201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9209)",
           "Datastreams": [
@@ -3233,7 +3830,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "100.00",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "100.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325122104151001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325122104151001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9210)",
           "Datastreams": [
@@ -3295,7 +3905,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "83",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "83",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325200104213401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325200104213401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9211)",
           "Datastreams": [
@@ -3357,7 +3980,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "231",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "231",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325206104275001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325206104275001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9212)",
           "Datastreams": [
@@ -3419,7 +4055,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "1261",
-            "GeologicFormation": "313SADR"
+            "well_depth": "1261",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325214104244201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325214104244201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9213)",
           "Datastreams": [
@@ -3481,7 +4130,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "235",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "235",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325220104253101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325220104253101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9214)",
           "Datastreams": [
@@ -3543,7 +4205,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "170",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "170",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325255104241001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325255104241001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9215)",
           "Datastreams": [
@@ -3605,7 +4280,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "390",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "390",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325314104230802&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325314104230802&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9216)",
           "Datastreams": [
@@ -3667,7 +4355,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "1149",
-            "GeologicFormation": "313GRBG"
+            "well_depth": "1149",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325335104221701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325335104221701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9217)",
           "Datastreams": [
@@ -3729,7 +4430,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "165",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "165",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325402104261301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325402104261301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9218)",
           "Datastreams": [
@@ -3790,7 +4504,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325448104071801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9219)",
           "Datastreams": [
@@ -3852,7 +4574,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "160",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "160",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325450104251101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325450104251101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9220)",
           "Datastreams": [
@@ -3914,7 +4649,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "148",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "148",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325451104260301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325451104260301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9221)",
           "Datastreams": [
@@ -3976,7 +4724,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "325",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "325",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325505104254101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325505104254101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9222)",
           "Datastreams": [
@@ -4038,7 +4799,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "231.00",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "231.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325517104234001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325517104234001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9223)",
           "Datastreams": [
@@ -4100,7 +4874,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "1094",
-            "GeologicFormation": "313SADR"
+            "well_depth": "1094",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325529104233901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325529104233901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9224)",
           "Datastreams": [
@@ -4221,7 +5008,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "292.00",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "292.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325550104284401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325550104284401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9226)",
           "Datastreams": [
@@ -4283,7 +5083,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "180",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "180",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325611104252701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325611104252701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9227)",
           "Datastreams": [
@@ -4344,7 +5157,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325634104304801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9228)",
           "Datastreams": [
@@ -4406,7 +5227,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "54",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "54",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325638104072801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325638104072801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9229)",
           "Datastreams": [
@@ -4468,7 +5302,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "280",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "280",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325639104234001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325639104234001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9230)",
           "Datastreams": [
@@ -4530,7 +5377,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "262",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "262",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325657104264501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325657104264501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9231)",
           "Datastreams": [
@@ -4592,7 +5452,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "610",
-            "GeologicFormation": "313SADR"
+            "well_depth": "610",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325702104352801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325702104352801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9232)",
           "Datastreams": [
@@ -4653,7 +5526,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325716104274401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9233)",
           "Datastreams": [
@@ -4715,7 +5596,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "80",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "80",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325721104305601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325721104305601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9234)",
           "Datastreams": [
@@ -4777,7 +5671,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "300",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "300",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325722104244101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325722104244101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9235)",
           "Datastreams": [
@@ -4838,7 +5745,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325727104253101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9236)",
           "Datastreams": [
@@ -4900,7 +5815,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "168",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "168",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325750104231001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325750104231001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9237)",
           "Datastreams": [
@@ -4962,7 +5890,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "94",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "94",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325753104213901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325753104213901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9238)",
           "Datastreams": [
@@ -5024,7 +5965,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "490",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "490",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325806104292101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325806104292101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9239)",
           "Datastreams": [
@@ -5086,7 +6040,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "425",
-            "GeologicFormation": "313SADR"
+            "well_depth": "425",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325815104375701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325815104375701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9240)",
           "Datastreams": [
@@ -5148,7 +6115,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "740",
-            "GeologicFormation": "313SADR"
+            "well_depth": "740",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325817104322701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325817104322701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9241)",
           "Datastreams": [
@@ -5210,7 +6190,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "129",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "129",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325838104215301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325838104215301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9242)",
           "Datastreams": [
@@ -5272,7 +6265,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "78",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "78",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325840104270301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325840104270301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9243)",
           "Datastreams": [
@@ -5333,7 +6339,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313ARTS"
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325852104271801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9244)",
           "Datastreams": [
@@ -5395,7 +6409,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "188",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "188",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325857104242701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325857104242701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9245)",
           "Datastreams": [
@@ -5457,7 +6484,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "256",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "256",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325919104231101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325919104231101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9246)",
           "Datastreams": [
@@ -5519,7 +6559,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "100",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "100",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325919104250701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325919104250701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9247)",
           "Datastreams": [
@@ -5581,7 +6634,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "102",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "102",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325954104285601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325954104285601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9248)",
           "Datastreams": [
@@ -5643,7 +6709,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "76",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "76",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334453104182601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334453104182601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9249)",
           "Datastreams": [
@@ -5705,7 +6784,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "99",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "99",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330024104191701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330024104191701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9250)",
           "Datastreams": [
@@ -5826,7 +6918,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "111",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "111",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330118104213701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330118104213701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9252)",
           "Datastreams": [
@@ -5888,7 +6993,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "132",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "132",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330118104230101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330118104230101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9253)",
           "Datastreams": [
@@ -5949,7 +7067,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330119104203601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9254)",
           "Datastreams": [
@@ -6010,7 +7136,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330210104190201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9255)",
           "Datastreams": [
@@ -6072,7 +7206,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "300",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330210104194701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330210104194701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9256)",
           "Datastreams": [
@@ -6134,7 +7281,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "155",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "155",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330236104231101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330236104231101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9257)",
           "Datastreams": [
@@ -6196,7 +7356,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "220",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "220",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330247104214301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330247104214301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9258)",
           "Datastreams": [
@@ -6258,7 +7431,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "1220",
-            "GeologicFormation": "313SADR"
+            "well_depth": "1220",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330256104204501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330256104204501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9259)",
           "Datastreams": [
@@ -6320,7 +7506,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "1150",
-            "GeologicFormation": "313SADR"
+            "well_depth": "1150",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330404104221201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330404104221201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9260)",
           "Datastreams": [
@@ -6382,7 +7581,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "153",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "153",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330420104190901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330420104190901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9261)",
           "Datastreams": [
@@ -6444,7 +7656,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "135",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "135",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330423104203801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330423104203801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9262)",
           "Datastreams": [
@@ -6506,7 +7731,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "168",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "168",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330455104215201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330455104215201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9263)",
           "Datastreams": [
@@ -6568,7 +7806,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "397",
-            "GeologicFormation": "313SADR"
+            "well_depth": "397",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330509104360901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330509104360901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9264)",
           "Datastreams": [
@@ -6630,7 +7881,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "39",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "39",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330519104134001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330519104134001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9265)",
           "Datastreams": [
@@ -6691,7 +7955,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330547104211401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9266)",
           "Datastreams": [
@@ -6752,7 +8024,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330553104181301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9267)",
           "Datastreams": [
@@ -6814,7 +8094,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "199",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "199",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330612104193601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330612104193601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9268)",
           "Datastreams": [
@@ -6875,7 +8168,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330628104231201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9269)",
           "Datastreams": [
@@ -6936,7 +8237,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330636104244601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9270)",
           "Datastreams": [
@@ -6998,7 +8307,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "180",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "180",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330638104210901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330638104210901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9271)",
           "Datastreams": [
@@ -7060,7 +8382,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "125",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "125",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330642104173301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330642104173301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9272)",
           "Datastreams": [
@@ -7122,7 +8457,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "50",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "50",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330652104131701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330652104131701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9273)",
           "Datastreams": [
@@ -7183,7 +8531,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330701104274701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9274)",
           "Datastreams": [
@@ -7304,7 +8660,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "190",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "190",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330705104200101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330705104200101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9276)",
           "Datastreams": [
@@ -7366,7 +8735,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "308.00",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "308.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330711104080301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330711104080301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9277)",
           "Datastreams": [
@@ -7428,7 +8810,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "263",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "263",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330728104241601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330728104241601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9278)",
           "Datastreams": [
@@ -7490,7 +8885,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "235",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "235",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330729104220001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330729104220001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9279)",
           "Datastreams": [
@@ -7552,7 +8960,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "228",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "228",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330821104221002&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330821104221002&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9280)",
           "Datastreams": [
@@ -7673,7 +9094,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "440",
-            "GeologicFormation": "313SADR"
+            "well_depth": "440",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330821104405501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330821104405501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9282)",
           "Datastreams": [
@@ -7735,7 +9169,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "177",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "177",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330844104251301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330844104251301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9283)",
           "Datastreams": [
@@ -7856,7 +9303,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "923",
-            "GeologicFormation": "313SADR"
+            "well_depth": "923",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331002104254701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331002104254701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9285)",
           "Datastreams": [
@@ -7918,7 +9378,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "200",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "200",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331028104244401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331028104244401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9286)",
           "Datastreams": [
@@ -7980,7 +9453,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "870",
-            "GeologicFormation": "313SADR"
+            "well_depth": "870",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331121104255001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331121104255001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9287)",
           "Datastreams": [
@@ -8042,7 +9528,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "270",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "270",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331123104262101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331123104262101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9288)",
           "Datastreams": [
@@ -8104,7 +9603,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "180.",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "180.",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331152104313601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331152104313601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9289)",
           "Datastreams": [
@@ -8165,7 +9677,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313ARTS"
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331212104200801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9290)",
           "Datastreams": [
@@ -8227,7 +9747,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "190",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "190",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331213104241601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331213104241601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9291)",
           "Datastreams": [
@@ -8289,7 +9822,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "385",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "385",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331333104243301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331333104243301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9292)",
           "Datastreams": [
@@ -8351,7 +9897,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "208",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "208",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331425104265501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331425104265501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9293)",
           "Datastreams": [
@@ -8412,7 +9971,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331518104301801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9294)",
           "Datastreams": [
@@ -8474,7 +10041,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "515",
-            "GeologicFormation": "313SADR"
+            "well_depth": "515",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331527104340001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331527104340001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9295)",
           "Datastreams": [
@@ -8536,7 +10116,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "194",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "194",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331646104200001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331646104200001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9296)",
           "Datastreams": [
@@ -8598,7 +10191,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "165",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "165",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331700104234701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331700104234701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9297)",
           "Datastreams": [
@@ -8659,7 +10265,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331702104251901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9298)",
           "Datastreams": [
@@ -8721,7 +10335,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "90",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "90",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331705104262801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331705104262801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9299)",
           "Datastreams": [
@@ -8783,7 +10410,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "170",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "170",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331720104294201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331720104294201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9300)",
           "Datastreams": [
@@ -8845,7 +10485,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "334",
-            "GeologicFormation": "313SADR"
+            "well_depth": "334",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331746104340601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331746104340601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9301)",
           "Datastreams": [
@@ -8907,7 +10560,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "817",
-            "GeologicFormation": "313SADR"
+            "well_depth": "817",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331826104255001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331826104255001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9302)",
           "Datastreams": [
@@ -8969,7 +10635,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "150",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "150",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331916104245101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331916104245101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9303)",
           "Datastreams": [
@@ -9031,7 +10710,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "43",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "43",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331927104151401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331927104151401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9304)",
           "Datastreams": [
@@ -9093,7 +10785,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "175",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "175",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332006104321001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332006104321001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9305)",
           "Datastreams": [
@@ -9214,7 +10919,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "233",
-            "GeologicFormation": "313SADR"
+            "well_depth": "233",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332007104353201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332007104353201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9307)",
           "Datastreams": [
@@ -9276,7 +10994,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "520",
-            "GeologicFormation": "313SADR"
+            "well_depth": "520",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332106104265201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332106104265201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9308)",
           "Datastreams": [
@@ -9338,7 +11069,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "199",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "199",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332111104293301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332111104293301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9309)",
           "Datastreams": [
@@ -9399,7 +11143,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313ARTS"
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332136104145301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9310)",
           "Datastreams": [
@@ -9461,7 +11213,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "169",
-            "GeologicFormation": "313SADR"
+            "well_depth": "169",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332244104335501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332244104335501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9311)",
           "Datastreams": [
@@ -9582,7 +11347,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "200",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "200",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332337104281501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332337104281501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9313)",
           "Datastreams": [
@@ -9703,7 +11481,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "300",
-            "GeologicFormation": "313SADR"
+            "well_depth": "300",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332413104310701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332413104310701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9315)",
           "Datastreams": [
@@ -9765,7 +11556,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "40",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "40",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332456104233201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332456104233201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9316)",
           "Datastreams": [
@@ -9827,7 +11631,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "312",
-            "GeologicFormation": "313SADR"
+            "well_depth": "312",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332510104302701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332510104302701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9317)",
           "Datastreams": [
@@ -9889,7 +11706,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "180",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "180",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332532104280801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332532104280801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9318)",
           "Datastreams": [
@@ -9950,7 +11780,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332621104262901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9319)",
           "Datastreams": [
@@ -10012,7 +11850,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "50",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "50",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332643104273701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332643104273701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9320)",
           "Datastreams": [
@@ -10074,7 +11925,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "700",
-            "GeologicFormation": "313SADR"
+            "well_depth": "700",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332651104363501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332651104363501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9321)",
           "Datastreams": [
@@ -10136,7 +12000,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "43",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "43",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332711104254201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332711104254201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9322)",
           "Datastreams": [
@@ -10198,7 +12075,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "202",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "202",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332711104321202&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332711104321202&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9323)",
           "Datastreams": [
@@ -10260,7 +12150,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "300",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332838104262601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332838104262601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9324)",
           "Datastreams": [
@@ -10322,7 +12225,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "30.00",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "30.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333036104194901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333036104194901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9325)",
           "Datastreams": [
@@ -10384,7 +12300,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "370",
-            "GeologicFormation": "313SADR"
+            "well_depth": "370",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333059104313501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333059104313501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9326)",
           "Datastreams": [
@@ -10445,7 +12374,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313ARTS"
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333149104170801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9327)",
           "Datastreams": [
@@ -10507,7 +12444,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "365",
-            "GeologicFormation": "313SADR"
+            "well_depth": "365",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333208104291201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333208104291201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9328)",
           "Datastreams": [
@@ -10627,7 +12577,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313ARTS"
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333244104204701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9330)",
           "Datastreams": [
@@ -10689,7 +12647,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "160",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "160",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333414104283901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333414104283901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9331)",
           "Datastreams": [
@@ -10751,7 +12722,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "308",
-            "GeologicFormation": "313SADR"
+            "well_depth": "308",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333458104321001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333458104321001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9332)",
           "Datastreams": [
@@ -10813,7 +12797,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "223",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "223",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333504104274401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333504104274401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9333)",
           "Datastreams": [
@@ -10875,7 +12872,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "84",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "84",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333600104275201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333600104275201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9334)",
           "Datastreams": [
@@ -10937,7 +12947,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "220",
-            "GeologicFormation": "313SADR"
+            "well_depth": "220",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333611104320201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333611104320201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9335)",
           "Datastreams": [
@@ -10999,7 +13022,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "270",
-            "GeologicFormation": "313SADR"
+            "well_depth": "270",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333620104330501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333620104330501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9336)",
           "Datastreams": [
@@ -11061,7 +13097,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "286",
-            "GeologicFormation": "313SADR"
+            "well_depth": "286",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333636104293301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333636104293301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9337)",
           "Datastreams": [
@@ -11123,7 +13172,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "301",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "301",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333756104303401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333756104303401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9338)",
           "Datastreams": [
@@ -11185,7 +13247,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "402",
-            "GeologicFormation": "313SADR"
+            "well_depth": "402",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333756104323001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333756104323001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9339)",
           "Datastreams": [
@@ -11247,7 +13322,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "90",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "90",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333824104232101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333824104232101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9340)",
           "Datastreams": [
@@ -11309,7 +13397,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "440",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "440",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333943104312901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333943104312901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9341)",
           "Datastreams": [
@@ -11371,7 +13472,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
             "WellDepth": "100",
-            "GeologicFormation": "313ARTS"
+            "well_depth": "100",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333956104212801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333956104212801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9342)",
           "Datastreams": [
@@ -11433,7 +13547,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "436",
-            "GeologicFormation": "313SADR"
+            "well_depth": "436",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334138104343801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334138104343801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9343)",
           "Datastreams": [
@@ -11495,7 +13622,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "118",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "118",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334141104191801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334141104191801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9344)",
           "Datastreams": [
@@ -11557,7 +13697,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "565",
-            "GeologicFormation": "313SADR"
+            "well_depth": "565",
+            "GeologicFormation": "313SADR",
+            "geologic_formation": "313SADR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334144104193901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334144104193901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9345)",
           "Datastreams": [
@@ -11619,7 +13772,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "200",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "200",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334218104193101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334218104193101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9346)",
           "Datastreams": [
@@ -11681,7 +13847,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "100",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "100",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334250104183201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334250104183201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9347)",
           "Datastreams": [
@@ -11742,7 +13921,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313ARTS"
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334326104200401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9348)",
           "Datastreams": [
@@ -11804,7 +13991,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "89",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "89",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334412104182301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334412104182301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9349)",
           "Datastreams": [
@@ -11866,7 +14066,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "68",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "68",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334419104191301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334419104191301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9350)",
           "Datastreams": [
@@ -11928,7 +14141,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "210",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "210",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334424104193601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334424104193601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9351)",
           "Datastreams": [
@@ -11989,7 +14215,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Artesia Group",
-            "GeologicFormation": "313ARTS"
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334615104271001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9352)",
           "Datastreams": [
@@ -12167,7 +14401,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "107",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "107",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342430104112101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342430104112101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9355)",
           "Datastreams": [
@@ -12227,7 +14474,20 @@
           "properties": {
             "agency": "OSE-Roswell",
             "WellDepth": "140",
-            "GeologicFormation": "231CHNL"
+            "well_depth": "140",
+            "GeologicFormation": "231CHNL",
+            "geologic_formation": "231CHNL",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342249104103401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342249104103401&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9356)",
           "Datastreams": [
@@ -12287,7 +14547,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342619104122001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9357)",
           "Datastreams": [
@@ -12347,7 +14615,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342525103581001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9358)",
           "Datastreams": [
@@ -12408,7 +14684,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "100",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "100",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342311103595901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342311103595901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9359)",
           "Datastreams": [
@@ -12468,7 +14757,15 @@
           "properties": {
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
-            "GeologicFormation": "110AVMB"
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=342612104003201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9360)",
           "Datastreams": [
@@ -12527,7 +14824,15 @@
           "name": "Water Well",
           "properties": {
             "agency": "OSE-Roswell",
-            "GeologicFormation": "231SNRS"
+            "GeologicFormation": "231SNRS",
+            "geologic_formation": "231SNRS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=343720104183801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9361)",
           "Datastreams": [
@@ -12587,7 +14892,20 @@
           "properties": {
             "agency": "OSE-Roswell",
             "WellDepth": "255",
-            "GeologicFormation": "231SNRS"
+            "well_depth": "255",
+            "GeologicFormation": "231SNRS",
+            "geologic_formation": "231SNRS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=343456104134201&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=343456104134201&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9362)",
           "Datastreams": [
@@ -12647,7 +14965,20 @@
           "properties": {
             "agency": "OSE-Roswell",
             "WellDepth": "125",
-            "GeologicFormation": "231SNRS"
+            "well_depth": "125",
+            "GeologicFormation": "231SNRS",
+            "geologic_formation": "231SNRS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=343652104141801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=343652104141801&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9363)",
           "Datastreams": [
@@ -12708,7 +15039,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "125",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "125",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=343556104142001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=343556104142001&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9364)",
           "Datastreams": [
@@ -12768,7 +15112,20 @@
           "properties": {
             "agency": "OSE-Roswell",
             "WellDepth": "448",
-            "GeologicFormation": "231SNRS"
+            "well_depth": "448",
+            "GeologicFormation": "231SNRS",
+            "geologic_formation": "231SNRS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=344036104150601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=344036104150601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9365)",
           "Datastreams": [
@@ -12828,7 +15185,20 @@
           "properties": {
             "agency": "OSE-Roswell",
             "WellDepth": "93",
-            "GeologicFormation": "211MVRD"
+            "well_depth": "93",
+            "GeologicFormation": "211MVRD",
+            "geologic_formation": "211MVRD",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332538105402301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332538105402301&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9366)",
           "Datastreams": [
@@ -12889,7 +15259,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "40",
-            "GeologicFormation": "310YESOG"
+            "well_depth": "40",
+            "GeologicFormation": "310YESOG",
+            "geologic_formation": "310YESOG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332607105281101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332607105281101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9367)",
           "Datastreams": [
@@ -12950,7 +15333,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "55",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "55",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332446105264901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332446105264901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9368)",
           "Datastreams": [
@@ -13011,7 +15407,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "120",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "120",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332456105261901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332456105261901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9369)",
           "Datastreams": [
@@ -13072,7 +15481,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "425",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "425",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332713105192501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332713105192501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9370)",
           "Datastreams": [
@@ -13133,7 +15555,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "105",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "105",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332521105180701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332521105180701&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9371)",
           "Datastreams": [
@@ -13309,7 +15744,20 @@
           "properties": {
             "agency": "OSE-Roswell",
             "WellDepth": "100",
-            "GeologicFormation": "231CHNL"
+            "well_depth": "100",
+            "GeologicFormation": "231CHNL",
+            "geologic_formation": "231CHNL",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332144105411901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332144105411901&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9374)",
           "Datastreams": [
@@ -13370,7 +15818,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Permian Aquifer System",
             "WellDepth": "125",
-            "GeologicFormation": "310YESOG"
+            "well_depth": "125",
+            "GeologicFormation": "310YESOG",
+            "geologic_formation": "310YESOG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332110105092501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332110105092501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9375)",
           "Datastreams": [
@@ -13431,7 +15892,25 @@
             "agency": "OSE-Roswell",
             "HoleDepth": "1261",
             "WellDepth": "320",
-            "GeologicFormation": "210MNCS"
+            "hole_depth": "1261",
+            "well_depth": "320",
+            "GeologicFormation": "210MNCS",
+            "geologic_formation": "210MNCS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "hole_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333241105341101&siteStatus=all&siteOutput=expanded"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333241105341101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333241105341101&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9376)",
           "Datastreams": [
@@ -13550,7 +16029,20 @@
             "agency": "OSE-Roswell",
             "aquifer": "Pecos Valley Alluvial Aquifer",
             "WellDepth": "45",
-            "GeologicFormation": "110AVMB"
+            "well_depth": "45",
+            "GeologicFormation": "110AVMB",
+            "geologic_formation": "110AVMB",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332937105314501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332937105314501&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9378)",
           "Datastreams": [
@@ -13612,7 +16104,25 @@
             "aquifer": "Permian Aquifer System",
             "HoleDepth": "120",
             "WellDepth": "120",
-            "GeologicFormation": "310GLOR"
+            "hole_depth": "120",
+            "well_depth": "120",
+            "GeologicFormation": "310GLOR",
+            "geologic_formation": "310GLOR",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "hole_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333120105280601&siteStatus=all&siteOutput=expanded"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333120105280601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333120105280601&siteStatus=all&siteOutput=expanded"
+            }
           },
           "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9379)",
           "Datastreams": [

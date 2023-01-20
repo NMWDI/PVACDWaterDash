@@ -249,6 +249,7 @@ def main_make():
         "SM-0246",
         "SM-0259",
         "NM-00643",
+        "NM-00367",
         "SM-0257",
         "SM-0258",
         "NM-28250",
@@ -270,6 +271,7 @@ def main_make():
         "WL-0244",
         "WL-0263",
         "WL-0274",
+        "WL-0077"
     ]
     make_st_agency(st2, "healy_collaborative", "NMBGMR", pointids=pointids)
 
@@ -296,8 +298,8 @@ if __name__ == "__main__":
     # st2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/"
     # make_st_agency(st2, "pvacd_hydrovu", "PVACD")
 
-    get_well_depths()
-    # main_make()
-    # group_locations()
+    # get_well_depths()
+    main_make()
+    group_locations()
 
 # ============= EOF =============================================

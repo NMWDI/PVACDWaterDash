@@ -32,6 +32,7 @@ DEBUG_MAPPINGS = int(os.environ.get("DEBUG_MAPPINGS", 0))
 
 
 MACROSTRAT_BM = {
+    "name": "MacroStrat",
     "below": "traces",
     "sourcetype": "raster",
     "sourceattribution": '&copy; <a href="https://macrostrat.org">MacroStrat</a> contributors',
@@ -39,6 +40,7 @@ MACROSTRAT_BM = {
 }
 
 USGS_BM = {
+    "name": "USGS Base Map",
     "below": "traces",
     "sourcetype": "raster",
     "sourceattribution": 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>',
@@ -48,6 +50,7 @@ USGS_BM = {
 }
 
 ESRI_BM = {
+    "name":"ESRI World Imagery",
     "below": "traces",
     "sourcetype": "raster",
     "sourceattribution": "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, "
@@ -57,6 +60,7 @@ ESRI_BM = {
     ],
 }
 OPENTOPO_BM = {
+    'name': 'Open Topo',
     "below": "traces",
     "sourcetype": "raster",
     "sourceattribution": 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> '
@@ -65,12 +69,12 @@ OPENTOPO_BM = {
 }
 
 OSM_BM = {
+    "name": 'OpenStreetMap',
     "below": "traces",
     "sourcetype": "raster",
     "sourceattribution": '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     "source": ["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"],
 }
-
 
 PERMIAN_AQUIFER_SYSTEM = "Permian Aquifer System"
 PECOS_VALLEY_ALLUVIAL_AQUIFER = "Pecos Valley Alluvial Aquifer"

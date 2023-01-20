@@ -136,9 +136,11 @@ xaxis = dict(
             ]
         )
     ),
-    rangeslider=dict(visible=True),
+    # rangeslider=dict(visible=True),
     type="date",
 )
+SELECTED_CHART_HEIGHT = 400
+SELECTED_TABLE_HEIGHT = SELECTED_CHART_HEIGHT
 
 chart_bgcolor = "#b5aeae"
 chart_bgcolor = "white"
@@ -225,34 +227,34 @@ banner_row = dbc.Row(
     ],
     style=banner_style,
 )
-subbanner_row = dbc.Row(
-    [
-        html.Div(
-            [
-                dbc.Button(
-                    "Pecos Slope Story Map",
-                    color="secondary",
-                    style={"margin": "5px"},
-                    href="https://nmt.maps.arcgis.com/apps/Cascade/index.html?appid=2f22f13a81f04042aabcfbe2e739ca96",
-                )
-            ],
-            style=card_style,
-        )
-    ]
-)
+# subbanner_row = dbc.Row(
+#     [
+#         html.Div(
+#             [
+#                 dbc.Button(
+#                     "Pecos Slope Story Map",
+#                     color="secondary",
+#                     style={"margin": "5px"},
+#                     href="https://nmt.maps.arcgis.com/apps/Cascade/index.html?appid=2f22f13a81f04042aabcfbe2e739ca96",
+#                 )
+#             ],
+#             style=card_style,
+#         )
+#     ]
+# )
 
 layout = go.Layout(
     mapbox_style="open-street-map",
     # mapbox_layers=[USGS_BM],
     mapbox={"zoom": 6, "center": {"lat": 33.25, "lon": -104.5}},
     margin={"r": 10, "t": 30, "l": 10, "b": 20},
-    height=450,
+    height=550,
     paper_bgcolor=chart_bgcolor,
     legend=dict(
         yanchor="top",
         y=0.99,
-        xanchor="left",
-        x=0.66,
+        xanchor="right",
+        x=0.99,
         bgcolor="#899DBE",
         borderwidth=3,
     ),
@@ -265,7 +267,7 @@ tablecomp = DataTable(
     style_as_list_view=True,
     style_header=header_style,
     style_data=data_style,
-    style_table={"height": "350px", "overflowY": "auto"},
+    style_table={"height": f"{SELECTED_TABLE_HEIGHT}px", "overflowY": "auto"},
 )
 
 summarytable = DataTable(
@@ -352,20 +354,9 @@ def init_app():
     stats = {}
     charts = []
     grouped_hydrograph_data = []
-    for i, row in crosswalk.iterrows():
-        iotid = row["PVACD"]
-        print(iotid, row)
-
-        location, obs = get_observations(location_iotid=iotid, limit=10000)
-
-        historic_obs = get_nm_aquifer_obs(iotid)
-        if historic_obs:
-            obs.extend(historic_obs)
-
-        obs = sorted(obs, key=lambda o: o["phenomenonTime"], reverse=True)
-        obs = [o for i, o in enumerate(obs) if not i % 5]
-
-        scatter = px.line(obs, x="phenomenonTime", y="result", height=350)
+    for i, iotid, location, obs in get_monitoring_wells_obs():
+        # print('leadfsafd', len(obs))
+        scatter = px.line(obs, x="phenomenonTime", y="result", height=365)
         xs = [o["phenomenonTime"] for o in obs]
         ys = [o["result"] for o in obs]
         grouped_hydrograph_data.append(
@@ -385,9 +376,9 @@ def init_app():
         ys = polyval(coeffs, xs)
         trends[iotid] = trend = coeffs[0]
 
-        scatter.add_scatter(
-            x=[datetime.datetime.fromtimestamp(xi) for xi in xs], y=ys, mode="lines"
-        )
+        # scatter.add_scatter(
+        #     x=[datetime.datetime.fromtimestamp(xi) for xi in xs], y=ys, mode="lines"
+        # )
         scatter.update_layout(
             margin=dict(t=75, b=50, l=50, r=25),
             title=location["name"],
@@ -497,23 +488,26 @@ def init_app():
         [
             dbc.Col(
                 dbc.DropdownMenu(
-                    label="Base Map",
+                    label=OSM_BM['name'],
                     size="sm",
                     color="secondary",
                     style={"marginTop": "5px"},
                     id="basemap_select",
                     children=[
-                        dbc.DropdownMenuItem("USGS Base Map", id="usgs_basemap_select"),
+                        dbc.DropdownMenuItem(USGS_BM['name'],
+                                             id="usgs_basemap_select"),
                         dbc.DropdownMenuItem(
-                            "Macrostrat", id="macrostrat_basemap_select"
+                            MACROSTRAT_BM['name'],
+                            id="macrostrat_basemap_select"
                         ),
                         dbc.DropdownMenuItem(
-                            "ESRI World Imagery",
+                            ESRI_BM['name'],
                             id="esri_basemap_select",
                         ),
-                        dbc.DropdownMenuItem("Open Topo", id="opentopo_basemap_select"),
-                        dbc.DropdownMenuItem(
-                            "Open Street Map", id="osm_basemap_select"
+                        dbc.DropdownMenuItem(OPENTOPO_BM['name'],
+                                             id="opentopo_basemap_select"),
+                        dbc.DropdownMenuItem(OSM_BM['name'],
+                                             id="osm_basemap_select"
                         ),
                         # dbc.DropdownMenuItem("Item 3"),
                     ],
@@ -534,11 +528,11 @@ def init_app():
     )
     first_row = dbc.Row(
         [
-            dbc.Col(
-                html.Div([html.H4("PVACD Monitoring Wells"), summarytable]),
-                style=lcol_style,
-                width=6,
-            ),
+            # dbc.Col(
+            #     html.Div([html.H4("PVACD Monitoring Wells"), summarytable]),
+            #     style=lcol_style,
+            #     width=3,
+            # ),
             dbc.Col(
                 html.Div(
                     [
@@ -550,16 +544,24 @@ def init_app():
             ),
         ]
     )
-
+    monitor_wells_row = dbc.Row([
+        dbc.Col(
+            html.Div([html.H4("PVACD Monitoring Wells"), summarytable]),
+            style=lcol_style,
+        )
+    ])
     dash_app.layout = dbc.Container(
         [
             banner_row,
-            subbanner_row,
+
             # dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
             first_row,
             dbc.Row(
                 [
-                    dbc.Col([html.H4("Selected Well"), tablecomp], style=lcol_style),
+                    dbc.Col([html.H4("Selected Well"), tablecomp],
+                            # className='col-3',
+                            width=3,
+                            style=lcol_style),
                     dbc.Col(
                         [
                             dbc.Button(
@@ -582,6 +584,8 @@ def init_app():
                     ),
                 ],
             ),
+            monitor_wells_row,
+
             dbc.Row(
                 children=[
                     dbc.ButtonGroup(
@@ -598,15 +602,21 @@ def init_app():
                                 color="primary",
                                 id="toggle_show_grouped_hydrograph",
                             ),
+                            # html.Div([dbc.Spinner(html.Div(id="loading-download-monitoring-wells-csv")),
+                            #           dcc.Download(id="download-csv")]),
                             dbc.Button(
+                                [dbc.Spinner(html.Div(id="loading-download-monitoring-wells-csv"),
+                                             size="sm"),
                                 "Download Monitoring Wells",
+                                 ],
                                 style={"margin": "10px", "width": "40%"},
                                 color="primary",
                                 title="Download all the water levels for all the monitoring"
                                 " wells as a single csv file",
                                 id="download_monitor_wells_btn",
                             ),
-                            dcc.Download(id="download-csv"),
+                                dcc.Download(id="download-csv"),
+
                         ]
                     )
                 ],
@@ -619,6 +629,13 @@ def init_app():
             ),
             dbc.Row(
                 [
+                    dbc.Col(dbc.Button(
+                        "Pecos Slope Story Map",
+                        color="secondary",
+                        style={"margin": "5px"},
+                        href="https://nmt.maps.arcgis.com/apps/Cascade/index.html?appid=2f22f13a81f04042aabcfbe2e739ca96",
+                    ),
+                    width=3),
                     html.Footer(
                         "Developed By Jake Ross (2022). "
                         "Assembled with data from NMBGMR, OSE, USGS, PVACD and ISC"
@@ -632,7 +649,31 @@ def init_app():
             "backgroundColor": BGCOLOR,
         },
     )
+def get_monitoring_wells_obs(include_all=False):
+    limit = 10000
+    downsample = None
+    if not include_all:
+        limit = 1000
+        downsample = 2
 
+    for idx, row in crosswalk.iterrows():
+        iotid = row["PVACD"]
+        print('adsfasdf', idx, iotid, row)
+
+        location, obs = get_observations(location_iotid=iotid, limit=limit)
+        # once a week
+        if downsample:
+            obs = [o for i, o in enumerate(obs) if not i%2]
+
+
+        historic_obs = get_nm_aquifer_obs(iotid, limit=limit)
+        if historic_obs:
+            obs.extend(historic_obs)
+
+        obs = sorted(obs, key=lambda o: o["phenomenonTime"], reverse=True)
+        if downsample:
+            obs = [o for i, o in enumerate(obs) if not i % 2]
+        yield idx, iotid, location, obs
 
 def calculate_stats(obs):
     obs = [(todatetime(o), o["result"]) for o in obs]
@@ -643,9 +684,17 @@ def calculate_stats(obs):
     return {"month_average": month_average}
 
 
-def make_additional_selection(location, thing, formation=None, formation_code=None):
-    data = []
+def set_summarytable_data(data, d):
+    for di in data:
+        # print(di['name'], d['name'])
+        if di['name']==d['name']:
+            di['value']=d['value']
+            # print('settinga', di)
+            break
+    else:
+        data.append(d)
 
+def make_additional_selection(data, location, thing, formation=None, formation_code=None):
     tprops = thing["properties"]
     if not formation and not formation_code:
         formation_code = tprops.get("GeologicFormation")
@@ -654,13 +703,13 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
     if formation_code:
         formation = get_formation_name(formation_code)
 
-    data.append(
+    set_summarytable_data(data,
         {
             "name": "Elevation (ft)",
             "value": floatfmt(location["properties"].get("Altitude")),
         }
     )
-    data.append(
+    set_summarytable_data(data,
         {
             "name": "Well Depth (ft)",
             "value": floatfmt(tprops.get("WellDepth")),
@@ -671,11 +720,11 @@ def make_additional_selection(location, thing, formation=None, formation_code=No
     model_formation = tprops.get("model_formation", "")
     pvacd_aquifer_name = AQUIFER_PVACD_MAP.get(aquifer, "")
 
-    data.append({"name": "Aquifer (PVACD)", "value": pvacd_aquifer_name})
-    data.append({"name": "Aquifer", "value": aquifer})
-    # data.append({"name": "Aquifer Group", "value": aquifer_group})
-    data.append({"name": "Formation", "value": formation})
-    data.append({"name": "Model Formation", "value": model_formation})
+    set_summarytable_data(data,{"name": "Aquifer (PVACD)", "value": pvacd_aquifer_name})
+    set_summarytable_data(data,{"name": "Aquifer", "value": aquifer})
+    # set_summarytable_data(data,{"name": "Aquifer Group", "value": aquifer_group})
+    set_summarytable_data(data,{"name": "Formation", "value": formation})
+    set_summarytable_data(data,{"name": "Model Formation", "value": model_formation})
     return data
 
 
@@ -733,38 +782,49 @@ def get_observations(location_iotid=None, datastream_id=None, limit=1000):
                 j = resp.json()
                 obs.extend(j["value"])
                 nextlink = j.get("@iot.nextLink")
-        print("lea", len(obs))
+
         return location, obs
 
+@cache.memoize()
+def get_nm_aquifer_obs_continuous(locationname, dname='Groundwater Levels(Pressure)'):
+    resp = requests.get(f"{ST2}/Locations?$filter=name eq '{locationname}'&$expand=Things/Datastreams")
+    if resp.status_code == 200:
+        location = resp.json()['value'][0]
+        for thing in location['Things']:
+            if thing['name'] == 'Water Well':
+                for di in thing['Datastreams']:
+                    if di['name'] == dname:
+                        _, obs = get_observations(datastream_id=di['@iot.id'])
+                        return obs
 
 @cache.memoize()
-def get_nm_aquifer_obs(iotid, data=None):
+def get_nm_aquifer_obs(iotid, data=None, limit=1000):
     try:
         aiotid = crosswalk[crosswalk["PVACD"] == iotid].iloc[0]["NM_AQUIFER"]
     except BaseException:
         aiotid = None
 
     if aiotid:
-        # data.append({"name": "aST ID", "value": aiotid})
+        # set_summarytable_data(data,{"name": "aST ID", "value": aiotid})
         resp = requests.get(f"{ST2}/Locations({aiotid})?$expand=Things")
         if resp.status_code == 200:
             alocation = resp.json()
             thing = alocation["Things"][0]
             if data is not None:
-                data.append({"name": "PointID", "value": alocation["name"]})
-                vs = make_additional_selection(
+                set_summarytable_data(data, {"name": "PointID", "value": alocation["name"]})
+                make_additional_selection(data,
                     alocation, thing, formation_code="313SADR"
                 )
-                data.extend(vs)
 
         nm_aquifer_location, manual_obs = get_observations(
-            location_iotid=aiotid, limit=10000
+            location_iotid=aiotid, limit=limit
         )
         return manual_obs
 
 
 @dash_app.callback(
-    Output("map", "figure"),
+    [Output("map", "figure"),
+     Output("basemap_select", "label")],
     [
         Input("usgs_basemap_select", "n_clicks"),
         Input("macrostrat_basemap_select", "n_clicks"),
@@ -780,6 +840,7 @@ def get_nm_aquifer_obs(iotid, data=None):
 def handle_basemap_select(a, b, c, d, e, opacity, search_input, fig):
     # print('asdf', a, b)
     l = None
+    label = OSM_BM['name']
     if ctx.triggered_id == "usgs_basemap_select":
         l = USGS_BM
     elif ctx.triggered_id == "macrostrat_basemap_select":
@@ -813,12 +874,13 @@ def handle_basemap_select(a, b, c, d, e, opacity, search_input, fig):
             l = layers[0]
 
     if l:
+        label = l.get('name', '*')
         l["opacity"] = opacity / 100.0
 
         fig["layout"]["mapbox"]["layers"] = [
             l,
         ]
-    return fig
+    return fig, label
 
 
 @dash_app.callback(
@@ -832,7 +894,8 @@ def handle_download_selected(n, fig):
 
 
 @dash_app.callback(
-    Output("download-csv", "data"),
+    [Output("download-csv", "data"),
+     Output("loading-download-monitoring-wells-csv", "children")],
     [
         Input("download_monitor_wells_btn", "n_clicks"),
         Input("grouped_hydrograph", "figure"),
@@ -841,7 +904,23 @@ def handle_download_selected(n, fig):
 )
 def handle_download_monitor_wells(n, fig):
     if ctx.triggered_id == "download_monitor_wells_btn":
-        return make_fig_csv(fig)
+        return make_monitor_wells_csv(), ""
+
+
+        # return make_fig_csv(fig)
+
+def make_monitor_wells_csv():
+    content = [
+        "please cite this data: New Mexico Water Data Initiative https://newmexicowaterdata.org"
+    ]
+    for i, iotid, location, obs in get_monitoring_wells_obs(include_all=True):
+        content.append(f'location_name: {location["name"]}')
+        content.append(f"measurement_timestamp, depth_to_water_ft_bgs")
+        for oi in obs:
+            content.append(f'{oi["phenomenonTime"]},{oi["result"]}')
+
+    content = "\n".join(content)
+    return dict(content=content, filename='download.csv')
 
 
 def make_fig_csv(fig):
@@ -906,12 +985,12 @@ def handle_toggle_grouping(n, n2, tsh, tsgh):
         Output("hydrograph", "figure"),
         # Output("progress-div", "children")
     ],
-    Input("map", "clickData"),
+    [Input("map", "clickData")]
 )
-def display_click_data(clickData):
-    # print('clasd', clickData)
+def display_click_data(click_data):
+    print('clasd', click_data)
     # set_progress()
-    data = [
+    tabledata = [
         {"name": "Location", "value": ""},
         {"name": "Lat/Lon", "value": ""},
         {"name": "Source", "value": ""},
@@ -931,26 +1010,29 @@ def display_click_data(clickData):
     # name = None
     location = None
     obs = None
-    if clickData:
-        point = clickData["points"][0]
+    continuous_obs = None
+    if click_data:
+        point = click_data["points"][0]
         print(point)
         name = point["text"]
         url = f"{ST2}/Locations?$filter=name eq '{name}'&$expand=Things/Datastreams"
         resp = requests.get(url)
-        data = [
-            {"name": "Location", "value": name},
-            {"name": "Lat/Lon", "value": f'{point["lat"]}, {point["lon"]}'},
-        ]
+        # tabledata = [
+        #     {"name": "Location", "value": name},
+        #     {"name": "Lat/Lon", "value": f'{point["lat"]}, {point["lon"]}'},
+        # ]
+        set_summarytable_data(tabledata, {"name": "Location", "value": name})
+        set_summarytable_data(tabledata, {"name": "Lat/Lon", "value": f'{point["lat"]}, {point["lon"]}'})
 
         if resp.status_code == 200:
             try:
                 location = resp.json()["value"][0]
                 iotid = location["@iot.id"]
                 osewellid = ""
-                data.append(
+                set_summarytable_data(tabledata,
                     {"name": "Source", "value": location["properties"]["agency"]}
                 )
-                data.append({"name": "OSE Well ID", "value": osewellid})
+                set_summarytable_data(tabledata, {"name": "OSE Well ID", "value": osewellid})
 
             except IndexError:
                 pass
@@ -958,13 +1040,20 @@ def display_click_data(clickData):
             thing = location["Things"][0]
             ds = thing["Datastreams"][0]
 
+            if location['name'] in ('WL-0199', 'NM-00367', 'NM-0643'):
+                continuous_obs = get_nm_aquifer_obs_continuous(location['name'])
+            elif location['name'] in ('WL-0077', ):
+                continuous_obs = get_nm_aquifer_obs_continuous(location['name'],
+                                                               dname='Groundwater Levels(Acoustic)')
+
+
             _, obs = get_observations(datastream_id=ds["@iot.id"], limit=2000)
             # get the data from NM_Aquifer (via ST2 for these wells)
-            nm_aquifer_obs = get_nm_aquifer_obs(iotid, data)
+            nm_aquifer_obs = get_nm_aquifer_obs(iotid, tabledata, limit=5000)
             if nm_aquifer_obs:
                 obs.extend(nm_aquifer_obs)
-                vs = make_additional_selection(location, thing)
-                data.extend(vs)
+                make_additional_selection(tabledata, location, thing)
+
             else:
                 # get the data from USGS
                 usgs = get_gwl(location)
@@ -972,10 +1061,10 @@ def display_click_data(clickData):
                     # name = "OSE-Roswell"
                     obsu = extract_usgs_timeseries(usgs)
                     obs.extend(obsu)
-                else:
+                # else:
                     # name = "NMBGMR"
-                    vs = make_additional_selection(location, thing)
-                    data.extend(vs)
+                make_additional_selection(tabledata, location, thing)
+
 
     fd = []
     if obs:
@@ -985,10 +1074,18 @@ def display_click_data(clickData):
         xs = [xi["phenomenonTime"] for xi in obs]
         ys = [xi["result"] for xi in obs]
 
-        fd = [go.Scatter(x=xs, y=ys, name=name, mode="markers+lines")]
+        fd = [go.Scatter(x=xs, y=ys, name=name, mode="lines")]
+
+    if continuous_obs:
+        obs = sorted(continuous_obs, key=lambda x: x["phenomenonTime"])
+
+        xs = [xi["phenomenonTime"] for xi in obs]
+        ys = [xi["result"] for xi in obs]
+
+        fd.append(go.Scatter(x=xs, y=ys, name='Continuous Data Logger'))
 
     layout = dict(
-        height=350,
+        height=SELECTED_CHART_HEIGHT,
         margin=dict(t=50, b=50, l=50, r=25),
         xaxis=xaxis,
         yaxis=yaxis,
@@ -997,8 +1094,7 @@ def display_click_data(clickData):
     )
 
     fig = go.Figure(data=fd, layout=layout)
-
-    return "", data, fig
+    return "", tabledata, fig
 
 
 # usgslocation = '333149104170801'
