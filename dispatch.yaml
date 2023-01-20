@@ -1,0 +1,12 @@
+dispatch:
+  - url: "pvacddashboard.newmexicowaterdata.org/*"
+    service: hydrodash
+
+#  - url: "demo.newmexicowaterdata.org/*"
+#    service: default
+
+#  - url: "mgt.newmexicowaterdata.org/*"
+#    service: mgt
+#
+#  - url: "etl.newmexicowaterdata.org/*"
+#    service: etl
