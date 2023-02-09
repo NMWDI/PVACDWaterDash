@@ -39,7 +39,6 @@ def make_locations(url, out, source, as_csv=False, datastream_filter=True):
 
     else:
         with open("./data/{}.json".format(out), "w") as wfile:
-
             obj = {}
             # print(jobj)
             # for ji in jobj.json()['value']:

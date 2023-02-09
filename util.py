@@ -96,7 +96,6 @@ def prep_hydrovu_name(n):
 def make_customdata(locations, tag):
     fs = []
     for l in locations:
-
         tprops = l["Things"][0]["properties"]
         if tag == "pvacd_hydrovu":
             code = "313SADR"
