@@ -133,7 +133,9 @@ layout = html.Div(
     ]
     # Input("map", "clickData"),
 )
-def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip, atmos_pressure):
+def display_graphs(
+    station_name, air_temp, rel_hum, windspeed, solar_rad, precip, atmos_pressure
+):
     layout = dict(
         height=350,
         margin=dict(t=50, b=50, l=50, r=25),
@@ -164,7 +166,7 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
             ("Relative Humidity", "Relative Humidity (%)"),
             ("Solar Radiation", "Solar Radiation (W/m2)"),
             ("Precipitation", "Precipitation (in)"),
-            ("Atmospheric Pressure", "Atmospheric Pressure (kPa)")
+            ("Atmospheric Pressure", "Atmospheric Pressure (kPa)"),
         ]:
             xs, ys = extract_xy(data[sname][0]["readings"])
             fig = go.Figure(
