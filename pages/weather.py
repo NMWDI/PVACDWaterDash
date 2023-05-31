@@ -27,29 +27,35 @@ dash.register_page(__name__)
 air_temp_graph = dcc.Graph(id="air_temp_graph")
 rel_hum_graph = dcc.Graph(id="rel_hum_graph")
 
-SERIAL = {'Poe Corn': 'A4100127',
-          'Shop': 'A4100062',
-          'Orchard Park': 'A4100132',
-          'Cottonwood': 'A4100114',
-          'Artesia': 'A4100130'
-          }
+SERIAL = {
+    "Poe Corn": "A4100127",
+    "Shop": "A4100062",
+    "Orchard Park": "A4100132",
+    "Cottonwood": "A4100114",
+    "Artesia": "A4100130",
+}
 
-layout = html.Div(children=[
-    # html.H1(children='This is our Analytics page'),
-    html.Div([
-        "Select a station: ",
-        dcc.Dropdown(['Poe Corn', 'Shop', 'Orchard Park',
-                      'Cottonwood', 'Artesia'],
-                     'Poe Corn',
-                     id='station-input')
-    ]),
-    html.Br(),
-    html.H2('Air Temperature'),
-    air_temp_graph,
-    html.H2('Relative Humidity'),
-    rel_hum_graph
-    # html.Div(id='analytics-output'),
-])
+layout = html.Div(
+    children=[
+        # html.H1(children='This is our Analytics page'),
+        html.Div(
+            [
+                "Select a station: ",
+                dcc.Dropdown(
+                    ["Poe Corn", "Shop", "Orchard Park", "Cottonwood", "Artesia"],
+                    "Poe Corn",
+                    id="station-input",
+                ),
+            ]
+        ),
+        html.Br(),
+        html.H2("Air Temperature"),
+        air_temp_graph,
+        html.H2("Relative Humidity"),
+        rel_hum_graph
+        # html.Div(id='analytics-output'),
+    ]
+)
 
 
 @callback(
@@ -60,10 +66,11 @@ layout = html.Div(children=[
         Output("rel_hum_graph", "figure"),
         # Output("progress-div", "children")
     ],
-    [Input(component_id='station-input', component_property='value'),
-     State('air_temp_graph', 'figure'),
-     State('rel_hum_graph', 'figure')
-     ]
+    [
+        Input(component_id="station-input", component_property="value"),
+        State("air_temp_graph", "figure"),
+        State("rel_hum_graph", "figure"),
+    ]
     # Input("map", "clickData"),
 )
 def display_graphs(station_name, air_temp, rel_hum):
@@ -81,21 +88,25 @@ def display_graphs(station_name, air_temp, rel_hum):
     resp = get_sensor_data(SERIAL[station_name])
 
     try:
-        data = resp['data']
+        data = resp["data"]
         # pprint(data)
 
         fs = []
-        for name in ['Air Temperature', 'Min Air Temperature', 'Max Air Temperature']:
-            xs, ys = extract_xy(data[name][0]['readings'])
+        for name in ["Air Temperature", "Min Air Temperature", "Max Air Temperature"]:
+            xs, ys = extract_xy(data[name][0]["readings"])
             fs.append(go.Scatter(x=xs, y=ys, name=name, mode="markers+lines"))
 
         fig = go.Figure(data=fs, layout=layout)
-        fig.layout.yaxis.title = 'Air Temperature (F)'
+        fig.layout.yaxis.title = "Air Temperature (F)"
         figs = [fig]
 
-        for sname, ytitle in [('Relative Humidity', 'Relative Humidity (%)'), ]:
-            xs, ys = extract_xy(data[sname][0]['readings'])
-            fig = go.Figure(data=[go.Scatter(x=xs, y=ys, mode="markers+lines")], layout=layout)
+        for sname, ytitle in [
+            ("Relative Humidity", "Relative Humidity (%)"),
+        ]:
+            xs, ys = extract_xy(data[sname][0]["readings"])
+            fig = go.Figure(
+                data=[go.Scatter(x=xs, y=ys, mode="markers+lines")], layout=layout
+            )
             fig.layout.yaxis.title = ytitle
             figs.append(fig)
 
@@ -107,20 +118,23 @@ def display_graphs(station_name, air_temp, rel_hum):
 
 
 def get_sensor_data(device_sn):
-    token = os.environ.get('ZENTRA_TOKEN', '')
+    token = os.environ.get("ZENTRA_TOKEN", "")
 
     # device_sn = "your_ZENTRAcloud_device_serial_number"
     url = "https://zentracloud.com/api/v3/get_readings/"
     token = "Token {TOKEN}".format(TOKEN=token)
-    headers = {'content-type': 'application/json', 'Authorization': token}
+    headers = {"content-type": "application/json", "Authorization": token}
     end_date = datetime.datetime.today()
     start_date = end_date - datetime.timedelta(days=30)
     page_num = 1
     per_page = 500
-    params = {'device_sn': device_sn, 'start_date': start_date, 'end_date': end_date,
-              'page_num': page_num,
-              'per_page': per_page
-              }
+    params = {
+        "device_sn": device_sn,
+        "start_date": start_date,
+        "end_date": end_date,
+        "page_num": page_num,
+        "per_page": per_page,
+    }
     response = requests.get(url, params=params, headers=headers)
     # content = json.loads(response.content)
     js = response.json()
@@ -133,9 +147,10 @@ def get_sensor_data(device_sn):
 def extract_xy(readings):
     xs, ys = [], []
     for ri in readings:
-        xs.append(ri['datetime'])
-        ys.append(ri['value'])
+        xs.append(ri["datetime"])
+        ys.append(ri["value"])
     return xs, ys
+
 
 # @callback(
 # Output(component_id='analytics-output', component_property='children'),

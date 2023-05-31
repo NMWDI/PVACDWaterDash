@@ -18,7 +18,15 @@ import datetime
 import pandas as pd
 import requests
 
-from constants import ST2, DEBUG_N_WELLS, AQUIFER_PVACD_MAP, DEBUG_OBS, DTFORMAT, DEPTH_TO_WATER_FT_BGS, DEBUG_LIMIT_OBS
+from constants import (
+    ST2,
+    DEBUG_N_WELLS,
+    AQUIFER_PVACD_MAP,
+    DEBUG_OBS,
+    DTFORMAT,
+    DEPTH_TO_WATER_FT_BGS,
+    DEBUG_LIMIT_OBS,
+)
 from util import todatetime, get_formation_name, floatfmt
 
 crosswalk = pd.read_csv(
@@ -49,6 +57,7 @@ xaxis = dict(
     rangeslider=dict(visible=True),
     type="date",
 )
+
 
 def calculate_stats(obs):
     obs = [(todatetime(o), o["result"]) for o in obs]
@@ -177,5 +186,6 @@ def get_nm_aquifer_obs(iotid, data=None):
             location_iotid=aiotid, limit=10000
         )
         return manual_obs
+
 
 # ============= EOF =============================================

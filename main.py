@@ -37,7 +37,7 @@ from dash import (
     CeleryManager,
     ctx,
     State,
-    page_registry
+    page_registry,
 )
 import plotly.express as px
 import plotly.graph_objects as go
@@ -203,12 +203,15 @@ banner_row = dbc.Row(
     ],
     style=banner_style,
 )
-buttons = [dbc.Button(
-            f"{page['name']}",
-            color='secondary',
-            style={"margin": "5px"},
-            href=page["relative_path"]
-        ) for page in page_registry.values()]
+buttons = [
+    dbc.Button(
+        f"{page['name']}",
+        color="secondary",
+        style={"margin": "5px"},
+        href=page["relative_path"],
+    )
+    for page in page_registry.values()
+]
 
 subbanner_row = dbc.Row(
     [
@@ -220,23 +223,18 @@ subbanner_row = dbc.Row(
                     style={"margin": "5px"},
                     href="https://nmt.maps.arcgis.com/apps/Cascade/index.html?appid=2f22f13a81f04042aabcfbe2e739ca96",
                 ),
-            #     dbc.Button(
-            #         'Weather Stations',
-            #         color="secondary",
-            #         style={"margin": "5px"},
-            #         href="/weather",
-            #     )
-
-
-            ]+buttons,
+                #     dbc.Button(
+                #         'Weather Stations',
+                #         color="secondary",
+                #         style={"margin": "5px"},
+                #         href="/weather",
+                #     )
+            ]
+            + buttons,
             style=card_style,
         )
     ]
 )
-
-
-
-
 
 
 def init_app():
@@ -246,7 +244,6 @@ def init_app():
             subbanner_row,
             dash.page_container,
             # dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
-
             dbc.Row(
                 [
                     html.Footer(
@@ -262,6 +259,7 @@ def init_app():
             "backgroundColor": BGCOLOR,
         },
     )
+
 
 # usgslocation = '333149104170801'
 # usgs = get_usgs(siteid =usgslocation)

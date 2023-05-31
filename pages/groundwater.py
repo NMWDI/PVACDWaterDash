@@ -30,17 +30,33 @@ from dash import (
     CeleryManager,
     ctx,
     State,
-    page_registry
+    page_registry,
 )
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 from dash.dash_table import DataTable
 
-from gw_util import now_month_name, yaxis, xaxis, crosswalk, calculate_stats, get_observations, get_nm_aquifer_obs, \
-    make_additional_selection
+from gw_util import (
+    now_month_name,
+    yaxis,
+    xaxis,
+    crosswalk,
+    calculate_stats,
+    get_observations,
+    get_nm_aquifer_obs,
+    make_additional_selection,
+)
 
-from styles import lcol_style, rcol_style, card_style, COLOR_MAP, chart_bgcolor, header_style, data_style
+from styles import (
+    lcol_style,
+    rcol_style,
+    card_style,
+    COLOR_MAP,
+    chart_bgcolor,
+    header_style,
+    data_style,
+)
 from usgs import get_gwl
 from util import (
     floatfmt,
@@ -69,7 +85,7 @@ from constants import (
     HIGH_MOUNTAIN_AQUIFER_SYSTEM,
 )
 
-dash.register_page(__name__, path='/')
+dash.register_page(__name__, path="/")
 hydrocomp = dcc.Graph(id="hydrograph")
 
 sdata = []
@@ -84,17 +100,17 @@ summarytable = DataTable(
     id="summarytable",
     tooltip_header={
         "last_measurement": f"Last depth to water. If current value is > than the long term average for"
-                            f" {now_month_name} highlight row in red",
+        f" {now_month_name} highlight row in red",
         "month_average_value": f"Average depth to water (ft) for for all years with water levels in {now_month_name}.",
         "trend": "Depth to water trend. Calculated by performing a linear regression "
-                 "on the last ~25-50 days depending on sampling frequency",
+        "on the last ~25-50 days depending on sampling frequency",
     },
     css=[
         {
             "selector": ".dash-table-tooltip",
             "rule": "background-color: grey; font-family: verdana; color: white;"
-                    "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
-                    "border-radius: 5px",
+            "width: fit-content; max-width: 440px; min-width: unset; font-size: 10px;"
+            "border-radius: 5px",
         },
         {
             "selector": ".dash-tooltip",
@@ -228,13 +244,13 @@ for i, row in crosswalk.iterrows():
 
 summarytable.data = sdata
 for a, tag in (
-        # ("ISC Seven Rivers", "isc_seven_rivers"),
-        # ("OSE Roswell", "ose_roswell"),
-        ("Well, uncertain aquifer", "locations_no_aquifer"),
-        (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
-        (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
-        (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
-        ("PVACD Monitoring Wells", "pvacd_hydrovu"),
+    # ("ISC Seven Rivers", "isc_seven_rivers"),
+    # ("OSE Roswell", "ose_roswell"),
+    ("Well, uncertain aquifer", "locations_no_aquifer"),
+    (PERMIAN_AQUIFER_SYSTEM, "locations_permian_aquifer_system"),
+    (PECOS_VALLEY_ALLUVIAL_AQUIFER, "locations_pecos_valley_alluvial_aquifer"),
+    (HIGH_MOUNTAIN_AQUIFER_SYSTEM, "locations_high_mountain_aquifer_system"),
+    ("PVACD Monitoring Wells", "pvacd_hydrovu"),
 ):
     locations = pd.read_json(
         f"./data/{tag}.json"
@@ -270,7 +286,6 @@ for a, tag in (
             ),
         )
     )
-
 
 
 tablecomp = DataTable(
@@ -311,9 +326,7 @@ grouped_hydrograph = go.Figure(
     ),
 )
 mapcomp = dcc.Graph(id="map", figure=figmap)
-gchart = dcc.Graph(
-    id="grouped_hydrograph", style=card_style, figure=grouped_hydrograph
-)
+gchart = dcc.Graph(id="grouped_hydrograph", style=card_style, figure=grouped_hydrograph)
 slider = dcc.Slider(
     0,
     100,
@@ -336,17 +349,13 @@ maptoolrow = dbc.Row(
                 id="basemap_select",
                 children=[
                     dbc.DropdownMenuItem("USGS Base Map", id="usgs_basemap_select"),
-                    dbc.DropdownMenuItem(
-                        "Macrostrat", id="macrostrat_basemap_select"
-                    ),
+                    dbc.DropdownMenuItem("Macrostrat", id="macrostrat_basemap_select"),
                     dbc.DropdownMenuItem(
                         "ESRI World Imagery",
                         id="esri_basemap_select",
                     ),
                     dbc.DropdownMenuItem("Open Topo", id="opentopo_basemap_select"),
-                    dbc.DropdownMenuItem(
-                        "Open Street Map", id="osm_basemap_select"
-                    ),
+                    dbc.DropdownMenuItem("Open Street Map", id="osm_basemap_select"),
                     # dbc.DropdownMenuItem("Item 3"),
                 ],
             ),
@@ -384,70 +393,72 @@ first_row = dbc.Row(
     ]
 )
 
-layout = html.Div([
-                      first_row,
-                      dbc.Row(
-                          [
-                              dbc.Col([html.H4("Selected Well"), tablecomp], style=lcol_style),
-                              dbc.Col(
-                                  [
-                                      dbc.Button(
-                                          "Download Selected",
-                                          style={"margin": "5px"},
-                                          color="secondary",
-                                          size="sm",
-                                          title="Download all the water levels for the selected location"
-                                                " as a single csv file",
-                                          id="download_selected_btn",
-                                      ),
-                                      dcc.Download(id="download_selected_csv"),
-                                      dbc.Spinner(
-                                          [html.Div(id="loading-output"), hydrocomp],
-                                          # fullscreen=True,
-                                          color="primary",
-                                      ),
-                                  ],
-                                  style=rcol_style,
-                              ),
-                          ],
-                      ),
-                      dbc.Row(
-                          children=[
-                              dbc.ButtonGroup(
-                                  children=[
-                                      dbc.Button(
-                                          "Show Hydrographs",
-                                          color="primary",
-                                          id="toggle_show_hydrographs",
-                                          style={"margin": "10px", "width": "40%"},
-                                      ),
-                                      dbc.Button(
-                                          "Show Grouped Hydrograph",
-                                          style={"margin": "10px", "width": "40%"},
-                                          color="primary",
-                                          id="toggle_show_grouped_hydrograph",
-                                      ),
-                                      dbc.Button(
-                                          "Download Monitoring Wells",
-                                          style={"margin": "10px", "width": "40%"},
-                                          color="primary",
-                                          title="Download all the water levels for all the monitoring"
-                                                " wells as a single csv file",
-                                          id="download_monitor_wells_btn",
-                                      ),
-                                      dcc.Download(id="download-csv"),
-                                  ]
-                              )
-                          ],
-                      ),
-                      dbc.Row(
-                          [
-                              html.Div(children=charts, id="igraph_container"),
-                              html.Div(children=gchart, id="ggraph_container"),
-                          ],
-                      ),
-                  ]
+layout = html.Div(
+    [
+        first_row,
+        dbc.Row(
+            [
+                dbc.Col([html.H4("Selected Well"), tablecomp], style=lcol_style),
+                dbc.Col(
+                    [
+                        dbc.Button(
+                            "Download Selected",
+                            style={"margin": "5px"},
+                            color="secondary",
+                            size="sm",
+                            title="Download all the water levels for the selected location"
+                            " as a single csv file",
+                            id="download_selected_btn",
+                        ),
+                        dcc.Download(id="download_selected_csv"),
+                        dbc.Spinner(
+                            [html.Div(id="loading-output"), hydrocomp],
+                            # fullscreen=True,
+                            color="primary",
+                        ),
+                    ],
+                    style=rcol_style,
+                ),
+            ],
+        ),
+        dbc.Row(
+            children=[
+                dbc.ButtonGroup(
+                    children=[
+                        dbc.Button(
+                            "Show Hydrographs",
+                            color="primary",
+                            id="toggle_show_hydrographs",
+                            style={"margin": "10px", "width": "40%"},
+                        ),
+                        dbc.Button(
+                            "Show Grouped Hydrograph",
+                            style={"margin": "10px", "width": "40%"},
+                            color="primary",
+                            id="toggle_show_grouped_hydrograph",
+                        ),
+                        dbc.Button(
+                            "Download Monitoring Wells",
+                            style={"margin": "10px", "width": "40%"},
+                            color="primary",
+                            title="Download all the water levels for all the monitoring"
+                            " wells as a single csv file",
+                            id="download_monitor_wells_btn",
+                        ),
+                        dcc.Download(id="download-csv"),
+                    ]
+                )
+            ],
+        ),
+        dbc.Row(
+            [
+                html.Div(children=charts, id="igraph_container"),
+                html.Div(children=gchart, id="ggraph_container"),
+            ],
+        ),
+    ]
 )
+
 
 @dash.callback(
     Output("map", "figure"),
@@ -685,4 +696,6 @@ def display_click_data(clickData):
     fig = go.Figure(data=fd, layout=layout)
 
     return "", data, fig
+
+
 # ============= EOF =============================================
