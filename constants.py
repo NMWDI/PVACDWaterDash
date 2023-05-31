@@ -22,7 +22,7 @@ ST2 = "https://st2.newmexicowaterdata.org/FROST-Server/v1.1"
 
 DTFORMAT = "%Y-%m-%dT%H:%M:%S.000Z"
 DEPTH_TO_WATER_FT_BGS = "Depth To Water (ft bgs)"
-TITLE = "PVACD Groundwater Dashboard"
+TITLE = "PVACD Water Dashboard"
 
 DEBUG_OBS = True
 DEBUG_OBS = False

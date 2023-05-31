@@ -1,0 +1,55 @@
+{
+  "locations": [
+    {
+      "name": "Poe Corn",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.5192322,
+          33.6135626
+        ]
+      }
+    },
+
+    {
+      "name": "Cottonwood",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.4993284,
+          32.9790784
+        ]
+      }
+    },
+    {
+      "name": "Artesia",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.41333,
+          32.77342
+        ]
+      }
+    },
+    {
+      "name": "Orchard Park",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.4148692,
+          33.2569533
+        ]
+      }
+    },
+    {
+      "name": "Shop",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.4908067,
+          33.3954558
+        ]
+      }
+    }
+  ]
+}

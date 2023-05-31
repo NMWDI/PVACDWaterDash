@@ -1,0 +1,3331 @@
+{
+  "locations": [
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9158,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.408167,
+          32.566778
+        ]
+      },
+      "name": "323405 104242601",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9158)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9158,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "71",
+            "well_depth": "71",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323405104242601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323405104242601&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9158)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14215,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.408167,
+                  32.566778
+                ]
+              },
+              "phenomenonTime": "2012-01-10T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2012-01-10T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14215)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9158)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9158)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9159,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.472778,
+          32.57
+        ]
+      },
+      "name": "323409 104281401",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9159)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9159,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "600",
+            "well_depth": "600",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323409104281401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323409104281401&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9159)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14216,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.472778,
+                  32.57
+                ]
+              },
+              "phenomenonTime": "2011-01-20T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-20T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14216)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9159)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9159)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9160,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.408333,
+          32.594722
+        ]
+      },
+      "name": "323542 104242701",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9160)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9160,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "400",
+            "well_depth": "400",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323542104242701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323542104242701&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9160)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14217,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.408333,
+                  32.594722
+                ]
+              },
+              "phenomenonTime": "2011-01-19T00:00:00.000Z/2012-01-10T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-19T00:00:00.000Z/2012-01-10T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14217)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9160)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9160)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9161,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.437556,
+          32.604139
+        ]
+      },
+      "name": "323613 104260901",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9161)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9161,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "200",
+            "well_depth": "200",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323613104260901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323613104260901&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9161)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14218,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.437556,
+                  32.604139
+                ]
+              },
+              "phenomenonTime": "2011-01-21T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-21T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14218)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9161)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9161)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9162,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.515556,
+          32.613889
+        ]
+      },
+      "name": "323656 104305001",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9162)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9162,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323656104305001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323656104305001&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9162)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14219,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.515556,
+                  32.613889
+                ]
+              },
+              "phenomenonTime": "2011-01-20T00:00:00.000Z/2012-01-05T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-20T00:00:00.000Z/2012-01-05T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14219)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9162)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9162)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9163,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.381861,
+          32.614806
+        ]
+      },
+      "name": "323705 104225501",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9163)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9163,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "225",
+            "well_depth": "225",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323705104225501&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323705104225501&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9163)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14220,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.381861,
+                  32.614806
+                ]
+              },
+              "phenomenonTime": "2014-01-09T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2014-01-09T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14220)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9163)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9163)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9166,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.446556,
+          32.63425
+        ]
+      },
+      "name": "323811 104264301",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9166)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9166,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "552",
+            "well_depth": "552",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323811104264301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=323811104264301&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9166)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14223,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.446556,
+                  32.63425
+                ]
+              },
+              "phenomenonTime": "2012-01-10T00:00:00.000Z/2012-01-10T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2012-01-10T00:00:00.000Z/2012-01-10T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14223)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9166)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9166)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9175,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.374722,
+          32.682222
+        ]
+      },
+      "name": "324105 104222601",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9175)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9175,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "880",
+            "well_depth": "880",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324105104222601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324105104222601&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9175)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14232,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.374722,
+                  32.682222
+                ]
+              },
+              "phenomenonTime": "2011-01-19T00:00:00.000Z/2011-01-19T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-19T00:00:00.000Z/2011-01-19T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14232)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9175)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9175)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9176,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.406944,
+          32.686389
+        ]
+      },
+      "name": "324119 104242101",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9176)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9176,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "905",
+            "well_depth": "905",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324119104242101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324119104242101&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9176)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14233,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.406944,
+                  32.686389
+                ]
+              },
+              "phenomenonTime": "2012-01-06T00:00:00.000Z/2012-01-06T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2012-01-06T00:00:00.000Z/2012-01-06T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14233)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9176)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9176)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9189,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.421389,
+          32.758611
+        ]
+      },
+      "name": "324533 104251301",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9189)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9189,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324533104251301&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9189)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14246,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.421389,
+                  32.758611
+                ]
+              },
+              "phenomenonTime": "2011-01-24T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-24T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14246)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9189)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9189)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9192,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.403333,
+          32.781111
+        ]
+      },
+      "name": "324652 104241001",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9192)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9192,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "840",
+            "well_depth": "840",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324652104241001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324652104241001&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9192)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14249,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.403333,
+                  32.781111
+                ]
+              },
+              "phenomenonTime": "2011-01-24T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-24T00:00:00.000Z/2020-02-17T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14249)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9192)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9192)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9202,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.564444,
+          32.814722
+        ]
+      },
+      "name": "324856 104334801",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9202)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9202,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "385",
+            "well_depth": "385",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324856104334801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324856104334801&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9202)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14259,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.564444,
+                  32.814722
+                ]
+              },
+              "phenomenonTime": "2011-01-26T00:00:00.000Z/2017-01-25T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-26T00:00:00.000Z/2017-01-25T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14259)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9202)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9202)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9205,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.368611,
+          32.821388999999996
+        ]
+      },
+      "name": "324916 104220601",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9205)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9205,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "903",
+            "well_depth": "903",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324916104220601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324916104220601&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9205)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14262,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.368611,
+                  32.821388999999996
+                ]
+              },
+              "phenomenonTime": "2011-01-26T00:00:00.000Z/2012-01-12T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-26T00:00:00.000Z/2012-01-12T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14262)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9205)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9205)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9207,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.593611,
+          32.828611
+        ]
+      },
+      "name": "324945 104353101",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9207)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9207,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324945104353101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=324945104353101&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9207)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14264,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.593611,
+                  32.828611
+                ]
+              },
+              "phenomenonTime": "2011-01-26T00:00:00.000Z/2011-01-26T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-26T00:00:00.000Z/2011-01-26T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14264)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9207)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9207)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9210,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.2525,
+          32.853611
+        ]
+      },
+      "name": "325122 104151001",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9210)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9210,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "100.00",
+            "well_depth": "100.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325122104151001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325122104151001&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9210)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14267,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.2525,
+                  32.853611
+                ]
+              },
+              "phenomenonTime": "2011-01-25T00:00:00.000Z/2020-02-03T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-25T00:00:00.000Z/2020-02-03T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14267)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9210)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9210)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9216,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.386667,
+          32.8875
+        ]
+      },
+      "name": "325314 104230802",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9216)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9216,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "390",
+            "well_depth": "390",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325314104230802&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325314104230802&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9216)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14273,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.386667,
+                  32.8875
+                ]
+              },
+              "phenomenonTime": "2011-01-26T00:00:00.000Z/2020-02-10T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-26T00:00:00.000Z/2020-02-10T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14273)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9216)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9216)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9217,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.372167,
+          32.893333
+        ]
+      },
+      "name": "325335 104221701",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9217)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9217,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "1149",
+            "well_depth": "1149",
+            "GeologicFormation": "313GRBG",
+            "geologic_formation": "313GRBG",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325335104221701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325335104221701&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9217)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14274,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.372167,
+                  32.893333
+                ]
+              },
+              "phenomenonTime": "2018-02-14T00:00:00.000Z/2018-02-14T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2018-02-14T00:00:00.000Z/2018-02-14T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14274)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9217)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9217)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9222,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.429444,
+          32.918889
+        ]
+      },
+      "name": "325505 104254101",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9222)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9222,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "325",
+            "well_depth": "325",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325505104254101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325505104254101&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9222)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14279,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.429444,
+                  32.918889
+                ]
+              },
+              "phenomenonTime": "2011-01-25T00:00:00.000Z/2015-01-28T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-25T00:00:00.000Z/2015-01-28T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14279)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9222)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9222)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9223,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.395,
+          32.921111
+        ]
+      },
+      "name": "325517 104234001",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9223)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9223,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "231.00",
+            "well_depth": "231.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325517104234001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325517104234001&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9223)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14280,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.395,
+                  32.921111
+                ]
+              },
+              "phenomenonTime": "2011-01-25T00:00:00.000Z/2011-01-25T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-25T00:00:00.000Z/2011-01-25T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14280)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9223)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9223)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9226,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.479944,
+          32.930722
+        ]
+      },
+      "name": "325550 104284401",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9226)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9226,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "292.00",
+            "well_depth": "292.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325550104284401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325550104284401&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9226)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14283,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.479944,
+                  32.930722
+                ]
+              },
+              "phenomenonTime": "2013-01-30T00:00:00.000Z/2020-02-10T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2013-01-30T00:00:00.000Z/2020-02-10T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14283)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9226)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9226)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9230,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.395,
+          32.944167
+        ]
+      },
+      "name": "325639 104234001",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9230)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9230,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "280",
+            "well_depth": "280",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325639104234001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325639104234001&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9230)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14287,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.395,
+                  32.944167
+                ]
+              },
+              "phenomenonTime": "2011-01-25T00:00:00.000Z/2018-02-13T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-25T00:00:00.000Z/2018-02-13T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14287)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9230)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9230)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9238,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.361528,
+          32.965056
+        ]
+      },
+      "name": "325753 104213901",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9238)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9238,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "94",
+            "well_depth": "94",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325753104213901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325753104213901&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9238)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14295,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.361528,
+                  32.965056
+                ]
+              },
+              "phenomenonTime": "2015-01-28T00:00:00.000Z/2020-02-28T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2015-01-28T00:00:00.000Z/2020-02-28T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14295)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9238)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9238)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9239,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.49,
+          32.968889
+        ]
+      },
+      "name": "325806 104292101",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9239)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9239,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "490",
+            "well_depth": "490",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325806104292101&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325806104292101&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9239)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14296,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.49,
+                  32.968889
+                ]
+              },
+              "phenomenonTime": "2011-01-20T00:00:00.000Z/2020-02-24T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-20T00:00:00.000Z/2020-02-24T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14296)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9239)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9239)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9242,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.365694,
+          32.977917
+        ]
+      },
+      "name": "325838 104215301",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9242)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9242,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "129",
+            "well_depth": "129",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325838104215301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325838104215301&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9242)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14299,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.365694,
+                  32.977917
+                ]
+              },
+              "phenomenonTime": "2011-01-20T00:00:00.000Z/2020-02-27T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-20T00:00:00.000Z/2020-02-27T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14299)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9242)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9242)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9244,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.456194,
+          32.981583
+        ]
+      },
+      "name": "325852 104271801",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9244)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9244,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325852104271801&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9244)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14301,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.456194,
+                  32.981583
+                ]
+              },
+              "phenomenonTime": "2011-01-20T00:00:00.000Z/2020-02-24T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-20T00:00:00.000Z/2020-02-24T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14301)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9244)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9244)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9245,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.408972,
+          32.98275
+        ]
+      },
+      "name": "325857 104242701",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9245)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9245,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "188",
+            "well_depth": "188",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325857104242701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=325857104242701&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9245)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14302,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.408972,
+                  32.98275
+                ]
+              },
+              "phenomenonTime": "2011-01-21T00:00:00.000Z/2011-01-21T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-21T00:00:00.000Z/2011-01-21T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14302)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9245)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9245)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9256,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.330861,
+          33.037417
+        ]
+      },
+      "name": "330210 104194701",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9256)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9256,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330210104194701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330210104194701&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9256)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14313,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.330861,
+                  33.037417
+                ]
+              },
+              "phenomenonTime": "2011-01-19T00:00:00.000Z/2020-02-25T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-19T00:00:00.000Z/2020-02-25T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14313)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9256)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9256)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9277,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.134444,
+          33.116944
+        ]
+      },
+      "name": "330711 104080301",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9277)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9277,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "308.00",
+            "well_depth": "308.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330711104080301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=330711104080301&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9277)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14334,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.134444,
+                  33.116944
+                ]
+              },
+              "phenomenonTime": "2011-01-19T00:00:00.000Z/2018-01-22T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-19T00:00:00.000Z/2018-01-22T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14334)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9277)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9277)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9289,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.531389,
+          33.193333
+        ]
+      },
+      "name": "331152 104313601",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9289)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9289,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "180.",
+            "well_depth": "180.",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331152104313601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331152104313601&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9289)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14346,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.531389,
+                  33.193333
+                ]
+              },
+              "phenomenonTime": "2011-01-31T00:00:00.000Z/2018-01-17T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-31T00:00:00.000Z/2018-01-17T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14346)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9289)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9289)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9290,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.340583,
+          33.198694
+        ]
+      },
+      "name": "331212 104200801",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9290)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9290,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331212104200801&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9290)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14347,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.340583,
+                  33.198694
+                ]
+              },
+              "phenomenonTime": "2011-01-31T00:00:00.000Z/2020-01-29T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-31T00:00:00.000Z/2020-01-29T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14347)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9290)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9290)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9292,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.413889,
+          33.223056
+        ]
+      },
+      "name": "331333 104243301",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9292)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9292,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "385",
+            "well_depth": "385",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331333104243301&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331333104243301&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9292)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14349,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.413889,
+                  33.223056
+                ]
+              },
+              "phenomenonTime": "2011-01-31T00:00:00.000Z/2015-01-29T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-31T00:00:00.000Z/2015-01-29T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14349)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9292)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9292)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9296,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.334417,
+          33.280139
+        ]
+      },
+      "name": "331646 104200001",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9296)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9296,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "194",
+            "well_depth": "194",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331646104200001&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331646104200001&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9296)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14353,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.334417,
+                  33.280139
+                ]
+              },
+              "phenomenonTime": "2011-01-27T00:00:00.000Z/2020-03-06T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-27T00:00:00.000Z/2020-03-06T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14353)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9296)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9296)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9297,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.397361,
+          33.289389
+        ]
+      },
+      "name": "331700 104234701",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9297)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9297,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "165",
+            "well_depth": "165",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331700104234701&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331700104234701&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9297)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14354,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.397361,
+                  33.289389
+                ]
+              },
+              "phenomenonTime": "2011-01-31T00:00:00.000Z/2016-02-04T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-31T00:00:00.000Z/2016-02-04T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14354)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9297)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9297)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9304,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.254583,
+          33.324028
+        ]
+      },
+      "name": "331927 104151401",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9304)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9304,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "43",
+            "well_depth": "43",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331927104151401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=331927104151401&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9304)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14361,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.254583,
+                  33.324028
+                ]
+              },
+              "phenomenonTime": "2011-01-27T00:00:00.000Z/2020-03-03T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-27T00:00:00.000Z/2020-03-03T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14361)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9304)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9304)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9310,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.250639,
+          33.364722
+        ]
+      },
+      "name": "332136 104145301",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9310)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9310,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332136104145301&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9310)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14367,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.250639,
+                  33.364722
+                ]
+              },
+              "phenomenonTime": "2011-01-27T00:00:00.000Z/2020-03-04T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-27T00:00:00.000Z/2020-03-04T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14367)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9310)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9310)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9323,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.610249,
+          33.447597
+        ]
+      },
+      "name": "332711 104321202",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9323)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9323,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "202",
+            "well_depth": "202",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332711104321202&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332711104321202&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9323)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14380,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.610249,
+                  33.447597
+                ]
+              },
+              "phenomenonTime": "2011-01-26T00:00:00.000Z/2015-02-02T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-26T00:00:00.000Z/2015-02-02T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14380)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9323)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9323)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9324,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.444806,
+          33.479333
+        ]
+      },
+      "name": "332838 104262601",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9324)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9324,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "300",
+            "well_depth": "300",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332838104262601&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=332838104262601&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9324)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14381,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.444806,
+                  33.479333
+                ]
+              },
+              "phenomenonTime": "2011-01-26T00:00:00.000Z/2020-01-29T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-26T00:00:00.000Z/2020-01-29T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14381)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9324)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9324)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9325,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.330722,
+          33.510278
+        ]
+      },
+      "name": "333036 104194901",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9325)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9325,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "30.00",
+            "well_depth": "30.00",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333036104194901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333036104194901&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9325)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14382,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.330722,
+                  33.510278
+                ]
+              },
+              "phenomenonTime": "2011-01-25T00:00:00.000Z/2020-01-28T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-25T00:00:00.000Z/2020-01-28T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14382)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9325)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9325)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9327,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.286083,
+          33.530528
+        ]
+      },
+      "name": "333149 104170801",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9327)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9327,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333149104170801&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9327)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14384,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.286083,
+                  33.530528
+                ]
+              },
+              "phenomenonTime": "2011-01-26T00:00:00.000Z/2020-01-27T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-26T00:00:00.000Z/2020-01-27T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14384)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9327)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9327)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9330,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.348583,
+          33.545611
+        ]
+      },
+      "name": "333244 104204701",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9330)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9330,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333244104204701&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9330)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14387,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.348583,
+                  33.545611
+                ]
+              },
+              "phenomenonTime": "2013-01-24T00:00:00.000Z/2020-01-27T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2013-01-24T00:00:00.000Z/2020-01-27T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14387)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9330)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9330)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9338,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.511,
+          33.631556
+        ]
+      },
+      "name": "333756 104303401",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9338)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9338,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "301",
+            "well_depth": "301",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333756104303401&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333756104303401&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9338)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14395,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.511,
+                  33.631556
+                ]
+              },
+              "phenomenonTime": "2011-01-20T00:00:00.000Z/2020-01-21T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-20T00:00:00.000Z/2020-01-21T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14395)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9338)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9338)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9341,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.527556,
+          33.661333
+        ]
+      },
+      "name": "333943 104312901",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9341)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9341,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "440",
+            "well_depth": "440",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333943104312901&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333943104312901&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9341)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14398,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.527556,
+                  33.661333
+                ]
+              },
+              "phenomenonTime": "2011-01-22T00:00:00.000Z/2020-01-22T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-22T00:00:00.000Z/2020-01-22T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14398)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9341)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9341)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9342,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.363333,
+          33.663056
+        ]
+      },
+      "name": "333956 104212801",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9342)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9342,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "WellDepth": "100",
+            "well_depth": "100",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "well_depth_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333956104212801&siteStatus=all&siteOutput=expanded"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=333956104212801&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9342)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14399,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.363333,
+                  33.663056
+                ]
+              },
+              "phenomenonTime": "2011-01-20T00:00:00.000Z/2020-01-23T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-20T00:00:00.000Z/2020-01-23T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14399)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9342)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9342)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9348,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.334361,
+          33.723444
+        ]
+      },
+      "name": "334326 104200401",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9348)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9348,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334326104200401&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9348)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14405,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.334361,
+                  33.723444
+                ]
+              },
+              "phenomenonTime": "2011-01-19T00:00:00.000Z/2020-01-22T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-19T00:00:00.000Z/2020-01-22T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14405)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9348)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9348)/Things",
+      "source": "OSE-Roswell"
+    },
+    {
+      "description": "No Description",
+      "encodingType": "application/vnd.geo+json",
+      "@iot.id": 9352,
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          -104.454556,
+          33.772972
+        ]
+      },
+      "name": "334615 104271001",
+      "properties": {
+        "basin": "Roswell",
+        "agency": "OSE-Roswell"
+      },
+      "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9352)",
+      "Things": [
+        {
+          "description": "No Description",
+          "@iot.id": 9352,
+          "name": "Water Well",
+          "properties": {
+            "agency": "OSE-Roswell",
+            "aquifer": "Artesia Group",
+            "GeologicFormation": "313ARTS",
+            "geologic_formation": "313ARTS",
+            "aquifer_attribution": {
+              "agency": "NMWDI"
+            },
+            "geologic_formation_attribution": {
+              "agency": "USGS",
+              "source_url": "https://waterservices.usgs.gov/nwis/site/?format=rdb&sites=334615104271001&siteStatus=all&siteOutput=expanded"
+            }
+          },
+          "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things(9352)",
+          "Datastreams": [
+            {
+              "description": "Measurement of groundwater depth in a water well, as measured below ground surface",
+              "@iot.id": 14409,
+              "name": "Groundwater Levels",
+              "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+              "observedArea": {
+                "type": "Point",
+                "coordinates": [
+                  -104.454556,
+                  33.772972
+                ]
+              },
+              "phenomenonTime": "2011-01-19T00:00:00.000Z/2020-01-22T00:00:00.000Z",
+              "properties": {
+                "topic": "Water Quantity",
+                "agency": "OSE-Roswell"
+              },
+              "resultTime": "2011-01-19T00:00:00.000Z/2020-01-22T00:00:00.000Z",
+              "@iot.selfLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams(14409)",
+              "unitOfMeasurement": {
+                "name": "Foot",
+                "symbol": "ft",
+                "definition": "http://www.qudt.org/vocab/unit/FT"
+              }
+            }
+          ]
+        }
+      ],
+      "HistoricalLocations@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9352)/HistoricalLocations",
+      "Things@iot.navigationLink": "https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Locations(9352)/Things",
+      "source": "OSE-Roswell"
+    }
+  ]
+}

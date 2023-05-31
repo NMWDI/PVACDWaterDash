@@ -108,7 +108,7 @@ config = {
 dash_app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.BOOTSTRAP],
-    title="PVACD Groundwater Dashboard",
+    title=TITLE,
     use_pages=True
     # background_callback_manager=background_callback_manager,
 )
