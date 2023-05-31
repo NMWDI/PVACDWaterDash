@@ -32,7 +32,7 @@ rel_hum_graph = dcc.Graph(id="rel_hum_graph")
 windspeed_graph = dcc.Graph(id="windspeed_graph")
 solar_radiation_graph = dcc.Graph(id="solar_radiation_graph")
 precipitation_graph = dcc.Graph(id="precipitation_graph")
-
+atmos_pressure_graph = dcc.Graph(id="atmos_pressure_graph")
 
 SERIAL = {
     "Poe Corn": "A4100127",
@@ -101,7 +101,9 @@ layout = html.Div(
         html.H2("Solar Radiation"),
         solar_radiation_graph,
         html.H2("Precipitation"),
-        precipitation_graph
+        precipitation_graph,
+        html.H2("Atmospheric Pressure"),
+        atmos_pressure_graph
         # html.Div(id='analytics-output'),
     ]
 )
@@ -115,6 +117,7 @@ layout = html.Div(
         Output("rel_hum_graph", "figure"),
         Output("solar_radiation_graph", "figure"),
         Output("precipitation_graph", "figure"),
+        Output("atmos_pressure_graph", "figure"),
         Output("windspeed_graph", "figure"),
         Output("station-name", "children"),
         # Output("progress-div", "children")
@@ -126,10 +129,11 @@ layout = html.Div(
         State("windspeed_graph", "figure"),
         State("solar_radiation_graph", "figure"),
         State("precipitation_graph", "figure"),
+        State("atmos_pressure_graph", "figure"),
     ]
     # Input("map", "clickData"),
 )
-def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip):
+def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip, atmos_pressure):
     layout = dict(
         height=350,
         margin=dict(t=50, b=50, l=50, r=25),
@@ -160,6 +164,7 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
             ("Relative Humidity", "Relative Humidity (%)"),
             ("Solar Radiation", "Solar Radiation (W/m2)"),
             ("Precipitation", "Precipitation (in)"),
+            ("Atmospheric Pressure", "Atmospheric Pressure (kPa)")
         ]:
             xs, ys = extract_xy(data[sname][0]["readings"])
             fig = go.Figure(
@@ -182,7 +187,7 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
 
     except KeyError as e:
         print(e, resp)
-        figs = [air_temp, rel_hum, solar_rad, precip, windspeed]
+        figs = [air_temp, rel_hum, solar_rad, precip, atmos_pressure, windspeed]
 
     return figs + [station_name]
 
