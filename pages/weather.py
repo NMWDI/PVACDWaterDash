@@ -34,12 +34,13 @@ solar_radiation_graph = dcc.Graph(id="solar_radiation_graph")
 precipitation_graph = dcc.Graph(id="precipitation_graph")
 
 
-SERIAL = {'Poe Corn': 'A4100127',
-          'Shop': 'A4100062',
-          'Orchard Park': 'A4100132',
-          'Cottonwood': 'A4100114',
-          'Artesia': 'A4100130'
-          }
+SERIAL = {
+    "Poe Corn": "A4100127",
+    "Shop": "A4100062",
+    "Orchard Park": "A4100132",
+    "Cottonwood": "A4100114",
+    "Artesia": "A4100130",
+}
 
 layout = go.Layout(
     mapbox_style="open-street-map",
@@ -55,50 +56,55 @@ layout = go.Layout(
         x=0.66,
         bgcolor="#899DBE",
         borderwidth=3,
-    ))
-
-locations = pd.read_json(
-    f"./data/weather_stations.json"
+    ),
 )
+
+locations = pd.read_json(f"./data/weather_stations.json")
 locations = locations["locations"]
 
 lats = [f'{l["location"]["coordinates"][1]:0.3f}' for l in locations]
 lons = [f'{l["location"]["coordinates"][0]:0.3f}' for l in locations]
 ids = [l["name"] for l in locations]
 
-data = [go.Scattermapbox(lat=lats, lon=lons,
-                         text=ids,
-                         marker=go.scattermapbox.Marker(size=14))]
+data = [
+    go.Scattermapbox(
+        lat=lats, lon=lons, text=ids, marker=go.scattermapbox.Marker(size=14)
+    )
+]
 
 mapcomp = dcc.Graph(id="map", figure=go.Figure(layout=layout, data=data))
 
 
-layout = html.Div(children=[
-    # html.H1(children='This is our Analytics page'),
-    html.Div([
-        "Select a station: ",
-        dcc.Dropdown(['Poe Corn', 'Shop', 'Orchard Park',
-                      'Cottonwood', 'Artesia'],
-                     'Poe Corn',
-                     id='station-input')
-    ]),
-    mapcomp,
-    html.Br(),
-    html.P('If graphs do not display please wait 1 minute before refreshing.'),
-    html.H2(id='station-name', style={'text-align': 'center'}),
-    html.H2('Air Temperature'),
-    air_temp_graph,
-    html.H2('Relative Humidity'),
-    rel_hum_graph,
-    html.H2('Wind Speed'),
-    windspeed_graph,
-    html.H2('Solar Radiation'),
-    solar_radiation_graph,
-    html.H2('Precipitation'),
-    precipitation_graph
-
-    # html.Div(id='analytics-output'),
-])
+layout = html.Div(
+    children=[
+        # html.H1(children='This is our Analytics page'),
+        html.Div(
+            [
+                "Select a station: ",
+                dcc.Dropdown(
+                    ["Poe Corn", "Shop", "Orchard Park", "Cottonwood", "Artesia"],
+                    "Poe Corn",
+                    id="station-input",
+                ),
+            ]
+        ),
+        mapcomp,
+        html.Br(),
+        html.P("If graphs do not display please wait 1 minute before refreshing."),
+        html.H2(id="station-name", style={"text-align": "center"}),
+        html.H2("Air Temperature"),
+        air_temp_graph,
+        html.H2("Relative Humidity"),
+        rel_hum_graph,
+        html.H2("Wind Speed"),
+        windspeed_graph,
+        html.H2("Solar Radiation"),
+        solar_radiation_graph,
+        html.H2("Precipitation"),
+        precipitation_graph
+        # html.Div(id='analytics-output'),
+    ]
+)
 
 
 @callback(
@@ -113,13 +119,14 @@ layout = html.Div(children=[
         Output("station-name", "children"),
         # Output("progress-div", "children")
     ],
-    [Input(component_id='station-input', component_property='value'),
-     State('air_temp_graph', 'figure'),
-     State('rel_hum_graph', 'figure'),
-     State('windspeed_graph', 'figure'),
-     State('solar_radiation_graph', 'figure'),
-     State('precipitation_graph', 'figure')
-     ]
+    [
+        Input(component_id="station-input", component_property="value"),
+        State("air_temp_graph", "figure"),
+        State("rel_hum_graph", "figure"),
+        State("windspeed_graph", "figure"),
+        State("solar_radiation_graph", "figure"),
+        State("precipitation_graph", "figure"),
+    ]
     # Input("map", "clickData"),
 )
 def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip):
@@ -137,32 +144,40 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
     resp = get_sensor_data(SERIAL[station_name])
 
     try:
-        data = resp['data']
+        data = resp["data"]
         # pprint(data)
 
         fs = []
-        for name in ['Air Temperature', 'Min Air Temperature', 'Max Air Temperature']:
-            xs, ys = extract_xy(data[name][0]['readings'])
+        for name in ["Air Temperature", "Min Air Temperature", "Max Air Temperature"]:
+            xs, ys = extract_xy(data[name][0]["readings"])
             fs.append(go.Scatter(x=xs, y=ys, name=name, mode="markers+lines"))
 
         fig = go.Figure(data=fs, layout=layout)
-        fig.layout.yaxis.title = 'Air Temperature (F)'
+        fig.layout.yaxis.title = "Air Temperature (F)"
         figs = [fig]
 
-        for sname, ytitle in [('Relative Humidity', 'Relative Humidity (%)'),
-                              ('Solar Radiation', 'Solar Radiation (W/m2)'),
-                              ('Precipitation', 'Precipitation (in)')]:
-            xs, ys = extract_xy(data[sname][0]['readings'])
-            fig = go.Figure(data=[go.Scatter(x=xs, y=ys, mode="markers+lines")], layout=layout)
+        for sname, ytitle in [
+            ("Relative Humidity", "Relative Humidity (%)"),
+            ("Solar Radiation", "Solar Radiation (W/m2)"),
+            ("Precipitation", "Precipitation (in)"),
+        ]:
+            xs, ys = extract_xy(data[sname][0]["readings"])
+            fig = go.Figure(
+                data=[go.Scatter(x=xs, y=ys, mode="markers+lines")], layout=layout
+            )
             fig.layout.yaxis.title = ytitle
             figs.append(fig)
 
-        xs, ys = extract_xy(data['Wind Speed'][0]['readings'])
-        gxs, gys = extract_xy(data['Gust Speed'][0]['readings'])
-        fig = go.Figure(data=[go.Scatter(x=xs, y=ys, name='Wind Speed', mode="markers+lines"),
-                              go.Scatter(x=gxs, y=gys, name='Gust Speed', mode='markers')],
-                        layout=layout)
-        fig.layout.yaxis.title = 'Wind Speed (mph)'
+        xs, ys = extract_xy(data["Wind Speed"][0]["readings"])
+        gxs, gys = extract_xy(data["Gust Speed"][0]["readings"])
+        fig = go.Figure(
+            data=[
+                go.Scatter(x=xs, y=ys, name="Wind Speed", mode="markers+lines"),
+                go.Scatter(x=gxs, y=gys, name="Gust Speed", mode="markers"),
+            ],
+            layout=layout,
+        )
+        fig.layout.yaxis.title = "Wind Speed (mph)"
         figs.append(fig)
 
     except KeyError as e:
@@ -173,20 +188,23 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
 
 
 def get_sensor_data(device_sn):
-    token = os.environ.get('ZENTRA_TOKEN', '')
+    token = os.environ.get("ZENTRA_TOKEN", "")
 
     # device_sn = "your_ZENTRAcloud_device_serial_number"
     url = "https://zentracloud.com/api/v3/get_readings/"
     token = "Token {TOKEN}".format(TOKEN=token)
-    headers = {'content-type': 'application/json', 'Authorization': token}
+    headers = {"content-type": "application/json", "Authorization": token}
     end_date = datetime.datetime.today()
     start_date = end_date - datetime.timedelta(days=14)
     page_num = 1
     per_page = 500
-    params = {'device_sn': device_sn, 'start_date': start_date, 'end_date': end_date,
-              'page_num': page_num,
-              'per_page': per_page
-              }
+    params = {
+        "device_sn": device_sn,
+        "start_date": start_date,
+        "end_date": end_date,
+        "page_num": page_num,
+        "per_page": per_page,
+    }
     response = requests.get(url, params=params, headers=headers)
     # content = json.loads(response.content)
     js = response.json()
@@ -199,9 +217,10 @@ def get_sensor_data(device_sn):
 def extract_xy(readings):
     xs, ys = [], []
     for ri in readings:
-        xs.append(ri['datetime'])
-        ys.append(ri['value'])
+        xs.append(ri["datetime"])
+        ys.append(ri["value"])
     return xs, ys
+
 
 # @callback(
 # Output(component_id='analytics-output', component_property='children'),
