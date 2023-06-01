@@ -80,13 +80,13 @@ header_style["fontSize"] = "16px"
 
 data_style["fontSize"] = "12px"
 
-current_table = DataTable(id='current_table',
-                          columns=[{'name': 'Name', 'id': 'name'},
-                                   {'name': 'Value', 'id': 'value'}],
-                          style_header=header_style,
-                          style_as_list_view=True,
-                          style_data=data_style,
-                          )
+current_table = DataTable(
+    id="current_table",
+    columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
+    style_header=header_style,
+    style_as_list_view=True,
+    style_data=data_style,
+)
 
 layout = html.Div(
     children=[
@@ -101,12 +101,17 @@ layout = html.Div(
         #         ),
         #     ]
         # ),
-        dbc.Row(children=[dbc.Col(mapcomp),
-                          dbc.Col(children=[html.H2('Current Conditions'),
-                                            dbc.Spinner([html.Div(id='loading-weather'),
-                                                         current_table])
-
-                                            ])]),
+        dbc.Row(
+            children=[
+                dbc.Col(mapcomp),
+                dbc.Col(
+                    children=[
+                        html.H2("Current Conditions"),
+                        dbc.Spinner([html.Div(id="loading-weather"), current_table]),
+                    ]
+                ),
+            ]
+        ),
         # html.Div(current_table),
         html.Br(),
         html.P("If graphs do not display please wait 1 minute before refreshing."),
@@ -153,7 +158,9 @@ layout = html.Div(
     ]
     # Input("map", "clickData"),
 )
-def display_graphs(clickdata, air_temp, rel_hum, windspeed, solar_rad, precip, atmos_pressure):
+def display_graphs(
+    clickdata, air_temp, rel_hum, windspeed, solar_rad, precip, atmos_pressure
+):
     layout = dict(
         height=350,
         margin=dict(t=50, b=50, l=50, r=25),
@@ -164,7 +171,7 @@ def display_graphs(clickdata, air_temp, rel_hum, windspeed, solar_rad, precip, a
     )
     # xs = [1, 2, 3]
     # ys = [1, 2, 3]
-    station_name = 'Poe Corn'
+    station_name = "Poe Corn"
     if clickdata:
         point = clickdata["points"][0]
         station_name = point["text"]
