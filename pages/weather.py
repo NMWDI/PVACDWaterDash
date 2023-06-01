@@ -76,19 +76,19 @@ data = [
 
 mapcomp = dcc.Graph(id="map", figure=go.Figure(layout=layout, data=data))
 
-header_style['fontSize'] = '16px'
+header_style["fontSize"] = "16px"
 
-data_style['fontSize'] = '12px'
+data_style["fontSize"] = "12px"
 
-current_table = DataTable(id='current_table',
-                          columns=[{'name': 'Name', 'id': 'name'},
-                                   {'name': 'Value', 'id': 'value'}],
-                          # columns=[{"name": i, "id": i.lower().replace(' ', '_')}
-                          #          for i in ["Station", "Relative Humidity"]]
-                          style_header=header_style,
-                          style_as_list_view=True,
-                          style_data=data_style,
-                          )
+current_table = DataTable(
+    id="current_table",
+    columns=[{"name": "Name", "id": "name"}, {"name": "Value", "id": "value"}],
+    # columns=[{"name": i, "id": i.lower().replace(' ', '_')}
+    #          for i in ["Station", "Relative Humidity"]]
+    style_header=header_style,
+    style_as_list_view=True,
+    style_data=data_style,
+)
 
 layout = html.Div(
     children=[
@@ -103,12 +103,17 @@ layout = html.Div(
                 ),
             ]
         ),
-        dbc.Row(children=[dbc.Col(mapcomp),
-                          dbc.Col(children=[html.H2('Current Conditions'),
-                                            dbc.Spinner([html.Div(id='loading-weather'),
-                                                         current_table])
-
-                                            ])]),
+        dbc.Row(
+            children=[
+                dbc.Col(mapcomp),
+                dbc.Col(
+                    children=[
+                        html.H2("Current Conditions"),
+                        dbc.Spinner([html.Div(id="loading-weather"), current_table]),
+                    ]
+                ),
+            ]
+        ),
         # html.Div(current_table),
         html.Br(),
         html.P("If graphs do not display please wait 1 minute before refreshing."),
@@ -154,7 +159,9 @@ layout = html.Div(
     ]
     # Input("map", "clickData"),
 )
-def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip, atmos_pressure):
+def display_graphs(
+    station_name, air_temp, rel_hum, windspeed, solar_rad, precip, atmos_pressure
+):
     layout = dict(
         height=350,
         margin=dict(t=50, b=50, l=50, r=25),
@@ -168,9 +175,9 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
 
     resp = get_sensor_data(SERIAL[station_name])
 
-    current_values = [{'name': 'Station',
-                       'value': station_name},
-                      ]
+    current_values = [
+        {"name": "Station", "value": station_name},
+    ]
     try:
         data = resp["data"]
         # pprint(data)
@@ -178,8 +185,7 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
         fs = []
         for name in ["Air Temperature", "Min Air Temperature", "Max Air Temperature"]:
             xs, ys = extract_xy(data[name][0]["readings"])
-            current_values.append({'name': name,
-                                   'value': f'{ys[0]:0.1f} F'})
+            current_values.append({"name": name, "value": f"{ys[0]:0.1f} F"})
             fs.append(go.Scatter(x=xs, y=ys, name=name, mode="markers+lines"))
 
         fig = go.Figure(data=fs, layout=layout)
@@ -190,11 +196,10 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
             ("Relative Humidity", "Relative Humidity", "%"),
             ("Solar Radiation", "Solar Radiation", "W/m2"),
             ("Precipitation", "Precipitation", "in"),
-            ("Atmospheric Pressure", "Atmospheric Pressure", "kPa")
+            ("Atmospheric Pressure", "Atmospheric Pressure", "kPa"),
         ]:
             xs, ys = extract_xy(data[sname][0]["readings"])
-            current_values.append({'name': sname,
-                                   'value': f'{ys[0]:0.1f} {units}'})
+            current_values.append({"name": sname, "value": f"{ys[0]:0.1f} {units}"})
             fig = go.Figure(
                 data=[go.Scatter(x=xs, y=ys, mode="markers+lines")], layout=layout
             )
@@ -204,12 +209,20 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
         xs, ys = extract_xy(data["Wind Speed"][0]["readings"])
         gxs, gys = extract_xy(data["Gust Speed"][0]["readings"])
 
-        current_values.append({'name': 'Wind Speed', 'value': f'{ys[0]:0.1f} mph'})
-        current_values.append({'name': 'Gust Speed', 'value': f'{gys[0]:0.1f} mph'})
-        current_values.append({'name': 'Battery Percent',
-                               'value': f'{data["Battery Percent"][0]["readings"][0]["value"]:0.1f} %'})
-        current_values.append({'name': 'Battery Voltage',
-                               'value': f'{data["Battery Voltage"][0]["readings"][0]["value"]/1000:0.1f} V'})
+        current_values.append({"name": "Wind Speed", "value": f"{ys[0]:0.1f} mph"})
+        current_values.append({"name": "Gust Speed", "value": f"{gys[0]:0.1f} mph"})
+        current_values.append(
+            {
+                "name": "Battery Percent",
+                "value": f'{data["Battery Percent"][0]["readings"][0]["value"]:0.1f} %',
+            }
+        )
+        current_values.append(
+            {
+                "name": "Battery Voltage",
+                "value": f'{data["Battery Voltage"][0]["readings"][0]["value"]/1000:0.1f} V',
+            }
+        )
 
         fig = go.Figure(
             data=[
@@ -220,7 +233,6 @@ def display_graphs(station_name, air_temp, rel_hum, windspeed, solar_rad, precip
         )
         fig.layout.yaxis.title = "Wind Speed (mph)"
         figs.append(fig)
-
 
     except KeyError as e:
         print(e, resp)
@@ -262,6 +274,7 @@ def extract_xy(readings):
         xs.append(ri["datetime"])
         ys.append(ri["value"])
     return xs, ys
+
 
 # @callback(
 # Output(component_id='analytics-output', component_property='children'),
