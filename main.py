@@ -37,7 +37,7 @@ from dash import (
     ctx,
     State,
     page_registry,
-    page_container
+    page_container,
 )
 import plotly.express as px
 import plotly.graph_objects as go
