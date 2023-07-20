@@ -21,7 +21,6 @@ from asyncio import Event
 from collections.abc import Collection
 from itertools import groupby
 
-import dash
 import dash_bootstrap_components as dbc
 import datetime as datetime
 import requests as requests
@@ -38,6 +37,7 @@ from dash import (
     ctx,
     State,
     page_registry,
+    page_container
 )
 import plotly.express as px
 import plotly.graph_objects as go
@@ -242,7 +242,7 @@ def init_app():
         [
             banner_row,
             subbanner_row,
-            dash.page_container,
+            page_container,
             # dbc.Row(html.H1("PVACD Monitoring Locations"), style=card_style),
             dbc.Row(
                 [

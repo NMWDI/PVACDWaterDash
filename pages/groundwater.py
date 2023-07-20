@@ -176,7 +176,7 @@ for i, row in crosswalk.iterrows():
     print(iotid, row)
 
     location, obs = get_observations(location_iotid=iotid, limit=10000)
-
+    obs = [o for i, o in enumerate(obs) if not i % 10]
     historic_obs = get_nm_aquifer_obs(iotid)
     if historic_obs:
         obs.extend(historic_obs)
